@@ -257,6 +257,19 @@ abstract base class Place extends Thing with EquatableMixin {
   final String? tourBookingPage;
 
   const Place({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.additionalProperty,
     this.address,
     this.aggregateRating,

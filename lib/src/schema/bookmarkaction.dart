@@ -10,6 +10,32 @@ import '../../schemaorg.dart';
 final class BookmarkAction extends OrganizeAction with EquatableMixin {
 
   const BookmarkAction({
+    super.actionProcess,
+    super.actionStatus,
+    super.agent,
+    super.endTime,
+    super.error,
+    super.instrument,
+    super.location,
+    super.object,
+    super.participant,
+    super.provider,
+    super.result,
+    super.startTime,
+    super.target,
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
   });
 
   @override

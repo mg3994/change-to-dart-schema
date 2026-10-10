@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).
 @Schema(description: r'''Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).''')

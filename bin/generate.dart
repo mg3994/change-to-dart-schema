@@ -51,6 +51,27 @@ class SchemaOrgGraph {
     }
     return [];
   }
+
+  List<String> getAllParentClassIds(String classId) {
+    final parents = <String>[];
+    final visited = <String>{};
+
+    void recurse(String current) {
+      if (!visited.add(current)) return;
+      final item = itemsById[current];
+      if (item == null) return;
+      final directParents = _extractList(item['rdfs:subClassOf']);
+      for (var p in directParents) {
+        if (p.startsWith('schema:')) {
+          parents.add(p);
+          recurse(p);
+        }
+      }
+    }
+
+    recurse(classId);
+    return parents;
+  }
 }
 
 String extractStringValue(dynamic entry, [String defaultVal = '']) {
@@ -184,7 +205,6 @@ void main(List<String> args) async {
     buffer.writeln("// Generated file. Do not edit directly.");
     buffer.writeln("import 'package:schemantic/schemantic.dart';");
     buffer.writeln("import 'package:json_annotation/json_annotation.dart';");
-    buffer.writeln("import '../../schemaorg.dart';");
     buffer.writeln();
     if (doc.isNotEmpty) buffer.writeln(doc);
     buffer.writeln("@Schema(description: r'''$commentText''')");
@@ -236,7 +256,42 @@ void main(List<String> args) async {
 
     final hasSubclasses = (graph.subclassesByParent[classId] ?? []).isNotEmpty;
 
+    // Direct properties
     final props = graph.propertiesByDomain[classId] ?? [];
+
+    // Fields
+    final fieldDeclarations = <String>[];
+    final fieldNames = <String>[];
+    final usedPropertyNames = <String>{};
+
+    for (var prop in props) {
+      final propId = prop['@id'] as String;
+      final propLabel = extractStringValue(prop['rdfs:label'], propId.replaceFirst('schema:', ''));
+      var propName = lowerFirst(sanitizeIdentifier(propLabel));
+      if (!usedPropertyNames.add(propName)) {
+        propName = '${propName}_${usedPropertyNames.length}';
+      }
+
+      fieldDeclarations.add(propName);
+      fieldNames.add(propName);
+    }
+
+    // Collect inherited properties from all ancestor classes that are NOT re-declared on this class
+    final parentClassIds = graph.getAllParentClassIds(classId);
+    final inheritedPropNames = <String>{};
+    final parentParams = <String>[];
+
+    for (var parentId in parentClassIds) {
+      final parentProps = graph.propertiesByDomain[parentId] ?? [];
+      for (var p in parentProps) {
+        final pId = p['@id'] as String;
+        final pLabel = extractStringValue(p['rdfs:label'], pId.replaceFirst('schema:', ''));
+        final pName = lowerFirst(sanitizeIdentifier(pLabel));
+        if (!usedPropertyNames.contains(pName) && inheritedPropNames.add(pName)) {
+          parentParams.add('super.$pName');
+        }
+      }
+    }
 
     final buffer = StringBuffer();
     buffer.writeln("// Generated file. Do not edit directly.");
@@ -264,18 +319,10 @@ void main(List<String> args) async {
 
     buffer.writeln("$classModifier $className$inheritanceClause {");
 
-    // Fields
-    final fieldDeclarations = <String>[];
-    final fieldNames = <String>[];
-    final usedPropertyNames = <String>{};
-
     for (var prop in props) {
       final propId = prop['@id'] as String;
       final propLabel = extractStringValue(prop['rdfs:label'], propId.replaceFirst('schema:', ''));
-      var propName = lowerFirst(sanitizeIdentifier(propLabel));
-      if (!usedPropertyNames.add(propName)) {
-        propName = '${propName}_${usedPropertyNames.length}';
-      }
+      final propName = lowerFirst(sanitizeIdentifier(propLabel));
 
       final propDoc = cleanDocComment(prop['rdfs:comment']);
       final propCommentText = extractStringValue(prop['rdfs:comment'], '');
@@ -288,16 +335,18 @@ void main(List<String> args) async {
       buffer.writeln("  @Field(name: '$propLabel', description: r'''$propCommentText''')");
       buffer.writeln("  @JsonKey(name: '$propLabel')");
       buffer.writeln("  final $dartType? $propName;");
-
-      fieldDeclarations.add("this.$propName");
-      fieldNames.add(propName);
     }
 
     // Primary constructor
     buffer.writeln();
     buffer.writeln("  const $className({");
-    for (var decl in fieldDeclarations) {
-      buffer.writeln("    $decl,");
+    if (primaryParentName.isNotEmpty && primaryParentName != className) {
+      for (var pParam in parentParams) {
+        buffer.writeln("    $pParam,");
+      }
+    }
+    for (var fname in fieldNames) {
+      buffer.writeln("    this.$fname,");
     }
     buffer.writeln("  });");
 

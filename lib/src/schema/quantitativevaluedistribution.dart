@@ -40,6 +40,19 @@ abstract base class QuantitativeValueDistribution extends StructuredValue with E
   final num? percentile90;
 
   const QuantitativeValueDistribution({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.duration,
     this.median,
     this.percentile10,

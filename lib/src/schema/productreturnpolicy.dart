@@ -20,6 +20,19 @@ final class ProductReturnPolicy extends Intangible with EquatableMixin {
   final String? productReturnLink;
 
   const ProductReturnPolicy({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.productReturnDays,
     this.productReturnLink,
   });

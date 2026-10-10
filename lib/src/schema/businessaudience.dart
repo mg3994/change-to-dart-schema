@@ -25,6 +25,21 @@ final class BusinessAudience extends Audience with EquatableMixin {
   final QuantitativeValue? yearsInOperation;
 
   const BusinessAudience({
+    super.audienceType,
+    super.geographicArea,
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.numberOfEmployees,
     this.yearlyRevenue,
     this.yearsInOperation,

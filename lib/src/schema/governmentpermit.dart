@@ -10,6 +10,26 @@ import '../../schemaorg.dart';
 final class GovernmentPermit extends Permit with EquatableMixin {
 
   const GovernmentPermit({
+    super.issuedBy,
+    super.issuedThrough,
+    super.permitAudience,
+    super.validFor,
+    super.validFrom,
+    super.validIn,
+    super.validUntil,
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
   });
 
   @override

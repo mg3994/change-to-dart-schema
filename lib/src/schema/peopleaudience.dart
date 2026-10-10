@@ -55,6 +55,21 @@ abstract base class PeopleAudience extends Audience with EquatableMixin {
   final num? suggestedMinAge;
 
   const PeopleAudience({
+    super.audienceType,
+    super.geographicArea,
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.healthCondition,
     this.requiredGender,
     this.requiredMaxAge,

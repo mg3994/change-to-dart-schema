@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// The kind of release which this album is: single, EP or album.
 @Schema(description: r'''The kind of release which this album is: single, EP or album.''')

@@ -10,6 +10,35 @@ import '../../schemaorg.dart';
 final class BrainStructure extends AnatomicalStructure with EquatableMixin {
 
   const BrainStructure({
+    super.associatedPathophysiology,
+    super.bodyLocation,
+    super.connectedTo,
+    super.diagram,
+    super.partOfSystem,
+    super.relatedCondition,
+    super.relatedTherapy,
+    super.subStructure,
+    super.code,
+    super.funding,
+    super.guideline,
+    super.legalStatus,
+    super.medicineSystem,
+    super.recognizingAuthority,
+    super.relevantSpecialty,
+    super.study,
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
   });
 
   @override

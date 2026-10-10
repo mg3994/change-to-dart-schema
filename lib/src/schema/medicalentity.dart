@@ -50,6 +50,19 @@ abstract base class MedicalEntity extends Thing with EquatableMixin {
   final MedicalStudy? study;
 
   const MedicalEntity({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.code,
     this.funding,
     this.guideline,

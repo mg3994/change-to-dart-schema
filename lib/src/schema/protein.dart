@@ -15,6 +15,32 @@ final class Protein extends BioChemEntity with EquatableMixin {
   final String? hasBioPolymerSequence;
 
   const Protein({
+    super.associatedDisease,
+    super.bioChemInteraction,
+    super.bioChemSimilarity,
+    super.biologicalRole,
+    super.funding,
+    super.hasBioChemEntityPart,
+    super.hasMolecularFunction,
+    super.hasRepresentation,
+    super.isEncodedByBioChemEntity,
+    super.isInvolvedInBiologicalProcess,
+    super.isLocatedInSubcellularLocation,
+    super.isPartOfBioChemEntity,
+    super.taxonomicRange,
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.hasBioPolymerSequence,
   });
 

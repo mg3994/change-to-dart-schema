@@ -26,6 +26,27 @@ final class GeoCircle extends GeoShape with EquatableMixin {
   final Object? geoRadius;
 
   const GeoCircle({
+    super.address,
+    super.addressCountry,
+    super.box,
+    super.circle,
+    super.elevation,
+    super.line,
+    super.polygon,
+    super.postalCode,
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.geoMidpoint,
     this.geoRadius,
   });

@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// Enumerated status values for Order.
 @Schema(description: r'''Enumerated status values for Order.''')

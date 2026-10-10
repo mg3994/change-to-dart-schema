@@ -10,6 +10,25 @@ import '../../schemaorg.dart';
 final class FMRadioChannel extends RadioChannel with EquatableMixin {
 
   const FMRadioChannel({
+    super.broadcastChannelId,
+    super.broadcastFrequency,
+    super.broadcastServiceTier,
+    super.genre,
+    super.inBroadcastLineup,
+    super.providesBroadcastService,
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
   });
 
   @override

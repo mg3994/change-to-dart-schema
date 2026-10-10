@@ -32,6 +32,19 @@ final class MenuItem extends Intangible with EquatableMixin {
   final Object? suitableForDiet;
 
   const MenuItem({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.menuAddOn,
     this.nutrition,
     this.offers,

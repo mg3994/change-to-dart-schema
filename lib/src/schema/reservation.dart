@@ -84,6 +84,19 @@ abstract base class Reservation extends Intangible with EquatableMixin {
   final Object? underName;
 
   const Reservation({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.bookingAgent,
     this.bookingTime,
     this.broker,

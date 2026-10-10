@@ -25,6 +25,19 @@ final class ServicePeriod extends StructuredValue with EquatableMixin {
   final Object? duration;
 
   const ServicePeriod({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.businessDays,
     this.cutoffTime,
     this.duration,

@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// Enumerates different price types, for example list price, invoice price, and sale price.
 @Schema(description: r'''Enumerates different price types, for example list price, invoice price, and sale price.''')

@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// Indicates whether this game is multi-player, co-op or single-player.
 @Schema(description: r'''Indicates whether this game is multi-player, co-op or single-player.''')

@@ -32,6 +32,19 @@ final class DatedMoneySpecification extends StructuredValue with EquatableMixin 
   final Object? startDate;
 
   const DatedMoneySpecification({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.amount,
     this.currency,
     this.endDate,

@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// A type of permission which can be granted for accessing a digital document.
 @Schema(description: r'''A type of permission which can be granted for accessing a digital document.''')

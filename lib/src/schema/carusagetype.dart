@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// A value indicating a special usage of a car, e.g. commercial rental, driving school, or as a taxi.
 @Schema(description: r'''A value indicating a special usage of a car, e.g. commercial rental, driving school, or as a taxi.''')

@@ -25,6 +25,19 @@ abstract base class InstantaneousEvent extends StructuredValue with EquatableMix
   final String? timestamp;
 
   const InstantaneousEvent({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.data,
     this.source,
     this.timestamp,

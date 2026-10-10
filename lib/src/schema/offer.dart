@@ -343,6 +343,19 @@ To discourage over-use, and reflecting intial usecases, the property is expected
   final WarrantyPromise? warranty;
 
   const Offer({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.acceptedPaymentMethod,
     this.addOn,
     this.additionalProperty,

@@ -408,6 +408,19 @@ The property values can be expressed either as unstructured text (repeated as ne
   final Object? width;
 
   const Product({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.additionalProperty,
     this.aggregateRating,
     this.asin,

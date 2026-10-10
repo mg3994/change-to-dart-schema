@@ -20,6 +20,19 @@ final class MediaSubscription extends Intangible with EquatableMixin {
   final Offer? expectsAcceptanceOf;
 
   const MediaSubscription({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.authenticator,
     this.expectsAcceptanceOf,
   });

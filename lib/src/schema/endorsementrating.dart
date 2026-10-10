@@ -22,6 +22,25 @@ endorsement rating is particularly useful in the absence of numeric scales as it
 final class EndorsementRating extends Rating with EquatableMixin {
 
   const EndorsementRating({
+    super.author,
+    super.bestRating,
+    super.ratingExplanation,
+    super.ratingValue,
+    super.reviewAspect,
+    super.worstRating,
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
   });
 
   @override

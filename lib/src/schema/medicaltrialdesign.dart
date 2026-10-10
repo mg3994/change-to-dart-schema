@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// Design models for medical trials. Enumerated type.
 @Schema(description: r'''Design models for medical trials. Enumerated type.''')

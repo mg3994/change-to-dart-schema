@@ -15,6 +15,32 @@ final class ImagingTest extends MedicalTest with EquatableMixin {
   final MedicalImagingTechnique? imagingTechnique;
 
   const ImagingTest({
+    super.affectedBy,
+    super.normalRange,
+    super.signDetected,
+    super.usedToDiagnose,
+    super.usesDevice,
+    super.code,
+    super.funding,
+    super.guideline,
+    super.legalStatus,
+    super.medicineSystem,
+    super.recognizingAuthority,
+    super.relevantSpecialty,
+    super.study,
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.imagingTechnique,
   });
 

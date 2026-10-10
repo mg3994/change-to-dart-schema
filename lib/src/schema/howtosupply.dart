@@ -15,6 +15,24 @@ final class HowToSupply extends HowToItem with EquatableMixin {
   final Object? estimatedCost;
 
   const HowToSupply({
+    super.requiredQuantity,
+    super.item,
+    super.nextItem,
+    super.position,
+    super.previousItem,
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.estimatedCost,
   });
 

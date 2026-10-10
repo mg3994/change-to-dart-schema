@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// Classification of the album by its type of content: soundtrack, live album, studio album, etc.
 @Schema(description: r'''Classification of the album by its type of content: soundtrack, live album, studio album, etc.''')

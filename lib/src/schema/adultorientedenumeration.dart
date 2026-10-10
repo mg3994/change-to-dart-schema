@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// Enumeration of considerations that make a product relevant or potentially restricted for adults only.
 @Schema(description: r'''Enumeration of considerations that make a product relevant or potentially restricted for adults only.''')

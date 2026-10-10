@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// EventStatusType is an enumeration type whose instances represent several states that an Event may be in.
 @Schema(description: r'''EventStatusType is an enumeration type whose instances represent several states that an Event may be in.''')

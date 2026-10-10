@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// A value indicating which roadwheels will receive torque.
 @Schema(description: r'''A value indicating which roadwheels will receive torque.''')

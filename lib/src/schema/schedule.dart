@@ -91,6 +91,19 @@ final class Schedule extends Intangible with EquatableMixin {
   final Object? startTime;
 
   const Schedule({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.byDay,
     this.byMonth,
     this.byMonthDay,

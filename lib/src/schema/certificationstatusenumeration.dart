@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// Enumerates the different statuses of a Certification (Active and Inactive).
 @Schema(description: r'''Enumerates the different statuses of a Certification (Active and Inactive).''')

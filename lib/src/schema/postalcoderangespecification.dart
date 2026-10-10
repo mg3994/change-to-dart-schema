@@ -20,6 +20,19 @@ final class PostalCodeRangeSpecification extends StructuredValue with EquatableM
   final String? postalCodeEnd;
 
   const PostalCodeRangeSpecification({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.postalCodeBegin,
     this.postalCodeEnd,
   });

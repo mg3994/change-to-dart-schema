@@ -80,6 +80,19 @@ final class ShippingConditions extends StructuredValue with EquatableMixin {
   final Object? width;
 
   const ShippingConditions({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.depth,
     this.doesNotShip,
     this.height,

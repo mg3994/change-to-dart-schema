@@ -10,6 +10,31 @@ import '../../schemaorg.dart';
 final class MedicalGuidelineContraindication extends MedicalGuideline with EquatableMixin {
 
   const MedicalGuidelineContraindication({
+    super.evidenceLevel,
+    super.evidenceOrigin,
+    super.guidelineDate,
+    super.guidelineSubject,
+    super.code,
+    super.funding,
+    super.guideline,
+    super.legalStatus,
+    super.medicineSystem,
+    super.recognizingAuthority,
+    super.relevantSpecialty,
+    super.study,
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
   });
 
   @override

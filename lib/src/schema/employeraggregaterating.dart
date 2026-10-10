@@ -10,6 +10,28 @@ import '../../schemaorg.dart';
 final class EmployerAggregateRating extends AggregateRating with EquatableMixin {
 
   const EmployerAggregateRating({
+    super.itemReviewed,
+    super.ratingCount,
+    super.reviewCount,
+    super.author,
+    super.bestRating,
+    super.ratingExplanation,
+    super.ratingValue,
+    super.reviewAspect,
+    super.worstRating,
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
   });
 
   @override

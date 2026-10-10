@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// Indicates whether this drug is available by prescription or over-the-counter.
 @Schema(description: r'''Indicates whether this drug is available by prescription or over-the-counter.''')

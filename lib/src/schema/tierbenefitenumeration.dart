@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// An enumeration of possible benefits as part of a loyalty (members) program.
 @Schema(description: r'''An enumeration of possible benefits as part of a loyalty (members) program.''')

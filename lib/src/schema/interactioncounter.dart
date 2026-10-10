@@ -44,6 +44,19 @@ final class InteractionCounter extends StructuredValue with EquatableMixin {
   final int? userInteractionCount;
 
   const InteractionCounter({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.endTime,
     this.interactionService,
     this.interactionType,

@@ -27,6 +27,19 @@ final class ExchangeRateSpecification extends StructuredValue with EquatableMixi
   final Object? exchangeRateSpread;
 
   const ExchangeRateSpecification({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.currency,
     this.currentExchangeRate,
     this.exchangeRateSpread,

@@ -50,6 +50,19 @@ abstract base class GeoShape extends StructuredValue with EquatableMixin {
   final String? postalCode;
 
   const GeoShape({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.address,
     this.addressCountry,
     this.box,

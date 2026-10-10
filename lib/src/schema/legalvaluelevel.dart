@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// A list of possible levels for the legal validity of a legislation.
 @Schema(description: r'''A list of possible levels for the legal validity of a legislation.''')

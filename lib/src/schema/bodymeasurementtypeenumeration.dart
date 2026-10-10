@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// Enumerates types (or dimensions) of a person's body measurements, for example for fitting of clothes.
 @Schema(description: r'''Enumerates types (or dimensions) of a person's body measurements, for example for fitting of clothes.''')

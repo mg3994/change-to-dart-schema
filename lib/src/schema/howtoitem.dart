@@ -15,6 +15,23 @@ abstract base class HowToItem extends ListItem with EquatableMixin {
   final Object? requiredQuantity;
 
   const HowToItem({
+    super.item,
+    super.nextItem,
+    super.position,
+    super.previousItem,
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.requiredQuantity,
   });
 

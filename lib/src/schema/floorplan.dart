@@ -74,6 +74,19 @@ Typical unit code(s): ROM for room or C62 for no unit. The type of room can be p
   final Object? petsAllowed;
 
   const FloorPlan({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.amenityFeature,
     this.floorSize,
     this.isPlanForApartment,

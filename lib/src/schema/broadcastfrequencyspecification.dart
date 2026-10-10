@@ -25,6 +25,19 @@ final class BroadcastFrequencySpecification extends Intangible with EquatableMix
   final String? broadcastSubChannel;
 
   const BroadcastFrequencySpecification({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.broadcastFrequencyValue,
     this.broadcastSignalModulation,
     this.broadcastSubChannel,

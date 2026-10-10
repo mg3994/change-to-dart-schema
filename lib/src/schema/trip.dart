@@ -52,6 +52,19 @@ abstract base class Trip extends Intangible with EquatableMixin {
   final Place? tripOrigin;
 
   const Trip({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.arrivalTime,
     this.departureTime,
     this.itinerary,

@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// Classes of agents or pathogens that transmit infectious diseases. Enumerated type.
 @Schema(description: r'''Classes of agents or pathogens that transmit infectious diseases. Enumerated type.''')

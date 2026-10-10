@@ -262,6 +262,19 @@ Use Text for incentives that are limited based on other criteria, for example if
   final Object? validThrough;
 
   const FinancialIncentive({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.areaServed,
     this.eligibleWithSupplier,
     this.incentiveAmount,

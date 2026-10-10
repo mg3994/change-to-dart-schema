@@ -10,6 +10,19 @@ import '../../schemaorg.dart';
 abstract base class Series extends Intangible with EquatableMixin {
 
   const Series({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
   });
 
   @override

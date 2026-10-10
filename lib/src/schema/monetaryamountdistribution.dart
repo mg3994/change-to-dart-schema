@@ -17,6 +17,25 @@ final class MonetaryAmountDistribution extends QuantitativeValueDistribution wit
   final String? currency;
 
   const MonetaryAmountDistribution({
+    super.duration,
+    super.median,
+    super.percentile10,
+    super.percentile25,
+    super.percentile75,
+    super.percentile90,
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.currency,
   });
 

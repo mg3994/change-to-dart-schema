@@ -656,6 +656,19 @@ This property can be used alongside the license property which indicates license
   final CreativeWork? workTranslation;
 
   const CreativeWork({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.about,
     this.abstractValue,
     this.accessMode,

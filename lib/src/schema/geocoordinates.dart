@@ -40,6 +40,19 @@ final class GeoCoordinates extends StructuredValue with EquatableMixin {
   final String? postalCode;
 
   const GeoCoordinates({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.address,
     this.addressCountry,
     this.elevation,

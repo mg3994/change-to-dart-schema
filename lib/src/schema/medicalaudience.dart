@@ -10,6 +10,30 @@ import '../../schemaorg.dart';
 abstract base class MedicalAudience extends Audience with EquatableMixin {
 
   const MedicalAudience({
+    super.audienceType,
+    super.geographicArea,
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
+    super.healthCondition,
+    super.requiredGender,
+    super.requiredMaxAge,
+    super.requiredMinAge,
+    super.suggestedAge,
+    super.suggestedGender,
+    super.suggestedMaxAge,
+    super.suggestedMeasurement,
+    super.suggestedMinAge,
   });
 
   @override

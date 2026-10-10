@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// Enumerates different price components that together make up the total price for an offered product.
 @Schema(description: r'''Enumerates different price components that together make up the total price for an offered product.''')

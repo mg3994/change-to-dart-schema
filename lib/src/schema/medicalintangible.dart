@@ -10,6 +10,27 @@ import '../../schemaorg.dart';
 abstract base class MedicalIntangible extends MedicalEntity with EquatableMixin {
 
   const MedicalIntangible({
+    super.code,
+    super.funding,
+    super.guideline,
+    super.legalStatus,
+    super.medicineSystem,
+    super.recognizingAuthority,
+    super.relevantSpecialty,
+    super.study,
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
   });
 
   @override

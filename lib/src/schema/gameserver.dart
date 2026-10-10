@@ -25,6 +25,19 @@ final class GameServer extends Intangible with EquatableMixin {
   final GameServerStatus? serverStatus;
 
   const GameServer({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.game,
     this.playersOnline,
     this.serverStatus,

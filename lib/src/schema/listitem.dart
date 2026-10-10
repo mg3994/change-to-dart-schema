@@ -30,6 +30,19 @@ abstract base class ListItem extends Intangible with EquatableMixin {
   final ListItem? previousItem;
 
   const ListItem({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.item,
     this.nextItem,
     this.position,

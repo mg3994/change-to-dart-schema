@@ -1,7 +1,6 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
-import '../../schemaorg.dart';
 
 /// RsvpResponseType is an enumeration type whose instances represent responding to an RSVP request.
 @Schema(description: r'''RsvpResponseType is an enumeration type whose instances represent responding to an RSVP request.''')

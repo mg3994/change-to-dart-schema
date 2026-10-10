@@ -14,6 +14,23 @@ import '../../schemaorg.dart';
 final class BreadcrumbList extends ItemList with EquatableMixin {
 
   const BreadcrumbList({
+    super.aggregateElement,
+    super.itemListElement,
+    super.itemListOrder,
+    super.numberOfItems,
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
   });
 
   @override

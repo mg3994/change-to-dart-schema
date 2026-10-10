@@ -90,6 +90,19 @@ final class Invoice extends Intangible with EquatableMixin {
   final Object? totalPaymentDue;
 
   const Invoice({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.accountId,
     this.billingPeriod,
     this.broker,

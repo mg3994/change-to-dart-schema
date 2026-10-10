@@ -60,6 +60,19 @@ final class GeospatialGeometry extends Intangible with EquatableMixin {
   final Object? geoWithin;
 
   const GeospatialGeometry({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.geoContains,
     this.geoCoveredBy,
     this.geoCovers,

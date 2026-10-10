@@ -30,6 +30,19 @@ final class OwnershipInfo extends StructuredValue with EquatableMixin {
   final Object? typeOfGood;
 
   const OwnershipInfo({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.acquiredFrom,
     this.ownedFrom,
     this.ownedThrough,

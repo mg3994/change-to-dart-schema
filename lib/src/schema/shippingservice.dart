@@ -38,6 +38,19 @@ In the context of [[ShippingService]], use the [[ServicePeriod]] format, that co
   final MemberProgramTier? validForMemberTier;
 
   const ShippingService({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.fulfillmentType,
     this.handlingTime,
     this.shippingConditions,

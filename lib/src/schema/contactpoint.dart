@@ -60,6 +60,19 @@ abstract base class ContactPoint extends StructuredValue with EquatableMixin {
   final String? telephone;
 
   const ContactPoint({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.areaServed,
     this.availableLanguage,
     this.contactOption,

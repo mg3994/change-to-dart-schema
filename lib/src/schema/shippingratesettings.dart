@@ -55,6 +55,19 @@ final class ShippingRateSettings extends StructuredValue with EquatableMixin {
   final num? weightPercentage;
 
   const ShippingRateSettings({
+    super.additionalType,
+    super.alternateName,
+    super.description,
+    super.disambiguatingDescription,
+    super.identifier,
+    super.image,
+    super.mainEntityOfPage,
+    super.name,
+    super.owner,
+    super.potentialAction,
+    super.sameAs,
+    super.subjectOf,
+    super.url,
     this.doesNotShip,
     this.freeShippingThreshold,
     this.isUnlabelledFallback,
