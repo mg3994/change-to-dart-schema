@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A US-style health insurance plan, including PPOs, EPOs, and HMOs.
 @Schema(description: r'''A US-style health insurance plan, including PPOs, EPOs, and HMOs.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class HealthInsurancePlan extends Intangible {
 
   /// The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
@@ -55,6 +60,9 @@ base class HealthInsurancePlan extends Intangible {
   final Object? usesHealthPlanIdStandard;
 
   const HealthInsurancePlan({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

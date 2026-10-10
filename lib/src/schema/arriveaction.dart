@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of arriving at a place. An agent arrives at a destination from a fromLocation, optionally with participants.
 @Schema(description: r'''The act of arriving at a place. An agent arrives at a destination from a fromLocation, optionally with participants.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ArriveAction extends MoveAction {
 
   const ArriveAction({
+    super.id,
+    super.type,
+    super.context,
     super.fromLocation,
     super.toLocation,
     super.actionProcess,

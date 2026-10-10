@@ -12,10 +12,18 @@ import '../../schemaorg.dart';
 @Schema(description: r'''Original definition: "provider of professional services."\n\nThe general [[ProfessionalService]] type for local businesses was deprecated due to confusion with [[Service]]. For reference, the types that it included were: [[Dentist]],
         [[AccountingService]], [[Attorney]], [[Notary]], as well as types for several kinds of [[HomeAndConstructionBusiness]]: [[Electrician]], [[GeneralContractor]],
         [[HousePainter]], [[Locksmith]], [[Plumber]], [[RoofingContractor]]. [[LegalService]] was introduced as a more inclusive supertype of [[Attorney]].''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ProfessionalService extends LocalBusiness {
 
   const ProfessionalService({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

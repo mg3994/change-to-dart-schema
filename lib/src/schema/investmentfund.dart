@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A company or fund that gathers capital from a number of investors to create a pool of money that is then re-invested into stocks, bonds and other assets.
 @Schema(description: r'''A company or fund that gathers capital from a number of investors to create a pool of money that is then re-invested into stocks, bonds and other assets.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class InvestmentFund extends InvestmentOrDeposit {
 
   const InvestmentFund({
+    super.id,
+    super.type,
+    super.context,
     super.amount,
     super.annualPercentageRate,
     super.feesAndCommissionsSpecification,

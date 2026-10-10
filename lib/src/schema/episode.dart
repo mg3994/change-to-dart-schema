@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A media episode (e.g. TV, radio, video game) which can be part of a series or season.
 @Schema(description: r'''A media episode (e.g. TV, radio, video game) which can be part of a series or season.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Episode extends CreativeWork {
 
   /// An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -65,6 +70,9 @@ base class Episode extends CreativeWork {
   final VideoObject? trailer;
 
   const Episode({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

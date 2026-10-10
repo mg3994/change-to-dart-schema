@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.
 @Schema(description: r'''Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SoftwareSourceCode extends CreativeWork {
 
   /// Link to the repository where the un-compiled, human readable code and related code is located (SVN, GitHub, CodePlex).
@@ -45,6 +50,9 @@ base class SoftwareSourceCode extends CreativeWork {
   final SoftwareApplication? targetProduct;
 
   const SoftwareSourceCode({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.
 @Schema(description: r'''Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BioChemEntity extends Thing {
 
   /// Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
@@ -75,6 +80,9 @@ base class BioChemEntity extends Thing {
   final Object? taxonomicRange;
 
   const BioChemEntity({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

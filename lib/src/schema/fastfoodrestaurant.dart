@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A fast-food restaurant.
 @Schema(description: r'''A fast-food restaurant.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class FastFoodRestaurant extends FoodEstablishment {
 
   const FastFoodRestaurant({
+    super.id,
+    super.type,
+    super.context,
     super.acceptsReservations,
     super.hasMenu,
     super.menu,

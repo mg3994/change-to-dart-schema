@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the [[offers]] property. Repeated events may be structured as separate Event objects.
 @Schema(description: r'''An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the [[offers]] property. Repeated events may be structured as separate Event objects.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Event extends Thing {
 
   /// The subject matter of an object.
@@ -239,6 +244,9 @@ base class Event extends Thing {
   final CreativeWork? workPerformed;
 
   const Event({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

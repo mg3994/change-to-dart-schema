@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A [[LiveBlogPosting]] is a [[BlogPosting]] intended to provide a rolling textual coverage of an ongoing event through continuous updates.
 @Schema(description: r'''A [[LiveBlogPosting]] is a [[BlogPosting]] intended to provide a rolling textual coverage of an ongoing event through continuous updates.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class LiveBlogPosting extends BlogPosting {
 
   /// The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
@@ -25,6 +30,9 @@ base class LiveBlogPosting extends BlogPosting {
   final BlogPosting? liveBlogUpdate;
 
   const LiveBlogPosting({
+    super.id,
+    super.type,
+    super.context,
     super.sharedContent,
     super.articleBody,
     super.articleSection,

@@ -12,7 +12,12 @@ import '../../schemaorg.dart';
     For more general reviews of media in the broader sense, use [[UserReview]], [[CriticReview]] or other [[Review]] types. This definition is
     a work in progress. While the [[MediaManipulationRatingEnumeration]] list reflects significant community review amongst fact-checkers and others working
     to combat misinformation, the specific structures for representing media objects, their versions and publication context, are still evolving. Similarly, best practices for the relationship between [[MediaReview]] and [[ClaimReview]] markup have not yet been finalized.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MediaReview extends Review {
 
   /// Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared).
@@ -31,6 +36,9 @@ base class MediaReview extends Review {
   final Object? originalMediaLink;
 
   const MediaReview({
+    super.id,
+    super.type,
+    super.context,
     super.associatedClaimReview,
     super.associatedMediaReview,
     super.associatedReview,

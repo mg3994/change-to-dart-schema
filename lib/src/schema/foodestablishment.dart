@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A food-related business.
 @Schema(description: r'''A food-related business.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class FoodEstablishment extends LocalBusiness {
 
   /// Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
@@ -35,6 +40,9 @@ base class FoodEstablishment extends LocalBusiness {
   final Rating? starRating;
 
   const FoodEstablishment({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A vet's office.
 @Schema(description: r'''A vet's office.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class VeterinaryCare extends MedicalOrganization {
 
   const VeterinaryCare({
+    super.id,
+    super.type,
+    super.context,
     super.healthPlanNetworkId,
     super.isAcceptingNewPatients,
     super.medicalSpecialty,

@@ -10,7 +10,12 @@ import '../../schemaorg.dart';
 ///
 /// * [[FindAction]]: SearchAction generally leads to a FindAction, but not necessarily.
 @Schema(description: r'''The act of searching for an object.\n\nRelated actions:\n\n* [[FindAction]]: SearchAction generally leads to a FindAction, but not necessarily.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SearchAction extends Action {
 
   /// A sub property of instrument. The query used on this action.
@@ -19,6 +24,9 @@ base class SearchAction extends Action {
   final String? query;
 
   const SearchAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

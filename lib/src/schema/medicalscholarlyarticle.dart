@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A scholarly article in the medical domain.
 @Schema(description: r'''A scholarly article in the medical domain.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MedicalScholarlyArticle extends ScholarlyArticle {
 
   /// The type of the medical article, taken from the US NLM MeSH publication type catalog. See also [MeSH documentation](http://www.nlm.nih.gov/mesh/pubtypes.html).
@@ -15,6 +20,9 @@ base class MedicalScholarlyArticle extends ScholarlyArticle {
   final String? publicationType;
 
   const MedicalScholarlyArticle({
+    super.id,
+    super.type,
+    super.context,
     super.articleBody,
     super.articleSection,
     super.backstory,

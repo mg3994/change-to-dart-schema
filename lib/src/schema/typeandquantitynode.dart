@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.
 @Schema(description: r'''A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class TypeAndQuantityNode extends StructuredValue {
 
   /// The quantity of the goods included in the offer.
@@ -37,6 +42,9 @@ base class TypeAndQuantityNode extends StructuredValue {
   final String? unitText;
 
   const TypeAndQuantityNode({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

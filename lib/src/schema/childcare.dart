@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A Childcare center.
 @Schema(description: r'''A Childcare center.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ChildCare extends LocalBusiness {
 
   const ChildCare({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

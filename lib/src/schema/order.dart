@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An order is a confirmation of a transaction (a receipt), which can contain multiple line items, each represented by an Offer that has been accepted by the customer.
 @Schema(description: r'''An order is a confirmation of a transaction (a receipt), which can contain multiple line items, each represented by an Offer that has been accepted by the customer.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Order extends Intangible {
 
   /// The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
@@ -122,6 +127,9 @@ base class Order extends Intangible {
   final Object? seller;
 
   const Order({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

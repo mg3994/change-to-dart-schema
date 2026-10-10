@@ -22,10 +22,18 @@ The [[ReportageNewsArticle]] type is based on a stricter ideal for "news" as a w
 
 A [[ReportageNewsArticle]] which goes deeper into analysis can also be marked with an additional type of [[AnalysisNewsArticle]].
 ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ReportageNewsArticle extends NewsArticle {
 
   const ReportageNewsArticle({
+    super.id,
+    super.type,
+    super.context,
     super.dateline,
     super.printColumn,
     super.printEdition,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A tool used (but not consumed) when performing instructions for how to achieve a result.
 @Schema(description: r'''A tool used (but not consumed) when performing instructions for how to achieve a result.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class HowToTool extends HowToItem {
 
   const HowToTool({
+    super.id,
+    super.type,
+    super.context,
     super.requiredQuantity,
     super.item,
     super.nextItem,

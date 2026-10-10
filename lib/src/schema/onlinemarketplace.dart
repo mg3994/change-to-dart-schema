@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An eCommerce marketplace.
 @Schema(description: r'''An eCommerce marketplace.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class OnlineMarketplace extends OnlineStore {
 
   /// An eCommerce store part of an online marketplace.
@@ -15,6 +20,9 @@ base class OnlineMarketplace extends OnlineStore {
   final OnlineStore? hasStore;
 
   const OnlineMarketplace({
+    super.id,
+    super.type,
+    super.context,
     super.isStoreOn,
     super.acceptedPaymentMethod,
     super.actionableFeedbackPolicy,

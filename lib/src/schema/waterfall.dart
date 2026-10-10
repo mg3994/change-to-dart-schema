@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A waterfall, like Niagara.
 @Schema(description: r'''A waterfall, like Niagara.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Waterfall extends BodyOfWater {
 
   const Waterfall({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.address,
     super.aggregateRating,

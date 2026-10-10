@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Event type: Sports event.
 @Schema(description: r'''Event type: Sports event.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SportsEvent extends Event {
 
   /// The away team in a sports event.
@@ -35,6 +40,9 @@ base class SportsEvent extends Event {
   final Object? sport;
 
   const SportsEvent({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.actor,
     super.aggregateRating,

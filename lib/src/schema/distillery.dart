@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A distillery.
 @Schema(description: r'''A distillery.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Distillery extends FoodEstablishment {
 
   const Distillery({
+    super.id,
+    super.type,
+    super.context,
     super.acceptsReservations,
     super.hasMenu,
     super.menu,

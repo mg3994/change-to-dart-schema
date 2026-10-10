@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.
 @Schema(description: r'''Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class StructuredValue extends Intangible {
 
   const StructuredValue({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

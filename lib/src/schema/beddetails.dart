@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An entity holding detailed information about the available bed types, e.g. the quantity of twin beds for a hotel room. For the single case of just one bed of a certain type, you can use bed directly with a text. See also [[BedType]] (under development).
 @Schema(description: r'''An entity holding detailed information about the available bed types, e.g. the quantity of twin beds for a hotel room. For the single case of just one bed of a certain type, you can use bed directly with a text. See also [[BedType]] (under development).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BedDetails extends Intangible {
 
   /// The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
@@ -20,6 +25,9 @@ base class BedDetails extends Intangible {
   final Object? typeOfBed;
 
   const BedDetails({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

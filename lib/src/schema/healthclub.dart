@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A health club.
 @Schema(description: r'''A health club.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class HealthClub extends HealthAndBeautyBusiness {
 
   const HealthClub({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// One or more messages between organizations or people on a particular topic. Individual messages can be linked to the conversation with isPartOf or hasPart properties.
 @Schema(description: r'''One or more messages between organizations or people on a particular topic. Individual messages can be linked to the conversation with isPartOf or hasPart properties.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Conversation extends CreativeWork {
 
   const Conversation({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

@@ -10,10 +10,18 @@ import '../../schemaorg.dart';
 ///
 /// * [[ScheduleAction]]: Unlike ScheduleAction, ReserveAction reserves concrete objects (e.g. a table, a hotel) towards a time slot / spatial allocation.
 @Schema(description: r'''Reserving a concrete object.\n\nRelated actions:\n\n* [[ScheduleAction]]: Unlike ScheduleAction, ReserveAction reserves concrete objects (e.g. a table, a hotel) towards a time slot / spatial allocation.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ReserveAction extends PlanAction {
 
   const ReserveAction({
+    super.id,
+    super.type,
+    super.context,
     super.scheduledTime,
     super.actionProcess,
     super.actionStatus,

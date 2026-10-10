@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A common pathway for the electrochemical nerve impulses that are transmitted along each of the axons.
 @Schema(description: r'''A common pathway for the electrochemical nerve impulses that are transmitted along each of the axons.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Nerve extends AnatomicalStructure {
 
   /// The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].
@@ -30,6 +35,9 @@ base class Nerve extends AnatomicalStructure {
   final BrainStructure? sourcedFrom;
 
   const Nerve({
+    super.id,
+    super.type,
+    super.context,
     super.associatedPathophysiology,
     super.bodyLocation,
     super.connectedTo,

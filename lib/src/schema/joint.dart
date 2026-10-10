@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The anatomical location at which two or more bones make contact.
 @Schema(description: r'''The anatomical location at which two or more bones make contact.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Joint extends AnatomicalStructure {
 
   /// The biomechanical properties of the bone.
@@ -25,6 +30,9 @@ base class Joint extends AnatomicalStructure {
   final String? structuralClass;
 
   const Joint({
+    super.id,
+    super.type,
+    super.context,
     super.associatedPathophysiology,
     super.bodyLocation,
     super.connectedTo,

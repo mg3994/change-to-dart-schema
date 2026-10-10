@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of downloading an object.
 @Schema(description: r'''The act of downloading an object.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DownloadAction extends TransferAction {
 
   const DownloadAction({
+    super.id,
+    super.type,
+    super.context,
     super.fromLocation,
     super.toLocation,
     super.actionProcess,

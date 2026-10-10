@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Organization: Non-governmental Organization.
 @Schema(description: r'''Organization: Non-governmental Organization.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class NGO extends Organization {
 
   const NGO({
+    super.id,
+    super.type,
+    super.context,
     super.acceptedPaymentMethod,
     super.actionableFeedbackPolicy,
     super.address,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An Insurance agency.
 @Schema(description: r'''An Insurance agency.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class InsuranceAgency extends FinancialService {
 
   const InsuranceAgency({
+    super.id,
+    super.type,
+    super.context,
     super.feesAndCommissionsSpecification,
     super.branchOf,
     super.currenciesAccepted,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An ocean (for example, the Pacific).
 @Schema(description: r'''An ocean (for example, the Pacific).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class OceanBodyOfWater extends BodyOfWater {
 
   const OceanBodyOfWater({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.address,
     super.aggregateRating,

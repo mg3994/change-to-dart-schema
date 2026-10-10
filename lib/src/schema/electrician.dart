@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An electrician.
 @Schema(description: r'''An electrician.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Electrician extends HomeAndConstructionBusiness {
 
   const Electrician({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

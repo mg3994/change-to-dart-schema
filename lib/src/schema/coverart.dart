@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The artwork on the outer surface of a CreativeWork.
 @Schema(description: r'''The artwork on the outer surface of a CreativeWork.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class CoverArt extends VisualArtwork {
 
   const CoverArt({
+    super.id,
+    super.type,
+    super.context,
     super.artEdition,
     super.artMedium,
     super.artform,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A [[NewsArticle]] expressing an open call by a [[NewsMediaOrganization]] asking the public for input, insights, clarifications, anecdotes, documentation, etc., on an issue, for reporting purposes.
 @Schema(description: r'''A [[NewsArticle]] expressing an open call by a [[NewsMediaOrganization]] asking the public for input, insights, clarifications, anecdotes, documentation, etc., on an issue, for reporting purposes.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AskPublicNewsArticle extends NewsArticle {
 
   const AskPublicNewsArticle({
+    super.id,
+    super.type,
+    super.context,
     super.dateline,
     super.printColumn,
     super.printEdition,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Rigid connective tissue that comprises up the skeletal structure of the human body.
 @Schema(description: r'''Rigid connective tissue that comprises up the skeletal structure of the human body.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Bone extends AnatomicalStructure {
 
   const Bone({
+    super.id,
+    super.type,
+    super.context,
     super.associatedPathophysiology,
     super.bodyLocation,
     super.connectedTo,

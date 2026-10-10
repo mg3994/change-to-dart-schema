@@ -8,10 +8,18 @@ import '../../schemaorg.dart';
 ///
 /// As a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]](s).
 @Schema(description: r'''A LegalService is a business that provides legally-oriented services, advice and representation, e.g. law firms.\n\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\(s).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class LegalService extends LocalBusiness {
 
   const LegalService({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

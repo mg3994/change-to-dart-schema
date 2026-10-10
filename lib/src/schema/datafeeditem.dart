@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A single item within a larger data feed.
 @Schema(description: r'''A single item within a larger data feed.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DataFeedItem extends Intangible {
 
   /// The date on which the CreativeWork was created or the item was added to a DataFeed.
@@ -30,6 +35,9 @@ base class DataFeedItem extends Intangible {
   final Thing? item;
 
   const DataFeedItem({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

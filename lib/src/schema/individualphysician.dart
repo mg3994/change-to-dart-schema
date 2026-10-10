@@ -8,7 +8,12 @@ import '../../schemaorg.dart';
 /// The [[practicesAt]] property can be used to indicate [[MedicalOrganization]] hospitals, clinics, pharmacies etc. where this physician practices.
 @Schema(description: r'''An individual medical practitioner. For their official address use [[address]], for affiliations to hospitals use [[hospitalAffiliation]].
 The [[practicesAt]] property can be used to indicate [[MedicalOrganization]] hospitals, clinics, pharmacies etc. where this physician practices.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class IndividualPhysician extends Physician {
 
   /// A [[MedicalOrganization]] where the [[IndividualPhysician]] practices.
@@ -17,6 +22,9 @@ base class IndividualPhysician extends Physician {
   final MedicalOrganization? practicesAt;
 
   const IndividualPhysician({
+    super.id,
+    super.type,
+    super.context,
     super.availableService,
     super.hospitalAffiliation,
     super.medicalSpecialty,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An agent orders an object/product/service to be delivered/sent.
 @Schema(description: r'''An agent orders an object/product/service to be delivered/sent.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class OrderAction extends TradeAction {
 
   /// A sub property of instrument. The method of delivery.
@@ -15,6 +20,9 @@ base class OrderAction extends TradeAction {
   final DeliveryMethod? deliveryMethod;
 
   const OrderAction({
+    super.id,
+    super.type,
+    super.context,
     super.price,
     super.priceCurrency,
     super.priceSpecification,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A screening of a movie or other video.
 @Schema(description: r'''A screening of a movie or other video.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ScreeningEvent extends Event {
 
   /// Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
@@ -25,6 +30,9 @@ base class ScreeningEvent extends Event {
   final Movie? workPresented;
 
   const ScreeningEvent({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.actor,
     super.aggregateRating,

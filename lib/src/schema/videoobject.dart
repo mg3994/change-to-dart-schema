@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A video file.
 @Schema(description: r'''A video file.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class VideoObject extends MediaObject {
 
   /// An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -60,6 +65,9 @@ base class VideoObject extends MediaObject {
   final String? videoQuality;
 
   const VideoObject({
+    super.id,
+    super.type,
+    super.context,
     super.associatedArticle,
     super.bitrate,
     super.contentSize,

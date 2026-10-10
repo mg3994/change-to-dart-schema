@@ -8,10 +8,18 @@ import '../../schemaorg.dart';
 ///
 /// See also [blog post](https://blog.schema.org/2014/09/02/schema-org-support-for-bibliographic-relationships-and-periodicals/).
 @Schema(description: r'''A publication in any medium issued in successive parts bearing numerical or chronological designations and intended to continue indefinitely, such as a magazine, scholarly journal, or newspaper.\n\nSee also [blog post](https://blog.schema.org/2014/09/02/schema-org-support-for-bibliographic-relationships-and-periodicals/).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Periodical extends CreativeWorkSeries {
 
   const Periodical({
+    super.id,
+    super.type,
+    super.context,
     super.endDate,
     super.issn,
     super.startDate,

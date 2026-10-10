@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A college, university, or other third-level educational institution.
 @Schema(description: r'''A college, university, or other third-level educational institution.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class CollegeOrUniversity extends EducationalOrganization {
 
   const CollegeOrUniversity({
+    super.id,
+    super.type,
+    super.context,
     super.alumni,
     super.openingHours,
     super.additionalProperty,

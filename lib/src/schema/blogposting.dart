@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A blog post.
 @Schema(description: r'''A blog post.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BlogPosting extends SocialMediaPosting {
 
   const BlogPosting({
+    super.id,
+    super.type,
+    super.context,
     super.sharedContent,
     super.articleBody,
     super.articleSection,

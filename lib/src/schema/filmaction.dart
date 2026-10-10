@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of capturing sound and moving images on film, video, or digitally.
 @Schema(description: r'''The act of capturing sound and moving images on film, video, or digitally.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class FilmAction extends CreateAction {
 
   const FilmAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

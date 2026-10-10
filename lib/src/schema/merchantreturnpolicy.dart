@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A MerchantReturnPolicy provides information about product return policies associated with an [[Organization]], [[Product]], or [[Offer]].
 @Schema(description: r'''A MerchantReturnPolicy provides information about product return policies associated with an [[Organization]], [[Product]], or [[Offer]].''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MerchantReturnPolicy extends Intangible {
 
   /// A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.
@@ -124,6 +129,9 @@ base class MerchantReturnPolicy extends Intangible {
   final MemberProgramTier? validForMemberTier;
 
   const MerchantReturnPolicy({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

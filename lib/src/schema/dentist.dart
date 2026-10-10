@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A dentist.
 @Schema(description: r'''A dentist.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Dentist extends LocalBusiness {
 
   const Dentist({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

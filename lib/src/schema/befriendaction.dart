@@ -10,10 +10,18 @@ import '../../schemaorg.dart';
 ///
 /// * [[FollowAction]]: Unlike FollowAction, BefriendAction implies that the connection is reciprocal.
 @Schema(description: r'''The act of forming a personal connection with someone (object) mutually/bidirectionally/symmetrically.\n\nRelated actions:\n\n* [[FollowAction]]: Unlike FollowAction, BefriendAction implies that the connection is reciprocal.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BefriendAction extends InteractAction {
 
   const BefriendAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

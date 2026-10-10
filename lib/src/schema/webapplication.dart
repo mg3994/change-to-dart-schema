@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Web applications.
 @Schema(description: r'''Web applications.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class WebApplication extends SoftwareApplication {
 
   /// Specifies browser requirements in human-readable text. For example, 'requires HTML5 support'.
@@ -15,6 +20,9 @@ base class WebApplication extends SoftwareApplication {
   final String? browserRequirements;
 
   const WebApplication({
+    super.id,
+    super.type,
+    super.context,
     super.applicationCategory,
     super.applicationSubCategory,
     super.applicationSuite,

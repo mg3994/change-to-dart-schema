@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A defence establishment, such as an army or navy base.
 @Schema(description: r'''A defence establishment, such as an army or navy base.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DefenceEstablishment extends GovernmentBuilding {
 
   const DefenceEstablishment({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

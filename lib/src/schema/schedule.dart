@@ -10,7 +10,12 @@ import '../../schemaorg.dart';
 @Schema(description: r'''A schedule defines a repeating time period used to describe a regularly occurring [[Event]]. At a minimum a schedule will specify [[repeatFrequency]] which describes the interval between occurrences of the event. Additional information can be provided to specify the schedule more precisely.
       This includes identifying the day(s) of the week or month when the recurring event will take place, in addition to its start and end time. Schedules may also
       have start and end dates to indicate when they are active, e.g. to define a limited calendar of events.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Schedule extends Intangible {
 
   /// Defines the day(s) of the week on which a recurring [[Event]] takes place. May be specified using either [[DayOfWeek]], or alternatively [[Text]] conforming to iCal's syntax for byDay recurrence rules.
@@ -91,6 +96,9 @@ base class Schedule extends Intangible {
   final Object? startTime;
 
   const Schedule({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

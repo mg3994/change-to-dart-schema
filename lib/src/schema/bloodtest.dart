@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A medical test performed on a sample of a patient's blood.
 @Schema(description: r'''A medical test performed on a sample of a patient's blood.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BloodTest extends MedicalTest {
 
   const BloodTest({
+    super.id,
+    super.type,
+    super.context,
     super.affectedBy,
     super.normalRange,
     super.signDetected,

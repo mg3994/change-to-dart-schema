@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Residence type: Gated community.
 @Schema(description: r'''Residence type: Gated community.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class GatedResidenceCommunity extends Residence {
 
   const GatedResidenceCommunity({
+    super.id,
+    super.type,
+    super.context,
     super.accommodationFloorPlan,
     super.floorLevel,
     super.additionalProperty,

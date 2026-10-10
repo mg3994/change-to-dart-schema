@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Properties that take Distances as values are of the form '&lt;Number&gt; &lt;Length unit of measure&gt;'. E.g., '7 ft'.
 @Schema(description: r'''Properties that take Distances as values are of the form '&lt;Number&gt; &lt;Length unit of measure&gt;'. E.g., '7 ft'.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Distance extends Quantity {
 
   const Distance({
+    super.id,
+    super.type,
+    super.context,
   });
 
   @override

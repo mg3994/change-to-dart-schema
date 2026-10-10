@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// ServicePeriod represents a duration with some constraints about cutoff time and business days. This is used e.g. in shipping for handling times or transit time.
 @Schema(description: r'''ServicePeriod represents a duration with some constraints about cutoff time and business days. This is used e.g. in shipping for handling times or transit time.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ServicePeriod extends StructuredValue {
 
   /// Days of the week when the merchant typically operates, indicated via opening hours markup.
@@ -25,6 +30,9 @@ base class ServicePeriod extends StructuredValue {
   final Object? duration;
 
   const ServicePeriod({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

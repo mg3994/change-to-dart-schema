@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Any collection of tests commonly ordered together.
 @Schema(description: r'''Any collection of tests commonly ordered together.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MedicalTestPanel extends MedicalTest {
 
   /// A component test of the panel.
@@ -15,6 +20,9 @@ base class MedicalTestPanel extends MedicalTest {
   final MedicalTest? subTest;
 
   const MedicalTestPanel({
+    super.id,
+    super.type,
+    super.context,
     super.affectedBy,
     super.normalRange,
     super.signDetected,

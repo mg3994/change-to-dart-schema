@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A sub-grouping of steps in the instructions for how to achieve a result (e.g. steps for making a pie crust within a pie recipe).
 @Schema(description: r'''A sub-grouping of steps in the instructions for how to achieve a result (e.g. steps for making a pie crust within a pie recipe).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class HowToSection extends CreativeWork {
 
   /// A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
@@ -15,6 +20,9 @@ base class HowToSection extends CreativeWork {
   final Object? steps;
 
   const HowToSection({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

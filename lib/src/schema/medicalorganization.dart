@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A medical organization (physical or not), such as hospital, institution or clinic.
 @Schema(description: r'''A medical organization (physical or not), such as hospital, institution or clinic.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MedicalOrganization extends Organization {
 
   /// Name or unique ID of network. (Networks are often reused across different insurance plans.)
@@ -25,6 +30,9 @@ base class MedicalOrganization extends Organization {
   final MedicalSpecialty? medicalSpecialty;
 
   const MedicalOrganization({
+    super.id,
+    super.type,
+    super.context,
     super.acceptedPaymentMethod,
     super.actionableFeedbackPolicy,
     super.address,

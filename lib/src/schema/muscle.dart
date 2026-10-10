@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A muscle is an anatomical structure consisting of a contractile form of tissue that animals use to effect movement.
 @Schema(description: r'''A muscle is an anatomical structure consisting of a contractile form of tissue that animals use to effect movement.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Muscle extends AnatomicalStructure {
 
   /// The muscle whose action counteracts the specified muscle.
@@ -35,6 +40,9 @@ base class Muscle extends AnatomicalStructure {
   final Nerve? nerve;
 
   const Muscle({
+    super.id,
+    super.type,
+    super.context,
     super.associatedPathophysiology,
     super.bodyLocation,
     super.connectedTo,

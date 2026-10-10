@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A set of characteristics describing parents, who can be interested in viewing some content.
 @Schema(description: r'''A set of characteristics describing parents, who can be interested in viewing some content.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ParentAudience extends PeopleAudience {
 
   /// Maximal age of the child.
@@ -20,6 +25,9 @@ base class ParentAudience extends PeopleAudience {
   final num? childMinAge;
 
   const ParentAudience({
+    super.id,
+    super.type,
+    super.context,
     super.healthCondition,
     super.requiredGender,
     super.requiredMaxAge,

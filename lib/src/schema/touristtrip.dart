@@ -8,7 +8,12 @@ import '../../schemaorg.dart';
 /// (See examples below.)
 @Schema(description: r'''A tourist trip. A created itinerary of visits to one or more places of interest ([[TouristAttraction]]/[[TouristDestination]]) often linked by a similar theme, geographic area, or interest to a particular [[touristType]]. The [UNWTO](http://www2.unwto.org/) defines tourism trip as the Trip taken by visitors.
   (See examples below.)''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class TouristTrip extends Trip {
 
   /// Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc.
@@ -17,6 +22,9 @@ base class TouristTrip extends Trip {
   final Object? touristType;
 
   const TouristTrip({
+    super.id,
+    super.type,
+    super.context,
     super.arrivalTime,
     super.departureTime,
     super.itinerary,

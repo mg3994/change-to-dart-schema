@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A tattoo parlor.
 @Schema(description: r'''A tattoo parlor.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class TattooParlor extends HealthAndBeautyBusiness {
 
   const TattooParlor({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

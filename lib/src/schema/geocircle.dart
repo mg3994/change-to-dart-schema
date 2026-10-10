@@ -12,7 +12,12 @@ import '../../schemaorg.dart';
           it provides the simple textual property 'circle', but also allows the combination of postalCode alongside geoRadius.
           The center of the circle can be indicated via the 'geoMidpoint' property, or more approximately using 'address', 'postalCode'.
        ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class GeoCircle extends GeoShape {
 
   /// Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle.
@@ -26,6 +31,9 @@ base class GeoCircle extends GeoShape {
   final Object? geoRadius;
 
   const GeoCircle({
+    super.id,
+    super.type,
+    super.context,
     super.address,
     super.addressCountry,
     super.box,

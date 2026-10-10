@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of starting or activating a device or application (e.g. starting a timer or turning on a flashlight).
 @Schema(description: r'''The act of starting or activating a device or application (e.g. starting a timer or turning on a flashlight).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ActivateAction extends ControlAction {
 
   const ActivateAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

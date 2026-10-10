@@ -10,10 +10,18 @@ import '../../schemaorg.dart';
 ///
 /// * [[RejectAction]]: The antonym of AcceptAction.
 @Schema(description: r'''The act of committing to/adopting an object.\n\nRelated actions:\n\n* [[RejectAction]]: The antonym of AcceptAction.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AcceptAction extends AllocateAction {
 
   const AcceptAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

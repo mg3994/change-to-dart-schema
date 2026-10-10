@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A profession, may involve prolonged training and/or a formal qualification.
 @Schema(description: r'''A profession, may involve prolonged training and/or a formal qualification.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Occupation extends Intangible {
 
   /// Educational background needed for the position or Occupation.
@@ -53,6 +58,9 @@ Note: for historical reasons, any textual label and formal code provided as a li
   final Object? skills;
 
   const Occupation({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

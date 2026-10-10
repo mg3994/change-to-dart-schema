@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A permit issued by an organization, e.g. a parking pass.
 @Schema(description: r'''A permit issued by an organization, e.g. a parking pass.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Permit extends Intangible {
 
   /// The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
@@ -45,6 +50,9 @@ base class Permit extends Intangible {
   final String? validUntil;
 
   const Permit({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

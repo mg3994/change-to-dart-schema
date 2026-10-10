@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of discovering/finding an object.
 @Schema(description: r'''The act of discovering/finding an object.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DiscoverAction extends FindAction {
 
   const DiscoverAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An airline flight.
 @Schema(description: r'''An airline flight.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Flight extends Trip {
 
   /// The kind of aircraft (e.g., "Boeing 747").
@@ -85,6 +90,9 @@ base class Flight extends Trip {
   final String? webCheckinTime;
 
   const Flight({
+    super.id,
+    super.type,
+    super.context,
     super.arrivalTime,
     super.departureTime,
     super.itinerary,

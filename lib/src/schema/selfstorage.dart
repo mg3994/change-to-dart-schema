@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A self-storage facility.
 @Schema(description: r'''A self-storage facility.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SelfStorage extends LocalBusiness {
 
   const SelfStorage({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

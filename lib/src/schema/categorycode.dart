@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A Category Code.
 @Schema(description: r'''A Category Code.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class CategoryCode extends DefinedTerm {
 
   /// A short textual code that uniquely identifies the value.
@@ -20,6 +25,9 @@ base class CategoryCode extends DefinedTerm {
   final Object? inCodeSet;
 
   const CategoryCode({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.inDefinedTermSet,
     super.termCode,

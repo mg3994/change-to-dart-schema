@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A government building.
 @Schema(description: r'''A government building.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class GovernmentBuilding extends CivicStructure {
 
   const GovernmentBuilding({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

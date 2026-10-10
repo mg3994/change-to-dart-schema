@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A ski resort.
 @Schema(description: r'''A ski resort.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SkiResort extends Resort {
 
   const SkiResort({
+    super.id,
+    super.type,
+    super.context,
     super.amenityFeature,
     super.audience,
     super.availableLanguage,

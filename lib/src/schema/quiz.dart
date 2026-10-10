@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Quiz: A test of knowledge, skills and abilities.
 @Schema(description: r'''Quiz: A test of knowledge, skills and abilities.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Quiz extends LearningResource {
 
   const Quiz({
+    super.id,
+    super.type,
+    super.context,
     super.assesses,
     super.competencyRequired,
     super.educationalAlignment,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An email message.
 @Schema(description: r'''An email message.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class EmailMessage extends Message {
 
   const EmailMessage({
+    super.id,
+    super.type,
+    super.context,
     super.bccRecipient,
     super.ccRecipient,
     super.dateRead,

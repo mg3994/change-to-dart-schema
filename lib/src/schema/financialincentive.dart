@@ -16,7 +16,12 @@ import '../../schemaorg.dart';
 
 <p>Optionally contains criteria on whether the incentive is limited based on [[purchaseType]], [[purchasePriceLimit]], [[incomeLimit]], and the [[qualifiedExpense]].
     ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class FinancialIncentive extends Intangible {
 
   /// The geographic area where a service or offered item is provided.
@@ -262,6 +267,9 @@ Use Text for incentives that are limited based on other criteria, for example if
   final Object? validThrough;
 
   const FinancialIncentive({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

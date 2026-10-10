@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A MusicRelease is a specific release of a music album.
 @Schema(description: r'''A MusicRelease is a specific release of a music album.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MusicRelease extends MusicPlaylist {
 
   /// The catalog number for the release.
@@ -40,6 +45,9 @@ base class MusicRelease extends MusicPlaylist {
   final MusicAlbum? releaseOf;
 
   const MusicRelease({
+    super.id,
+    super.type,
+    super.context,
     super.numTracks,
     super.track,
     super.tracks,

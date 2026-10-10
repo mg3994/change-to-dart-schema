@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of inserting at the end if an ordered collection.
 @Schema(description: r'''The act of inserting at the end if an ordered collection.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AppendAction extends InsertAction {
 
   const AppendAction({
+    super.id,
+    super.type,
+    super.context,
     super.toLocation,
     super.collection,
     super.targetCollection,

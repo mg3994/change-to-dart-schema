@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An image file.
 @Schema(description: r'''An image file.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ImageObject extends MediaObject {
 
   /// The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
@@ -30,6 +35,9 @@ base class ImageObject extends MediaObject {
   final bool? representativeOfPage;
 
   const ImageObject({
+    super.id,
+    super.type,
+    super.context,
     super.associatedArticle,
     super.bitrate,
     super.contentSize,

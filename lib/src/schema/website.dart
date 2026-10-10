@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs.
 @Schema(description: r'''A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class WebSite extends CreativeWork {
 
   /// The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
@@ -15,6 +20,9 @@ base class WebSite extends CreativeWork {
   final String? issn;
 
   const WebSite({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

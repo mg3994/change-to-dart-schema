@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Organization: A business corporation.
 @Schema(description: r'''Organization: A business corporation.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Corporation extends Organization {
 
   /// The exchange traded instrument associated with a Corporation object. The tickerSymbol is expressed as an exchange and an instrument name separated by a space character. For the exchange component of the tickerSymbol attribute, we recommend using the controlled vocabulary of Market Identifier Codes (MIC) specified in ISO 15022.
@@ -15,6 +20,9 @@ base class Corporation extends Organization {
   final String? tickerSymbol;
 
   const Corporation({
+    super.id,
+    super.type,
+    super.context,
     super.acceptedPaymentMethod,
     super.actionableFeedbackPolicy,
     super.address,

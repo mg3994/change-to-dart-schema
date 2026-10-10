@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A crematorium.
 @Schema(description: r'''A crematorium.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Crematorium extends CivicStructure {
 
   const Crematorium({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

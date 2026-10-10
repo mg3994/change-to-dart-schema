@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// For a given health insurance plan, the specification for costs and coverage of prescription drugs.
 @Schema(description: r'''For a given health insurance plan, the specification for costs and coverage of prescription drugs.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class HealthPlanFormulary extends Intangible {
 
   /// The costs to the patient for services under this network or formulary.
@@ -25,6 +30,9 @@ base class HealthPlanFormulary extends Intangible {
   final bool? offersPrescriptionByMail;
 
   const HealthPlanFormulary({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

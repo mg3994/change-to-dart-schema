@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A florist.
 @Schema(description: r'''A florist.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Florist extends Store {
 
   const Florist({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

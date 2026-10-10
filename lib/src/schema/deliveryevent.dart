@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An event involving the delivery of an item.
 @Schema(description: r'''An event involving the delivery of an item.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DeliveryEvent extends Event {
 
   /// Password, PIN, or access code needed for delivery (e.g. from a locker).
@@ -30,6 +35,9 @@ base class DeliveryEvent extends Event {
   final DeliveryMethod? hasDeliveryMethod;
 
   const DeliveryEvent({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.actor,
     super.aggregateRating,

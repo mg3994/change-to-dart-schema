@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A photograph.
 @Schema(description: r'''A photograph.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Photograph extends CreativeWork {
 
   const Photograph({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

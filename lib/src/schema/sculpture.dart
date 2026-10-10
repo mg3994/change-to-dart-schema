@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A piece of sculpture.
 @Schema(description: r'''A piece of sculpture.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Sculpture extends CreativeWork {
 
   const Sculpture({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

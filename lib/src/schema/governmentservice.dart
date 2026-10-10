@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A service provided by a government organization, e.g. food stamps, veterans benefits, etc.
 @Schema(description: r'''A service provided by a government organization, e.g. food stamps, veterans benefits, etc.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class GovernmentService extends Service {
 
   /// Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
@@ -20,6 +25,9 @@ base class GovernmentService extends Service {
   final Organization? serviceOperator;
 
   const GovernmentService({
+    super.id,
+    super.type,
+    super.context,
     super.aggregateRating,
     super.areaServed,
     super.audience,

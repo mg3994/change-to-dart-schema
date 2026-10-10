@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A discrete unit of inheritance which affects one or more biological traits (Source: [https://en.wikipedia.org/wiki/Gene](https://en.wikipedia.org/wiki/Gene)). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype).
 @Schema(description: r'''A discrete unit of inheritance which affects one or more biological traits (Source: [https://en.wikipedia.org/wiki/Gene](https://en.wikipedia.org/wiki/Gene)). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Gene extends BioChemEntity {
 
   /// Another gene which is a variation of this one.
@@ -30,6 +35,9 @@ base class Gene extends BioChemEntity {
   final String? hasBioPolymerSequence;
 
   const Gene({
+    super.id,
+    super.type,
+    super.context,
     super.associatedDisease,
     super.bioChemInteraction,
     super.bioChemSimilarity,

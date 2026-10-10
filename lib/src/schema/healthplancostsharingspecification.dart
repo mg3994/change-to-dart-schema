@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A description of costs to the patient under a given network or formulary.
 @Schema(description: r'''A description of costs to the patient under a given network or formulary.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class HealthPlanCostSharingSpecification extends Intangible {
 
   /// Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
@@ -35,6 +40,9 @@ base class HealthPlanCostSharingSpecification extends Intangible {
   final String? healthPlanPharmacyCategory;
 
   const HealthPlanCostSharingSpecification({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

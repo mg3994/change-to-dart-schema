@@ -12,7 +12,12 @@ import '../../schemaorg.dart';
 /// * [[SubscribeAction]]: Unlike SubscribeAction, JoinAction does not imply that you'll be receiving updates.
 /// * [[FollowAction]]: Unlike FollowAction, JoinAction does not imply that you'll be polling for updates.
 @Schema(description: r'''An agent joins an event/group with participants/friends at a location.\n\nRelated actions:\n\n* [[RegisterAction]]: Unlike RegisterAction, JoinAction refers to joining a group/team of people.\n* [[SubscribeAction]]: Unlike SubscribeAction, JoinAction does not imply that you'll be receiving updates.\n* [[FollowAction]]: Unlike FollowAction, JoinAction does not imply that you'll be polling for updates.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class JoinAction extends InteractAction {
 
   /// Upcoming or past event associated with this place, organization, or action.
@@ -21,6 +26,9 @@ base class JoinAction extends InteractAction {
   final Event? event;
 
   const JoinAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

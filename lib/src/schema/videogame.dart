@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A video game is an electronic game that involves human interaction with a user interface to generate visual feedback on a video device.
 @Schema(description: r'''A video game is an electronic game that involves human interaction with a user interface to generate visual feedback on a video device.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class VideoGame extends Game {
 
   /// An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -70,6 +75,9 @@ base class VideoGame extends Game {
   final VideoObject? trailer;
 
   const VideoGame({
+    super.id,
+    super.type,
+    super.context,
     super.characterAttribute,
     super.gameItem,
     super.gameLocation,

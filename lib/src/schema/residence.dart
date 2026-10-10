@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The place where a person lives.
 @Schema(description: r'''The place where a person lives.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Residence extends Place {
 
   /// A floorplan of some [[Accommodation]].
@@ -22,6 +27,9 @@ base class Residence extends Place {
   final String? floorLevel;
 
   const Residence({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.address,
     super.aggregateRating,

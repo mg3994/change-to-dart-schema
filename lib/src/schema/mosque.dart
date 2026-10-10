@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A mosque.
 @Schema(description: r'''A mosque.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Mosque extends PlaceOfWorship {
 
   const Mosque({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

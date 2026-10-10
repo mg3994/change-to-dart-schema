@@ -76,7 +76,12 @@ The basic content of [[SpecialAnnouncement]] is similar to that of an [RSS](http
 with the [[webFeed]] property. This can be a simple URL, or an inline [[DataFeed]] object, with [[encodingFormat]] providing
 media type information, e.g. "application/rss+xml" or "application/atom+xml".
 ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SpecialAnnouncement extends CreativeWork {
 
   /// Indicates a specific [[CivicStructure]] or [[LocalBusiness]] associated with the SpecialAnnouncement. For example, a specific testing facility or business with special opening hours. For a larger geographic region like a quarantine of an entire region, use [[spatialCoverage]].
@@ -149,6 +154,9 @@ base class SpecialAnnouncement extends CreativeWork {
   final Object? webFeed;
 
   const SpecialAnnouncement({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

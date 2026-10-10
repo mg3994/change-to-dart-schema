@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A canal, like the Panama Canal.
 @Schema(description: r'''A canal, like the Panama Canal.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Canal extends BodyOfWater {
 
   const Canal({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.address,
     super.aggregateRating,

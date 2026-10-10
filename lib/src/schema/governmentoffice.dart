@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A government office&#x2014;for example, an IRS or DMV office.
 @Schema(description: r'''A government office&#x2014;for example, an IRS or DMV office.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class GovernmentOffice extends LocalBusiness {
 
   const GovernmentOffice({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of expressing a preference from a fixed/finite/structured set of choices/options.
 @Schema(description: r'''The act of expressing a preference from a fixed/finite/structured set of choices/options.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class VoteAction extends ChooseAction {
 
   /// A sub property of object. The candidate subject of this action.
@@ -15,6 +20,9 @@ base class VoteAction extends ChooseAction {
   final Person? candidate;
 
   const VoteAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionOption,
     super.option,
     super.actionProcess,

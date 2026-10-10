@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The action of resetting the password of a device or application.
 @Schema(description: r'''The action of resetting the password of a device or application.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ResetPasswordAction extends ControlAction {
 
   const ResetPasswordAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

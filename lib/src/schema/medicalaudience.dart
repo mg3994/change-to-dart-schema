@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Target audiences for medical web pages.
 @Schema(description: r'''Target audiences for medical web pages.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MedicalAudience extends Audience {
 
   const MedicalAudience({
+    super.id,
+    super.type,
+    super.context,
     super.audienceType,
     super.geographicArea,
     super.additionalType,

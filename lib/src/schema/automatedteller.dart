@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// ATM/cash machine.
 @Schema(description: r'''ATM/cash machine.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AutomatedTeller extends FinancialService {
 
   const AutomatedTeller({
+    super.id,
+    super.type,
+    super.context,
     super.feesAndCommissionsSpecification,
     super.branchOf,
     super.currenciesAccepted,

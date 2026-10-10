@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A [[NewsArticle]] and [[CriticReview]] providing a professional critic's assessment of a service, product, performance, or artistic or literary work.
 @Schema(description: r'''A [[NewsArticle]] and [[CriticReview]] providing a professional critic's assessment of a service, product, performance, or artistic or literary work.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ReviewNewsArticle extends CriticReview {
 
   const ReviewNewsArticle({
+    super.id,
+    super.type,
+    super.context,
     super.associatedClaimReview,
     super.associatedMediaReview,
     super.associatedReview,

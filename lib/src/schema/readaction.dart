@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of consuming written content.
 @Schema(description: r'''The act of consuming written content.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ReadAction extends ConsumeAction {
 
   const ReadAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionAccessibilityRequirement,
     super.expectsAcceptanceOf,
     super.actionProcess,

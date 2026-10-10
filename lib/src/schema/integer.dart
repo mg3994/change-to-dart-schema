@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Data type: Integer.
 @Schema(description: r'''Data type: Integer.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Integer extends Number {
 
   const Integer({
+    super.id,
+    super.type,
+    super.context,
   });
 
   @override

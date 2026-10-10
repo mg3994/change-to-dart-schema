@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A risk factor is anything that increases a person's likelihood of developing or contracting a disease, medical condition, or complication.
 @Schema(description: r'''A risk factor is anything that increases a person's likelihood of developing or contracting a disease, medical condition, or complication.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MedicalRiskFactor extends MedicalEntity {
 
   /// The condition, complication, etc. influenced by this factor.
@@ -15,6 +20,9 @@ base class MedicalRiskFactor extends MedicalEntity {
   final MedicalEntity? increasesRiskOf;
 
   const MedicalRiskFactor({
+    super.id,
+    super.type,
+    super.context,
     super.code,
     super.funding,
     super.guideline,

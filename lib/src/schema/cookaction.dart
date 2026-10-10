@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of producing/preparing food.
 @Schema(description: r'''The act of producing/preparing food.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class CookAction extends CreateAction {
 
   /// A sub property of location. The specific food establishment where the action occurred.
@@ -25,6 +30,9 @@ base class CookAction extends CreateAction {
   final Recipe? recipe;
 
   const CookAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

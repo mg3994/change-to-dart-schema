@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of editing by adding an object to a collection.
 @Schema(description: r'''The act of editing by adding an object to a collection.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AddAction extends UpdateAction {
 
   const AddAction({
+    super.id,
+    super.type,
+    super.context,
     super.collection,
     super.targetCollection,
     super.actionProcess,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A tennis complex.
 @Schema(description: r'''A tennis complex.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class TennisComplex extends SportsActivityLocation {
 
   const TennisComplex({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

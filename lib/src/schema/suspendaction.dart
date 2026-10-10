@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of momentarily pausing a device or application (e.g. pause music playback or pause a timer).
 @Schema(description: r'''The act of momentarily pausing a device or application (e.g. pause music playback or pause a timer).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SuspendAction extends ControlAction {
 
   const SuspendAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

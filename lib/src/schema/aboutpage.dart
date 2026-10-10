@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Web page type: About page.
 @Schema(description: r'''Web page type: About page.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AboutPage extends WebPage {
 
   const AboutPage({
+    super.id,
+    super.type,
+    super.context,
     super.breadcrumb,
     super.lastReviewed,
     super.mainContentOfPage,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Any complaint sensed and expressed by the patient (therefore defined as subjective)  like stomachache, lower-back pain, or fatigue.
 @Schema(description: r'''Any complaint sensed and expressed by the patient (therefore defined as subjective)  like stomachache, lower-back pain, or fatigue.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MedicalSymptom extends MedicalSignOrSymptom {
 
   const MedicalSymptom({
+    super.id,
+    super.type,
+    super.context,
     super.possibleTreatment,
     super.associatedAnatomy,
     super.cause,

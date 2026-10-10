@@ -10,10 +10,18 @@ import '../../schemaorg.dart';
 ///
 /// * [[SearchAction]]: FindAction is generally lead by a SearchAction, but not necessarily.
 @Schema(description: r'''The act of finding an object.\n\nRelated actions:\n\n* [[SearchAction]]: FindAction is generally lead by a SearchAction, but not necessarily.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class FindAction extends Action {
 
   const FindAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

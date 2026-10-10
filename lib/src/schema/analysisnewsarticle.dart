@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An AnalysisNewsArticle is a [[NewsArticle]] that, while based on factual reporting, incorporates the expertise of the author/producer, offering interpretations and conclusions.
 @Schema(description: r'''An AnalysisNewsArticle is a [[NewsArticle]] that, while based on factual reporting, incorporates the expertise of the author/producer, offering interpretations and conclusions.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AnalysisNewsArticle extends NewsArticle {
 
   const AnalysisNewsArticle({
+    super.id,
+    super.type,
+    super.context,
     super.dateline,
     super.printColumn,
     super.printEdition,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A movie.
 @Schema(description: r'''A movie.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Movie extends CreativeWork {
 
   /// An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -83,6 +88,9 @@ Since schema.org types like [[Movie]], [[TVEpisode]], [[TVSeason]], and [[TVSeri
   final VideoObject? trailer;
 
   const Movie({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

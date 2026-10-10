@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// CreativeWorkSeries dedicated to TV broadcast and associated online delivery.
 @Schema(description: r'''CreativeWorkSeries dedicated to TV broadcast and associated online delivery.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class TVSeries extends CreativeWork {
 
   /// An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -108,6 +113,9 @@ Since schema.org types like [[Movie]], [[TVEpisode]], [[TVSeason]], and [[TVSeri
   final VideoObject? trailer;
 
   const TVSeries({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

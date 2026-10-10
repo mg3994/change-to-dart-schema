@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Any object used in a medical capacity, such as to diagnose or treat a patient.
 @Schema(description: r'''Any object used in a medical capacity, such as to diagnose or treat a patient.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MedicalDevice extends MedicalEntity {
 
   /// A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or otherwise life-threatening or requiring immediate medical attention), tag it as a seriousAdverseOutcome instead.
@@ -40,6 +45,9 @@ base class MedicalDevice extends MedicalEntity {
   final MedicalEntity? seriousAdverseOutcome;
 
   const MedicalDevice({
+    super.id,
+    super.type,
+    super.context,
     super.code,
     super.funding,
     super.guideline,

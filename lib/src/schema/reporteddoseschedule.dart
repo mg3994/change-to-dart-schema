@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A patient-reported or observed dosing schedule for a drug or supplement.
 @Schema(description: r'''A patient-reported or observed dosing schedule for a drug or supplement.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ReportedDoseSchedule extends DoseSchedule {
 
   const ReportedDoseSchedule({
+    super.id,
+    super.type,
+    super.context,
     super.doseUnit,
     super.doseValue,
     super.frequency,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A class, also often called a 'Type'; equivalent to rdfs:Class.
 @Schema(description: r'''A class, also often called a 'Type'; equivalent to rdfs:Class.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Class extends Intangible {
 
   /// Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
@@ -15,6 +20,9 @@ base class Class extends Intangible {
   final Object? supersededBy;
 
   const Class({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

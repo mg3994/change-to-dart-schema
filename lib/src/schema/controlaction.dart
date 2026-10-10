@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An agent controls a device or application.
 @Schema(description: r'''An agent controls a device or application.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ControlAction extends Action {
 
   const ControlAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

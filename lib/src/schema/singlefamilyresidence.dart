@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Residence type: Single-family home.
 @Schema(description: r'''Residence type: Single-family home.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SingleFamilyResidence extends House {
 
   /// The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
@@ -24,6 +29,9 @@ Typical unit code(s): C62 for person.''')
   final QuantitativeValue? occupancy;
 
   const SingleFamilyResidence({
+    super.id,
+    super.type,
+    super.context,
     super.accommodationCategory,
     super.accommodationFloorPlan,
     super.amenityFeature,

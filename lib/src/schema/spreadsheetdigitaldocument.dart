@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A spreadsheet file.
 @Schema(description: r'''A spreadsheet file.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SpreadsheetDigitalDocument extends DigitalDocument {
 
   const SpreadsheetDigitalDocument({
+    super.id,
+    super.type,
+    super.context,
     super.hasDigitalDocumentPermission,
     super.about,
     super.abstractValue,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Reference documentation for application programming interfaces (APIs).
 @Schema(description: r'''Reference documentation for application programming interfaces (APIs).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class APIReference extends TechArticle {
 
   /// Library file name, e.g., mscorlib.dll, system.web.dll.
@@ -35,6 +40,9 @@ base class APIReference extends TechArticle {
   final String? targetPlatform;
 
   const APIReference({
+    super.id,
+    super.type,
+    super.context,
     super.dependencies,
     super.proficiencyLevel,
     super.articleBody,

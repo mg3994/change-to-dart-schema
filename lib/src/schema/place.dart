@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Entities that have a somewhat fixed, physical extension.
 @Schema(description: r'''Entities that have a somewhat fixed, physical extension.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Place extends Thing {
 
   /// A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.
@@ -257,6 +262,9 @@ base class Place extends Thing {
   final String? tourBookingPage;
 
   const Place({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

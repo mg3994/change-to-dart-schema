@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A body of water, such as a sea, ocean, or lake.
 @Schema(description: r'''A body of water, such as a sea, ocean, or lake.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BodyOfWater extends Landform {
 
   const BodyOfWater({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.address,
     super.aggregateRating,

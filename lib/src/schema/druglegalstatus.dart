@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The legal availability status of a medical drug.
 @Schema(description: r'''The legal availability status of a medical drug.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DrugLegalStatus extends MedicalIntangible {
 
   /// The location in which the status applies.
@@ -15,6 +20,9 @@ base class DrugLegalStatus extends MedicalIntangible {
   final AdministrativeArea? applicableLocation;
 
   const DrugLegalStatus({
+    super.id,
+    super.type,
+    super.context,
     super.code,
     super.funding,
     super.guideline,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// ShippingService represents the criteria used to determine if and how an offer could be shipped to a customer.
 @Schema(description: r'''ShippingService represents the criteria used to determine if and how an offer could be shipped to a customer.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ShippingService extends StructuredValue {
 
   /// Type of fulfillment applicable to the [[ShippingService]].
@@ -38,6 +43,9 @@ In the context of [[ShippingService]], use the [[ServicePeriod]] format, that co
   final MemberProgramTier? validForMemberTier;
 
   const ShippingService({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

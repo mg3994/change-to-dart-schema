@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Printed music, as opposed to performed or recorded music.
 @Schema(description: r'''Printed music, as opposed to performed or recorded music.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SheetMusic extends CreativeWork {
 
   const SheetMusic({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

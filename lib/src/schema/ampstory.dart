@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A creative work with a visual storytelling format intended to be viewed online, particularly on mobile devices.
 @Schema(description: r'''A creative work with a visual storytelling format intended to be viewed online, particularly on mobile devices.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AmpStory extends CreativeWork {
 
   const AmpStory({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A single message from a sender to one or more organizations or people.
 @Schema(description: r'''A single message from a sender to one or more organizations or people.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Message extends CreativeWork {
 
   /// A sub property of recipient. The recipient blind copied on a message.
@@ -55,6 +60,9 @@ base class Message extends CreativeWork {
   final Object? toRecipient;
 
   const Message({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

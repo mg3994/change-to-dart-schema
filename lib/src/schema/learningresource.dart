@@ -14,7 +14,12 @@ import '../../schemaorg.dart';
 [[LearningResource]] is expected to be used as an addition to a primary type such as [[Book]], [[VideoObject]], [[Product]] etc.
 
 [[EducationEvent]] serves a similar purpose for event-like things (e.g. a [[Trip]]). A [[LearningResource]] may be created as a result of an [[EducationEvent]], for example by recording one.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class LearningResource extends CreativeWork {
 
   /// The item being described is intended to assess the competency or learning outcome defined by the referenced term.
@@ -57,6 +62,9 @@ This property should not be used where the nature of the alignment can be descri
   final Object? teaches;
 
   const LearningResource({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

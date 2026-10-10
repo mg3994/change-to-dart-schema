@@ -28,7 +28,12 @@ Two entities that are identical but differ in rate and time:
 
 E.g. Cheaper and slower: $5 in 5-7 days
 or Fast and expensive: $15 in 1-2 days.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class OfferShippingDetails extends StructuredValue {
 
   /// The total delay between the receipt of the order and the goods reaching the final customer.
@@ -107,6 +112,9 @@ base class OfferShippingDetails extends StructuredValue {
   final Object? width;
 
   const OfferShippingDetails({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

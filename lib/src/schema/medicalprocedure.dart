@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques.
 @Schema(description: r'''A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MedicalProcedure extends MedicalEntity {
 
   /// Location in the body of the anatomical structure.
@@ -40,6 +45,9 @@ base class MedicalProcedure extends MedicalEntity {
   final Object? status;
 
   const MedicalProcedure({
+    super.id,
+    super.type,
+    super.context,
     super.code,
     super.funding,
     super.guideline,

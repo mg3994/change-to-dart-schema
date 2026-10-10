@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A QAPage is a WebPage focussed on a specific Question and its Answer(s), e.g. in a question answering site or documenting Frequently Asked Questions (FAQs).
 @Schema(description: r'''A QAPage is a WebPage focussed on a specific Question and its Answer(s), e.g. in a question answering site or documenting Frequently Asked Questions (FAQs).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class QAPage extends WebPage {
 
   const QAPage({
+    super.id,
+    super.type,
+    super.context,
     super.breadcrumb,
     super.lastReviewed,
     super.mainContentOfPage,

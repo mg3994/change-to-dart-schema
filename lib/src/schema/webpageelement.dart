@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A web page element, like a table or an image.
 @Schema(description: r'''A web page element, like a table or an image.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class WebPageElement extends CreativeWork {
 
   /// A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
@@ -20,6 +25,9 @@ base class WebPageElement extends CreativeWork {
   final XPathType? xpath;
 
   const WebPageElement({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

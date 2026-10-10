@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A [[comment]] that corrects [[CreativeWork]].
 @Schema(description: r'''A [[comment]] that corrects [[CreativeWork]].''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class CorrectionComment extends Comment {
 
   const CorrectionComment({
+    super.id,
+    super.type,
+    super.context,
     super.downvoteCount,
     super.parentItem,
     super.sharedContent,

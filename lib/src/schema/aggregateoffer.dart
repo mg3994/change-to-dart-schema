@@ -8,7 +8,12 @@ import '../../schemaorg.dart';
 ///
 /// Note: AggregateOffers are normally expected to associate multiple offers that all share the same defined [[businessFunction]] value, or default to http://purl.org/goodrelations/v1#Sell if businessFunction is not explicitly defined.
 @Schema(description: r'''When a single product is associated with multiple offers (for example, the same pair of shoes is offered by different merchants), then AggregateOffer can be used.\n\nNote: AggregateOffers are normally expected to associate multiple offers that all share the same defined [[businessFunction]] value, or default to http://purl.org/goodrelations/v1#Sell if businessFunction is not explicitly defined.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AggregateOffer extends Offer {
 
   /// The highest price of all offers available.
@@ -44,6 +49,9 @@ base class AggregateOffer extends Offer {
   final Object? offers;
 
   const AggregateOffer({
+    super.id,
+    super.type,
+    super.context,
     super.acceptedPaymentMethod,
     super.addOn,
     super.additionalProperty,

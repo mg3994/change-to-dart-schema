@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// ShippingDeliveryTime provides various pieces of information about delivery times for shipping.
 @Schema(description: r'''ShippingDeliveryTime provides various pieces of information about delivery times for shipping.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ShippingDeliveryTime extends StructuredValue {
 
   /// Days of the week when the merchant typically operates, indicated via opening hours markup.
@@ -48,6 +53,9 @@ In the context of [[ShippingService]], use the [[ServicePeriod]] format, that co
   final Object? transitTime;
 
   const ShippingDeliveryTime({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

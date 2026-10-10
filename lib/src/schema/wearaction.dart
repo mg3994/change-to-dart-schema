@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of dressing oneself in clothing.
 @Schema(description: r'''The act of dressing oneself in clothing.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class WearAction extends UseAction {
 
   const WearAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionAccessibilityRequirement,
     super.expectsAcceptanceOf,
     super.actionProcess,

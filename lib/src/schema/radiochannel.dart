@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A unique instance of a radio BroadcastService on a CableOrSatelliteService lineup.
 @Schema(description: r'''A unique instance of a radio BroadcastService on a CableOrSatelliteService lineup.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class RadioChannel extends BroadcastChannel {
 
   const RadioChannel({
+    super.id,
+    super.type,
+    super.context,
     super.broadcastChannelId,
     super.broadcastFrequency,
     super.broadcastServiceTier,

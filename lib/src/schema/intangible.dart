@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.
 @Schema(description: r'''A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Intangible extends Thing {
 
   const Intangible({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

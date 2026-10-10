@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A set of products (either [[ProductGroup]]s or specific variants) that are listed together e.g. in an [[Offer]].
 @Schema(description: r'''A set of products (either [[ProductGroup]]s or specific variants) that are listed together e.g. in an [[Offer]].''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ProductCollection extends Collection {
 
   /// This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
@@ -15,6 +20,9 @@ base class ProductCollection extends Collection {
   final TypeAndQuantityNode? includesObject;
 
   const ProductCollection({
+    super.id,
+    super.type,
+    super.context,
     super.collectionSize,
     super.about,
     super.abstractValue,

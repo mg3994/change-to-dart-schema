@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// One of the sections into which a book is divided. A chapter usually has a section number or a name.
 @Schema(description: r'''One of the sections into which a book is divided. A chapter usually has a section number or a name.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Chapter extends CreativeWork {
 
   /// The page on which the work ends; for example "138" or "xvi".
@@ -25,6 +30,9 @@ base class Chapter extends CreativeWork {
   final String? pagination;
 
   const Chapter({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A fire station. With firemen.
 @Schema(description: r'''A fire station. With firemen.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class FireStation extends CivicStructure {
 
   const FireStation({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

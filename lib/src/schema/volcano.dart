@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A volcano, like Fujisan.
 @Schema(description: r'''A volcano, like Fujisan.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Volcano extends Landform {
 
   const Volcano({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.address,
     super.aggregateRating,

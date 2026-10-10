@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Event type: Visual arts event.
 @Schema(description: r'''Event type: Visual arts event.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class VisualArtsEvent extends Event {
 
   const VisualArtsEvent({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.actor,
     super.aggregateRating,

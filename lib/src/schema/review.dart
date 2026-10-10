@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A review of an item - for example, of a restaurant, movie, or store.
 @Schema(description: r'''A review of an item - for example, of a restaurant, movie, or store.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Review extends CreativeWork {
 
   /// An associated [[ClaimReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[associatedClaimReview]] would be used on [[MediaReview]].
@@ -73,6 +78,9 @@ The property values can be expressed either as unstructured text (repeated as ne
   final Rating? reviewRating;
 
   const Review({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

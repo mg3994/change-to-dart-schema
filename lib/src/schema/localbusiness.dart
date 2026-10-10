@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.
 @Schema(description: r'''A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class LocalBusiness extends Organization {
 
   /// The larger organization that this local business is a branch of, if any. Not to be confused with (anatomical) [[branch]].
@@ -49,6 +54,9 @@ base class LocalBusiness extends Organization {
   final String? priceRange;
 
   const LocalBusiness({
+    super.id,
+    super.type,
+    super.context,
     super.acceptedPaymentMethod,
     super.actionableFeedbackPolicy,
     super.address,

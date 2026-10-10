@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A strategy of regulating the intake of food to achieve or maintain a specific health-related goal.
 @Schema(description: r'''A strategy of regulating the intake of food to achieve or maintain a specific health-related goal.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Diet extends CreativeWork {
 
   /// Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.
@@ -35,6 +40,9 @@ base class Diet extends CreativeWork {
   final String? risks;
 
   const Diet({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

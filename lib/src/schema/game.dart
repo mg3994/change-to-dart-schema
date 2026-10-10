@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting.
 @Schema(description: r'''The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Game extends CreativeWork {
 
   /// A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).
@@ -35,6 +40,9 @@ base class Game extends CreativeWork {
   final Thing? quest;
 
   const Game({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

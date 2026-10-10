@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A date value in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
 @Schema(description: r'''A date value in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Date extends Equatable {
 
   const Date({

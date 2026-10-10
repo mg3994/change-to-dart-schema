@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A financial product for the loaning of an amount of money, or line of credit, under agreed terms and charges.
 @Schema(description: r'''A financial product for the loaning of an amount of money, or line of credit, under agreed terms and charges.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class LoanOrCredit extends FinancialProduct {
 
   /// The amount of money.
@@ -57,6 +62,9 @@ base class LoanOrCredit extends FinancialProduct {
   final Object? requiredCollateral;
 
   const LoanOrCredit({
+    super.id,
+    super.type,
+    super.context,
     super.annualPercentageRate,
     super.feesAndCommissionsSpecification,
     super.interestRate,

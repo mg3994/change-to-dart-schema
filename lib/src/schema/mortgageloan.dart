@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A loan in which property or real estate is used as collateral. (A loan securitized against some real estate.)
 @Schema(description: r'''A loan in which property or real estate is used as collateral. (A loan securitized against some real estate.)''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MortgageLoan extends LoanOrCredit {
 
   /// Whether borrower is a resident of the jurisdiction where the property is located.
@@ -20,6 +25,9 @@ base class MortgageLoan extends LoanOrCredit {
   final MonetaryAmount? loanMortgageMandateAmount;
 
   const MortgageLoan({
+    super.id,
+    super.type,
+    super.context,
     super.amount,
     super.currency,
     super.gracePeriod,

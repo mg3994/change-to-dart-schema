@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An audio file.
 @Schema(description: r'''An audio file.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AudioObject extends MediaObject {
 
   /// The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
@@ -25,6 +30,9 @@ base class AudioObject extends MediaObject {
   final String? transcript;
 
   const AudioObject({
+    super.id,
+    super.type,
+    super.context,
     super.associatedArticle,
     super.bitrate,
     super.contentSize,

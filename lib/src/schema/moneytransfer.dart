@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of transferring money from one place to another place. This may occur electronically or physically.
 @Schema(description: r'''The act of transferring money from one place to another place. This may occur electronically or physically.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MoneyTransfer extends TransferAction {
 
   /// The amount of money.
@@ -20,6 +25,9 @@ base class MoneyTransfer extends TransferAction {
   final Object? beneficiaryBank;
 
   const MoneyTransfer({
+    super.id,
+    super.type,
+    super.context,
     super.fromLocation,
     super.toLocation,
     super.actionProcess,

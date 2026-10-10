@@ -11,7 +11,12 @@ import '../../schemaorg.dart';
 /// * [[JoinAction]]: The antonym of LeaveAction.
 /// * [[UnRegisterAction]]: Unlike UnRegisterAction, LeaveAction implies leaving a group/team of people rather than a service.
 @Schema(description: r'''An agent leaves an event / group with participants/friends at a location.\n\nRelated actions:\n\n* [[JoinAction]]: The antonym of LeaveAction.\n* [[UnRegisterAction]]: Unlike UnRegisterAction, LeaveAction implies leaving a group/team of people rather than a service.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class LeaveAction extends InteractAction {
 
   /// Upcoming or past event associated with this place, organization, or action.
@@ -20,6 +25,9 @@ base class LeaveAction extends InteractAction {
   final Event? event;
 
   const LeaveAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The header section of the page.
 @Schema(description: r'''The header section of the page.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class WPHeader extends WebPageElement {
 
   const WPHeader({
+    super.id,
+    super.type,
+    super.context,
     super.cssSelector,
     super.xpath,
     super.about,

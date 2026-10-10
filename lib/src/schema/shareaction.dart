@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of distributing content to people for their amusement or edification.
 @Schema(description: r'''The act of distributing content to people for their amusement or edification.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ShareAction extends CommunicateAction {
 
   const ShareAction({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.inLanguage,
     super.language,

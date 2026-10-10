@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Information about the engine of the vehicle. A vehicle can have multiple engines represented by multiple engine specification entities.
 @Schema(description: r'''Information about the engine of the vehicle. A vehicle can have multiple engines represented by multiple engine specification entities.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class EngineSpecification extends StructuredValue {
 
   /// The volume swept by all of the pistons inside the cylinders of an internal combustion engine in a single movement.
@@ -50,6 +55,9 @@ base class EngineSpecification extends StructuredValue {
   final QuantitativeValue? torque;
 
   const EngineSpecification({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

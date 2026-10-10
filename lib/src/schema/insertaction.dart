@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of adding at a specific location in an ordered collection.
 @Schema(description: r'''The act of adding at a specific location in an ordered collection.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class InsertAction extends AddAction {
 
   /// A sub property of location. The final location of the object or the agent after the action.
@@ -15,6 +20,9 @@ base class InsertAction extends AddAction {
   final Place? toLocation;
 
   const InsertAction({
+    super.id,
+    super.type,
+    super.context,
     super.collection,
     super.targetCollection,
     super.actionProcess,

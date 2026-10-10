@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A state or province of a country.
 @Schema(description: r'''A state or province of a country.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class State extends AdministrativeArea {
 
   const State({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.address,
     super.aggregateRating,

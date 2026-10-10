@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An answer offered to a question; perhaps correct, perhaps opinionated or wrong.
 @Schema(description: r'''An answer offered to a question; perhaps correct, perhaps opinionated or wrong.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Answer extends Comment {
 
   /// A step-by-step or full explanation about Answer. Can outline how this Answer was achieved or contain more broad clarification or statement about it.
@@ -20,6 +25,9 @@ base class Answer extends Comment {
   final Object? parentItem;
 
   const Answer({
+    super.id,
+    super.type,
+    super.context,
     super.downvoteCount,
     super.sharedContent,
     super.upvoteCount,

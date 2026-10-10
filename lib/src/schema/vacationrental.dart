@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A kind of lodging business that focuses on renting single properties for limited time.
 @Schema(description: r'''A kind of lodging business that focuses on renting single properties for limited time.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class VacationRental extends LodgingBusiness {
 
   const VacationRental({
+    super.id,
+    super.type,
+    super.context,
     super.amenityFeature,
     super.audience,
     super.availableLanguage,

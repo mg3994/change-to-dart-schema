@@ -32,10 +32,18 @@ worrying about which kinds of series are really event-like enough to call an Eve
 may seem more Event-like when the period of time is compact and when aspects such as location are fixed, but
 it may also sometimes prove useful to describe a longer-term series as an Event.
    ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class EventSeries extends Event {
 
   const EventSeries({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.actor,
     super.aggregateRating,

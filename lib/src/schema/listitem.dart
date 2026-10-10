@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An list item, e.g. a step in a checklist or how-to description.
 @Schema(description: r'''An list item, e.g. a step in a checklist or how-to description.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ListItem extends Intangible {
 
   /// An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').
@@ -30,6 +35,9 @@ base class ListItem extends Intangible {
   final ListItem? previousItem;
 
   const ListItem({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

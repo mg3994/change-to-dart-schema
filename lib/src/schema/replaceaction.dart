@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of editing a recipient by replacing an old object with a new object.
 @Schema(description: r'''The act of editing a recipient by replacing an old object with a new object.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ReplaceAction extends UpdateAction {
 
   /// A sub property of object. The object that is being replaced.
@@ -20,6 +25,9 @@ base class ReplaceAction extends UpdateAction {
   final Thing? replacer;
 
   const ReplaceAction({
+    super.id,
+    super.type,
+    super.context,
     super.collection,
     super.targetCollection,
     super.actionProcess,

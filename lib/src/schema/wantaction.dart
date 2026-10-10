@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of expressing a desire about the object. An agent wants an object.
 @Schema(description: r'''The act of expressing a desire about the object. An agent wants an object.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class WantAction extends ReactAction {
 
   const WantAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The price for the delivery of an offer using a particular delivery method.
 @Schema(description: r'''The price for the delivery of an offer using a particular delivery method.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DeliveryChargeSpecification extends PriceSpecification {
 
   /// The delivery method(s) to which the delivery charge or payment charge specification applies.
@@ -38,6 +43,9 @@ base class DeliveryChargeSpecification extends PriceSpecification {
   final Object? ineligibleRegion;
 
   const DeliveryChargeSpecification({
+    super.id,
+    super.type,
+    super.context,
     super.eligibleQuantity,
     super.eligibleTransactionVolume,
     super.maxPrice,

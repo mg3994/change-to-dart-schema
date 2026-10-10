@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A pond.
 @Schema(description: r'''A pond.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Pond extends BodyOfWater {
 
   const Pond({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.address,
     super.aggregateRating,

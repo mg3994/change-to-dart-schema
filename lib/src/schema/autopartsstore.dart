@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An auto parts store.
 @Schema(description: r'''An auto parts store.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AutoPartsStore extends AutomotiveBusiness {
 
   const AutoPartsStore({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

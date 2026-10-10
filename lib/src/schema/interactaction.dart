@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of interacting with another person or organization.
 @Schema(description: r'''The act of interacting with another person or organization.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class InteractAction extends Action {
 
   const InteractAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

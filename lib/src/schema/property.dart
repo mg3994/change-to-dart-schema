@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property.
 @Schema(description: r'''A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Property extends Intangible {
 
   /// Relates a property to a class that is (one of) the type(s) the property is expected to be used on.
@@ -30,6 +35,9 @@ base class Property extends Intangible {
   final Object? supersededBy;
 
   const Property({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

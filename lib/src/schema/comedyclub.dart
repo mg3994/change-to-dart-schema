@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A comedy club.
 @Schema(description: r'''A comedy club.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ComedyClub extends EntertainmentBusiness {
 
   const ComedyClub({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Any medical test, typically performed for diagnostic purposes.
 @Schema(description: r'''Any medical test, typically performed for diagnostic purposes.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MedicalTest extends MedicalEntity {
 
   /// Drugs that affect the test's results.
@@ -35,6 +40,9 @@ base class MedicalTest extends MedicalEntity {
   final MedicalDevice? usesDevice;
 
   const MedicalTest({
+    super.id,
+    super.type,
+    super.context,
     super.code,
     super.funding,
     super.guideline,

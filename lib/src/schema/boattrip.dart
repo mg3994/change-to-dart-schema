@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A trip on a commercial ferry line.
 @Schema(description: r'''A trip on a commercial ferry line.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BoatTrip extends Trip {
 
   /// The terminal or port from which the boat arrives.
@@ -20,6 +25,9 @@ base class BoatTrip extends Trip {
   final BoatTerminal? departureBoatTerminal;
 
   const BoatTrip({
+    super.id,
+    super.type,
+    super.context,
     super.arrivalTime,
     super.departureTime,
     super.itinerary,

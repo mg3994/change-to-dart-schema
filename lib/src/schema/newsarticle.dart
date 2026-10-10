@@ -12,7 +12,12 @@ import '../../schemaorg.dart';
 
 A more detailed overview of [schema.org News markup](/docs/news.html) is also available.
 ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class NewsArticle extends Article {
 
   /// A [dateline](https://en.wikipedia.org/wiki/Dateline) is a brief piece of text included in news articles that describes where and when the story was written or filed though the date is often omitted. Sometimes only a placename is provided.
@@ -51,6 +56,9 @@ Dateline summaries are oriented more towards human readers than towards automate
   final String? printSection;
 
   const NewsArticle({
+    super.id,
+    super.type,
+    super.context,
     super.articleBody,
     super.articleSection,
     super.backstory,

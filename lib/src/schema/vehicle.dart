@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.
 @Schema(description: r'''A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Vehicle extends Product {
 
   /// The time needed to accelerate the vehicle from a given start velocity to a given target velocity.
@@ -268,6 +273,9 @@ base class Vehicle extends Product {
   final QuantitativeValue? wheelbase;
 
   const Vehicle({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.aggregateRating,
     super.asin,

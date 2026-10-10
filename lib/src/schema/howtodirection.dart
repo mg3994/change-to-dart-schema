@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A direction indicating a single action to do in the instructions for how to achieve a result.
 @Schema(description: r'''A direction indicating a single action to do in the instructions for how to achieve a result.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class HowToDirection extends CreativeWork {
 
   /// A media object representing the circumstances after performing this direction.
@@ -50,6 +55,9 @@ base class HowToDirection extends CreativeWork {
   final Duration? totalTime;
 
   const HowToDirection({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A motorcycle dealer.
 @Schema(description: r'''A motorcycle dealer.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MotorcycleDealer extends AutomotiveBusiness {
 
   const MotorcycleDealer({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

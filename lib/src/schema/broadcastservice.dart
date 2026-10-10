@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A delivery service through which content is provided via broadcast over the air or online.
 @Schema(description: r'''A delivery service through which content is provided via broadcast over the air or online.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BroadcastService extends Service {
 
   /// The area within which users can expect to reach the broadcast service.
@@ -65,6 +70,9 @@ base class BroadcastService extends Service {
   final String? videoFormat;
 
   const BroadcastService({
+    super.id,
+    super.type,
+    super.context,
     super.aggregateRating,
     super.areaServed,
     super.audience,

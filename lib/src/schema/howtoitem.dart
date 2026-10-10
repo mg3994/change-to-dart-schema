@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An item used as either a tool or supply when performing the instructions for how to achieve a result.
 @Schema(description: r'''An item used as either a tool or supply when performing the instructions for how to achieve a result.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class HowToItem extends ListItem {
 
   /// The required quantity of the item(s).
@@ -15,6 +20,9 @@ base class HowToItem extends ListItem {
   final Object? requiredQuantity;
 
   const HowToItem({
+    super.id,
+    super.type,
+    super.context,
     super.item,
     super.nextItem,
     super.position,

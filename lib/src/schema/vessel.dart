@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A component of the human body circulatory system comprised of an intricate network of hollow tubes that transport blood throughout the entire body.
 @Schema(description: r'''A component of the human body circulatory system comprised of an intricate network of hollow tubes that transport blood throughout the entire body.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Vessel extends AnatomicalStructure {
 
   const Vessel({
+    super.id,
+    super.type,
+    super.context,
     super.associatedPathophysiology,
     super.bodyLocation,
     super.connectedTo,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of generating a comment about a subject.
 @Schema(description: r'''The act of generating a comment about a subject.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class CommentAction extends CommunicateAction {
 
   /// A sub property of result. The Comment created or sent as a result of this action.
@@ -15,6 +20,9 @@ base class CommentAction extends CommunicateAction {
   final Comment? resultComment;
 
   const CommentAction({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.inLanguage,
     super.language,

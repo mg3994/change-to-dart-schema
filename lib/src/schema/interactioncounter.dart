@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A summary of how users have interacted with this CreativeWork. In most cases, authors will use a subtype to specify the specific type of interaction.
 @Schema(description: r'''A summary of how users have interacted with this CreativeWork. In most cases, authors will use a subtype to specify the specific type of interaction.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class InteractionCounter extends StructuredValue {
 
   /// The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.
@@ -44,6 +49,9 @@ base class InteractionCounter extends StructuredValue {
   final int? userInteractionCount;
 
   const InteractionCounter({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

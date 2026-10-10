@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An organization such as a school, NGO, corporation, club, etc.
 @Schema(description: r'''An organization such as a school, NGO, corporation, club, etc.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Organization extends Thing {
 
   /// The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
@@ -406,6 +411,9 @@ While such policies are most typically expressed in natural language, sometimes 
   final String? vatID;
 
   const Organization({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Car repair, sales, or parts.
 @Schema(description: r'''Car repair, sales, or parts.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AutomotiveBusiness extends LocalBusiness {
 
   const AutomotiveBusiness({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

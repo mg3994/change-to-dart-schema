@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A class of medical drugs, e.g., statins. Classes can represent general pharmacological class, common mechanisms of action, common physiological effects, etc.
 @Schema(description: r'''A class of medical drugs, e.g., statins. Classes can represent general pharmacological class, common mechanisms of action, common physiological effects, etc.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DrugClass extends MedicalEntity {
 
   /// Specifying a drug or medicine used in a medication procedure.
@@ -15,6 +20,9 @@ base class DrugClass extends MedicalEntity {
   final Drug? drug;
 
   const DrugClass({
+    super.id,
+    super.type,
+    super.context,
     super.code,
     super.funding,
     super.guideline,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A specific strength in which a medical drug is available in a specific country.
 @Schema(description: r'''A specific strength in which a medical drug is available in a specific country.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DrugStrength extends MedicalIntangible {
 
   /// An active ingredient, typically chemical compounds and/or biologic substances.
@@ -35,6 +40,9 @@ base class DrugStrength extends MedicalIntangible {
   final num? strengthValue;
 
   const DrugStrength({
+    super.id,
+    super.type,
+    super.context,
     super.code,
     super.funding,
     super.guideline,

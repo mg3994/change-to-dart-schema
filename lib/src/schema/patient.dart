@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A patient is any person recipient of health care services.
 @Schema(description: r'''A patient is any person recipient of health care services.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Patient extends MedicalAudience {
 
   /// One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
@@ -25,6 +30,9 @@ base class Patient extends MedicalAudience {
   final MedicalCondition? healthCondition;
 
   const Patient({
+    super.id,
+    super.type,
+    super.context,
     super.audienceType,
     super.geographicArea,
     super.additionalType,

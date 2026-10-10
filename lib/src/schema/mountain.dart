@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A mountain, like Mount Whitney or Mount Everest.
 @Schema(description: r'''A mountain, like Mount Whitney or Mount Everest.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Mountain extends Landform {
 
   const Mountain({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.address,
     super.aggregateRating,

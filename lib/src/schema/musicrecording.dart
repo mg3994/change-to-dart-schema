@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A music recording (track), usually a single song.
 @Schema(description: r'''A music recording (track), usually a single song.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MusicRecording extends CreativeWork {
 
   /// The artist that performed this album or recording.
@@ -40,6 +45,9 @@ base class MusicRecording extends CreativeWork {
   final MusicComposition? recordingOf;
 
   const MusicRecording({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

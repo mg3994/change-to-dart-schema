@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Text representing an XPath (typically but not necessarily version 1.0).
 @Schema(description: r'''Text representing an XPath (typically but not necessarily version 1.0).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class XPathType extends Text {
 
   const XPathType({
+    super.id,
+    super.type,
+    super.context,
   });
 
   @override

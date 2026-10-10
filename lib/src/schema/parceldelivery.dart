@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The delivery of a parcel either via the postal service or a commercial service.
 @Schema(description: r'''The delivery of a parcel either via the postal service or a commercial service.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ParcelDelivery extends Intangible {
 
   /// 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
@@ -70,6 +75,9 @@ base class ParcelDelivery extends Intangible {
   final String? trackingUrl;
 
   const ParcelDelivery({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

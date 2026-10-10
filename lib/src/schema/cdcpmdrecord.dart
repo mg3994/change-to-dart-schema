@@ -12,7 +12,12 @@ import '../../schemaorg.dart';
       used for hospital data reporting. See [documentation](/docs/cdc-covid.html) for details, and the linked CDC materials for authoritative
       definitions used as the source here.
       ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class CDCPMDRecord extends StructuredValue {
 
   /// collectiondate - Date for which patient counts are reported.
@@ -101,6 +106,9 @@ base class CDCPMDRecord extends StructuredValue {
   final Object? datePosted;
 
   const CDCPMDRecord({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

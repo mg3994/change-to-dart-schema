@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A structured representation of food or drink items available from a FoodEstablishment.
 @Schema(description: r'''A structured representation of food or drink items available from a FoodEstablishment.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Menu extends CreativeWork {
 
   /// A food or drink item contained in a menu or menu section.
@@ -20,6 +25,9 @@ base class Menu extends CreativeWork {
   final MenuSection? hasMenuSection;
 
   const Menu({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A math solver which is capable of solving a subset of mathematical problems.
 @Schema(description: r'''A math solver which is capable of solving a subset of mathematical problems.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MathSolver extends CreativeWork {
 
   /// A mathematical expression (e.g. 'x^2-3x=0') that may be solved for a specific variable, simplified, or transformed. This can take many formats, e.g. LaTeX, Ascii-Math, or math as you would write with a keyboard.
@@ -15,6 +20,9 @@ base class MathSolver extends CreativeWork {
   final Object? mathExpression;
 
   const MathSolver({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

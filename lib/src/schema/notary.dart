@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A notary.
 @Schema(description: r'''A notary.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Notary extends LegalService {
 
   const Notary({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

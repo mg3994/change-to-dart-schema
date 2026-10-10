@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// CreativeWorkSeries dedicated to radio broadcast and associated online delivery.
 @Schema(description: r'''CreativeWorkSeries dedicated to radio broadcast and associated online delivery.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class RadioSeries extends CreativeWorkSeries {
 
   /// An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -80,6 +85,9 @@ base class RadioSeries extends CreativeWorkSeries {
   final VideoObject? trailer;
 
   const RadioSeries({
+    super.id,
+    super.type,
+    super.context,
     super.endDate,
     super.issn,
     super.startDate,

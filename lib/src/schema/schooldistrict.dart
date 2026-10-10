@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A School District is an administrative area for the administration of schools.
 @Schema(description: r'''A School District is an administrative area for the administration of schools.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SchoolDistrict extends AdministrativeArea {
 
   const SchoolDistrict({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.address,
     super.aggregateRating,

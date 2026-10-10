@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Animal shelter.
 @Schema(description: r'''Animal shelter.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AnimalShelter extends LocalBusiness {
 
   const AnimalShelter({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

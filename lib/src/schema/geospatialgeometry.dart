@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// (Eventually to be defined as) a supertype of GeoShape designed to accommodate definitions from Geo-Spatial best practices.
 @Schema(description: r'''(Eventually to be defined as) a supertype of GeoShape designed to accommodate definitions from Geo-Spatial best practices.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class GeospatialGeometry extends Intangible {
 
   /// Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -60,6 +65,9 @@ base class GeospatialGeometry extends Intangible {
   final Object? geoWithin;
 
   const GeospatialGeometry({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

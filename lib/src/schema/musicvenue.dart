@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A music venue.
 @Schema(description: r'''A music venue.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MusicVenue extends CivicStructure {
 
   const MusicVenue({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

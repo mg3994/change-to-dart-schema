@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A DeliveryTimeSettings represents re-usable pieces of shipping information, relating to timing. It is designed for publication on an URL that may be referenced via the [[shippingSettingsLink]] property of an [[OfferShippingDetails]]. Several occurrences can be published, distinguished (and identified/referenced) by their different values for [[transitTimeLabel]].
 @Schema(description: r'''A DeliveryTimeSettings represents re-usable pieces of shipping information, relating to timing. It is designed for publication on an URL that may be referenced via the [[shippingSettingsLink]] property of an [[OfferShippingDetails]]. Several occurrences can be published, distinguished (and identified/referenced) by their different values for [[transitTimeLabel]].''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DeliveryTimeSettings extends StructuredValue {
 
   /// The total delay between the receipt of the order and the goods reaching the final customer.
@@ -30,6 +35,9 @@ base class DeliveryTimeSettings extends StructuredValue {
   final String? transitTimeLabel;
 
   const DeliveryTimeSettings({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

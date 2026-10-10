@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An EducationalAudience.
 @Schema(description: r'''An EducationalAudience.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class EducationalAudience extends Audience {
 
   /// An educationalRole of an EducationalAudience.
@@ -15,6 +20,9 @@ base class EducationalAudience extends Audience {
   final String? educationalRole;
 
   const EducationalAudience({
+    super.id,
+    super.type,
+    super.context,
     super.audienceType,
     super.geographicArea,
     super.additionalType,

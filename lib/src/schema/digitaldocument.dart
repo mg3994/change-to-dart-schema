@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An electronic file or document.
 @Schema(description: r'''An electronic file or document.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DigitalDocument extends CreativeWork {
 
   /// A permission related to the access to this document (e.g. permission to read or write an electronic document). For a public document, specify a grantee with an Audience with audienceType equal to "public".
@@ -15,6 +20,9 @@ base class DigitalDocument extends CreativeWork {
   final DigitalDocumentPermission? hasDigitalDocumentPermission;
 
   const DigitalDocument({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

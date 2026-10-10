@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The most generic kind of creative work, including books, movies, photographs, software programs, etc.
 @Schema(description: r'''The most generic kind of creative work, including books, movies, photographs, software programs, etc.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class CreativeWork extends Thing {
 
   /// The subject matter of an object.
@@ -656,6 +661,9 @@ This property can be used alongside the license property which indicates license
   final CreativeWork? workTranslation;
 
   const CreativeWork({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

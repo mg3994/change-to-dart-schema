@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A bus (also omnibus or autobus) is a road vehicle designed to carry passengers. Coaches are luxury buses, usually in service for long distance travel.
 @Schema(description: r'''A bus (also omnibus or autobus) is a road vehicle designed to carry passengers. Coaches are luxury buses, usually in service for long distance travel.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BusOrCoach extends Vehicle {
 
   /// The ACRISS Car Classification Code is a code used by many car rental companies, for classifying vehicles. ACRISS stands for Association of Car Rental Industry Systems and Standards.
@@ -26,6 +31,9 @@ base class BusOrCoach extends Vehicle {
   final QuantitativeValue? roofLoad;
 
   const BusOrCoach({
+    super.id,
+    super.type,
+    super.context,
     super.accelerationTime,
     super.bodyType,
     super.callSign,

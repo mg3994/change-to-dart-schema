@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A review created by an end-user (e.g. consumer, purchaser, attendee etc.), in contrast with [[CriticReview]].
 @Schema(description: r'''A review created by an end-user (e.g. consumer, purchaser, attendee etc.), in contrast with [[CriticReview]].''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class UserReview extends Review {
 
   const UserReview({
+    super.id,
+    super.type,
+    super.context,
     super.associatedClaimReview,
     super.associatedMediaReview,
     super.associatedReview,

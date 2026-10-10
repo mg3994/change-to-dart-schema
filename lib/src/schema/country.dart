@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A country.
 @Schema(description: r'''A country.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Country extends AdministrativeArea {
 
   const Country({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.address,
     super.aggregateRating,

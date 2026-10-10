@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
 @Schema(description: r'''UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class UserComments extends UserInteraction {
 
   /// The text of the UserComment.
@@ -35,6 +40,9 @@ base class UserComments extends UserInteraction {
   final String? replyToUrl;
 
   const UserComments({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.actor,
     super.aggregateRating,

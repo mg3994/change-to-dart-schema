@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A river (for example, the broad majestic Shannon).
 @Schema(description: r'''A river (for example, the broad majestic Shannon).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class RiverBodyOfWater extends BodyOfWater {
 
   const RiverBodyOfWater({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.address,
     super.aggregateRating,

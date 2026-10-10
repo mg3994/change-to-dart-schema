@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A structured value providing information about when a certain organization or person owned a certain product.
 @Schema(description: r'''A structured value providing information about when a certain organization or person owned a certain product.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class OwnershipInfo extends StructuredValue {
 
   /// The organization or person from which the product was acquired.
@@ -30,6 +35,9 @@ base class OwnershipInfo extends StructuredValue {
   final Object? typeOfGood;
 
   const OwnershipInfo({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

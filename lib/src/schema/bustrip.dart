@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A trip on a commercial bus line.
 @Schema(description: r'''A trip on a commercial bus line.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BusTrip extends Trip {
 
   /// The stop or station from which the bus arrives.
@@ -30,6 +35,9 @@ base class BusTrip extends Trip {
   final Object? departureBusStop;
 
   const BusTrip({
+    super.id,
+    super.type,
+    super.context,
     super.arrivalTime,
     super.departureTime,
     super.itinerary,

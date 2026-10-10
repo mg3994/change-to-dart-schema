@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of planning the execution of an event/task/action/reservation/plan to a future date.
 @Schema(description: r'''The act of planning the execution of an event/task/action/reservation/plan to a future date.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PlanAction extends OrganizeAction {
 
   /// The time the object is scheduled to.
@@ -15,6 +20,9 @@ base class PlanAction extends OrganizeAction {
   final Object? scheduledTime;
 
   const PlanAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

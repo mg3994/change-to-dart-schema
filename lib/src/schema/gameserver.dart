@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Server that provides game interaction in a multiplayer game.
 @Schema(description: r'''Server that provides game interaction in a multiplayer game.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class GameServer extends Intangible {
 
   /// Video game which is played on this server.
@@ -25,6 +30,9 @@ base class GameServer extends Intangible {
   final GameServerStatus? serverStatus;
 
   const GameServer({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

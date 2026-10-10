@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The frequency in MHz and the modulation used for a particular BroadcastService.
 @Schema(description: r'''The frequency in MHz and the modulation used for a particular BroadcastService.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BroadcastFrequencySpecification extends Intangible {
 
   /// The frequency in MHz for a particular broadcast.
@@ -25,6 +30,9 @@ base class BroadcastFrequencySpecification extends Intangible {
   final String? broadcastSubChannel;
 
   const BroadcastFrequencySpecification({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

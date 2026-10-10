@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An [[Article]] that an external entity has paid to place or to produce to its specifications. Includes [advertorials](https://en.wikipedia.org/wiki/Advertorial), sponsored content, native advertising and other paid content.
 @Schema(description: r'''An [[Article]] that an external entity has paid to place or to produce to its specifications. Includes [advertorials](https://en.wikipedia.org/wiki/Advertorial), sponsored content, native advertising and other paid content.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AdvertiserContentArticle extends Article {
 
   const AdvertiserContentArticle({
+    super.id,
+    super.type,
+    super.context,
     super.articleBody,
     super.articleSection,
     super.backstory,

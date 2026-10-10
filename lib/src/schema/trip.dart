@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A trip or journey. An itinerary of visits to one or more places.
 @Schema(description: r'''A trip or journey. An itinerary of visits to one or more places.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Trip extends Intangible {
 
   /// The expected arrival time.
@@ -52,6 +57,9 @@ base class Trip extends Intangible {
   final Place? tripOrigin;
 
   const Trip({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

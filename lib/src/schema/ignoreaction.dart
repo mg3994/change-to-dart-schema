@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of intentionally disregarding the object. An agent ignores an object.
 @Schema(description: r'''The act of intentionally disregarding the object. An agent ignores an object.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class IgnoreAction extends AssessAction {
 
   const IgnoreAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

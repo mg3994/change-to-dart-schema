@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A [[FAQPage]] is a [[WebPage]] presenting one or more "[Frequently asked questions](https://en.wikipedia.org/wiki/FAQ)" (see also [[QAPage]]).
 @Schema(description: r'''A [[FAQPage]] is a [[WebPage]] presenting one or more "[Frequently asked questions](https://en.wikipedia.org/wiki/FAQ)" (see also [[QAPage]]).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class FAQPage extends WebPage {
 
   const FAQPage({
+    super.id,
+    super.type,
+    super.context,
     super.breadcrumb,
     super.lastReviewed,
     super.mainContentOfPage,

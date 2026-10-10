@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Beach.
 @Schema(description: r'''Beach.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Beach extends CivicStructure {
 
   const Beach({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A specific dosing schedule for a drug or supplement.
 @Schema(description: r'''A specific dosing schedule for a drug or supplement.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DoseSchedule extends MedicalIntangible {
 
   /// The unit of the dose, e.g. 'mg'.
@@ -30,6 +35,9 @@ base class DoseSchedule extends MedicalIntangible {
   final String? targetPopulation;
 
   const DoseSchedule({
+    super.id,
+    super.type,
+    super.context,
     super.code,
     super.funding,
     super.guideline,

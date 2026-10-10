@@ -8,7 +8,12 @@ import '../../schemaorg.dart';
 ///
 /// Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
 @Schema(description: r'''A reservation for a rental car.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class RentalCarReservation extends Reservation {
 
   /// Where a rental car can be dropped off.
@@ -32,6 +37,9 @@ base class RentalCarReservation extends Reservation {
   final String? pickupTime;
 
   const RentalCarReservation({
+    super.id,
+    super.type,
+    super.context,
     super.bookingAgent,
     super.bookingTime,
     super.broker,

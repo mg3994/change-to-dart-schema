@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A permission for a particular person or group to access a particular file.
 @Schema(description: r'''A permission for a particular person or group to access a particular file.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DigitalDocumentPermission extends Intangible {
 
   /// The person, organization, contact point, or audience that has been granted this permission.
@@ -20,6 +25,9 @@ base class DigitalDocumentPermission extends Intangible {
   final DigitalDocumentPermissionType? permissionType;
 
   const DigitalDocumentPermission({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A Declaration of Conformity (DoC), a formal document issued by a manufacturer declaring that a product meets specific regulatory requirements.
 @Schema(description: r'''A Declaration of Conformity (DoC), a formal document issued by a manufacturer declaring that a product meets specific regulatory requirements.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DeclarationOfConformity extends Certification {
 
   const DeclarationOfConformity({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.auditDate,
     super.certificationIdentification,

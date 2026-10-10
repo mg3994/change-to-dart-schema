@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Representation of an Error.
 @Schema(description: r'''Representation of an Error.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Error extends InstantaneousEvent {
 
   /// Application or platform dependant error code.
@@ -15,6 +20,9 @@ base class Error extends InstantaneousEvent {
   final Object? errorCode;
 
   const Error({
+    super.id,
+    super.type,
+    super.context,
     super.data,
     super.source,
     super.timestamp,

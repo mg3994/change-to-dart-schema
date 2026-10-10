@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A day spa.
 @Schema(description: r'''A day spa.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DaySpa extends HealthAndBeautyBusiness {
 
   const DaySpa({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

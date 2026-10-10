@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A store that sells materials useful or necessary for various hobbies.
 @Schema(description: r'''A store that sells materials useful or necessary for various hobbies.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class HobbyShop extends Store {
 
   const HobbyShop({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

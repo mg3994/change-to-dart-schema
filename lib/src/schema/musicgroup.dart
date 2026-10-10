@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.
 @Schema(description: r'''A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MusicGroup extends PerformingGroup {
 
   /// A music album.
@@ -40,6 +45,9 @@ base class MusicGroup extends PerformingGroup {
   final MusicRecording? tracks;
 
   const MusicGroup({
+    super.id,
+    super.type,
+    super.context,
     super.acceptedPaymentMethod,
     super.actionableFeedbackPolicy,
     super.address,

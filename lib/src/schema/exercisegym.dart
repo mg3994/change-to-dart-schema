@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A gym.
 @Schema(description: r'''A gym.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ExerciseGym extends SportsActivityLocation {
 
   const ExerciseGym({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

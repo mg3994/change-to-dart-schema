@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of being defeated in a competitive activity.
 @Schema(description: r'''The act of being defeated in a competitive activity.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class LoseAction extends AchieveAction {
 
   /// A sub property of participant. The winner of the action.
@@ -15,6 +20,9 @@ base class LoseAction extends AchieveAction {
   final Person? winner;
 
   const LoseAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

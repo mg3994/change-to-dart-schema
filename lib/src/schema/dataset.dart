@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A body of structured information describing some topic(s) of interest.
 @Schema(description: r'''A body of structured information describing some topic(s) of interest.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Dataset extends CreativeWork {
 
   /// A data catalog which contains this dataset.
@@ -67,6 +72,9 @@ If there are several [[variableMeasured]] properties recorded for some given dat
   final Object? variableMeasured;
 
   const Dataset({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

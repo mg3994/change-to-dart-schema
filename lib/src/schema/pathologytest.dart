@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A medical test performed by a laboratory that typically involves examination of a tissue sample by a pathologist.
 @Schema(description: r'''A medical test performed by a laboratory that typically involves examination of a tissue sample by a pathologist.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PathologyTest extends MedicalTest {
 
   /// The type of tissue sample required for the test.
@@ -15,6 +20,9 @@ base class PathologyTest extends MedicalTest {
   final String? tissueSample;
 
   const PathologyTest({
+    super.id,
+    super.type,
+    super.context,
     super.affectedBy,
     super.normalRange,
     super.signDetected,

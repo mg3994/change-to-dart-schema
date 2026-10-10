@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// All or part of a [[Dataset]] in downloadable form.
 @Schema(description: r'''All or part of a [[Dataset]] in downloadable form. ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DataDownload extends MediaObject {
 
   /// A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
@@ -32,6 +37,9 @@ If there are several [[variableMeasured]] properties recorded for some given dat
   final Object? measurementTechnique;
 
   const DataDownload({
+    super.id,
+    super.type,
+    super.context,
     super.associatedArticle,
     super.bitrate,
     super.contentSize,

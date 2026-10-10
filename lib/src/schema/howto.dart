@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Instructions that explain how to achieve a result by performing a sequence of steps.
 @Schema(description: r'''Instructions that explain how to achieve a result by performing a sequence of steps.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class HowTo extends CreativeWork {
 
   /// The estimated cost of the supply or supplies consumed when performing instructions.
@@ -55,6 +60,9 @@ base class HowTo extends CreativeWork {
   final Object? yieldValue;
 
   const HowTo({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

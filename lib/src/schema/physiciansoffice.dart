@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A doctor's office or clinic.
 @Schema(description: r'''A doctor's office or clinic.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PhysiciansOffice extends Physician {
 
   const PhysiciansOffice({
+    super.id,
+    super.type,
+    super.context,
     super.availableService,
     super.hospitalAffiliation,
     super.medicalSpecialty,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of expressing a negative sentiment about the object. An agent dislikes an object (a proposition, topic or theme) with participants.
 @Schema(description: r'''The act of expressing a negative sentiment about the object. An agent dislikes an object (a proposition, topic or theme) with participants.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DislikeAction extends ReactAction {
 
   const DislikeAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of  departing from a place. An agent departs from a fromLocation for a destination, optionally with participants.
 @Schema(description: r'''The act of  departing from a place. An agent departs from a fromLocation for a destination, optionally with participants.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DepartAction extends MoveAction {
 
   const DepartAction({
+    super.id,
+    super.type,
+    super.context,
     super.fromLocation,
     super.toLocation,
     super.actionProcess,

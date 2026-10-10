@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A dance group&#x2014;for example, the Alvin Ailey Dance Theater or Riverdance.
 @Schema(description: r'''A dance group&#x2014;for example, the Alvin Ailey Dance Theater or Riverdance.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DanceGroup extends PerformingGroup {
 
   const DanceGroup({
+    super.id,
+    super.type,
+    super.context,
     super.acceptedPaymentMethod,
     super.actionableFeedbackPolicy,
     super.address,

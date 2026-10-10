@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A nightclub or discotheque.
 @Schema(description: r'''A nightclub or discotheque.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class NightClub extends EntertainmentBusiness {
 
   const NightClub({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A US-style health insurance plan network.
 @Schema(description: r'''A US-style health insurance plan network.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class HealthPlanNetwork extends Intangible {
 
   /// The costs to the patient for services under this network or formulary.
@@ -25,6 +30,9 @@ base class HealthPlanNetwork extends Intangible {
   final String? healthPlanNetworkTier;
 
   const HealthPlanNetwork({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

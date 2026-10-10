@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A product taken by mouth that contains a dietary ingredient intended to supplement the diet. Dietary ingredients may include vitamins, minerals, herbs or other botanicals, amino acids, and substances such as enzymes, organ tissues, glandulars and metabolites.
 @Schema(description: r'''A product taken by mouth that contains a dietary ingredient intended to supplement the diet. Dietary ingredients may include vitamins, minerals, herbs or other botanicals, amino acids, and substances such as enzymes, organ tissues, glandulars and metabolites.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DietarySupplement extends Product {
 
   /// An active ingredient, typically chemical compounds and/or biologic substances.
@@ -60,6 +65,9 @@ base class DietarySupplement extends Product {
   final String? targetPopulation;
 
   const DietarySupplement({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.aggregateRating,
     super.asin,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A media season, e.g. TV, radio, video game etc.
 @Schema(description: r'''A media season, e.g. TV, radio, video game etc.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Season extends CreativeWork {
 
   const Season({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A facility, often associated with a hospital or medical school, that is devoted to the specific diagnosis and/or healthcare. Previously limited to outpatients but with evolution it may be open to inpatients as well.
 @Schema(description: r'''A facility, often associated with a hospital or medical school, that is devoted to the specific diagnosis and/or healthcare. Previously limited to outpatients but with evolution it may be open to inpatients as well.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MedicalClinic extends MedicalBusiness {
 
   /// A medical service available from this provider.
@@ -20,6 +25,9 @@ base class MedicalClinic extends MedicalBusiness {
   final MedicalSpecialty? medicalSpecialty;
 
   const MedicalClinic({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

@@ -10,7 +10,12 @@ import '../../schemaorg.dart';
 ///
 @Schema(description: r'''A property-value pair, e.g. representing a feature of a product or place. Use the 'name' property for the name of the property. If there is an additional human-readable version of the value, put that into the 'description' property.\n\n Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.
     ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PropertyValue extends StructuredValue {
 
   /// The upper value of some characteristic or property.
@@ -89,6 +94,9 @@ Standards bodies should promote a standard prefix for the identifiers of propert
   final Object? valueReference;
 
   const PropertyValue({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

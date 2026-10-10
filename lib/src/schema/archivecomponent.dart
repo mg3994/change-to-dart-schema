@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An intangible type to be applied to any archive content, carrying with it a set of properties required to describe archival items and collections.
 @Schema(description: r'''An intangible type to be applied to any archive content, carrying with it a set of properties required to describe archival items and collections.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ArchiveComponent extends CreativeWork {
 
   /// [[ArchiveOrganization]] that holds, keeps or maintains the [[ArchiveComponent]].
@@ -20,6 +25,9 @@ base class ArchiveComponent extends CreativeWork {
   final Object? itemLocation;
 
   const ArchiveComponent({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

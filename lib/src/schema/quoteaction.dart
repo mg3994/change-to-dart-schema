@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An agent quotes/estimates/appraises an object/product/service with a price at a location/store.
 @Schema(description: r'''An agent quotes/estimates/appraises an object/product/service with a price at a location/store.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class QuoteAction extends TradeAction {
 
   const QuoteAction({
+    super.id,
+    super.type,
+    super.context,
     super.price,
     super.priceCurrency,
     super.priceSpecification,

@@ -12,10 +12,18 @@ import '../../schemaorg.dart';
   [[businessFunction]] is [lease out](http://purl.org/goodrelations/v1#LeaseOut.). See [Good Relations](https://en.wikipedia.org/wiki/GoodRelations) for
   background on the underlying concepts.
   ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class OfferForLease extends Offer {
 
   const OfferForLease({
+    super.id,
+    super.type,
+    super.context,
     super.acceptedPaymentMethod,
     super.addOn,
     super.additionalProperty,

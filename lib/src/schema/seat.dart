@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Used to describe a seat, such as a reserved seat in an event reservation.
 @Schema(description: r'''Used to describe a seat, such as a reserved seat in an event reservation.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Seat extends Intangible {
 
   /// The location of the reserved seat (e.g., 27).
@@ -30,6 +35,9 @@ base class Seat extends Intangible {
   final Object? seatingType;
 
   const Seat({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

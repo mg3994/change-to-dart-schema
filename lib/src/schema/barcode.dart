@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An image of a visual machine-readable code such as a barcode or QR code.
 @Schema(description: r'''An image of a visual machine-readable code such as a barcode or QR code.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Barcode extends ImageObject {
 
   const Barcode({
+    super.id,
+    super.type,
+    super.context,
     super.caption,
     super.embeddedTextCaption,
     super.exifData,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A recycling center.
 @Schema(description: r'''A recycling center.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class RecyclingCenter extends LocalBusiness {
 
   const RecyclingCenter({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

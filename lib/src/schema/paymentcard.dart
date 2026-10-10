@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A payment method using a credit, debit, store or other card to associate the payment with an account.
 @Schema(description: r'''A payment method using a credit, debit, store or other card to associate the payment with an account.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PaymentCard extends FinancialProduct {
 
   /// A cardholder benefit that pays the cardholder a small percentage of their net expenditures.
@@ -30,6 +35,9 @@ base class PaymentCard extends FinancialProduct {
   final Object? monthlyMinimumRepaymentAmount;
 
   const PaymentCard({
+    super.id,
+    super.type,
+    super.context,
     super.annualPercentageRate,
     super.feesAndCommissionsSpecification,
     super.interestRate,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A retail good store.
 @Schema(description: r'''A retail good store.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Store extends LocalBusiness {
 
   const Store({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

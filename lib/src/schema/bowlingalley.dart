@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A bowling alley.
 @Schema(description: r'''A bowling alley.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BowlingAlley extends SportsActivityLocation {
 
   const BowlingAlley({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

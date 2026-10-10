@@ -14,7 +14,12 @@ import '../../schemaorg.dart';
 @Schema(description: r'''A structured value providing information about the opening hours of a place or a certain service inside a place.\n\n
 The place is __open__ if the [[opens]] property is specified, and __closed__ otherwise.\n\nIf the value for the [[closes]] property is less than the value for the [[opens]] property then the hour range is assumed to span over the next day.
       ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class OpeningHoursSpecification extends StructuredValue {
 
   /// The closing hour of the place or service on the given day(s) of the week.
@@ -43,6 +48,9 @@ base class OpeningHoursSpecification extends StructuredValue {
   final Object? validThrough;
 
   const OpeningHoursSpecification({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

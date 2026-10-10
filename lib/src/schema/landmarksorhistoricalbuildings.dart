@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An historical landmark or building.
 @Schema(description: r'''An historical landmark or building.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class LandmarksOrHistoricalBuildings extends Place {
 
   const LandmarksOrHistoricalBuildings({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.address,
     super.aggregateRating,

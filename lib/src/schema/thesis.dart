@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A thesis or dissertation document submitted in support of candidature for an academic degree or professional qualification.
 @Schema(description: r'''A thesis or dissertation document submitted in support of candidature for an academic degree or professional qualification.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Thesis extends CreativeWork {
 
   /// Qualification, candidature, degree, application that Thesis supports.
@@ -15,6 +20,9 @@ base class Thesis extends CreativeWork {
   final String? inSupportOf;
 
   const Thesis({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

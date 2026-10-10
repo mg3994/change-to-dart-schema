@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A fact-checking review of claims made (or reported) in some creative work (referenced via itemReviewed).
 @Schema(description: r'''A fact-checking review of claims made (or reported) in some creative work (referenced via itemReviewed).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ClaimReview extends Review {
 
   /// A short summary of the specific claims reviewed in a ClaimReview.
@@ -15,6 +20,9 @@ base class ClaimReview extends Review {
   final String? claimReviewed;
 
   const ClaimReview({
+    super.id,
+    super.type,
+    super.context,
     super.associatedClaimReview,
     super.associatedMediaReview,
     super.associatedReview,

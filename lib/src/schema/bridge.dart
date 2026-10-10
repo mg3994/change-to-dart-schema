@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A bridge.
 @Schema(description: r'''A bridge.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Bridge extends CivicStructure {
 
   const Bridge({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

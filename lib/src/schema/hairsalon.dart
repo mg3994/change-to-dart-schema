@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A hair salon.
 @Schema(description: r'''A hair salon.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class HairSalon extends HealthAndBeautyBusiness {
 
   const HairSalon({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

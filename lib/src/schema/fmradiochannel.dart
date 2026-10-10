@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A radio channel that uses FM.
 @Schema(description: r'''A radio channel that uses FM.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class FMRadioChannel extends RadioChannel {
 
   const FMRadioChannel({
+    super.id,
+    super.type,
+    super.context,
     super.broadcastChannelId,
     super.broadcastFrequency,
     super.broadcastServiceTier,

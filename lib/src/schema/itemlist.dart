@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A list of items of any sort&#x2014;for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting.
 @Schema(description: r'''A list of items of any sort&#x2014;for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ItemList extends Intangible {
 
   /// Indicates a prototype of the elements in the list that is used to hold aggregate information (ratings, offers, etc.).
@@ -34,6 +39,9 @@ base class ItemList extends Intangible {
   final int? numberOfItems;
 
   const ItemList({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

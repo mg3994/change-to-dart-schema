@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A terminal for boats, ships, and other water vessels.
 @Schema(description: r'''A terminal for boats, ships, and other water vessels.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BoatTerminal extends CivicStructure {
 
   const BoatTerminal({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

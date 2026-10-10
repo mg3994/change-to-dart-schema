@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A stage of a medical condition, such as 'Stage IIIa'.
 @Schema(description: r'''A stage of a medical condition, such as 'Stage IIIa'.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MedicalConditionStage extends MedicalIntangible {
 
   /// The stage represented as a number, e.g. 3.
@@ -20,6 +25,9 @@ base class MedicalConditionStage extends MedicalIntangible {
   final String? subStageSuffix;
 
   const MedicalConditionStage({
+    super.id,
+    super.type,
+    super.context,
     super.code,
     super.funding,
     super.guideline,

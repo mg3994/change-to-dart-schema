@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An internet cafe.
 @Schema(description: r'''An internet cafe.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class InternetCafe extends LocalBusiness {
 
   const InternetCafe({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

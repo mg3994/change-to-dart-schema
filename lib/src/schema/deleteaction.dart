@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of editing a recipient by removing one of its objects.
 @Schema(description: r'''The act of editing a recipient by removing one of its objects.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DeleteAction extends UpdateAction {
 
   const DeleteAction({
+    super.id,
+    super.type,
+    super.context,
     super.collection,
     super.targetCollection,
     super.actionProcess,

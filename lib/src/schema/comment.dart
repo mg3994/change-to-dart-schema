@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks.
 @Schema(description: r'''A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Comment extends CreativeWork {
 
   /// The number of downvotes this question, answer or comment has received from the community.
@@ -30,6 +35,9 @@ base class Comment extends CreativeWork {
   final int? upvoteCount;
 
   const Comment({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

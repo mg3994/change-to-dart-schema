@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// System software that manages computer hardware and software resources, and provides common services for computer programs.
 @Schema(description: r'''System software that manages computer hardware and software resources, and provides common services for computer programs.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class OperatingSystem extends SoftwareApplication {
 
   const OperatingSystem({
+    super.id,
+    super.type,
+    super.context,
     super.applicationCategory,
     super.applicationSubCategory,
     super.applicationSuite,

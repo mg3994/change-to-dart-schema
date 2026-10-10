@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A type of financial product that typically requires the client to transfer funds to a financial service in return for potential beneficial financial return.
 @Schema(description: r'''A type of financial product that typically requires the client to transfer funds to a financial service in return for potential beneficial financial return.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class InvestmentOrDeposit extends FinancialProduct {
 
   /// The amount of money.
@@ -15,6 +20,9 @@ base class InvestmentOrDeposit extends FinancialProduct {
   final Object? amount;
 
   const InvestmentOrDeposit({
+    super.id,
+    super.type,
+    super.context,
     super.annualPercentageRate,
     super.feesAndCommissionsSpecification,
     super.interestRate,

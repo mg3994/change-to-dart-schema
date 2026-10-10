@@ -10,7 +10,12 @@ import '../../schemaorg.dart';
 ///
 /// * [[ReplyAction]]: Appears generally as a response to AskAction.
 @Schema(description: r'''The act of posing a question / favor to someone.\n\nRelated actions:\n\n* [[ReplyAction]]: Appears generally as a response to AskAction.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AskAction extends CommunicateAction {
 
   /// A sub property of object. A question.
@@ -19,6 +24,9 @@ base class AskAction extends CommunicateAction {
   final Question? question;
 
   const AskAction({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.inLanguage,
     super.language,

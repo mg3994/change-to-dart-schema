@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A monetary grant.
 @Schema(description: r'''A monetary grant.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MonetaryGrant extends Grant {
 
   /// The amount of money.
@@ -20,6 +25,9 @@ base class MonetaryGrant extends Grant {
   final Object? funder;
 
   const MonetaryGrant({
+    super.id,
+    super.type,
+    super.context,
     super.fundedItem,
     super.sponsor,
     super.additionalType,

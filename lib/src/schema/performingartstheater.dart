@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A theater or other performing art center.
 @Schema(description: r'''A theater or other performing art center.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PerformingArtsTheater extends CivicStructure {
 
   const PerformingArtsTheater({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

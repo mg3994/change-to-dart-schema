@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A collection of datasets.
 @Schema(description: r'''A collection of datasets.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DataCatalog extends CreativeWork {
 
   /// A dataset contained in this catalog.
@@ -37,6 +42,9 @@ If there are several [[variableMeasured]] properties recorded for some given dat
   final Object? measurementTechnique;
 
   const DataCatalog({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

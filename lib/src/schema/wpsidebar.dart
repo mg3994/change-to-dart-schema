@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A sidebar section of the page.
 @Schema(description: r'''A sidebar section of the page.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class WPSideBar extends WebPageElement {
 
   const WPSideBar({
+    super.id,
+    super.type,
+    super.context,
     super.cssSelector,
     super.xpath,
     super.about,

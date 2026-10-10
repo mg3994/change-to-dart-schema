@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A set of characteristics belonging to businesses, e.g. who compose an item's target audience.
 @Schema(description: r'''A set of characteristics belonging to businesses, e.g. who compose an item's target audience.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BusinessAudience extends Audience {
 
   /// The number of employees in an organization, e.g. business.
@@ -25,6 +30,9 @@ base class BusinessAudience extends Audience {
   final QuantitativeValue? yearsInOperation;
 
   const BusinessAudience({
+    super.id,
+    super.type,
+    super.context,
     super.audienceType,
     super.geographicArea,
     super.additionalType,

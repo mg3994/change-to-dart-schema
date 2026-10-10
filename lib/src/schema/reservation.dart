@@ -8,7 +8,12 @@ import '../../schemaorg.dart';
 ///
 /// Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]].
 @Schema(description: r'''Describes a reservation for travel, dining or an event. Some reservations require tickets. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]].''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Reservation extends Intangible {
 
   /// 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
@@ -84,6 +89,9 @@ base class Reservation extends Intangible {
   final Object? underName;
 
   const Reservation({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

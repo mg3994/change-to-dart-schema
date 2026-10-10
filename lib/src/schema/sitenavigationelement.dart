@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A navigation element of the page.
 @Schema(description: r'''A navigation element of the page.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SiteNavigationElement extends WebPageElement {
 
   const SiteNavigationElement({
+    super.id,
+    super.type,
+    super.context,
     super.cssSelector,
     super.xpath,
     super.about,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A service provided by an organization, e.g. delivery service, print services, etc.
 @Schema(description: r'''A service provided by an organization, e.g. delivery service, print services, etc.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Service extends Intangible {
 
   /// The overall rating, based on a collection of reviews or ratings, of the item.
@@ -137,6 +142,9 @@ base class Service extends Intangible {
   final Object? termsOfService;
 
   const Service({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

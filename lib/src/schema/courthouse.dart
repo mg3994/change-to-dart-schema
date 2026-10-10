@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A courthouse.
 @Schema(description: r'''A courthouse.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Courthouse extends GovernmentBuilding {
 
   const Courthouse({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

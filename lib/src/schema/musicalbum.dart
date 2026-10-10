@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A collection of music tracks.
 @Schema(description: r'''A collection of music tracks.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MusicAlbum extends MusicPlaylist {
 
   /// Classification of the album by its type of content: soundtrack, live album, studio album, etc.
@@ -30,6 +35,9 @@ base class MusicAlbum extends MusicPlaylist {
   final Object? byArtist;
 
   const MusicAlbum({
+    super.id,
+    super.type,
+    super.context,
     super.numTracks,
     super.track,
     super.tracks,

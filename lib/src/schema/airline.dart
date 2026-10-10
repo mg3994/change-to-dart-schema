@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An organization that provides flights for passengers.
 @Schema(description: r'''An organization that provides flights for passengers.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Airline extends Organization {
 
   /// The type of boarding policy used by the airline (e.g. zone-based or group-based).
@@ -20,6 +25,9 @@ base class Airline extends Organization {
   final String? iataCode;
 
   const Airline({
+    super.id,
+    super.type,
+    super.context,
     super.acceptedPaymentMethod,
     super.actionableFeedbackPolicy,
     super.address,

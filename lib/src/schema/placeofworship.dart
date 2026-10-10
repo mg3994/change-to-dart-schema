@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Place of worship, such as a church, synagogue, or mosque.
 @Schema(description: r'''Place of worship, such as a church, synagogue, or mosque.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PlaceOfWorship extends CivicStructure {
 
   const PlaceOfWorship({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

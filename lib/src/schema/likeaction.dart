@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of expressing a positive sentiment about the object. An agent likes an object (a proposition, topic or theme) with participants.
 @Schema(description: r'''The act of expressing a positive sentiment about the object. An agent likes an object (a proposition, topic or theme) with participants.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class LikeAction extends ReactAction {
 
   const LikeAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

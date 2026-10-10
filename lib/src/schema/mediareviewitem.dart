@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Represents an item or group of closely related items treated as a unit for the sake of evaluation in a [[MediaReview]]. Authorship etc. apply to the items rather than to the curation/grouping or reviewing party.
 @Schema(description: r'''Represents an item or group of closely related items treated as a unit for the sake of evaluation in a [[MediaReview]]. Authorship etc. apply to the items rather than to the curation/grouping or reviewing party.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MediaReviewItem extends CreativeWork {
 
   /// In the context of a [[MediaReview]], indicates specific media item(s) that are grouped using a [[MediaReviewItem]].
@@ -15,6 +20,9 @@ base class MediaReviewItem extends CreativeWork {
   final MediaObject? mediaItemAppearance;
 
   const MediaReviewItem({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

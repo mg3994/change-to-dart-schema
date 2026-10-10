@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A shop that will buy, or lend money against the security of, personal possessions.
 @Schema(description: r'''A shop that will buy, or lend money against the security of, personal possessions.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PawnShop extends Store {
 
   const PawnShop({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

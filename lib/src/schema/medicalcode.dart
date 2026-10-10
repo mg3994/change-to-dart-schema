@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A code for a medical entity.
 @Schema(description: r'''A code for a medical entity.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MedicalCode extends CategoryCode {
 
   /// A short textual code that uniquely identifies the value.
@@ -20,6 +25,9 @@ base class MedicalCode extends CategoryCode {
   final String? codingSystem;
 
   const MedicalCode({
+    super.id,
+    super.type,
+    super.context,
     super.inCodeSet,
     super.about,
     super.inDefinedTermSet,

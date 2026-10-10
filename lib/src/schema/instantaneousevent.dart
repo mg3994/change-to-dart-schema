@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An event with no duration, like for instance a computer log entry.
 @Schema(description: r'''An event with no duration, like for instance a computer log entry.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class InstantaneousEvent extends StructuredValue {
 
   /// Data associated with the event, like for instance a log message.
@@ -25,6 +30,9 @@ base class InstantaneousEvent extends StructuredValue {
   final String? timestamp;
 
   const InstantaneousEvent({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

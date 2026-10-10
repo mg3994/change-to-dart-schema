@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A business that provides Heating, Ventilation and Air Conditioning services.
 @Schema(description: r'''A business that provides Heating, Ventilation and Air Conditioning services.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class HVACBusiness extends HomeAndConstructionBusiness {
 
   const HVACBusiness({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

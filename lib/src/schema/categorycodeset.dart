@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A set of Category Code values.
 @Schema(description: r'''A set of Category Code values.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class CategoryCodeSet extends DefinedTermSet {
 
   /// A Category code contained in this code set.
@@ -15,6 +20,9 @@ base class CategoryCodeSet extends DefinedTermSet {
   final CategoryCode? hasCategoryCode;
 
   const CategoryCodeSet({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.hasDefinedTerm,
     super.abstractValue,

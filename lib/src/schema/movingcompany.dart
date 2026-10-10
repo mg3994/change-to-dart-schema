@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A moving company.
 @Schema(description: r'''A moving company.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MovingCompany extends HomeAndConstructionBusiness {
 
   const MovingCompany({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

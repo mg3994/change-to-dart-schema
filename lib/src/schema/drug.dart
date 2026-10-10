@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A chemical or biologic substance, used as a medical therapy, that has a physiological effect on an organism. Here the term drug is used interchangeably with the term medicine although clinical knowledge makes a clear difference between them.
 @Schema(description: r'''A chemical or biologic substance, used as a medical therapy, that has a physiological effect on an organism. Here the term drug is used interchangeably with the term medicine although clinical knowledge makes a clear difference between them.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Drug extends Product {
 
   /// An active ingredient, typically chemical compounds and/or biologic substances.
@@ -160,6 +165,9 @@ base class Drug extends Product {
   final Object? warning;
 
   const Drug({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.aggregateRating,
     super.asin,

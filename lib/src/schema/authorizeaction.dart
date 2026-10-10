@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of granting permission to an object.
 @Schema(description: r'''The act of granting permission to an object.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AuthorizeAction extends AllocateAction {
 
   /// A sub property of participant. The participant who is at the receiving end of the action.
@@ -15,6 +20,9 @@ base class AuthorizeAction extends AllocateAction {
   final Object? recipient;
 
   const AuthorizeAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

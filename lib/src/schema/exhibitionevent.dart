@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Event type: Exhibition event, e.g. at a museum, library, archive, tradeshow, ...
 @Schema(description: r'''Event type: Exhibition event, e.g. at a museum, library, archive, tradeshow, ...''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ExhibitionEvent extends Event {
 
   const ExhibitionEvent({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.actor,
     super.aggregateRating,

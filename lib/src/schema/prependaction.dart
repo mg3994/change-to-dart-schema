@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of inserting at the beginning if an ordered collection.
 @Schema(description: r'''The act of inserting at the beginning if an ordered collection.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PrependAction extends InsertAction {
 
   const PrependAction({
+    super.id,
+    super.type,
+    super.context,
     super.toLocation,
     super.collection,
     super.targetCollection,

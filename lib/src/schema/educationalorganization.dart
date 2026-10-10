@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An educational organization.
 @Schema(description: r'''An educational organization.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class EducationalOrganization extends CivicStructure {
 
   /// Alumni of an organization.
@@ -15,6 +20,9 @@ base class EducationalOrganization extends CivicStructure {
   final Person? alumni;
 
   const EducationalOrganization({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

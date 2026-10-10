@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A set of organisms asserted to represent a natural cohesive biological unit.
 @Schema(description: r'''A set of organisms asserted to represent a natural cohesive biological unit.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Taxon extends Thing {
 
   /// Closest child taxa of the taxon in question.
@@ -30,6 +35,9 @@ base class Taxon extends Thing {
   final Object? taxonRank;
 
   const Taxon({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

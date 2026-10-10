@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document.
 @Schema(description: r'''A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Question extends Comment {
 
   /// The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
@@ -35,6 +40,9 @@ base class Question extends Comment {
   final Object? suggestedAnswer;
 
   const Question({
+    super.id,
+    super.type,
+    super.context,
     super.downvoteCount,
     super.sharedContent,
     super.upvoteCount,

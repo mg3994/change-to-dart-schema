@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A structured value representing repayment.
 @Schema(description: r'''A structured value representing repayment.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class RepaymentSpecification extends StructuredValue {
 
   /// a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
@@ -35,6 +40,9 @@ base class RepaymentSpecification extends StructuredValue {
   final num? numberOfLoanPayments;
 
   const RepaymentSpecification({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

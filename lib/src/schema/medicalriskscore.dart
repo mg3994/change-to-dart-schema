@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A simple system that adds up the number of risk factors to yield a score that is associated with prognosis, e.g. CHAD score, TIMI risk score.
 @Schema(description: r'''A simple system that adds up the number of risk factors to yield a score that is associated with prognosis, e.g. CHAD score, TIMI risk score.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MedicalRiskScore extends MedicalRiskEstimator {
 
   /// The algorithm or rules to follow to compute the score.
@@ -15,6 +20,9 @@ base class MedicalRiskScore extends MedicalRiskEstimator {
   final String? algorithm;
 
   const MedicalRiskScore({
+    super.id,
+    super.type,
+    super.context,
     super.estimatesRiskOf,
     super.includedRiskFactor,
     super.code,

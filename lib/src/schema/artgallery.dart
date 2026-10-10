@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An art gallery.
 @Schema(description: r'''An art gallery.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ArtGallery extends EntertainmentBusiness {
 
   const ArtGallery({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

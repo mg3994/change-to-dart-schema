@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An OfferCatalog is an ItemList that contains related Offers and/or further OfferCatalogs that are offeredBy the same provider.
 @Schema(description: r'''An OfferCatalog is an ItemList that contains related Offers and/or further OfferCatalogs that are offeredBy the same provider.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class OfferCatalog extends ItemList {
 
   const OfferCatalog({
+    super.id,
+    super.type,
+    super.context,
     super.aggregateElement,
     super.itemListElement,
     super.itemListOrder,

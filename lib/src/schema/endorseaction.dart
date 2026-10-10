@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An agent approves/certifies/likes/supports/sanctions an object.
 @Schema(description: r'''An agent approves/certifies/likes/supports/sanctions an object.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class EndorseAction extends ReactAction {
 
   /// A sub property of participant. The person/organization being supported.
@@ -15,6 +20,9 @@ base class EndorseAction extends ReactAction {
   final Object? endorsee;
 
   const EndorseAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

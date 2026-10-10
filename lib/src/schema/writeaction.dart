@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of authoring written creative content.
 @Schema(description: r'''The act of authoring written creative content.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class WriteAction extends CreateAction {
 
   /// The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -20,6 +25,9 @@ base class WriteAction extends CreateAction {
   final Language? language;
 
   const WriteAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A large, usually printed placard, bill, or announcement, often illustrated, that is posted to advertise or publicize something.
 @Schema(description: r'''A large, usually printed placard, bill, or announcement, often illustrated, that is posted to advertise or publicize something.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Poster extends CreativeWork {
 
   const Poster({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

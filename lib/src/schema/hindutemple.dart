@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A Hindu temple.
 @Schema(description: r'''A Hindu temple.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class HinduTemple extends PlaceOfWorship {
 
   const HinduTemple({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

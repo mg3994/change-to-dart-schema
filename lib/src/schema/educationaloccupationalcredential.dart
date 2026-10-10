@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An educational or occupational credential. A diploma, academic degree, certification, qualification, badge, etc., that may be awarded to a person or other entity that meets the requirements defined by the credentialer.
 @Schema(description: r'''An educational or occupational credential. A diploma, academic degree, certification, qualification, badge, etc., that may be awarded to a person or other entity that meets the requirements defined by the credentialer.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class EducationalOccupationalCredential extends Credential {
 
   /// Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
@@ -20,6 +25,9 @@ base class EducationalOccupationalCredential extends Credential {
   final Object? educationalLevel;
 
   const EducationalOccupationalCredential({
+    super.id,
+    super.type,
+    super.context,
     super.credentialCategory,
     super.recognizedBy,
     super.validFor,

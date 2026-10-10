@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of ingesting information/resources/food.
 @Schema(description: r'''The act of ingesting information/resources/food.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ConsumeAction extends Action {
 
   /// A set of requirements that must be fulfilled in order to perform an Action. If more than one value is specified, fulfilling one set of requirements will allow the Action to be performed.
@@ -20,6 +25,9 @@ base class ConsumeAction extends Action {
   final Offer? expectsAcceptanceOf;
 
   const ConsumeAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of giving money voluntarily to a beneficiary in recognition of services rendered.
 @Schema(description: r'''The act of giving money voluntarily to a beneficiary in recognition of services rendered.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class TipAction extends TradeAction {
 
   /// A sub property of participant. The participant who is at the receiving end of the action.
@@ -15,6 +20,9 @@ base class TipAction extends TradeAction {
   final Object? recipient;
 
   const TipAction({
+    super.id,
+    super.type,
+    super.context,
     super.price,
     super.priceCurrency,
     super.priceSpecification,

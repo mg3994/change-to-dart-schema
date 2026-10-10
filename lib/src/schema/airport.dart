@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An airport.
 @Schema(description: r'''An airport.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Airport extends CivicStructure {
 
   /// IATA identifier for an airline or airport.
@@ -20,6 +25,9 @@ base class Airport extends CivicStructure {
   final String? icaoCode;
 
   const Airport({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

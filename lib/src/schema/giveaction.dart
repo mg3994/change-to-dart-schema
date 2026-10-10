@@ -11,7 +11,12 @@ import '../../schemaorg.dart';
 /// * [[TakeAction]]: Reciprocal of GiveAction.
 /// * [[SendAction]]: Unlike SendAction, GiveAction implies that ownership is being transferred (e.g. I may send my laptop to you, but that doesn't mean I'm giving it to you).
 @Schema(description: r'''The act of transferring ownership of an object to a destination. Reciprocal of TakeAction.\n\nRelated actions:\n\n* [[TakeAction]]: Reciprocal of GiveAction.\n* [[SendAction]]: Unlike SendAction, GiveAction implies that ownership is being transferred (e.g. I may send my laptop to you, but that doesn't mean I'm giving it to you).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class GiveAction extends TransferAction {
 
   /// A sub property of participant. The participant who is at the receiving end of the action.
@@ -20,6 +25,9 @@ base class GiveAction extends TransferAction {
   final Object? recipient;
 
   const GiveAction({
+    super.id,
+    super.type,
+    super.context,
     super.fromLocation,
     super.toLocation,
     super.actionProcess,

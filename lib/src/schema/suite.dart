@@ -12,7 +12,12 @@ import '../../schemaorg.dart';
 <br /><br />
 See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
 ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Suite extends Accommodation {
 
   /// The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
@@ -37,6 +42,9 @@ Typical unit code(s): C62 for person.''')
   final QuantitativeValue? occupancy;
 
   const Suite({
+    super.id,
+    super.type,
+    super.context,
     super.accommodationCategory,
     super.accommodationFloorPlan,
     super.amenityFeature,

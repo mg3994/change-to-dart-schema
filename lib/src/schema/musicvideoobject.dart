@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A music video file.
 @Schema(description: r'''A music video file.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MusicVideoObject extends MediaObject {
 
   const MusicVideoObject({
+    super.id,
+    super.type,
+    super.context,
     super.associatedArticle,
     super.bitrate,
     super.contentSize,

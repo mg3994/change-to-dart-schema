@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Event type: Education event.
 @Schema(description: r'''Event type: Education event.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class EducationEvent extends Event {
 
   /// The item being described is intended to assess the competency or learning outcome defined by the referenced term.
@@ -25,6 +30,9 @@ base class EducationEvent extends Event {
   final Object? teaches;
 
   const EducationEvent({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.actor,
     super.aggregateRating,

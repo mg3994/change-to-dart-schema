@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An aggregate rating of an Organization related to its role as an employer.
 @Schema(description: r'''An aggregate rating of an Organization related to its role as an employer.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class EmployerAggregateRating extends AggregateRating {
 
   const EmployerAggregateRating({
+    super.id,
+    super.type,
+    super.context,
     super.itemReviewed,
     super.ratingCount,
     super.reviewCount,

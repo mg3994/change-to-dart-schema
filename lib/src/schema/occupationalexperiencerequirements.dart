@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Indicates employment-related experience requirements, e.g. [[monthsOfExperience]].
 @Schema(description: r'''Indicates employment-related experience requirements, e.g. [[monthsOfExperience]].''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class OccupationalExperienceRequirements extends Intangible {
 
   /// Indicates the minimal number of months of experience required for a position.
@@ -15,6 +20,9 @@ base class OccupationalExperienceRequirements extends Intangible {
   final num? monthsOfExperience;
 
   const OccupationalExperienceRequirements({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

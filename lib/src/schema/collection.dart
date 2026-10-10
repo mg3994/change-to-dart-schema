@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A collection of items, e.g. creative works or products.
 @Schema(description: r'''A collection of items, e.g. creative works or products.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Collection extends CreativeWork {
 
   /// The number of items in the [[Collection]].
@@ -15,6 +20,9 @@ base class Collection extends CreativeWork {
   final int? collectionSize;
 
   const Collection({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

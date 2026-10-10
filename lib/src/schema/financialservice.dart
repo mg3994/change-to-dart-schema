@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Financial services business.
 @Schema(description: r'''Financial services business.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class FinancialService extends LocalBusiness {
 
   /// Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
@@ -15,6 +20,9 @@ base class FinancialService extends LocalBusiness {
   final Object? feesAndCommissionsSpecification;
 
   const FinancialService({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

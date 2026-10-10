@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of participating in exertive activity for the purposes of improving health and fitness.
 @Schema(description: r'''The act of participating in exertive activity for the purposes of improving health and fitness.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ExerciseAction extends PlayAction {
 
   /// A sub property of location. The course where this action was taken.
@@ -75,6 +80,9 @@ base class ExerciseAction extends PlayAction {
   final Place? toLocation;
 
   const ExerciseAction({
+    super.id,
+    super.type,
+    super.context,
     super.audience,
     super.event,
     super.actionProcess,

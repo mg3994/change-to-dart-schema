@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A TV episode which can be part of a series or season.
 @Schema(description: r'''A TV episode which can be part of a series or season.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class TVEpisode extends Episode {
 
   /// The country of origin of something, including products as well as creative  works such as movie and TV content.
@@ -48,6 +53,9 @@ Since schema.org types like [[Movie]], [[TVEpisode]], [[TVSeason]], and [[TVSeri
   final Object? titleEIDR;
 
   const TVEpisode({
+    super.id,
+    super.type,
+    super.context,
     super.actor,
     super.actors,
     super.director,

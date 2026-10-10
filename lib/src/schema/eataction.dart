@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of swallowing solid objects.
 @Schema(description: r'''The act of swallowing solid objects.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class EatAction extends ConsumeAction {
 
   const EatAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionAccessibilityRequirement,
     super.expectsAcceptanceOf,
     super.actionProcess,

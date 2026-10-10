@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Web page type: Checkout page.
 @Schema(description: r'''Web page type: Checkout page.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class CheckoutPage extends WebPage {
 
   const CheckoutPage({
+    super.id,
+    super.type,
+    super.context,
     super.breadcrumb,
     super.lastReviewed,
     super.mainContentOfPage,

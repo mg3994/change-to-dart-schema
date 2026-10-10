@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A bus stop.
 @Schema(description: r'''A bus stop.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BusStop extends CivicStructure {
 
   const BusStop({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

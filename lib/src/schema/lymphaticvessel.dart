@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A type of blood vessel that specifically carries lymph fluid unidirectionally toward the heart.
 @Schema(description: r'''A type of blood vessel that specifically carries lymph fluid unidirectionally toward the heart.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class LymphaticVessel extends Vessel {
 
   /// The vasculature the lymphatic structure originates, or afferents, from.
@@ -25,6 +30,9 @@ base class LymphaticVessel extends Vessel {
   final Vessel? runsTo;
 
   const LymphaticVessel({
+    super.id,
+    super.type,
+    super.context,
     super.associatedPathophysiology,
     super.bodyLocation,
     super.connectedTo,

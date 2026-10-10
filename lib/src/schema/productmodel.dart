@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A datasheet or vendor specification of a product (in the sense of a prototypical description).
 @Schema(description: r'''A datasheet or vendor specification of a product (in the sense of a prototypical description).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ProductModel extends Product {
 
   /// Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
@@ -25,6 +30,9 @@ base class ProductModel extends Product {
   final ProductModel? successorOf;
 
   const ProductModel({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.aggregateRating,
     super.asin,

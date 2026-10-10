@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An agent pays a price to a participant.
 @Schema(description: r'''An agent pays a price to a participant.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PayAction extends TradeAction {
 
   /// A sub property of participant. The participant who is at the receiving end of the action.
@@ -15,6 +20,9 @@ base class PayAction extends TradeAction {
   final Object? recipient;
 
   const PayAction({
+    super.id,
+    super.type,
+    super.context,
     super.price,
     super.priceCurrency,
     super.priceSpecification,

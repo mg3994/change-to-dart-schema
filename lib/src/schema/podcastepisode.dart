@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A single episode of a podcast series.
 @Schema(description: r'''A single episode of a podcast series.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PodcastEpisode extends Episode {
 
   const PodcastEpisode({
+    super.id,
+    super.type,
+    super.context,
     super.actor,
     super.actors,
     super.director,

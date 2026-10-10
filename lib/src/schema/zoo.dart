@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A zoo.
 @Schema(description: r'''A zoo.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Zoo extends CivicStructure {
 
   const Zoo({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

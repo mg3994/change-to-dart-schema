@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An Environmental Product Declaration (EPD) that quantifies environmental information on the life cycle of a product.
 @Schema(description: r'''An Environmental Product Declaration (EPD) that quantifies environmental information on the life cycle of a product.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class EnvironmentalProductDeclaration extends Certification {
 
   const EnvironmentalProductDeclaration({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.auditDate,
     super.certificationIdentification,

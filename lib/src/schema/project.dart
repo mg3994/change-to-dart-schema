@@ -10,10 +10,18 @@ import '../../schemaorg.dart';
 @Schema(description: r'''An enterprise (potentially individual but typically collaborative), planned to achieve a particular aim.
 Use properties from [[Organization]], [[subOrganization]]/[[parentOrganization]] to indicate project sub-structures.
    ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Project extends Organization {
 
   const Project({
+    super.id,
+    super.type,
+    super.context,
     super.acceptedPaymentMethod,
     super.actionableFeedbackPolicy,
     super.address,

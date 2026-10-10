@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An audiobook.
 @Schema(description: r'''An audiobook.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Audiobook extends AudioObject {
 
   /// The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -20,6 +25,9 @@ base class Audiobook extends AudioObject {
   final Person? readBy;
 
   const Audiobook({
+    super.id,
+    super.type,
+    super.context,
     super.caption,
     super.embeddedTextCaption,
     super.transcript,

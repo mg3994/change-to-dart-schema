@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A set of defined terms, for example a set of categories or a classification scheme, a glossary, dictionary or enumeration. Use the about property to specify what the term set is about.
 @Schema(description: r'''A set of defined terms, for example a set of categories or a classification scheme, a glossary, dictionary or enumeration. Use the about property to specify what the term set is about.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DefinedTermSet extends CreativeWork {
 
   /// The subject matter of an object.
@@ -20,6 +25,9 @@ base class DefinedTermSet extends CreativeWork {
   final DefinedTerm? hasDefinedTerm;
 
   const DefinedTermSet({
+    super.id,
+    super.type,
+    super.context,
     super.abstractValue,
     super.accessMode,
     super.accessModeSufficient,

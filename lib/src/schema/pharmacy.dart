@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A pharmacy or drugstore.
 @Schema(description: r'''A pharmacy or drugstore.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Pharmacy extends MedicalBusiness {
 
   const Pharmacy({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of expressing a preference from a set of options or a large or unbounded set of choices/options.
 @Schema(description: r'''The act of expressing a preference from a set of options or a large or unbounded set of choices/options.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ChooseAction extends AssessAction {
 
   /// A sub property of object. The options subject to this action.
@@ -20,6 +25,9 @@ base class ChooseAction extends AssessAction {
   final Object? option;
 
   const ChooseAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

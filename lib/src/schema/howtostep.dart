@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A step in the instructions for how to achieve a result. It is an ordered list with HowToDirection and/or HowToTip items.
 @Schema(description: r'''A step in the instructions for how to achieve a result. It is an ordered list with HowToDirection and/or HowToTip items.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class HowToStep extends CreativeWork {
 
   const HowToStep({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

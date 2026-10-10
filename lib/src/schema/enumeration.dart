@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Lists or enumerations—for example, a list of cuisines or music genres, etc.
 @Schema(description: r'''Lists or enumerations—for example, a list of cuisines or music genres, etc.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Enumeration extends Intangible {
 
   /// Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
@@ -15,6 +20,9 @@ base class Enumeration extends Intangible {
   final Object? supersededBy;
 
   const Enumeration({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Intended audience for an item, i.e. the group for whom the item was created.
 @Schema(description: r'''Intended audience for an item, i.e. the group for whom the item was created.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Audience extends Intangible {
 
   /// The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
@@ -20,6 +25,9 @@ base class Audience extends Intangible {
   final AdministrativeArea? geographicArea;
 
   const Audience({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

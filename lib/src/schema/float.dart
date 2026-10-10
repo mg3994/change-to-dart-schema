@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Data type: Floating number.
 @Schema(description: r'''Data type: Floating number.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Float extends Number {
 
   const Float({
+    super.id,
+    super.type,
+    super.context,
   });
 
   @override

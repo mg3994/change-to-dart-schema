@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of accomplishing something via previous efforts. It is an instantaneous action rather than an ongoing process.
 @Schema(description: r'''The act of accomplishing something via previous efforts. It is an instantaneous action rather than an ongoing process.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AchieveAction extends Action {
 
   const AchieveAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

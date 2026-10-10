@@ -235,6 +235,7 @@ void main(List<String> args) async {
 
   // Generate Model Class files
   final modelClassIds = schemaClasses.keys.where((id) => !enumClassIds.contains(id)).toList();
+  final registeredClassInfo = <Map<String, dynamic>>[];
 
   for (var classId in modelClassIds) {
     final item = schemaClasses[classId]!;
@@ -258,9 +259,14 @@ void main(List<String> args) async {
     final props = graph.propertiesByDomain[classId] ?? [];
 
     // Fields
-    final fieldDeclarations = <String>[];
     final fieldNames = <String>[];
+    final fieldTypes = <String, String>{};
+    final fieldJsonKeys = <String, String>{};
     final usedPropertyNames = <String>{};
+
+    if (className == 'Thing') {
+      usedPropertyNames.addAll(['id', 'type', 'context']);
+    }
 
     for (var prop in props) {
       final propId = prop['@id'] as String;
@@ -270,14 +276,25 @@ void main(List<String> args) async {
         propName = '${propName}_${usedPropertyNames.length}';
       }
 
-      fieldDeclarations.add(propName);
+      final ranges = graph._extractList(prop['schema:rangeIncludes']);
+      final dartType = _mapRangeToDartType(ranges, schemaClasses);
+
       fieldNames.add(propName);
+      fieldTypes[propName] = dartType;
+      fieldJsonKeys[propName] = propLabel;
     }
 
     // Collect inherited properties ONLY from the primary parent's inheritance chain
     final primaryChainParentIds = primaryParentId.isNotEmpty ? graph.getPrimaryParentChain(classId) : <String>[];
     final inheritedPropNames = <String>{};
     final parentParams = <String>[];
+    final inheritedJsonKeys = <String, String>{};
+
+    if (primaryParentName.isNotEmpty && primaryParentName != className) {
+      if (!usedPropertyNames.contains('id')) parentParams.add('super.id');
+      if (!usedPropertyNames.contains('type')) parentParams.add('super.type');
+      if (!usedPropertyNames.contains('context')) parentParams.add('super.context');
+    }
 
     for (var parentId in primaryChainParentIds) {
       final parentProps = graph.propertiesByDomain[parentId] ?? [];
@@ -287,9 +304,22 @@ void main(List<String> args) async {
         final pName = lowerFirst(sanitizeIdentifier(pLabel));
         if (!usedPropertyNames.contains(pName) && inheritedPropNames.add(pName)) {
           parentParams.add('super.$pName');
+          inheritedJsonKeys[pName] = pLabel;
         }
       }
     }
+
+    final allClassPropNames = [...inheritedPropNames, ...fieldNames];
+    final allJsonKeys = {...inheritedJsonKeys, ...fieldJsonKeys};
+
+    registeredClassInfo.add({
+      'className': className,
+      'schemaType': rawName,
+      'directFields': fieldNames,
+      'allFields': allClassPropNames,
+      'jsonKeys': allJsonKeys,
+      'fieldTypes': fieldTypes,
+    });
 
     final buffer = StringBuffer();
     buffer.writeln("// Generated file. Do not edit directly.");
@@ -301,7 +331,12 @@ void main(List<String> args) async {
 
     if (doc.isNotEmpty) buffer.writeln(doc);
     buffer.writeln("@Schema(description: r'''$commentText''')");
-    buffer.writeln("@JsonSerializable(explicitToJson: true)");
+    buffer.writeln("@JsonSerializable(");
+    buffer.writeln("  explicitToJson: true,");
+    buffer.writeln("  includeIfNull: false,");
+    buffer.writeln("  checked: true,");
+    buffer.writeln("  createFieldMap: true,");
+    buffer.writeln(")");
 
     var classModifier = 'base class';
 
@@ -314,6 +349,17 @@ void main(List<String> args) async {
 
     buffer.writeln("$classModifier $className$inheritanceClause {");
 
+    if (className == 'Thing') {
+      buffer.writeln("  @JsonKey(name: '@id')");
+      buffer.writeln("  final String? id;");
+      buffer.writeln();
+      buffer.writeln("  @JsonKey(name: '@type')");
+      buffer.writeln("  final String? type;");
+      buffer.writeln();
+      buffer.writeln("  @JsonKey(name: '@context')");
+      buffer.writeln("  final String? context;");
+    }
+
     for (var prop in props) {
       final propId = prop['@id'] as String;
       final propLabel = extractStringValue(prop['rdfs:label'], propId.replaceFirst('schema:', ''));
@@ -321,9 +367,7 @@ void main(List<String> args) async {
 
       final propDoc = cleanDocComment(prop['rdfs:comment']);
       final propCommentText = extractStringValue(prop['rdfs:comment'], '');
-
-      final ranges = graph._extractList(prop['schema:rangeIncludes']);
-      final dartType = _mapRangeToDartType(ranges, schemaClasses);
+      final dartType = fieldTypes[propName] ?? 'Object';
 
       buffer.writeln();
       if (propDoc.isNotEmpty) buffer.writeln("  $propDoc");
@@ -335,7 +379,11 @@ void main(List<String> args) async {
     // Primary constructor
     buffer.writeln();
     buffer.writeln("  const $className({");
-    if (primaryParentName.isNotEmpty && primaryParentName != className) {
+    if (className == 'Thing') {
+      buffer.writeln("    this.id,");
+      buffer.writeln("    this.type,");
+      buffer.writeln("    this.context,");
+    } else if (primaryParentName.isNotEmpty && primaryParentName != className) {
       for (var pParam in parentParams) {
         buffer.writeln("    $pParam,");
       }
@@ -349,7 +397,11 @@ void main(List<String> args) async {
     buffer.writeln();
     buffer.writeln("  @override");
     buffer.writeln("  List<Object?> get props => [");
-    if (primaryParentName.isNotEmpty && primaryParentName != className) {
+    if (className == 'Thing') {
+      buffer.writeln("    id,");
+      buffer.writeln("    type,");
+      buffer.writeln("    context,");
+    } else if (primaryParentName.isNotEmpty && primaryParentName != className) {
       buffer.writeln("    ...super.props,");
     }
     for (var fname in fieldNames) {
@@ -362,6 +414,86 @@ void main(List<String> args) async {
     final filePath = 'lib/src/schema/$fileName';
     await File(filePath).writeAsString(buffer.toString());
   }
+
+  // Generate lib/src/json_ld_registry.g.dart
+  final regBuffer = StringBuffer();
+  regBuffer.writeln("// Generated file. Registry for JSON-LD parsing and serialization.");
+  regBuffer.writeln("import '../schemaorg.dart';");
+  regBuffer.writeln();
+  regBuffer.writeln("Object? parseJsonLdFromMap(Map<String, dynamic> json) {");
+  regBuffer.writeln("  final type = json['@type'] as String?;");
+  regBuffer.writeln("  if (type == null) return null;");
+  regBuffer.writeln("  switch (type) {");
+
+  for (var info in registeredClassInfo) {
+    final cName = info['className'] as String;
+    final sType = info['schemaType'] as String;
+    final allFields = info['allFields'] as List<String>;
+    final jsonKeys = info['jsonKeys'] as Map<String, String>;
+    final fieldTypes = info['fieldTypes'] as Map<String, String>;
+
+    regBuffer.writeln("    case '$sType':");
+    regBuffer.writeln("      return $cName(");
+    regBuffer.writeln("        id: json['@id'] as String?,");
+    regBuffer.writeln("        type: json['@type'] as String?,");
+    regBuffer.writeln("        context: json['@context'] as String?,");
+    for (var f in allFields) {
+      final jsonKey = jsonKeys[f] ?? f;
+      final expectedType = fieldTypes[f] ?? 'Object';
+
+      if (expectedType == 'String') {
+        regBuffer.writeln("        $f: json['$jsonKey'] as String?,");
+      } else if (expectedType == 'int') {
+        regBuffer.writeln("        $f: json['$jsonKey'] is int ? json['$jsonKey'] as int : (json['$jsonKey'] != null ? int.tryParse(json['$jsonKey'].toString()) : null),");
+      } else if (expectedType == 'num') {
+        regBuffer.writeln("        $f: json['$jsonKey'] is num ? json['$jsonKey'] as num : (json['$jsonKey'] != null ? num.tryParse(json['$jsonKey'].toString()) : null),");
+      } else if (expectedType == 'bool') {
+        regBuffer.writeln("        $f: json['$jsonKey'] is bool ? json['$jsonKey'] as bool : null,");
+      } else {
+        regBuffer.writeln("        $f: json['$jsonKey'] is Map<String, dynamic> ? parseJsonLdFromMap(json['$jsonKey'] as Map<String, dynamic>) as $expectedType? : json['$jsonKey'] as $expectedType?,");
+      }
+    }
+    regBuffer.writeln("      );");
+  }
+
+  regBuffer.writeln("    default:");
+  regBuffer.writeln("      return null;");
+  regBuffer.writeln("  }");
+  regBuffer.writeln("}");
+
+  regBuffer.writeln();
+  regBuffer.writeln("Object? _convertJsonValue(Object? value) {");
+  regBuffer.writeln("  if (value == null) return null;");
+  regBuffer.writeln("  if (value is Enum) return value.name;");
+  regBuffer.writeln("  if (value is Thing) return toJsonLdFromObject(value);");
+  regBuffer.writeln("  if (value is List) return value.map(_convertJsonValue).toList();");
+  regBuffer.writeln("  return value;");
+  regBuffer.writeln("}");
+
+  regBuffer.writeln();
+  regBuffer.writeln("Map<String, dynamic> toJsonLdFromObject(Object object) {");
+  for (var info in registeredClassInfo) {
+    final cName = info['className'] as String;
+    final sType = info['schemaType'] as String;
+    final allFields = info['allFields'] as List<String>;
+    final jsonKeys = info['jsonKeys'] as Map<String, String>;
+
+    regBuffer.writeln("  if (object is $cName) {");
+    regBuffer.writeln("    return {");
+    regBuffer.writeln("      '@context': object.context ?? 'https://schema.org',");
+    regBuffer.writeln("      '@type': object.type ?? '$sType',");
+    regBuffer.writeln("      if (object.id != null) '@id': object.id,");
+    for (var f in allFields) {
+      final jsonKey = jsonKeys[f] ?? f;
+      regBuffer.writeln("      if (object.$f != null) '$jsonKey': _convertJsonValue(object.$f),");
+    }
+    regBuffer.writeln("    };");
+    regBuffer.writeln("  }");
+  }
+  regBuffer.writeln("  return {'@context': 'https://schema.org'};");
+  regBuffer.writeln("}");
+
+  await File('lib/src/json_ld_registry.g.dart').writeAsString(regBuffer.toString());
 
   // Generate lib/schemaorg.dart library file export
   final exportBuffer = StringBuffer();

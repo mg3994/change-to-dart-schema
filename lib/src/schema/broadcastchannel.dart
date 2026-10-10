@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A unique instance of a BroadcastService on a CableOrSatelliteService lineup.
 @Schema(description: r'''A unique instance of a BroadcastService on a CableOrSatelliteService lineup.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BroadcastChannel extends Intangible {
 
   /// The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
@@ -40,6 +45,9 @@ base class BroadcastChannel extends Intangible {
   final BroadcastService? providesBroadcastService;
 
   const BroadcastChannel({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

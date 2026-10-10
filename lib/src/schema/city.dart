@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A city or town.
 @Schema(description: r'''A city or town.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class City extends AdministrativeArea {
 
   const City({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.address,
     super.aggregateRating,

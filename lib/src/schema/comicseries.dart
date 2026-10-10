@@ -10,10 +10,18 @@ import '../../schemaorg.dart';
 @Schema(description: r'''A sequential publication of comic stories under a
 	unifying title, for example "The Amazing Spider-Man" or "Groo the
 	Wanderer".''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ComicSeries extends Periodical {
 
   const ComicSeries({
+    super.id,
+    super.type,
+    super.context,
     super.endDate,
     super.issn,
     super.startDate,

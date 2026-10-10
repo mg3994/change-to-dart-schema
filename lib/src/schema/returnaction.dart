@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of returning to the origin that which was previously received (concrete objects) or taken (ownership).
 @Schema(description: r'''The act of returning to the origin that which was previously received (concrete objects) or taken (ownership).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ReturnAction extends TransferAction {
 
   /// A sub property of participant. The participant who is at the receiving end of the action.
@@ -15,6 +20,9 @@ base class ReturnAction extends TransferAction {
   final Object? recipient;
 
   const ReturnAction({
+    super.id,
+    super.type,
+    super.context,
     super.fromLocation,
     super.toLocation,
     super.actionProcess,

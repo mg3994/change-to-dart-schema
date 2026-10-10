@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A web page that provides medical information.
 @Schema(description: r'''A web page that provides medical information.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MedicalWebPage extends WebPage {
 
   /// An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.
@@ -20,6 +25,9 @@ base class MedicalWebPage extends WebPage {
   final Object? medicalAudience;
 
   const MedicalWebPage({
+    super.id,
+    super.type,
+    super.context,
     super.breadcrumb,
     super.lastReviewed,
     super.mainContentOfPage,

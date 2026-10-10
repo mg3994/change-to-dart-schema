@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A treatment of people with physical, emotional, or social problems, using purposeful activity to help them overcome or learn to deal with their problems.
 @Schema(description: r'''A treatment of people with physical, emotional, or social problems, using purposeful activity to help them overcome or learn to deal with their problems.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class OccupationalTherapy extends MedicalTherapy {
 
   const OccupationalTherapy({
+    super.id,
+    super.type,
+    super.context,
     super.contraindication,
     super.duplicateTherapy,
     super.seriousAdverseOutcome,

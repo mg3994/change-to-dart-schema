@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A store that sells mobile phones and related accessories.
 @Schema(description: r'''A store that sells mobile phones and related accessories.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MobilePhoneStore extends Store {
 
   const MobilePhoneStore({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

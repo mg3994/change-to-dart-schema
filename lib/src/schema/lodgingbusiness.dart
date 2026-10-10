@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A lodging business, such as a motel, hotel, or inn.
 @Schema(description: r'''A lodging business, such as a motel, hotel, or inn.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class LodgingBusiness extends LocalBusiness {
 
   /// An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
@@ -52,6 +57,9 @@ Typical unit code(s): ROM for room or C62 for no unit. The type of room can be p
   final Rating? starRating;
 
   const LodgingBusiness({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

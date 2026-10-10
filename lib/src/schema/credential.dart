@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A credential is a certificate that is used to verify the identity of a person or entity.
 @Schema(description: r'''A credential is a certificate that is used to verify the identity of a person or entity.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Credential extends CreativeWork {
 
   /// The category or type of credential being described, for example "degree”, “certificate”, “badge”, or more specific term.
@@ -30,6 +35,9 @@ base class Credential extends CreativeWork {
   final AdministrativeArea? validIn;
 
   const Credential({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

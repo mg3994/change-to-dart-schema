@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Event type: Business event.
 @Schema(description: r'''Event type: Business event.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BusinessEvent extends Event {
 
   const BusinessEvent({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.actor,
     super.aggregateRating,

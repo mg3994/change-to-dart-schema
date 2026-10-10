@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A publication event, e.g. catch-up TV or radio podcast, during which a program is available on-demand.
 @Schema(description: r'''A publication event, e.g. catch-up TV or radio podcast, during which a program is available on-demand.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class OnDemandEvent extends PublicationEvent {
 
   const OnDemandEvent({
+    super.id,
+    super.type,
+    super.context,
     super.free,
     super.publishedBy,
     super.publishedOn,

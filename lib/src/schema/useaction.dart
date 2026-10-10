@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of applying an object to its intended purpose.
 @Schema(description: r'''The act of applying an object to its intended purpose.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class UseAction extends ConsumeAction {
 
   const UseAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionAccessibilityRequirement,
     super.expectsAcceptanceOf,
     super.actionProcess,

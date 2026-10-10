@@ -14,10 +14,18 @@ import '../../schemaorg.dart';
       non-medical organization, multiple types can be listed. This makes it easier to re-use existing schema.org information
       about that place, e.g. contact info, address, opening hours. Note that in an emergency, such information may not always be reliable.
       ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class CovidTestingFacility extends MedicalClinic {
 
   const CovidTestingFacility({
+    super.id,
+    super.type,
+    super.context,
     super.availableService,
     super.medicalSpecialty,
     super.branchOf,

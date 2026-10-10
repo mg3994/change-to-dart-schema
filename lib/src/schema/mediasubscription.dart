@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A subscription which allows a user to access media including audio, video, books, etc.
 @Schema(description: r'''A subscription which allows a user to access media including audio, video, books, etc.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MediaSubscription extends Intangible {
 
   /// The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable/satellite provider to authenticate your subscription before playing media.
@@ -20,6 +25,9 @@ base class MediaSubscription extends Intangible {
   final Offer? expectsAcceptanceOf;
 
   const MediaSubscription({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

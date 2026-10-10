@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The costs of settling the payment using a particular payment method.
 @Schema(description: r'''The costs of settling the payment using a particular payment method.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PaymentChargeSpecification extends PriceSpecification {
 
   /// The delivery method(s) to which the delivery charge or payment charge specification applies.
@@ -20,6 +25,9 @@ base class PaymentChargeSpecification extends PriceSpecification {
   final PaymentMethod? appliesToPaymentMethod;
 
   const PaymentChargeSpecification({
+    super.id,
+    super.type,
+    super.context,
     super.eligibleQuantity,
     super.eligibleTransactionVolume,
     super.maxPrice,

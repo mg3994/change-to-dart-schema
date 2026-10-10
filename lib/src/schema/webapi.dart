@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An application programming interface accessible over Web/Internet technologies.
 @Schema(description: r'''An application programming interface accessible over Web/Internet technologies.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class WebAPI extends Service {
 
   /// Further documentation describing the Web API in more detail.
@@ -15,6 +20,9 @@ base class WebAPI extends Service {
   final Object? documentation;
 
   const WebAPI({
+    super.id,
+    super.type,
+    super.context,
     super.aggregateRating,
     super.areaServed,
     super.audience,

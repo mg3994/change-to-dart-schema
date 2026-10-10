@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A collection of music tracks in playlist form.
 @Schema(description: r'''A collection of music tracks in playlist form.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MusicPlaylist extends CreativeWork {
 
   /// The number of tracks in this album or playlist.
@@ -25,6 +30,9 @@ base class MusicPlaylist extends CreativeWork {
   final MusicRecording? tracks;
 
   const MusicPlaylist({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

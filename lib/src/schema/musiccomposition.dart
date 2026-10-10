@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A musical composition.
 @Schema(description: r'''A musical composition.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MusicComposition extends CreativeWork {
 
   /// The person or organization who wrote a composition, or who is the composer of a work performed at some event.
@@ -60,6 +65,9 @@ base class MusicComposition extends CreativeWork {
   final MusicRecording? recordedAs;
 
   const MusicComposition({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

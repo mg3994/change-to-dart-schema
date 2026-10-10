@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A tourist information center.
 @Schema(description: r'''A tourist information center.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class TouristInformationCenter extends LocalBusiness {
 
   const TouristInformationCenter({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

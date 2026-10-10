@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// One of the continents (for example, Europe or Africa).
 @Schema(description: r'''One of the continents (for example, Europe or Africa).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Continent extends Landform {
 
   const Continent({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.address,
     super.aggregateRating,

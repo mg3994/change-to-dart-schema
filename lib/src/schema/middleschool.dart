@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A middle school (typically for children aged around 11-14, although this varies somewhat).
 @Schema(description: r'''A middle school (typically for children aged around 11-14, although this varies somewhat).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MiddleSchool extends EducationalOrganization {
 
   const MiddleSchool({
+    super.id,
+    super.type,
+    super.context,
     super.alumni,
     super.openingHours,
     super.additionalProperty,

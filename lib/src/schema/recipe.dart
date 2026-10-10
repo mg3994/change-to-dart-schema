@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A recipe. For dietary restrictions covered by the recipe, a few common restrictions are enumerated via [[suitableForDiet]]. The [[keywords]] property can also be used to add more detail.
 @Schema(description: r'''A recipe. For dietary restrictions covered by the recipe, a few common restrictions are enumerated via [[suitableForDiet]]. The [[keywords]] property can also be used to add more detail.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Recipe extends HowTo {
 
   /// The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -60,6 +65,9 @@ base class Recipe extends HowTo {
   final Object? suitableForDiet;
 
   const Recipe({
+    super.id,
+    super.type,
+    super.context,
     super.estimatedCost,
     super.performTime,
     super.prepTime,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Data type: URL.
 @Schema(description: r'''Data type: URL.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class URL extends Text {
 
   const URL({
+    super.id,
+    super.type,
+    super.context,
   });
 
   @override

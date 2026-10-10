@@ -8,7 +8,12 @@ import '../../schemaorg.dart';
 ///
 /// See also [blog post](https://blog.schema.org/2014/09/02/schema-org-support-for-bibliographic-relationships-and-periodicals/).
 @Schema(description: r'''An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.\n\nSee also [blog post](https://blog.schema.org/2014/09/02/schema-org-support-for-bibliographic-relationships-and-periodicals/).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Article extends CreativeWork {
 
   /// The actual body of the article.
@@ -78,6 +83,9 @@ we define a supporting type, [[SpeakableSpecification]]  which is defined to be 
   final int? wordCount;
 
   const Article({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

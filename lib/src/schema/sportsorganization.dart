@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Represents the collection of all sports organizations, including sports teams, governing bodies, and sports associations.
 @Schema(description: r'''Represents the collection of all sports organizations, including sports teams, governing bodies, and sports associations.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SportsOrganization extends Organization {
 
   /// A type of sport (e.g. Baseball).
@@ -15,6 +20,9 @@ base class SportsOrganization extends Organization {
   final Object? sport;
 
   const SportsOrganization({
+    super.id,
+    super.type,
+    super.context,
     super.acceptedPaymentMethod,
     super.actionableFeedbackPolicy,
     super.address,

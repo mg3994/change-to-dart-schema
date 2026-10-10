@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A sub-grouping of food or drink items in a menu. E.g. courses (such as 'Dinner', 'Breakfast', etc.), specific type of dishes (such as 'Meat', 'Vegan', 'Drinks', etc.), or some other classification made by the menu provider.
 @Schema(description: r'''A sub-grouping of food or drink items in a menu. E.g. courses (such as 'Dinner', 'Breakfast', etc.), specific type of dishes (such as 'Meat', 'Vegan', 'Drinks', etc.), or some other classification made by the menu provider.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MenuSection extends CreativeWork {
 
   /// A food or drink item contained in a menu or menu section.
@@ -20,6 +25,9 @@ base class MenuSection extends CreativeWork {
   final MenuSection? hasMenuSection;
 
   const MenuSection({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

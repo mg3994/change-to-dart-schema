@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A general contractor.
 @Schema(description: r'''A general contractor.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class GeneralContractor extends HomeAndConstructionBusiness {
 
   const GeneralContractor({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

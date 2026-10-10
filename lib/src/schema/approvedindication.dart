@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An indication for a medical therapy that has been formally specified or approved by a regulatory body that regulates use of the therapy; for example, the US FDA approves indications for most drugs in the US.
 @Schema(description: r'''An indication for a medical therapy that has been formally specified or approved by a regulatory body that regulates use of the therapy; for example, the US FDA approves indications for most drugs in the US.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ApprovedIndication extends MedicalIndication {
 
   const ApprovedIndication({
+    super.id,
+    super.type,
+    super.context,
     super.code,
     super.funding,
     super.guideline,

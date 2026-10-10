@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A type of blood vessel that specifically carries blood to the heart.
 @Schema(description: r'''A type of blood vessel that specifically carries blood to the heart.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Vein extends Vessel {
 
   /// The vasculature that the vein drains into.
@@ -25,6 +30,9 @@ base class Vein extends Vessel {
   final AnatomicalStructure? tributary;
 
   const Vein({
+    super.id,
+    super.type,
+    super.context,
     super.associatedPathophysiology,
     super.bodyLocation,
     super.connectedTo,

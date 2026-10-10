@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of participating in an exchange of goods and services for monetary compensation. An agent trades an object, product or service with a participant in exchange for a one time or periodic payment.
 @Schema(description: r'''The act of participating in an exchange of goods and services for monetary compensation. An agent trades an object, product or service with a participant in exchange for a one time or periodic payment.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class TradeAction extends Action {
 
   /// The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.
@@ -36,6 +41,9 @@ base class TradeAction extends Action {
   final PriceSpecification? priceSpecification;
 
   const TradeAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

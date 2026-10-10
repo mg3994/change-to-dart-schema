@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of managing by changing/editing the state of the object.
 @Schema(description: r'''The act of managing by changing/editing the state of the object.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class UpdateAction extends Action {
 
   /// A sub property of object. The collection target of the action.
@@ -20,6 +25,9 @@ base class UpdateAction extends Action {
   final Thing? targetCollection;
 
   const UpdateAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

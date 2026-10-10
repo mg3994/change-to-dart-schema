@@ -9,7 +9,12 @@ import '../../schemaorg.dart';
 /// * [[ReceiveAction]]: The reciprocal of SendAction.
 /// * [[GiveAction]]: Unlike GiveAction, SendAction does not imply the transfer of ownership (e.g. I can send you my laptop, but I'm not necessarily giving it to you).
 @Schema(description: r'''The act of physically/electronically dispatching an object for transfer from an origin to a destination. Related actions:\n\n* [[ReceiveAction]]: The reciprocal of SendAction.\n* [[GiveAction]]: Unlike GiveAction, SendAction does not imply the transfer of ownership (e.g. I can send you my laptop, but I'm not necessarily giving it to you).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SendAction extends TransferAction {
 
   /// A sub property of instrument. The method of delivery.
@@ -23,6 +28,9 @@ base class SendAction extends TransferAction {
   final Object? recipient;
 
   const SendAction({
+    super.id,
+    super.type,
+    super.context,
     super.fromLocation,
     super.toLocation,
     super.actionProcess,

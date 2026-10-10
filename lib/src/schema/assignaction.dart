@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of allocating an action/event/task to some destination (someone or something).
 @Schema(description: r'''The act of allocating an action/event/task to some destination (someone or something).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AssignAction extends AllocateAction {
 
   const AssignAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

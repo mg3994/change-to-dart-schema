@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A medical laboratory that offers on-site or off-site diagnostic services.
 @Schema(description: r'''A medical laboratory that offers on-site or off-site diagnostic services.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DiagnosticLab extends MedicalOrganization {
 
   /// A diagnostic test or procedure offered by this lab.
@@ -15,6 +20,9 @@ base class DiagnosticLab extends MedicalOrganization {
   final MedicalTest? availableTest;
 
   const DiagnosticLab({
+    super.id,
+    super.type,
+    super.context,
     super.healthPlanNetworkId,
     super.isAcceptingNewPatients,
     super.medicalSpecialty,

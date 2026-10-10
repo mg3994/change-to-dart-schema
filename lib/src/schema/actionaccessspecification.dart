@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A set of requirements that must be fulfilled in order to perform an Action.
 @Schema(description: r'''A set of requirements that must be fulfilled in order to perform an Action.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ActionAccessSpecification extends Intangible {
 
   /// The end of the availability of the product or service included in the offer.
@@ -53,6 +58,9 @@ base class ActionAccessSpecification extends Intangible {
   final Object? requiresSubscription;
 
   const ActionAccessSpecification({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

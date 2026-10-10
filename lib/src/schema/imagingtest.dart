@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Any medical imaging modality typically used for diagnostic purposes.
 @Schema(description: r'''Any medical imaging modality typically used for diagnostic purposes.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ImagingTest extends MedicalTest {
 
   /// Imaging technique used.
@@ -15,6 +20,9 @@ base class ImagingTest extends MedicalTest {
   final MedicalImagingTechnique? imagingTechnique;
 
   const ImagingTest({
+    super.id,
+    super.type,
+    super.context,
     super.affectedBy,
     super.normalRange,
     super.signDetected,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A geographical region, typically under the jurisdiction of a particular government.
 @Schema(description: r'''A geographical region, typically under the jurisdiction of a particular government.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AdministrativeArea extends Place {
 
   const AdministrativeArea({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.address,
     super.aggregateRating,

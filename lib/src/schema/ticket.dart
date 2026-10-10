@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Used to describe a ticket to an event, a flight, a bus ride, etc.
 @Schema(description: r'''Used to describe a ticket to an event, a flight, a bus ride, etc.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Ticket extends Intangible {
 
   /// The date the ticket was issued.
@@ -57,6 +62,9 @@ base class Ticket extends Intangible {
   final Object? underName;
 
   const Ticket({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

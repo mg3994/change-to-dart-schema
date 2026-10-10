@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of giving money in return for temporary use, but not ownership, of an object such as a vehicle or property. For example, an agent rents a property from a landlord in exchange for a periodic payment.
 @Schema(description: r'''The act of giving money in return for temporary use, but not ownership, of an object such as a vehicle or property. For example, an agent rents a property from a landlord in exchange for a periodic payment.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class RentAction extends TradeAction {
 
   /// A sub property of participant. The owner of the real estate property.
@@ -20,6 +25,9 @@ base class RentAction extends TradeAction {
   final RealEstateAgent? realEstateAgent;
 
   const RentAction({
+    super.id,
+    super.type,
+    super.context,
     super.price,
     super.priceCurrency,
     super.priceSpecification,

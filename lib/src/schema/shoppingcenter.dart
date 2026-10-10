@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A shopping center or mall.
 @Schema(description: r'''A shopping center or mall.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ShoppingCenter extends LocalBusiness {
 
   const ShoppingCenter({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

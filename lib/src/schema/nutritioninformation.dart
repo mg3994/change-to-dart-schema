@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Nutritional information about the recipe.
 @Schema(description: r'''Nutritional information about the recipe.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class NutritionInformation extends StructuredValue {
 
   /// The number of calories.
@@ -70,6 +75,9 @@ base class NutritionInformation extends StructuredValue {
   final Mass? unsaturatedFatContent;
 
   const NutritionInformation({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

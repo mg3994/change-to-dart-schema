@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Any physical manifestation of a person's medical condition discoverable by objective diagnostic tests or physical examination.
 @Schema(description: r'''Any physical manifestation of a person's medical condition discoverable by objective diagnostic tests or physical examination.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MedicalSign extends MedicalSignOrSymptom {
 
   /// A physical examination that can identify this sign.
@@ -20,6 +25,9 @@ base class MedicalSign extends MedicalSignOrSymptom {
   final MedicalTest? identifyingTest;
 
   const MedicalSign({
+    super.id,
+    super.type,
+    super.context,
     super.possibleTreatment,
     super.associatedAnatomy,
     super.cause,

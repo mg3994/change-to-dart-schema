@@ -10,7 +10,12 @@ import '../../schemaorg.dart';
 ///
 /// * [[TransferAction]]: Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object.
 @Schema(description: r'''The act of an agent relocating to a place.\n\nRelated actions:\n\n* [[TransferAction]]: Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MoveAction extends Action {
 
   /// A sub property of location. The original location of the object or the agent before the action.
@@ -24,6 +29,9 @@ base class MoveAction extends Action {
   final Place? toLocation;
 
   const MoveAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A theater group or company, for example, the Royal Shakespeare Company or Druid Theatre.
 @Schema(description: r'''A theater group or company, for example, the Royal Shakespeare Company or Druid Theatre.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class TheaterGroup extends PerformingGroup {
 
   const TheaterGroup({
+    super.id,
+    super.type,
+    super.context,
     super.acceptedPaymentMethod,
     super.actionableFeedbackPolicy,
     super.address,

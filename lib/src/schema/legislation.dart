@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A legal document such as an act, decree, bill, etc. (enforceable or not) or a component of a legal act (like an article).
 @Schema(description: r'''A legal document such as an act, decree, bill, etc. (enforceable or not) or a component of a legal act (like an article).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Legislation extends CreativeWork {
 
   /// Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
@@ -110,6 +115,9 @@ base class Legislation extends CreativeWork {
   final Object? legislationType;
 
   const Legislation({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A trip on a commercial train line.
 @Schema(description: r'''A trip on a commercial train line.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class TrainTrip extends Trip {
 
   /// The platform where the train arrives.
@@ -40,6 +45,9 @@ base class TrainTrip extends Trip {
   final String? trainNumber;
 
   const TrainTrip({
+    super.id,
+    super.type,
+    super.context,
     super.arrivalTime,
     super.departureTime,
     super.itinerary,

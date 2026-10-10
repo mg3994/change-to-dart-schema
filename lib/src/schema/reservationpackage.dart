@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A group of multiple reservations with common values for all sub-reservations.
 @Schema(description: r'''A group of multiple reservations with common values for all sub-reservations.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ReservationPackage extends Reservation {
 
   /// The individual reservations included in the package. Typically a repeated property.
@@ -15,6 +20,9 @@ base class ReservationPackage extends Reservation {
   final Reservation? subReservation;
 
   const ReservationPackage({
+    super.id,
+    super.type,
+    super.context,
     super.bookingAgent,
     super.bookingTime,
     super.broker,

@@ -8,10 +8,18 @@ import '../../schemaorg.dart';
 ///
 /// This type is deprecated - [[LegalService]] is more inclusive and less ambiguous.
 @Schema(description: r'''Professional service: Attorney. \n\nThis type is deprecated - [[LegalService]] is more inclusive and less ambiguous.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Attorney extends LegalService {
 
   const Attorney({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

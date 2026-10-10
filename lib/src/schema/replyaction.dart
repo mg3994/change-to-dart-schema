@@ -10,7 +10,12 @@ import '../../schemaorg.dart';
 ///
 /// * [[AskAction]]: Appears generally as an origin of a ReplyAction.
 @Schema(description: r'''The act of responding to a question/message asked/sent by the object. Related to [[AskAction]].\n\nRelated actions:\n\n* [[AskAction]]: Appears generally as an origin of a ReplyAction.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ReplyAction extends CommunicateAction {
 
   /// A sub property of result. The Comment created or sent as a result of this action.
@@ -19,6 +24,9 @@ base class ReplyAction extends CommunicateAction {
   final Comment? resultComment;
 
   const ReplyAction({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.inLanguage,
     super.language,

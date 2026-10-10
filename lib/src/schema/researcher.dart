@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Researchers.
 @Schema(description: r'''Researchers.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Researcher extends Audience {
 
   const Researcher({
+    super.id,
+    super.type,
+    super.context,
     super.audienceType,
     super.geographicArea,
     super.additionalType,

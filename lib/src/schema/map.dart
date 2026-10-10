@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A map.
 @Schema(description: r'''A map.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Map extends CreativeWork {
 
   /// Indicates the kind of Map, from the MapCategoryType Enumeration.
@@ -15,6 +20,9 @@ base class Map extends CreativeWork {
   final MapCategoryType? mapType;
 
   const Map({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

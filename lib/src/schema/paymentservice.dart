@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A Service to transfer funds from a person or organization to a beneficiary person or organization.
 @Schema(description: r'''A Service to transfer funds from a person or organization to a beneficiary person or organization.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PaymentService extends FinancialProduct {
 
   const PaymentService({
+    super.id,
+    super.type,
+    super.context,
     super.annualPercentageRate,
     super.feesAndCommissionsSpecification,
     super.interestRate,

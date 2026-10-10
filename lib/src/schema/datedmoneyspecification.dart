@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A DatedMoneySpecification represents monetary values with optional start and end dates. For example, this could represent an employee's salary over a specific period of time. __Note:__ This type has been superseded by [[MonetaryAmount]], use of that type is recommended.
 @Schema(description: r'''A DatedMoneySpecification represents monetary values with optional start and end dates. For example, this could represent an employee's salary over a specific period of time. __Note:__ This type has been superseded by [[MonetaryAmount]], use of that type is recommended.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DatedMoneySpecification extends StructuredValue {
 
   /// The amount of money.
@@ -32,6 +37,9 @@ base class DatedMoneySpecification extends StructuredValue {
   final Object? startDate;
 
   const DatedMoneySpecification({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

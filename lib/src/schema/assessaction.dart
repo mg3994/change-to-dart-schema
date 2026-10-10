@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of forming one's opinion, reaction or sentiment.
 @Schema(description: r'''The act of forming one's opinion, reaction or sentiment.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AssessAction extends Action {
 
   const AssessAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An anatomical system is a group of anatomical structures that work together to perform a certain task. Anatomical systems, such as organ systems, are one organizing principle of anatomy, and can include circulatory, digestive, endocrine, integumentary, immune, lymphatic, muscular, nervous, reproductive, respiratory, skeletal, urinary, vestibular, and other systems.
 @Schema(description: r'''An anatomical system is a group of anatomical structures that work together to perform a certain task. Anatomical systems, such as organ systems, are one organizing principle of anatomy, and can include circulatory, digestive, endocrine, integumentary, immune, lymphatic, muscular, nervous, reproductive, respiratory, skeletal, urinary, vestibular, and other systems.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AnatomicalSystem extends MedicalEntity {
 
   /// If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
@@ -35,6 +40,9 @@ base class AnatomicalSystem extends MedicalEntity {
   final MedicalTherapy? relatedTherapy;
 
   const AnatomicalSystem({
+    super.id,
+    super.type,
+    super.context,
     super.code,
     super.funding,
     super.guideline,

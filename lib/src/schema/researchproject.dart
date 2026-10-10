@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A Research project.
 @Schema(description: r'''A Research project.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ResearchProject extends Project {
 
   const ResearchProject({
+    super.id,
+    super.type,
+    super.context,
     super.acceptedPaymentMethod,
     super.actionableFeedbackPolicy,
     super.address,

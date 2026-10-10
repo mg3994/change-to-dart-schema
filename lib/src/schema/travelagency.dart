@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A travel agency.
 @Schema(description: r'''A travel agency.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class TravelAgency extends LocalBusiness {
 
   const TravelAgency({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

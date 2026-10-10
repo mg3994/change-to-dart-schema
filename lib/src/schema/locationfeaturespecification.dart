@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Specifies a location feature by providing a structured value representing a feature of an accommodation as a property-value pair of varying degrees of formality.
 @Schema(description: r'''Specifies a location feature by providing a structured value representing a feature of an accommodation as a property-value pair of varying degrees of formality.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class LocationFeatureSpecification extends PropertyValue {
 
   /// The hours during which this service or contact is available.
@@ -25,6 +30,9 @@ base class LocationFeatureSpecification extends PropertyValue {
   final Object? validThrough;
 
   const LocationFeatureSpecification({
+    super.id,
+    super.type,
+    super.context,
     super.maxValue,
     super.measurementMethod,
     super.measurementTechnique,

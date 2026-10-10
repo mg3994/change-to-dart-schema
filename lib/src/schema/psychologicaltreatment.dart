@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A process of care relying upon counseling, dialogue and communication  aimed at improving a mental health condition without use of drugs.
 @Schema(description: r'''A process of care relying upon counseling, dialogue and communication  aimed at improving a mental health condition without use of drugs.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PsychologicalTreatment extends TherapeuticProcedure {
 
   const PsychologicalTreatment({
+    super.id,
+    super.type,
+    super.context,
     super.adverseOutcome,
     super.doseSchedule,
     super.drug,

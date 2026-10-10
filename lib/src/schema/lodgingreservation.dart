@@ -8,7 +8,12 @@ import '../../schemaorg.dart';
 ///
 /// Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
 @Schema(description: r'''A reservation for lodging at a hotel, motel, inn, etc.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class LodgingReservation extends Reservation {
 
   /// The earliest someone may check into a lodging establishment.
@@ -42,6 +47,9 @@ base class LodgingReservation extends Reservation {
   final Object? numChildren;
 
   const LodgingReservation({
+    super.id,
+    super.type,
+    super.context,
     super.bookingAgent,
     super.bookingTime,
     super.broker,

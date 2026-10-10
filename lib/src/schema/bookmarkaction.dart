@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An agent bookmarks/flags/labels/tags/marks an object.
 @Schema(description: r'''An agent bookmarks/flags/labels/tags/marks an object.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BookmarkAction extends OrganizeAction {
 
   const BookmarkAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

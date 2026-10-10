@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A software application.
 @Schema(description: r'''A software application.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SoftwareApplication extends CreativeWork {
 
   /// Type of software application, e.g. 'Game, Multimedia'.
@@ -135,6 +140,9 @@ base class SoftwareApplication extends CreativeWork {
   final DataFeed? supportingData;
 
   const SoftwareApplication({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

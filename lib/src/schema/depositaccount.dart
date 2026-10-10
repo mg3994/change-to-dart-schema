@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A type of Bank Account with a main purpose of depositing funds to gain interest or other benefits.
 @Schema(description: r'''A type of Bank Account with a main purpose of depositing funds to gain interest or other benefits.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DepositAccount extends BankAccount {
 
   const DepositAccount({
+    super.id,
+    super.type,
+    super.context,
     super.accountMinimumInflow,
     super.accountOverdraftLimit,
     super.bankAccountType,

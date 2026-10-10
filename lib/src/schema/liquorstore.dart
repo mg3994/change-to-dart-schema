@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A shop that sells alcoholic drinks such as wine, beer, whisky and other spirits.
 @Schema(description: r'''A shop that sells alcoholic drinks such as wine, beer, whisky and other spirits.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class LiquorStore extends Store {
 
   const LiquorStore({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

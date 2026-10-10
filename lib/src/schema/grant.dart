@@ -18,7 +18,12 @@ Grants support  activities directed towards some agreed collective goals, often 
 
 The amount of a [[Grant]] is represented using [[amount]] as a [[MonetaryAmount]].
     ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Grant extends Intangible {
 
   /// Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]].
@@ -37,6 +42,9 @@ base class Grant extends Intangible {
   final Object? sponsor;
 
   const Grant({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

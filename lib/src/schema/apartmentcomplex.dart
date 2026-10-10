@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Residence type: Apartment complex.
 @Schema(description: r'''Residence type: Apartment complex.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ApartmentComplex extends Residence {
 
   /// Indicates the total (available plus unavailable) number of accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAvailableAccommodationUnits]].
@@ -35,6 +40,9 @@ base class ApartmentComplex extends Residence {
   final String? tourBookingPage;
 
   const ApartmentComplex({
+    super.id,
+    super.type,
+    super.context,
     super.accommodationFloorPlan,
     super.floorLevel,
     super.additionalProperty,

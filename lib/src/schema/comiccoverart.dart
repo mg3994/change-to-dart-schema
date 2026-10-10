@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The artwork on the cover of a comic.
 @Schema(description: r'''The artwork on the cover of a comic.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ComicCoverArt extends ComicStory {
 
   const ComicCoverArt({
+    super.id,
+    super.type,
+    super.context,
     super.artist,
     super.colorist,
     super.inker,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Any feature associated or not with a medical condition. In medicine a symptom is generally subjective while a sign is objective.
 @Schema(description: r'''Any feature associated or not with a medical condition. In medicine a symptom is generally subjective while a sign is objective.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MedicalSignOrSymptom extends MedicalCondition {
 
   /// A possible treatment to address this condition, sign or symptom.
@@ -15,6 +20,9 @@ base class MedicalSignOrSymptom extends MedicalCondition {
   final Object? possibleTreatment;
 
   const MedicalSignOrSymptom({
+    super.id,
+    super.type,
+    super.context,
     super.associatedAnatomy,
     super.cause,
     super.differentialDiagnosis,

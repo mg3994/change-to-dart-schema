@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An apartment (in American English) or flat (in British English) is a self-contained housing unit (a type of residential real estate) that occupies only part of a building (source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Apartment">http://en.wikipedia.org/wiki/Apartment</a>).
 @Schema(description: r'''An apartment (in American English) or flat (in British English) is a self-contained housing unit (a type of residential real estate) that occupies only part of a building (source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Apartment">http://en.wikipedia.org/wiki/Apartment</a>).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Apartment extends Accommodation {
 
   /// The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
@@ -24,6 +29,9 @@ Typical unit code(s): C62 for person.''')
   final QuantitativeValue? occupancy;
 
   const Apartment({
+    super.id,
+    super.type,
+    super.context,
     super.accommodationCategory,
     super.accommodationFloorPlan,
     super.amenityFeature,

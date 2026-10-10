@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An organization with archival holdings. An organization which keeps and preserves archival material and typically makes it accessible to the public.
 @Schema(description: r'''An organization with archival holdings. An organization which keeps and preserves archival material and typically makes it accessible to the public.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ArchiveOrganization extends LocalBusiness {
 
   /// Collection, [fonds](https://en.wikipedia.org/wiki/Fonds), or item held, kept or maintained by an [[ArchiveOrganization]].
@@ -15,6 +20,9 @@ base class ArchiveOrganization extends LocalBusiness {
   final ArchiveComponent? archiveHeld;
 
   const ArchiveOrganization({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

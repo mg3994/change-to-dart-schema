@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Web page type: Search results page.
 @Schema(description: r'''Web page type: Search results page.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SearchResultsPage extends WebPage {
 
   const SearchResultsPage({
+    super.id,
+    super.type,
+    super.context,
     super.breadcrumb,
     super.lastReviewed,
     super.mainContentOfPage,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A short segment/part of a video game.
 @Schema(description: r'''A short segment/part of a video game.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class VideoGameClip extends Clip {
 
   const VideoGameClip({
+    super.id,
+    super.type,
+    super.context,
     super.actor,
     super.actors,
     super.clipNumber,

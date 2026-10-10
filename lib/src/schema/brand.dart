@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A brand is a name used by an organization or business person for labeling a product, product group, or similar.
 @Schema(description: r'''A brand is a name used by an organization or business person for labeling a product, product group, or similar.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Brand extends Intangible {
 
   /// The overall rating, based on a collection of reviews or ratings, of the item.
@@ -30,6 +35,9 @@ base class Brand extends Intangible {
   final String? slogan;
 
   const Brand({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

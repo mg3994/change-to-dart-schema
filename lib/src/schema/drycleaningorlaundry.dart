@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A dry-cleaning business.
 @Schema(description: r'''A dry-cleaning business.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DryCleaningOrLaundry extends LocalBusiness {
 
   const DryCleaningOrLaundry({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

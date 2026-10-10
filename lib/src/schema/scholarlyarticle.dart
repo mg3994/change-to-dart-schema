@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A scholarly article.
 @Schema(description: r'''A scholarly article.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ScholarlyArticle extends Article {
 
   const ScholarlyArticle({
+    super.id,
+    super.type,
+    super.context,
     super.articleBody,
     super.articleSection,
     super.backstory,

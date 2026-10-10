@@ -18,10 +18,18 @@ some [[agent]]. As is common elsewhere in schema.org, it is sometimes more usefu
 An [[EndorsementRating]] may be part of a numeric scale or organized system, but this is not required: having an explicit type for indicating a positive,
 endorsement rating is particularly useful in the absence of numeric scales as it helps consumers understand that the rating is broadly positive.
 ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class EndorsementRating extends Rating {
 
   const EndorsementRating({
+    super.id,
+    super.type,
+    super.context,
     super.author,
     super.bestRating,
     super.ratingExplanation,

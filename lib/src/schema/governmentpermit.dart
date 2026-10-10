@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A permit issued by a government agency.
 @Schema(description: r'''A permit issued by a government agency.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class GovernmentPermit extends Permit {
 
   const GovernmentPermit({
+    super.id,
+    super.type,
+    super.context,
     super.issuedBy,
     super.issuedThrough,
     super.permitAudience,

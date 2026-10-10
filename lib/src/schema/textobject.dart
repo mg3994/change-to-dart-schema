@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A text file. The text can be unformatted or contain markup, html, etc.
 @Schema(description: r'''A text file. The text can be unformatted or contain markup, html, etc.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class TextObject extends MediaObject {
 
   const TextObject({
+    super.id,
+    super.type,
+    super.context,
     super.associatedArticle,
     super.bitrate,
     super.contentSize,

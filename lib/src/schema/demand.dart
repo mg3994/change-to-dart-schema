@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A demand entity represents the public, not necessarily binding, not necessarily exclusive, announcement by an organization or person to seek a certain type of goods or services. For describing demand using this type, the very same properties used for Offer apply.
 @Schema(description: r'''A demand entity represents the public, not necessarily binding, not necessarily exclusive, announcement by an organization or person to seek a certain type of goods or services. For describing demand using this type, the very same properties used for Offer apply.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Demand extends Intangible {
 
   /// The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
@@ -208,6 +213,9 @@ Note also that this is a definition for how to include GTINs in Schema.org data,
   final WarrantyPromise? warranty;
 
   const Demand({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

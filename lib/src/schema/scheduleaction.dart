@@ -10,10 +10,18 @@ import '../../schemaorg.dart';
 ///
 /// * [[ReserveAction]]: Unlike ReserveAction, ScheduleAction allocates future actions (e.g. an event, a task, etc) towards a time slot / spatial allocation.
 @Schema(description: r'''Scheduling future actions, events, or tasks.\n\nRelated actions:\n\n* [[ReserveAction]]: Unlike ReserveAction, ScheduleAction allocates future actions (e.g. an event, a task, etc) towards a time slot / spatial allocation.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ScheduleAction extends PlanAction {
 
   const ScheduleAction({
+    super.id,
+    super.type,
+    super.context,
     super.scheduledTime,
     super.actionProcess,
     super.actionStatus,

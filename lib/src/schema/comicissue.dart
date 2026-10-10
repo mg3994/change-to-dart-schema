@@ -16,7 +16,12 @@ import '../../schemaorg.dart';
 	uniquely identified by: the combination of the name and volume number of the
 	series to which the issue belongs; the issue number; and the variant
 	description of the issue (if any).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ComicIssue extends PublicationIssue {
 
   /// The primary artist for a work
@@ -58,6 +63,9 @@ base class ComicIssue extends PublicationIssue {
   final String? variantCover;
 
   const ComicIssue({
+    super.id,
+    super.type,
+    super.context,
     super.issueNumber,
     super.pageEnd,
     super.pageStart,

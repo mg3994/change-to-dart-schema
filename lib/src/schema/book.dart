@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A book.
 @Schema(description: r'''A book.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Book extends CreativeWork {
 
   /// Indicates whether the book is an abridged edition.
@@ -40,6 +45,9 @@ base class Book extends CreativeWork {
   final int? numberOfPages;
 
   const Book({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

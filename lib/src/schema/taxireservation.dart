@@ -8,7 +8,12 @@ import '../../schemaorg.dart';
 ///
 /// Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
 @Schema(description: r'''A reservation for a taxi.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class TaxiReservation extends Reservation {
 
   /// Number of people the reservation should accommodate.
@@ -27,6 +32,9 @@ base class TaxiReservation extends Reservation {
   final String? pickupTime;
 
   const TaxiReservation({
+    super.id,
+    super.type,
+    super.context,
     super.bookingAgent,
     super.bookingTime,
     super.broker,

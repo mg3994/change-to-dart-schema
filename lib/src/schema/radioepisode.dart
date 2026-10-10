@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A radio episode which can be part of a series or season.
 @Schema(description: r'''A radio episode which can be part of a series or season.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class RadioEpisode extends Episode {
 
   const RadioEpisode({
+    super.id,
+    super.type,
+    super.context,
     super.actor,
     super.actors,
     super.director,

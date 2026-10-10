@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A file composed primarily of text.
 @Schema(description: r'''A file composed primarily of text.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class TextDigitalDocument extends DigitalDocument {
 
   const TextDigitalDocument({
+    super.id,
+    super.type,
+    super.context,
     super.hasDigitalDocumentPermission,
     super.about,
     super.abstractValue,

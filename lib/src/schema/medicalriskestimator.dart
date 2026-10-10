@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Any rule set or interactive tool for estimating the risk of developing a complication or condition.
 @Schema(description: r'''Any rule set or interactive tool for estimating the risk of developing a complication or condition.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MedicalRiskEstimator extends MedicalEntity {
 
   /// The condition, complication, or symptom whose risk is being estimated.
@@ -20,6 +25,9 @@ base class MedicalRiskEstimator extends MedicalEntity {
   final MedicalRiskFactor? includedRiskFactor;
 
   const MedicalRiskEstimator({
+    super.id,
+    super.type,
+    super.context,
     super.code,
     super.funding,
     super.guideline,

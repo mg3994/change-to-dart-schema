@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A contact point&#x2014;for example, a Customer Complaints department.
 @Schema(description: r'''A contact point&#x2014;for example, a Customer Complaints department.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ContactPoint extends StructuredValue {
 
   /// The geographic area where a service or offered item is provided.
@@ -60,6 +65,9 @@ base class ContactPoint extends StructuredValue {
   final String? telephone;
 
   const ContactPoint({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

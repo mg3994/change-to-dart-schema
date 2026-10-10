@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A Research Organization (e.g. scientific institute, research company).
 @Schema(description: r'''A Research Organization (e.g. scientific institute, research company).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ResearchOrganization extends Organization {
 
   const ResearchOrganization({
+    super.id,
+    super.type,
+    super.context,
     super.acceptedPaymentMethod,
     super.actionableFeedbackPolicy,
     super.address,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A public swimming pool.
 @Schema(description: r'''A public swimming pool.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PublicSwimmingPool extends SportsActivityLocation {
 
   const PublicSwimmingPool({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

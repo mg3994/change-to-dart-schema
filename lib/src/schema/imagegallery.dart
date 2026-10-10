@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Web page type: Image gallery page.
 @Schema(description: r'''Web page type: Image gallery page.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ImageGallery extends MediaGallery {
 
   const ImageGallery({
+    super.id,
+    super.type,
+    super.context,
     super.breadcrumb,
     super.lastReviewed,
     super.mainContentOfPage,

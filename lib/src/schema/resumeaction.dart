@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of resuming a device or application which was formerly paused (e.g. resume music playback or resume a timer).
 @Schema(description: r'''The act of resuming a device or application which was formerly paused (e.g. resume music playback or resume a timer).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ResumeAction extends ControlAction {
 
   const ResumeAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

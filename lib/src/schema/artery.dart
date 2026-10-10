@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A type of blood vessel that specifically carries blood away from the heart.
 @Schema(description: r'''A type of blood vessel that specifically carries blood away from the heart.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Artery extends Vessel {
 
   /// The branches that comprise the arterial structure.
@@ -20,6 +25,9 @@ base class Artery extends Vessel {
   final AnatomicalStructure? supplyTo;
 
   const Artery({
+    super.id,
+    super.type,
+    super.context,
     super.associatedPathophysiology,
     super.bodyLocation,
     super.connectedTo,

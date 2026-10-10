@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A series of movies. Included movies can be indicated with the hasPart property.
 @Schema(description: r'''A series of movies. Included movies can be indicated with the hasPart property.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MovieSeries extends CreativeWorkSeries {
 
   /// An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -45,6 +50,9 @@ base class MovieSeries extends CreativeWorkSeries {
   final VideoObject? trailer;
 
   const MovieSeries({
+    super.id,
+    super.type,
+    super.context,
     super.endDate,
     super.issn,
     super.startDate,

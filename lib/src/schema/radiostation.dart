@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A radio station.
 @Schema(description: r'''A radio station.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class RadioStation extends LocalBusiness {
 
   const RadioStation({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Web page type: Collection page.
 @Schema(description: r'''Web page type: Collection page.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class CollectionPage extends WebPage {
 
   const CollectionPage({
+    super.id,
+    super.type,
+    super.context,
     super.breadcrumb,
     super.lastReviewed,
     super.mainContentOfPage,

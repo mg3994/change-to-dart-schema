@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The mailing address.
 @Schema(description: r'''The mailing address.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PostalAddress extends ContactPoint {
 
   /// The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as "SGP" or a full country name such as "Singapore" can also be used.
@@ -45,6 +50,9 @@ base class PostalAddress extends ContactPoint {
   final String? streetAddress;
 
   const PostalAddress({
+    super.id,
+    super.type,
+    super.context,
     super.areaServed,
     super.availableLanguage,
     super.contactOption,

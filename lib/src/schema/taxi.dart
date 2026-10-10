@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A taxi.
 @Schema(description: r'''A taxi.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Taxi extends Service {
 
   const Taxi({
+    super.id,
+    super.type,
+    super.context,
     super.aggregateRating,
     super.areaServed,
     super.audience,

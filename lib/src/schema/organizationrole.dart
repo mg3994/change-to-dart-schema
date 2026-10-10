@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A subclass of Role used to describe roles within organizations.
 @Schema(description: r'''A subclass of Role used to describe roles within organizations.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class OrganizationRole extends Role {
 
   /// A number associated with a role in an organization, for example, the number on an athlete's jersey.
@@ -15,6 +20,9 @@ base class OrganizationRole extends Role {
   final num? numberedPosition;
 
   const OrganizationRole({
+    super.id,
+    super.type,
+    super.context,
     super.endDate,
     super.namedPosition,
     super.roleName,

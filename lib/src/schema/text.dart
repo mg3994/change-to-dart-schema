@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Data type: Text.
 @Schema(description: r'''Data type: Text.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Text extends Equatable {
 
   const Text({

@@ -8,7 +8,12 @@ import '../../schemaorg.dart';
 ///
 /// Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
 @Schema(description: r'''A reservation to dine at a food-related business.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class FoodEstablishmentReservation extends Reservation {
 
   /// The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.
@@ -31,6 +36,9 @@ base class FoodEstablishmentReservation extends Reservation {
   final Object? startTime;
 
   const FoodEstablishmentReservation({
+    super.id,
+    super.type,
+    super.context,
     super.bookingAgent,
     super.bookingTime,
     super.broker,

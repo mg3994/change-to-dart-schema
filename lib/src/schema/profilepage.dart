@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Web page type: Profile page.
 @Schema(description: r'''Web page type: Profile page.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ProfilePage extends WebPage {
 
   const ProfilePage({
+    super.id,
+    super.type,
+    super.context,
     super.breadcrumb,
     super.lastReviewed,
     super.mainContentOfPage,

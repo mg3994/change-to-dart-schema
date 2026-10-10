@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A short TV program or a segment/part of a TV program.
 @Schema(description: r'''A short TV program or a segment/part of a TV program.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class TVClip extends Clip {
 
   /// The TV series to which this episode or season belongs.
@@ -15,6 +20,9 @@ base class TVClip extends Clip {
   final TVSeries? partOfTVSeries;
 
   const TVClip({
+    super.id,
+    super.type,
+    super.context,
     super.actor,
     super.actors,
     super.clipNumber,

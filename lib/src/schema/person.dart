@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A person (alive, dead, undead, or fictional).
 @Schema(description: r'''A person (alive, dead, undead, or fictional).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Person extends Thing {
 
   /// An additional name for a Person, can be used for a middle name.
@@ -362,6 +367,9 @@ While such policies are most typically expressed in natural language, sometimes 
   final Organization? worksFor;
 
   const Person({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

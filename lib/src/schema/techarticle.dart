@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A technical article - Example: How-to (task) topics, step-by-step, procedural troubleshooting, specifications, etc.
 @Schema(description: r'''A technical article - Example: How-to (task) topics, step-by-step, procedural troubleshooting, specifications, etc.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class TechArticle extends Article {
 
   /// Prerequisites needed to fulfill steps in article.
@@ -20,6 +25,9 @@ base class TechArticle extends Article {
   final String? proficiencyLevel;
 
   const TechArticle({
+    super.id,
+    super.type,
+    super.context,
     super.articleBody,
     super.articleSection,
     super.backstory,

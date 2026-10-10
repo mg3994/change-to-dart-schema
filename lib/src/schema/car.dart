@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A car is a wheeled, self-powered motor vehicle used for transportation.
 @Schema(description: r'''A car is a wheeled, self-powered motor vehicle used for transportation.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Car extends Vehicle {
 
   /// The ACRISS Car Classification Code is a code used by many car rental companies, for classifying vehicles. ACRISS stands for Association of Car Rental Industry Systems and Standards.
@@ -26,6 +31,9 @@ base class Car extends Vehicle {
   final QuantitativeValue? roofLoad;
 
   const Car({
+    super.id,
+    super.type,
+    super.context,
     super.accelerationTime,
     super.bodyType,
     super.callSign,

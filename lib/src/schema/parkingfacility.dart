@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A parking lot or other parking facility.
 @Schema(description: r'''A parking lot or other parking facility.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ParkingFacility extends CivicStructure {
 
   const ParkingFacility({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

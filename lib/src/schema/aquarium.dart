@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Aquarium.
 @Schema(description: r'''Aquarium.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Aquarium extends CivicStructure {
 
   const Aquarium({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

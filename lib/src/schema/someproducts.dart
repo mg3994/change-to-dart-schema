@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A placeholder for multiple similar products of the same kind.
 @Schema(description: r'''A placeholder for multiple similar products of the same kind.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SomeProducts extends Product {
 
   /// The current approximate inventory level for the item or items.
@@ -15,6 +20,9 @@ base class SomeProducts extends Product {
   final QuantitativeValue? inventoryLevel;
 
   const SomeProducts({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.aggregateRating,
     super.asin,

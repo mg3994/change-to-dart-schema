@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A [hackathon](https://en.wikipedia.org/wiki/Hackathon) event.
 @Schema(description: r'''A [hackathon](https://en.wikipedia.org/wiki/Hackathon) event.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Hackathon extends Event {
 
   const Hackathon({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.actor,
     super.aggregateRating,

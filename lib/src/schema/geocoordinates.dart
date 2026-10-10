@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The geographic coordinates of a place or event.
 @Schema(description: r'''The geographic coordinates of a place or event.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class GeoCoordinates extends StructuredValue {
 
   /// Physical address of the item.
@@ -40,6 +45,9 @@ base class GeoCoordinates extends StructuredValue {
   final String? postalCode;
 
   const GeoCoordinates({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

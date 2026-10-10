@@ -2,9 +2,10 @@ import 'package:test/test.dart';
 import 'package:schemaorg/schemaorg.dart';
 
 void main() {
-  group('SchemaOrgJson JSON-LD Tests', () {
-    test('Serialize Person to JSON-LD map', () {
+  group('SchemaOrgJson JSON-LD Registry Tests', () {
+    test('Serialize Person to JSON-LD map with @id and @type', () {
       final person = Person(
+        id: 'https://example.com/person/1',
         name: 'Jane Doe',
         email: 'jane@example.com',
         jobTitle: 'Software Engineer',
@@ -14,44 +15,45 @@ void main() {
 
       expect(jsonLd['@context'], equals('https://schema.org'));
       expect(jsonLd['@type'], equals('Person'));
+      expect(jsonLd['@id'], equals('https://example.com/person/1'));
       expect(jsonLd['name'], equals('Jane Doe'));
       expect(jsonLd['email'], equals('jane@example.com'));
       expect(jsonLd['jobTitle'], equals('Software Engineer'));
     });
 
-    test('Parse JSON-LD map to Person model', () {
+    test('Parse Article JSON-LD map', () {
       final map = {
         '@context': 'https://schema.org',
-        '@type': 'Person',
-        'name': 'John Smith',
-        'email': 'john@example.com',
-        'givenName': 'John',
-        'familyName': 'Smith',
+        '@type': 'Article',
+        '@id': 'https://example.com/article/100',
+        'headline': 'Dart 3 Released',
+        'articleBody': 'Dart 3 includes patterns, record types, and class modifiers.',
       };
 
       final parsed = SchemaOrgJson.parseJsonLd(map);
 
-      expect(parsed, isA<Person>());
-      final person = parsed as Person;
-      expect(person.name, equals('John Smith'));
-      expect(person.email, equals('john@example.com'));
-      expect(person.givenName, equals('John'));
-      expect(person.familyName, equals('Smith'));
+      expect(parsed, isA<Article>());
+      final article = parsed as Article;
+      expect(article.id, equals('https://example.com/article/100'));
+      expect(article.headline, equals('Dart 3 Released'));
+      expect(article.articleBody, equals('Dart 3 includes patterns, record types, and class modifiers.'));
     });
 
-    test('Round-trip serialization/deserialization for Product', () {
-      final product = Product(
-        name: 'Dart SDK',
-        description: 'Language for client apps',
-        sku: '12345',
+    test('Round-trip Event serialization and deserialization', () {
+      final event = Event(
+        id: 'https://example.com/event/2026',
+        name: 'DartConf 2026',
+        description: 'Annual Dart Conference',
+        startDate: '2026-10-10',
       );
 
-      final jsonLd = SchemaOrgJson.toJsonLd(product);
-      final parsedProduct = SchemaOrgJson.parseJsonLd(jsonLd) as Product;
+      final jsonLd = SchemaOrgJson.toJsonLd(event);
+      final parsedEvent = SchemaOrgJson.parseJsonLd(jsonLd) as Event;
 
-      expect(parsedProduct.name, equals(product.name));
-      expect(parsedProduct.description, equals(product.description));
-      expect(parsedProduct.sku, equals(product.sku));
+      expect(parsedEvent.id, equals(event.id));
+      expect(parsedEvent.name, equals(event.name));
+      expect(parsedEvent.description, equals(event.description));
+      expect(parsedEvent.startDate, equals(event.startDate));
     });
   });
 }

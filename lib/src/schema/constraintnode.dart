@@ -8,7 +8,12 @@ import '../../schemaorg.dart';
 /// variety of purposes, and their values may sometimes be understood to indicate sets of possible values rather than single, exact and specific values.
 @Schema(description: r'''The ConstraintNode type is provided to support usecases in which a node in a structured data graph is described with properties which appear to describe a single entity, but are being used in a situation where they serve a more abstract purpose. A [[ConstraintNode]] can be described using [[constraintProperty]] and [[numConstraints]]. These constraint properties can serve a
     variety of purposes, and their values may sometimes be understood to indicate sets of possible values rather than single, exact and specific values.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ConstraintNode extends Intangible {
 
   /// Indicates a property used as a constraint. For example, in the definition of a [[StatisticalVariable]]. The value is a property, either from within Schema.org or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org.
@@ -22,6 +27,9 @@ base class ConstraintNode extends Intangible {
   final int? numConstraints;
 
   const ConstraintNode({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

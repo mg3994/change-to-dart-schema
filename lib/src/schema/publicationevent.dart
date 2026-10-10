@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type, e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.
 @Schema(description: r'''A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type, e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PublicationEvent extends Event {
 
   /// A flag to signal that the item, event, or place is accessible for free.
@@ -25,6 +30,9 @@ base class PublicationEvent extends Event {
   final BroadcastService? publishedOn;
 
   const PublicationEvent({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.actor,
     super.aggregateRating,

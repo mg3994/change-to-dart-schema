@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A listing that describes a job opening in a certain organization.
 @Schema(description: r'''A listing that describes a job opening in a certain organization.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class JobPosting extends Intangible {
 
   /// The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
@@ -203,6 +208,9 @@ Note: for historical reasons, any textual label and formal code provided as a li
   final String? workHours;
 
   const JobPosting({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

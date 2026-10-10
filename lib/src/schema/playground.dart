@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A playground.
 @Schema(description: r'''A playground.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Playground extends CivicStructure {
 
   const Playground({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

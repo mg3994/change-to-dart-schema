@@ -16,7 +16,12 @@ import '../../schemaorg.dart';
 
   At this time, Schema.org does not define any types of relationship between claims. This is a natural area for future exploration.
   ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Claim extends CreativeWork {
 
   /// Indicates an occurrence of a [[Claim]] in some [[CreativeWork]].
@@ -35,6 +40,9 @@ base class Claim extends CreativeWork {
   final CreativeWork? firstAppearance;
 
   const Claim({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

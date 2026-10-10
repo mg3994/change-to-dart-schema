@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An employment agency.
 @Schema(description: r'''An employment agency.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class EmploymentAgency extends LocalBusiness {
 
   const EmploymentAgency({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

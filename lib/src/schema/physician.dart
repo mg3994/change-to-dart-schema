@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An individual physician or a physician's office considered as a [[MedicalOrganization]].
 @Schema(description: r'''An individual physician or a physician's office considered as a [[MedicalOrganization]].''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Physician extends MedicalBusiness {
 
   /// A medical service available from this provider.
@@ -40,6 +45,9 @@ Note: for historical reasons, any textual label and formal code provided as a li
   final String? usNPI;
 
   const Physician({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

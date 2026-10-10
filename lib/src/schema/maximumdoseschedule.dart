@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The maximum dosing schedule considered safe for a drug or supplement as recommended by an authority or by the drug/supplement's manufacturer. Capture the recommending authority in the recognizingAuthority property of MedicalEntity.
 @Schema(description: r'''The maximum dosing schedule considered safe for a drug or supplement as recommended by an authority or by the drug/supplement's manufacturer. Capture the recommending authority in the recognizingAuthority property of MedicalEntity.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MaximumDoseSchedule extends DoseSchedule {
 
   const MaximumDoseSchedule({
+    super.id,
+    super.type,
+    super.context,
     super.doseUnit,
     super.doseValue,
     super.frequency,

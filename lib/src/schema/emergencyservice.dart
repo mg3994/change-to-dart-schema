@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// An emergency service, such as a fire station or ER.
 @Schema(description: r'''An emergency service, such as a fire station or ER.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class EmergencyService extends LocalBusiness {
 
   const EmergencyService({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

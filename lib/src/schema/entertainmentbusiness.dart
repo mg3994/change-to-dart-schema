@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A business providing entertainment.
 @Schema(description: r'''A business providing entertainment.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class EntertainmentBusiness extends LocalBusiness {
 
   const EntertainmentBusiness({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

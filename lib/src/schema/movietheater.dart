@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A movie theater.
 @Schema(description: r'''A movie theater.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MovieTheater extends CivicStructure {
 
   /// The number of screens in the movie theater.
@@ -15,6 +20,9 @@ base class MovieTheater extends CivicStructure {
   final num? screenCount;
 
   const MovieTheater({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

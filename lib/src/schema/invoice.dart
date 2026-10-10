@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A statement of the money due for goods or services; a bill.
 @Schema(description: r'''A statement of the money due for goods or services; a bill.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Invoice extends Intangible {
 
   /// The identifier for the account the payment will be applied to.
@@ -90,6 +95,9 @@ base class Invoice extends Intangible {
   final Object? totalPaymentDue;
 
   const Invoice({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

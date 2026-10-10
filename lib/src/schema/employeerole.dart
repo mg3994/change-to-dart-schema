@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A subclass of OrganizationRole used to describe employee relationships.
 @Schema(description: r'''A subclass of OrganizationRole used to describe employee relationships.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class EmployeeRole extends OrganizationRole {
 
   /// The base salary of the job or of an employee in an EmployeeRole.
@@ -20,6 +25,9 @@ base class EmployeeRole extends OrganizationRole {
   final String? salaryCurrency;
 
   const EmployeeRole({
+    super.id,
+    super.type,
+    super.context,
     super.numberedPosition,
     super.endDate,
     super.namedPosition,

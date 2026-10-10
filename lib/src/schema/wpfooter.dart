@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The footer section of the page.
 @Schema(description: r'''The footer section of the page.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class WPFooter extends WebPageElement {
 
   const WPFooter({
+    super.id,
+    super.type,
+    super.context,
     super.cssSelector,
     super.xpath,
     super.about,

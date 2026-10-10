@@ -10,10 +10,18 @@ import '../../schemaorg.dart';
 ///
 @Schema(description: r'''Accountancy business.\n\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\(s).
       ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AccountingService extends FinancialService {
 
   const AccountingService({
+    super.id,
+    super.type,
+    super.context,
     super.feesAndCommissionsSpecification,
     super.branchOf,
     super.currenciesAccepted,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A statistical distribution of values.
 @Schema(description: r'''A statistical distribution of values.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class QuantitativeValueDistribution extends StructuredValue {
 
   /// The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -40,6 +45,9 @@ base class QuantitativeValueDistribution extends StructuredValue {
   final num? percentile90;
 
   const QuantitativeValueDistribution({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

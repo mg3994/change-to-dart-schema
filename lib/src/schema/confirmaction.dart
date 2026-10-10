@@ -10,10 +10,18 @@ import '../../schemaorg.dart';
 ///
 /// * [[CancelAction]]: The antonym of ConfirmAction.
 @Schema(description: r'''The act of notifying someone that a future event/action is going to happen as expected.\n\nRelated actions:\n\n* [[CancelAction]]: The antonym of ConfirmAction.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ConfirmAction extends InformAction {
 
   const ConfirmAction({
+    super.id,
+    super.type,
+    super.context,
     super.event,
     super.about,
     super.inLanguage,

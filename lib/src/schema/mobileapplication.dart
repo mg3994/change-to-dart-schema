@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A software application designed specifically to work well on a mobile device such as a telephone.
 @Schema(description: r'''A software application designed specifically to work well on a mobile device such as a telephone.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MobileApplication extends SoftwareApplication {
 
   /// Specifies specific carrier(s) requirements for the application (e.g. an application may only work on a specific carrier network).
@@ -15,6 +20,9 @@ base class MobileApplication extends SoftwareApplication {
   final String? carrierRequirements;
 
   const MobileApplication({
+    super.id,
+    super.type,
+    super.context,
     super.applicationCategory,
     super.applicationSubCategory,
     super.applicationSuite,

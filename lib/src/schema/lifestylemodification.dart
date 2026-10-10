@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A process of care involving exercise, changes to diet, fitness routines, and other lifestyle changes aimed at improving a health condition.
 @Schema(description: r'''A process of care involving exercise, changes to diet, fitness routines, and other lifestyle changes aimed at improving a health condition.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class LifestyleModification extends MedicalEntity {
 
   const LifestyleModification({
+    super.id,
+    super.type,
+    super.context,
     super.code,
     super.funding,
     super.guideline,

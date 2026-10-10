@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A hospital.
 @Schema(description: r'''A hospital.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Hospital extends CivicStructure {
 
   /// A medical service available from this provider.
@@ -25,6 +30,9 @@ base class Hospital extends CivicStructure {
   final MedicalSpecialty? medicalSpecialty;
 
   const Hospital({
+    super.id,
+    super.type,
+    super.context,
     super.openingHours,
     super.additionalProperty,
     super.address,

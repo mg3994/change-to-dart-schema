@@ -10,7 +10,12 @@ import '../../schemaorg.dart';
 @Schema(description: r'''The term "story" is any indivisible, re-printable
 	unit of a comic, including the interior stories, covers, and backmatter. Most
 	comics have at least two stories: a cover (ComicCoverArt) and an interior story.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ComicStory extends CreativeWork {
 
   /// The primary artist for a work
@@ -43,6 +48,9 @@ base class ComicStory extends CreativeWork {
   final Person? penciler;
 
   const ComicStory({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

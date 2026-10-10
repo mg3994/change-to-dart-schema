@@ -16,7 +16,12 @@ Observations can also encode a subset of simple RDF-like statements (its observa
 
 In the context of a quantitative knowledge graph, typical properties could include [[measuredProperty]], [[observationAbout]], [[observationDate]], [[value]], [[unitCode]], [[unitText]], [[measurementMethod]].
     ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Observation extends Intangible {
 
   /// A [[marginOfError]] for an [[Observation]].
@@ -82,6 +87,9 @@ If there are several [[variableMeasured]] properties recorded for some given dat
   final Object? variableMeasured;
 
   const Observation({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

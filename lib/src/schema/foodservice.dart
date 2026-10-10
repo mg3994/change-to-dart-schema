@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A food service, like breakfast, lunch, or dinner.
 @Schema(description: r'''A food service, like breakfast, lunch, or dinner.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class FoodService extends Service {
 
   const FoodService({
+    super.id,
+    super.type,
+    super.context,
     super.aggregateRating,
     super.areaServed,
     super.audience,

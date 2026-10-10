@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Used to describe membership in a loyalty programs (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc.
 @Schema(description: r'''Used to describe membership in a loyalty programs (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ProgramMembership extends Intangible {
 
   /// The Organization (airline, travelers' club, retailer, etc.) the membership is made with or which offers the  MemberProgram.
@@ -45,6 +50,9 @@ base class ProgramMembership extends Intangible {
   final String? programName;
 
   const ProgramMembership({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

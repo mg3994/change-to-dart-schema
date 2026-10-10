@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of participating in performance arts.
 @Schema(description: r'''The act of participating in performance arts.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PerformAction extends PlayAction {
 
   /// A sub property of location. The entertainment business where the action occurred.
@@ -15,6 +20,9 @@ base class PerformAction extends PlayAction {
   final EntertainmentBusiness? entertainmentBusiness;
 
   const PerformAction({
+    super.id,
+    super.type,
+    super.context,
     super.audience,
     super.event,
     super.actionProcess,

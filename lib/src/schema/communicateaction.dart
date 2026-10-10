@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.
 @Schema(description: r'''The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class CommunicateAction extends InteractAction {
 
   /// The subject matter of an object.
@@ -30,6 +35,9 @@ base class CommunicateAction extends InteractAction {
   final Object? recipient;
 
   const CommunicateAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

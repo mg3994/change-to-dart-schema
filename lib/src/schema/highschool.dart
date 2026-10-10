@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A high school.
 @Schema(description: r'''A high school.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class HighSchool extends EducationalOrganization {
 
   const HighSchool({
+    super.id,
+    super.type,
+    super.context,
     super.alumni,
     super.openingHours,
     super.additionalProperty,

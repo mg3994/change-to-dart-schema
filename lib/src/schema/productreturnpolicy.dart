@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A ProductReturnPolicy provides information about product return policies associated with an [[Organization]] or [[Product]].
 @Schema(description: r'''A ProductReturnPolicy provides information about product return policies associated with an [[Organization]] or [[Product]].''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class ProductReturnPolicy extends Intangible {
 
   /// The productReturnDays property indicates the number of days (from purchase) within which relevant product return policy is applicable.
@@ -20,6 +25,9 @@ base class ProductReturnPolicy extends Intangible {
   final String? productReturnLink;
 
   const ProductReturnPolicy({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

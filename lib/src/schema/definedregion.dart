@@ -32,7 +32,12 @@ PostalCode Set: { [94000-94585], [97000, 97999], [13000, 13599]}
 { [12345, 12345], [78945, 78945], }
 Region = state, canton, prefecture, autonomous community...
 ''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class DefinedRegion extends Place {
 
   /// The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as "SGP" or a full country name such as "Singapore" can also be used.
@@ -61,6 +66,9 @@ base class DefinedRegion extends Place {
   final PostalCodeRangeSpecification? postalCodeRange;
 
   const DefinedRegion({
+    super.id,
+    super.type,
+    super.context,
     super.additionalProperty,
     super.address,
     super.aggregateRating,

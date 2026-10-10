@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The average rating based on multiple ratings or reviews.
 @Schema(description: r'''The average rating based on multiple ratings or reviews.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class AggregateRating extends Rating {
 
   /// The item that is being reviewed/rated.
@@ -25,6 +30,9 @@ base class AggregateRating extends Rating {
   final int? reviewCount;
 
   const AggregateRating({
+    super.id,
+    super.type,
+    super.context,
     super.author,
     super.bestRating,
     super.ratingExplanation,

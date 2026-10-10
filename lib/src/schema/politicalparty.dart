@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Organization: Political Party.
 @Schema(description: r'''Organization: Political Party.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PoliticalParty extends Organization {
 
   const PoliticalParty({
+    super.id,
+    super.type,
+    super.context,
     super.acceptedPaymentMethod,
     super.actionableFeedbackPolicy,
     super.address,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// Text representing a CSS selector.
 @Schema(description: r'''Text representing a CSS selector.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class CssSelectorType extends Text {
 
   const CssSelectorType({
+    super.id,
+    super.type,
+    super.context,
   });
 
   @override

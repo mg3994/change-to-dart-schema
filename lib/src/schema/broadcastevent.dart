@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An over the air or online broadcast event.
 @Schema(description: r'''An over the air or online broadcast event.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BroadcastEvent extends PublicationEvent {
 
   /// The event being broadcast such as a sporting event or awards ceremony.
@@ -30,6 +35,9 @@ base class BroadcastEvent extends PublicationEvent {
   final String? videoFormat;
 
   const BroadcastEvent({
+    super.id,
+    super.type,
+    super.context,
     super.free,
     super.publishedBy,
     super.publishedOn,

@@ -10,7 +10,12 @@ import '../../schemaorg.dart';
 ///
 /// * [[LendAction]]: Reciprocal of BorrowAction.
 @Schema(description: r'''The act of obtaining an object under an agreement to return it at a later date. Reciprocal of LendAction.\n\nRelated actions:\n\n* [[LendAction]]: Reciprocal of BorrowAction.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class BorrowAction extends TransferAction {
 
   /// A sub property of participant. The person that lends the object being borrowed.
@@ -19,6 +24,9 @@ base class BorrowAction extends TransferAction {
   final Object? lender;
 
   const BorrowAction({
+    super.id,
+    super.type,
+    super.context,
     super.fromLocation,
     super.toLocation,
     super.actionProcess,

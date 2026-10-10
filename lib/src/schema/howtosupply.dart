@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A supply consumed when performing the instructions for how to achieve a result.
 @Schema(description: r'''A supply consumed when performing the instructions for how to achieve a result.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class HowToSupply extends HowToItem {
 
   /// The estimated cost of the supply or supplies consumed when performing instructions.
@@ -15,6 +20,9 @@ base class HowToSupply extends HowToItem {
   final Object? estimatedCost;
 
   const HowToSupply({
+    super.id,
+    super.type,
+    super.context,
     super.requiredQuantity,
     super.item,
     super.nextItem,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of playing a video game.
 @Schema(description: r'''The act of playing a video game.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PlayGameAction extends ConsumeAction {
 
   /// Indicates the availability type of the game content associated with this action, such as whether it is a full version or a demo.
@@ -15,6 +20,9 @@ base class PlayGameAction extends ConsumeAction {
   final Object? gameAvailabilityType;
 
   const PlayGameAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionAccessibilityRequirement,
     super.expectsAcceptanceOf,
     super.actionProcess,

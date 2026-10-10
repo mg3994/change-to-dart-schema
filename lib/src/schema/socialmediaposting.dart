@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// A post to a social media platform, including blog posts, tweets, Facebook posts, etc.
 @Schema(description: r'''A post to a social media platform, including blog posts, tweets, Facebook posts, etc.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SocialMediaPosting extends Article {
 
   /// A CreativeWork such as an image, video, or audio clip shared as part of this posting.
@@ -15,6 +20,9 @@ base class SocialMediaPosting extends Article {
   final CreativeWork? sharedContent;
 
   const SocialMediaPosting({
+    super.id,
+    super.type,
+    super.context,
     super.articleBody,
     super.articleSection,
     super.backstory,

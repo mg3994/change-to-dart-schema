@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.
 @Schema(description: r'''Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MolecularEntity extends BioChemEntity {
 
   /// A role played by the BioChemEntity within a chemical context.
@@ -55,6 +60,9 @@ base class MolecularEntity extends BioChemEntity {
   final String? smiles;
 
   const MolecularEntity({
+    super.id,
+    super.type,
+    super.context,
     super.associatedDisease,
     super.bioChemInteraction,
     super.bioChemSimilarity,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A painting.
 @Schema(description: r'''A painting.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Painting extends CreativeWork {
 
   const Painting({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

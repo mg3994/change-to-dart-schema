@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Season dedicated to TV broadcast and associated online delivery.
 @Schema(description: r'''Season dedicated to TV broadcast and associated online delivery.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class TVSeason extends CreativeWork {
 
   /// The country of origin of something, including products as well as creative  works such as movie and TV content.
@@ -43,6 +48,9 @@ Since schema.org types like [[Movie]], [[TVEpisode]], [[TVSeason]], and [[TVSeri
   final Object? titleEIDR;
 
   const TVSeason({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Organization: Sports team.
 @Schema(description: r'''Organization: Sports team.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SportsTeam extends SportsOrganization {
 
   /// A person that acts as performing member of a sports team; a player as opposed to a coach.
@@ -25,6 +30,9 @@ base class SportsTeam extends SportsOrganization {
   final Object? gender;
 
   const SportsTeam({
+    super.id,
+    super.type,
+    super.context,
     super.sport,
     super.acceptedPaymentMethod,
     super.actionableFeedbackPolicy,

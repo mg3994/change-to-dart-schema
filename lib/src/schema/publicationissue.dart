@@ -8,7 +8,12 @@ import '../../schemaorg.dart';
 ///
 /// See also [blog post](https://blog-schema.org/2014/09/02/schema-org-support-for-bibliographic-relationships-and-periodicals/).
 @Schema(description: r'''A part of a successively published publication such as a periodical or publication volume, often numbered, usually containing a grouping of works such as articles.\n\nSee also [blog post](https://blog-schema.org/2014/09/02/schema-org-support-for-bibliographic-relationships-and-periodicals/).''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PublicationIssue extends CreativeWork {
 
   /// Identifies the issue of publication; for example, "iii" or "2".
@@ -32,6 +37,9 @@ base class PublicationIssue extends CreativeWork {
   final String? pagination;
 
   const PublicationIssue({
+    super.id,
+    super.type,
+    super.context,
     super.about,
     super.abstractValue,
     super.accessMode,

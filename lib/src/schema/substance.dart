@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical.
 @Schema(description: r'''Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Substance extends MedicalEntity {
 
   /// An active ingredient, typically chemical compounds and/or biologic substances.
@@ -20,6 +25,9 @@ base class Substance extends MedicalEntity {
   final MaximumDoseSchedule? maximumIntake;
 
   const Substance({
+    super.id,
+    super.type,
+    super.context,
     super.code,
     super.funding,
     super.guideline,

@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// The act of producing a painting, typically with paint and canvas as instruments.
 @Schema(description: r'''The act of producing a painting, typically with paint and canvas as instruments.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class PaintAction extends CreateAction {
 
   const PaintAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

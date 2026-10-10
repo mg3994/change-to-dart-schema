@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// An entry point, within some Web-based protocol.
 @Schema(description: r'''An entry point, within some Web-based protocol.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class EntryPoint extends Intangible {
 
   /// An application that can complete the request.
@@ -45,6 +50,9 @@ base class EntryPoint extends Intangible {
   final String? urlTemplate;
 
   const EntryPoint({
+    super.id,
+    super.type,
+    super.context,
     super.additionalType,
     super.alternateName,
     super.description,

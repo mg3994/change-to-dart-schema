@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A movie rental store.
 @Schema(description: r'''A movie rental store.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class MovieRentalStore extends Store {
 
   const MovieRentalStore({
+    super.id,
+    super.type,
+    super.context,
     super.branchOf,
     super.currenciesAccepted,
     super.floorLevel,

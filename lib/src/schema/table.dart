@@ -6,10 +6,18 @@ import '../../schemaorg.dart';
 
 /// A table on a Web page.
 @Schema(description: r'''A table on a Web page.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class Table extends WebPageElement {
 
   const Table({
+    super.id,
+    super.type,
+    super.context,
     super.cssSelector,
     super.xpath,
     super.about,

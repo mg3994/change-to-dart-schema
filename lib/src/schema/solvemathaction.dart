@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The action that takes in a math expression and directs users to a page potentially capable of solving/simplifying that expression.
 @Schema(description: r'''The action that takes in a math expression and directs users to a page potentially capable of solving/simplifying that expression.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class SolveMathAction extends Action {
 
   /// For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: "Multiple choice", "Open ended", "Flashcard".
@@ -15,6 +20,9 @@ base class SolveMathAction extends Action {
   final String? eduQuestionType;
 
   const SolveMathAction({
+    super.id,
+    super.type,
+    super.context,
     super.actionProcess,
     super.actionStatus,
     super.agent,

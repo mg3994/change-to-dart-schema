@@ -6,7 +6,12 @@ import '../../schemaorg.dart';
 
 /// The act of traveling from a fromLocation to a destination by a specified mode of transport, optionally with participants.
 @Schema(description: r'''The act of traveling from a fromLocation to a destination by a specified mode of transport, optionally with participants.''')
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(
+  explicitToJson: true,
+  includeIfNull: false,
+  checked: true,
+  createFieldMap: true,
+)
 base class TravelAction extends MoveAction {
 
   /// The distance travelled, e.g. exercising or travelling.
@@ -15,6 +20,9 @@ base class TravelAction extends MoveAction {
   final Distance? distance;
 
   const TravelAction({
+    super.id,
+    super.type,
+    super.context,
     super.fromLocation,
     super.toLocation,
     super.actionProcess,
