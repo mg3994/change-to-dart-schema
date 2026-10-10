@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A structured value representing the duration and scope of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.
 @Schema(description: r'''A structured value representing the duration and scope of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.''')
 @JsonSerializable(explicitToJson: true)
-final class WarrantyPromise extends StructuredValue with EquatableMixin {
+base class WarrantyPromise extends StructuredValue {
 
   /// The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
   @Field(name: 'durationOfWarranty', description: r'''The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.''')

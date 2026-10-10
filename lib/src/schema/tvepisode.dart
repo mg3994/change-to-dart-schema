@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A TV episode which can be part of a series or season.
 @Schema(description: r'''A TV episode which can be part of a series or season.''')
 @JsonSerializable(explicitToJson: true)
-final class TVEpisode extends Episode with EquatableMixin {
+base class TVEpisode extends Episode {
 
   /// The country of origin of something, including products as well as creative  works such as movie and TV content.
 ///

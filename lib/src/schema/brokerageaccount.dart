@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An account that allows an investor to deposit funds and place investment orders with a licensed broker or brokerage firm.
 @Schema(description: r'''An account that allows an investor to deposit funds and place investment orders with a licensed broker or brokerage firm.''')
 @JsonSerializable(explicitToJson: true)
-final class BrokerageAccount extends InvestmentOrDeposit with EquatableMixin {
+base class BrokerageAccount extends InvestmentOrDeposit {
 
   const BrokerageAccount({
     super.amount,

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A mountain, like Mount Whitney or Mount Everest.
 @Schema(description: r'''A mountain, like Mount Whitney or Mount Everest.''')
 @JsonSerializable(explicitToJson: true)
-final class Mountain extends Landform with EquatableMixin {
+base class Mountain extends Landform {
 
   const Mountain({
     super.additionalProperty,

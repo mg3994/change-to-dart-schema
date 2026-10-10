@@ -17,7 +17,7 @@ import '../../schemaorg.dart';
   At this time, Schema.org does not define any types of relationship between claims. This is a natural area for future exploration.
   ''')
 @JsonSerializable(explicitToJson: true)
-final class Claim extends CreativeWork with EquatableMixin {
+base class Claim extends CreativeWork {
 
   /// Indicates an occurrence of a [[Claim]] in some [[CreativeWork]].
   @Field(name: 'appearance', description: r'''Indicates an occurrence of a [[Claim]] in some [[CreativeWork]].''')

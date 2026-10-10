@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Vital signs are measures of various physiological functions in order to assess the most basic body functions.
 @Schema(description: r'''Vital signs are measures of various physiological functions in order to assess the most basic body functions.''')
 @JsonSerializable(explicitToJson: true)
-final class VitalSign extends MedicalSign with EquatableMixin {
+base class VitalSign extends MedicalSign {
 
   const VitalSign({
     super.identifyingExam,

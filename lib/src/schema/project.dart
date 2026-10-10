@@ -11,7 +11,7 @@ import '../../schemaorg.dart';
 Use properties from [[Organization]], [[subOrganization]]/[[parentOrganization]] to indicate project sub-structures.
    ''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Project extends Organization with EquatableMixin {
+base class Project extends Organization {
 
   const Project({
     super.acceptedPaymentMethod,

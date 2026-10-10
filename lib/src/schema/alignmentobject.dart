@@ -9,7 +9,7 @@ import '../../schemaorg.dart';
 @Schema(description: r'''An intangible item that describes an alignment between a learning resource and a node in an educational framework.
 Should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.''')
 @JsonSerializable(explicitToJson: true)
-final class AlignmentObject extends Intangible with EquatableMixin {
+base class AlignmentObject extends Intangible {
 
   /// A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
   @Field(name: 'alignmentType', description: r'''A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.''')

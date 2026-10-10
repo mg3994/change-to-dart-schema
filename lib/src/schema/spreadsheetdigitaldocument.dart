@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A spreadsheet file.
 @Schema(description: r'''A spreadsheet file.''')
 @JsonSerializable(explicitToJson: true)
-final class SpreadsheetDigitalDocument extends DigitalDocument with EquatableMixin {
+base class SpreadsheetDigitalDocument extends DigitalDocument {
 
   const SpreadsheetDigitalDocument({
     super.hasDigitalDocumentPermission,

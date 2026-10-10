@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// ShippingDeliveryTime provides various pieces of information about delivery times for shipping.
 @Schema(description: r'''ShippingDeliveryTime provides various pieces of information about delivery times for shipping.''')
 @JsonSerializable(explicitToJson: true)
-final class ShippingDeliveryTime extends StructuredValue with EquatableMixin {
+base class ShippingDeliveryTime extends StructuredValue {
 
   /// Days of the week when the merchant typically operates, indicated via opening hours markup.
   @Field(name: 'businessDays', description: r'''Days of the week when the merchant typically operates, indicated via opening hours markup.''')

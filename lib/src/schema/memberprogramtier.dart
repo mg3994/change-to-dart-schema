@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A MemberProgramTier specifies a tier under a loyalty (member) program, for example "gold".
 @Schema(description: r'''A MemberProgramTier specifies a tier under a loyalty (member) program, for example "gold".''')
 @JsonSerializable(explicitToJson: true)
-final class MemberProgramTier extends Intangible with EquatableMixin {
+base class MemberProgramTier extends Intangible {
 
   /// A member benefit for a particular tier of a loyalty program.
   @Field(name: 'hasTierBenefit', description: r'''A member benefit for a particular tier of a loyalty program.''')

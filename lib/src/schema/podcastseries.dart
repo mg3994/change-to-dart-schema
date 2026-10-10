@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A podcast is an episodic series of digital audio or video files which a user can download and listen to.
 @Schema(description: r'''A podcast is an episodic series of digital audio or video files which a user can download and listen to.''')
 @JsonSerializable(explicitToJson: true)
-final class PodcastSeries extends CreativeWorkSeries with EquatableMixin {
+base class PodcastSeries extends CreativeWorkSeries {
 
   /// An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
   @Field(name: 'actor', description: r'''An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A scholarly article.
 @Schema(description: r'''A scholarly article.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class ScholarlyArticle extends Article with EquatableMixin {
+base class ScholarlyArticle extends Article {
 
   const ScholarlyArticle({
     super.articleBody,

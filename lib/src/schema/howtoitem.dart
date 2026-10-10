@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An item used as either a tool or supply when performing the instructions for how to achieve a result.
 @Schema(description: r'''An item used as either a tool or supply when performing the instructions for how to achieve a result.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class HowToItem extends ListItem with EquatableMixin {
+base class HowToItem extends ListItem {
 
   /// The required quantity of the item(s).
   @Field(name: 'requiredQuantity', description: r'''The required quantity of the item(s).''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A radio channel that uses AM.
 @Schema(description: r'''A radio channel that uses AM.''')
 @JsonSerializable(explicitToJson: true)
-final class AMRadioChannel extends RadioChannel with EquatableMixin {
+base class AMRadioChannel extends RadioChannel {
 
   const AMRadioChannel({
     super.broadcastChannelId,

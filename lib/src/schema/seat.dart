@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Used to describe a seat, such as a reserved seat in an event reservation.
 @Schema(description: r'''Used to describe a seat, such as a reserved seat in an event reservation.''')
 @JsonSerializable(explicitToJson: true)
-final class Seat extends Intangible with EquatableMixin {
+base class Seat extends Intangible {
 
   /// The location of the reserved seat (e.g., 27).
   @Field(name: 'seatNumber', description: r'''The location of the reserved seat (e.g., 27).''')

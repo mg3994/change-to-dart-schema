@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A set of organisms asserted to represent a natural cohesive biological unit.
 @Schema(description: r'''A set of organisms asserted to represent a natural cohesive biological unit.''')
 @JsonSerializable(explicitToJson: true)
-final class Taxon extends Thing with EquatableMixin {
+base class Taxon extends Thing {
 
   /// Closest child taxa of the taxon in question.
   @Field(name: 'childTaxon', description: r'''Closest child taxa of the taxon in question.''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A blog post.
 @Schema(description: r'''A blog post.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class BlogPosting extends SocialMediaPosting with EquatableMixin {
+base class BlogPosting extends SocialMediaPosting {
 
   const BlogPosting({
     super.sharedContent,

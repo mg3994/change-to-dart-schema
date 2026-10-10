@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A media season, e.g. TV, radio, video game etc.
 @Schema(description: r'''A media season, e.g. TV, radio, video game etc.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class CreativeWorkSeason extends CreativeWork with EquatableMixin {
+base class CreativeWorkSeason extends CreativeWork {
 
   /// An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
   @Field(name: 'actor', description: r'''An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.''')

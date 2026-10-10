@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of notifying someone of information pertinent to them, with no expectation of a response.
 @Schema(description: r'''The act of notifying someone of information pertinent to them, with no expectation of a response.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class InformAction extends CommunicateAction with EquatableMixin {
+base class InformAction extends CommunicateAction {
 
   /// Upcoming or past event associated with this place, organization, or action.
   @Field(name: 'event', description: r'''Upcoming or past event associated with this place, organization, or action.''')

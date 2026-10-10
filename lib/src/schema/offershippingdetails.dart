@@ -29,7 +29,7 @@ Two entities that are identical but differ in rate and time:
 E.g. Cheaper and slower: $5 in 5-7 days
 or Fast and expensive: $15 in 1-2 days.''')
 @JsonSerializable(explicitToJson: true)
-final class OfferShippingDetails extends StructuredValue with EquatableMixin {
+base class OfferShippingDetails extends StructuredValue {
 
   /// The total delay between the receipt of the order and the goods reaching the final customer.
   @Field(name: 'deliveryTime', description: r'''The total delay between the receipt of the order and the goods reaching the final customer.''')

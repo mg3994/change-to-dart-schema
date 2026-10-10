@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques.
 @Schema(description: r'''A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class MedicalProcedure extends MedicalEntity with EquatableMixin {
+base class MedicalProcedure extends MedicalEntity {
 
   /// Location in the body of the anatomical structure.
   @Field(name: 'bodyLocation', description: r'''Location in the body of the anatomical structure.''')

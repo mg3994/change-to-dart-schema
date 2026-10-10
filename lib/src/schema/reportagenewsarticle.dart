@@ -23,7 +23,7 @@ The [[ReportageNewsArticle]] type is based on a stricter ideal for "news" as a w
 A [[ReportageNewsArticle]] which goes deeper into analysis can also be marked with an additional type of [[AnalysisNewsArticle]].
 ''')
 @JsonSerializable(explicitToJson: true)
-final class ReportageNewsArticle extends NewsArticle with EquatableMixin {
+base class ReportageNewsArticle extends NewsArticle {
 
   const ReportageNewsArticle({
     super.dateline,

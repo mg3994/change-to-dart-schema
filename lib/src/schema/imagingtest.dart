@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Any medical imaging modality typically used for diagnostic purposes.
 @Schema(description: r'''Any medical imaging modality typically used for diagnostic purposes.''')
 @JsonSerializable(explicitToJson: true)
-final class ImagingTest extends MedicalTest with EquatableMixin {
+base class ImagingTest extends MedicalTest {
 
   /// Imaging technique used.
   @Field(name: 'imagingTechnique', description: r'''Imaging technique used.''')

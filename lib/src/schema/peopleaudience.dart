@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A set of characteristics belonging to people, e.g. who compose an item's target audience.
 @Schema(description: r'''A set of characteristics belonging to people, e.g. who compose an item's target audience.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class PeopleAudience extends Audience with EquatableMixin {
+base class PeopleAudience extends Audience {
 
   /// Specifying the health condition(s) of a patient, medical study, or other target audience.
   @Field(name: 'healthCondition', description: r'''Specifying the health condition(s) of a patient, medical study, or other target audience.''')

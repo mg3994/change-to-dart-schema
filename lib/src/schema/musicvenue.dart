@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A music venue.
 @Schema(description: r'''A music venue.''')
 @JsonSerializable(explicitToJson: true)
-final class MusicVenue extends CivicStructure with EquatableMixin {
+base class MusicVenue extends CivicStructure {
 
   const MusicVenue({
     super.openingHours,

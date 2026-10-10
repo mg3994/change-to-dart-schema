@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A delivery service through which content is provided via broadcast over the air or online.
 @Schema(description: r'''A delivery service through which content is provided via broadcast over the air or online.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class BroadcastService extends Service with EquatableMixin {
+base class BroadcastService extends Service {
 
   /// The area within which users can expect to reach the broadcast service.
   @Field(name: 'area', description: r'''The area within which users can expect to reach the broadcast service.''')

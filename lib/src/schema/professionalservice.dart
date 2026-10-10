@@ -13,7 +13,7 @@ import '../../schemaorg.dart';
         [[AccountingService]], [[Attorney]], [[Notary]], as well as types for several kinds of [[HomeAndConstructionBusiness]]: [[Electrician]], [[GeneralContractor]],
         [[HousePainter]], [[Locksmith]], [[Plumber]], [[RoofingContractor]]. [[LegalService]] was introduced as a more inclusive supertype of [[Attorney]].''')
 @JsonSerializable(explicitToJson: true)
-final class ProfessionalService extends LocalBusiness with EquatableMixin {
+base class ProfessionalService extends LocalBusiness {
 
   const ProfessionalService({
     super.branchOf,
@@ -113,38 +113,6 @@ final class ProfessionalService extends LocalBusiness with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.amenityFeature,
-    super.branchCode,
-    super.containedIn,
-    super.containedInPlace,
-    super.containsPlace,
-    super.geo,
-    super.geoContains,
-    super.geoCoveredBy,
-    super.geoCovers,
-    super.geoCrosses,
-    super.geoDisjoint,
-    super.geoEquals,
-    super.geoIntersects,
-    super.geoOverlaps,
-    super.geoTouches,
-    super.geoWithin,
-    super.hasDriveThroughService,
-    super.hasMap,
-    super.isAccessibleForFree,
-    super.latitude,
-    super.longitude,
-    super.map,
-    super.maps,
-    super.maximumAttendeeCapacity,
-    super.openingHoursSpecification,
-    super.photo,
-    super.photos,
-    super.publicAccess,
-    super.smokingAllowed,
-    super.specialOpeningHoursSpecification,
-    super.tourBookingPage,
   });
 
   @override

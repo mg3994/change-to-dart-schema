@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The header section of the page.
 @Schema(description: r'''The header section of the page.''')
 @JsonSerializable(explicitToJson: true)
-final class WPHeader extends WebPageElement with EquatableMixin {
+base class WPHeader extends WebPageElement {
 
   const WPHeader({
     super.cssSelector,

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property.
 @Schema(description: r'''A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property.''')
 @JsonSerializable(explicitToJson: true)
-final class Property extends Intangible with EquatableMixin {
+base class Property extends Intangible {
 
   /// Relates a property to a class that is (one of) the type(s) the property is expected to be used on.
   @Field(name: 'domainIncludes', description: r'''Relates a property to a class that is (one of) the type(s) the property is expected to be used on.''')

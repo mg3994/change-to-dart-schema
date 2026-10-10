@@ -11,7 +11,7 @@ import '../../schemaorg.dart';
 /// * [[ConfirmAction]]: The antonym of CancelAction.
 @Schema(description: r'''The act of asserting that a future event/action is no longer going to happen.\n\nRelated actions:\n\n* [[ConfirmAction]]: The antonym of CancelAction.''')
 @JsonSerializable(explicitToJson: true)
-final class CancelAction extends PlanAction with EquatableMixin {
+base class CancelAction extends PlanAction {
 
   const CancelAction({
     super.scheduledTime,

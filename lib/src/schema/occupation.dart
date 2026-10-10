@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A profession, may involve prolonged training and/or a formal qualification.
 @Schema(description: r'''A profession, may involve prolonged training and/or a formal qualification.''')
 @JsonSerializable(explicitToJson: true)
-final class Occupation extends Intangible with EquatableMixin {
+base class Occupation extends Intangible {
 
   /// Educational background needed for the position or Occupation.
   @Field(name: 'educationRequirements', description: r'''Educational background needed for the position or Occupation.''')

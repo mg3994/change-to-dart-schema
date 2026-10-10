@@ -17,7 +17,7 @@ import '../../schemaorg.dart';
 	series to which the issue belongs; the issue number; and the variant
 	description of the issue (if any).''')
 @JsonSerializable(explicitToJson: true)
-final class ComicIssue extends PublicationIssue with EquatableMixin {
+base class ComicIssue extends PublicationIssue {
 
   /// The primary artist for a work
 /// in a medium other than pencils or digital line art--for example, if the

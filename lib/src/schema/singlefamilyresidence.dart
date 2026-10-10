@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Residence type: Single-family home.
 @Schema(description: r'''Residence type: Single-family home.''')
 @JsonSerializable(explicitToJson: true)
-final class SingleFamilyResidence extends House with EquatableMixin {
+base class SingleFamilyResidence extends House {
 
   /// The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
 /// Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An organization such as a school, NGO, corporation, club, etc.
 @Schema(description: r'''An organization such as a school, NGO, corporation, club, etc.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Organization extends Thing with EquatableMixin {
+base class Organization extends Thing {
 
   /// The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
   @Field(name: 'acceptedPaymentMethod', description: r'''The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.''')

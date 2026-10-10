@@ -1,6 +1,7 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
 
 /// A diet restricted to certain foods or preparations for cultural, religious, health or lifestyle reasons.
 @Schema(description: r'''A diet restricted to certain foods or preparations for cultural, religious, health or lifestyle reasons. ''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Lists or enumerations—for example, a list of cuisines or music genres, etc.
 @Schema(description: r'''Lists or enumerations—for example, a list of cuisines or music genres, etc.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Enumeration extends Intangible with EquatableMixin {
+base class Enumeration extends Intangible {
 
   /// Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
   @Field(name: 'supersededBy', description: r'''Relates a term (i.e. a property, class or enumeration) to one that supersedes it.''')

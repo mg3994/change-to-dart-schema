@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A screening of a movie or other video.
 @Schema(description: r'''A screening of a movie or other video.''')
 @JsonSerializable(explicitToJson: true)
-final class ScreeningEvent extends Event with EquatableMixin {
+base class ScreeningEvent extends Event {
 
   /// Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
   @Field(name: 'subtitleLanguage', description: r'''Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).''')

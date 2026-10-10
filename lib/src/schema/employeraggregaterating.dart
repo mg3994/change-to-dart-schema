@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An aggregate rating of an Organization related to its role as an employer.
 @Schema(description: r'''An aggregate rating of an Organization related to its role as an employer.''')
 @JsonSerializable(explicitToJson: true)
-final class EmployerAggregateRating extends AggregateRating with EquatableMixin {
+base class EmployerAggregateRating extends AggregateRating {
 
   const EmployerAggregateRating({
     super.itemReviewed,

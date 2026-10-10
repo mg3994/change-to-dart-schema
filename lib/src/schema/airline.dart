@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An organization that provides flights for passengers.
 @Schema(description: r'''An organization that provides flights for passengers.''')
 @JsonSerializable(explicitToJson: true)
-final class Airline extends Organization with EquatableMixin {
+base class Airline extends Organization {
 
   /// The type of boarding policy used by the airline (e.g. zone-based or group-based).
   @Field(name: 'boardingPolicy', description: r'''The type of boarding policy used by the airline (e.g. zone-based or group-based).''')

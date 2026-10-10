@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A post office.
 @Schema(description: r'''A post office.''')
 @JsonSerializable(explicitToJson: true)
-final class PostOffice extends GovernmentOffice with EquatableMixin {
+base class PostOffice extends GovernmentOffice {
 
   const PostOffice({
     super.branchOf,
@@ -107,38 +107,6 @@ final class PostOffice extends GovernmentOffice with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.amenityFeature,
-    super.branchCode,
-    super.containedIn,
-    super.containedInPlace,
-    super.containsPlace,
-    super.geo,
-    super.geoContains,
-    super.geoCoveredBy,
-    super.geoCovers,
-    super.geoCrosses,
-    super.geoDisjoint,
-    super.geoEquals,
-    super.geoIntersects,
-    super.geoOverlaps,
-    super.geoTouches,
-    super.geoWithin,
-    super.hasDriveThroughService,
-    super.hasMap,
-    super.isAccessibleForFree,
-    super.latitude,
-    super.longitude,
-    super.map,
-    super.maps,
-    super.maximumAttendeeCapacity,
-    super.openingHoursSpecification,
-    super.photo,
-    super.photos,
-    super.publicAccess,
-    super.smokingAllowed,
-    super.specialOpeningHoursSpecification,
-    super.tourBookingPage,
   });
 
   @override

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A facility, often associated with a hospital or medical school, that is devoted to the specific diagnosis and/or healthcare. Previously limited to outpatients but with evolution it may be open to inpatients as well.
 @Schema(description: r'''A facility, often associated with a hospital or medical school, that is devoted to the specific diagnosis and/or healthcare. Previously limited to outpatients but with evolution it may be open to inpatients as well.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class MedicalClinic extends MedicalBusiness with EquatableMixin {
+base class MedicalClinic extends MedicalBusiness {
 
   /// A medical service available from this provider.
   @Field(name: 'availableService', description: r'''A medical service available from this provider.''')
@@ -117,40 +117,6 @@ abstract base class MedicalClinic extends MedicalBusiness with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.amenityFeature,
-    super.branchCode,
-    super.containedIn,
-    super.containedInPlace,
-    super.containsPlace,
-    super.geo,
-    super.geoContains,
-    super.geoCoveredBy,
-    super.geoCovers,
-    super.geoCrosses,
-    super.geoDisjoint,
-    super.geoEquals,
-    super.geoIntersects,
-    super.geoOverlaps,
-    super.geoTouches,
-    super.geoWithin,
-    super.hasDriveThroughService,
-    super.hasMap,
-    super.isAccessibleForFree,
-    super.latitude,
-    super.longitude,
-    super.map,
-    super.maps,
-    super.maximumAttendeeCapacity,
-    super.openingHoursSpecification,
-    super.photo,
-    super.photos,
-    super.publicAccess,
-    super.smokingAllowed,
-    super.specialOpeningHoursSpecification,
-    super.tourBookingPage,
-    super.healthPlanNetworkId,
-    super.isAcceptingNewPatients,
     this.availableService,
     this.medicalSpecialty,
   });

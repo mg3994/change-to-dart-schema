@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of giving money to a seller in exchange for goods or services rendered. An agent buys an object, product, or service from a seller for a price. Reciprocal of SellAction.
 @Schema(description: r'''The act of giving money to a seller in exchange for goods or services rendered. An agent buys an object, product, or service from a seller for a price. Reciprocal of SellAction.''')
 @JsonSerializable(explicitToJson: true)
-final class BuyAction extends TradeAction with EquatableMixin {
+base class BuyAction extends TradeAction {
 
   /// An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
   @Field(name: 'seller', description: r'''An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.''')

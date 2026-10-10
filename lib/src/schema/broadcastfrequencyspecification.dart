@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The frequency in MHz and the modulation used for a particular BroadcastService.
 @Schema(description: r'''The frequency in MHz and the modulation used for a particular BroadcastService.''')
 @JsonSerializable(explicitToJson: true)
-final class BroadcastFrequencySpecification extends Intangible with EquatableMixin {
+base class BroadcastFrequencySpecification extends Intangible {
 
   /// The frequency in MHz for a particular broadcast.
   @Field(name: 'broadcastFrequencyValue', description: r'''The frequency in MHz for a particular broadcast.''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A technical article - Example: How-to (task) topics, step-by-step, procedural troubleshooting, specifications, etc.
 @Schema(description: r'''A technical article - Example: How-to (task) topics, step-by-step, procedural troubleshooting, specifications, etc.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class TechArticle extends Article with EquatableMixin {
+base class TechArticle extends Article {
 
   /// Prerequisites needed to fulfill steps in article.
   @Field(name: 'dependencies', description: r'''Prerequisites needed to fulfill steps in article.''')

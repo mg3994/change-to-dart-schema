@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Any anatomical structure which pertains to the soft nervous tissue functioning as the coordinating center of sensation and intellectual and nervous activity.
 @Schema(description: r'''Any anatomical structure which pertains to the soft nervous tissue functioning as the coordinating center of sensation and intellectual and nervous activity.''')
 @JsonSerializable(explicitToJson: true)
-final class BrainStructure extends AnatomicalStructure with EquatableMixin {
+base class BrainStructure extends AnatomicalStructure {
 
   const BrainStructure({
     super.associatedPathophysiology,

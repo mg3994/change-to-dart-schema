@@ -1,6 +1,7 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
 
 /// Enumerates common financial incentives for products, including tax credits, tax deductions, rebates and subsidies, etc.
 @Schema(description: r'''Enumerates common financial incentives for products, including tax credits, tax deductions, rebates and subsidies, etc.''')

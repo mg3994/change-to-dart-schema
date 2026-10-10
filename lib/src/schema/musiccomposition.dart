@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A musical composition.
 @Schema(description: r'''A musical composition.''')
 @JsonSerializable(explicitToJson: true)
-final class MusicComposition extends CreativeWork with EquatableMixin {
+base class MusicComposition extends CreativeWork {
 
   /// The person or organization who wrote a composition, or who is the composer of a work performed at some event.
   @Field(name: 'composer', description: r'''The person or organization who wrote a composition, or who is the composer of a work performed at some event.''')

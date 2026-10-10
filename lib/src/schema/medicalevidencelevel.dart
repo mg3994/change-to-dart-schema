@@ -1,6 +1,7 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
 
 /// Level of evidence for a medical guideline. Enumerated type.
 @Schema(description: r'''Level of evidence for a medical guideline. Enumerated type.''')

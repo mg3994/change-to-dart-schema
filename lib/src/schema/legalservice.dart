@@ -9,7 +9,7 @@ import '../../schemaorg.dart';
 /// As a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]](s).
 @Schema(description: r'''A LegalService is a business that provides legally-oriented services, advice and representation, e.g. law firms.\n\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\(s).''')
 @JsonSerializable(explicitToJson: true)
-abstract base class LegalService extends LocalBusiness with EquatableMixin {
+base class LegalService extends LocalBusiness {
 
   const LegalService({
     super.branchOf,
@@ -109,38 +109,6 @@ abstract base class LegalService extends LocalBusiness with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.amenityFeature,
-    super.branchCode,
-    super.containedIn,
-    super.containedInPlace,
-    super.containsPlace,
-    super.geo,
-    super.geoContains,
-    super.geoCoveredBy,
-    super.geoCovers,
-    super.geoCrosses,
-    super.geoDisjoint,
-    super.geoEquals,
-    super.geoIntersects,
-    super.geoOverlaps,
-    super.geoTouches,
-    super.geoWithin,
-    super.hasDriveThroughService,
-    super.hasMap,
-    super.isAccessibleForFree,
-    super.latitude,
-    super.longitude,
-    super.map,
-    super.maps,
-    super.maximumAttendeeCapacity,
-    super.openingHoursSpecification,
-    super.photo,
-    super.photos,
-    super.publicAccess,
-    super.smokingAllowed,
-    super.specialOpeningHoursSpecification,
-    super.tourBookingPage,
   });
 
   @override

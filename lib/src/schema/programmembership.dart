@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Used to describe membership in a loyalty programs (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc.
 @Schema(description: r'''Used to describe membership in a loyalty programs (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc.''')
 @JsonSerializable(explicitToJson: true)
-final class ProgramMembership extends Intangible with EquatableMixin {
+base class ProgramMembership extends Intangible {
 
   /// The Organization (airline, travelers' club, retailer, etc.) the membership is made with or which offers the  MemberProgram.
   @Field(name: 'hostingOrganization', description: r'''The Organization (airline, travelers' club, retailer, etc.) the membership is made with or which offers the  MemberProgram.''')

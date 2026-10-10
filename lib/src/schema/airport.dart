@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An airport.
 @Schema(description: r'''An airport.''')
 @JsonSerializable(explicitToJson: true)
-final class Airport extends CivicStructure with EquatableMixin {
+base class Airport extends CivicStructure {
 
   /// IATA identifier for an airline or airport.
   @Field(name: 'iataCode', description: r'''IATA identifier for an airline or airport.''')

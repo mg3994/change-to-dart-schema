@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A service for a vehicle for hire with a driver for local travel. Fares are usually calculated based on distance traveled.
 @Schema(description: r'''A service for a vehicle for hire with a driver for local travel. Fares are usually calculated based on distance traveled.''')
 @JsonSerializable(explicitToJson: true)
-final class TaxiService extends Service with EquatableMixin {
+base class TaxiService extends Service {
 
   const TaxiService({
     super.aggregateRating,

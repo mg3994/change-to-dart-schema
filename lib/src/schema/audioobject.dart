@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An audio file.
 @Schema(description: r'''An audio file.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class AudioObject extends MediaObject with EquatableMixin {
+base class AudioObject extends MediaObject {
 
   /// The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
   @Field(name: 'caption', description: r'''The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].''')

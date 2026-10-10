@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A short band of tough, flexible, fibrous connective tissue that functions to connect multiple bones, cartilages, and structurally support joints.
 @Schema(description: r'''A short band of tough, flexible, fibrous connective tissue that functions to connect multiple bones, cartilages, and structurally support joints.''')
 @JsonSerializable(explicitToJson: true)
-final class Ligament extends AnatomicalStructure with EquatableMixin {
+base class Ligament extends AnatomicalStructure {
 
   const Ligament({
     super.associatedPathophysiology,

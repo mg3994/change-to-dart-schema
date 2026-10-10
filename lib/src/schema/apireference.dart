@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Reference documentation for application programming interfaces (APIs).
 @Schema(description: r'''Reference documentation for application programming interfaces (APIs).''')
 @JsonSerializable(explicitToJson: true)
-final class APIReference extends TechArticle with EquatableMixin {
+base class APIReference extends TechArticle {
 
   /// Library file name, e.g., mscorlib.dll, system.web.dll.
   @Field(name: 'assembly', description: r'''Library file name, e.g., mscorlib.dll, system.web.dll.''')

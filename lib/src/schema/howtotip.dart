@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An explanation in the instructions for how to achieve a result. It provides supplementary information about a technique, supply, author's preference, etc. It can explain what could be done, or what should not be done, but doesn't specify what should be done (see HowToDirection).
 @Schema(description: r'''An explanation in the instructions for how to achieve a result. It provides supplementary information about a technique, supply, author's preference, etc. It can explain what could be done, or what should not be done, but doesn't specify what should be done (see HowToDirection).''')
 @JsonSerializable(explicitToJson: true)
-final class HowToTip extends CreativeWork with EquatableMixin {
+base class HowToTip extends CreativeWork {
 
   const HowToTip({
     super.about,
@@ -139,9 +139,6 @@ final class HowToTip extends CreativeWork with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.item,
-    super.nextItem,
-    super.previousItem,
   });
 
   @override

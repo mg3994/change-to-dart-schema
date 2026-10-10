@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A condition or factor that indicates use of a medical therapy, including signs, symptoms, risk factors, anatomical states, etc.
 @Schema(description: r'''A condition or factor that indicates use of a medical therapy, including signs, symptoms, risk factors, anatomical states, etc.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class MedicalIndication extends MedicalEntity with EquatableMixin {
+base class MedicalIndication extends MedicalEntity {
 
   const MedicalIndication({
     super.code,

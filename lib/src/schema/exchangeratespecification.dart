@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A structured value representing exchange rate.
 @Schema(description: r'''A structured value representing exchange rate.''')
 @JsonSerializable(explicitToJson: true)
-final class ExchangeRateSpecification extends StructuredValue with EquatableMixin {
+base class ExchangeRateSpecification extends StructuredValue {
 
   /// The currency in which the monetary amount is expressed.
 ///

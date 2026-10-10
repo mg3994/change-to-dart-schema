@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.
 @Schema(description: r'''The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class CommunicateAction extends InteractAction with EquatableMixin {
+base class CommunicateAction extends InteractAction {
 
   /// The subject matter of an object.
   @Field(name: 'about', description: r'''The subject matter of an object.''')

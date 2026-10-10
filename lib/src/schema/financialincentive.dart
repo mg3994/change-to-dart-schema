@@ -17,7 +17,7 @@ import '../../schemaorg.dart';
 <p>Optionally contains criteria on whether the incentive is limited based on [[purchaseType]], [[purchasePriceLimit]], [[incomeLimit]], and the [[qualifiedExpense]].
     ''')
 @JsonSerializable(explicitToJson: true)
-final class FinancialIncentive extends Intangible with EquatableMixin {
+base class FinancialIncentive extends Intangible {
 
   /// The geographic area where a service or offered item is provided.
   @Field(name: 'areaServed', description: r'''The geographic area where a service or offered item is provided.''')

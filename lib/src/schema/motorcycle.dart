@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A motorcycle or motorbike is a single-track, two-wheeled motor vehicle.
 @Schema(description: r'''A motorcycle or motorbike is a single-track, two-wheeled motor vehicle.''')
 @JsonSerializable(explicitToJson: true)
-final class Motorcycle extends Vehicle with EquatableMixin {
+base class Motorcycle extends Vehicle {
 
   const Motorcycle({
     super.accelerationTime,

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A short segment/part of a movie.
 @Schema(description: r'''A short segment/part of a movie.''')
 @JsonSerializable(explicitToJson: true)
-final class MovieClip extends Clip with EquatableMixin {
+base class MovieClip extends Clip {
 
   const MovieClip({
     super.actor,

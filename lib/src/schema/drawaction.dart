@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of producing a visual/graphical representation of an object, typically with a pen/pencil and paper as instruments.
 @Schema(description: r'''The act of producing a visual/graphical representation of an object, typically with a pen/pencil and paper as instruments.''')
 @JsonSerializable(explicitToJson: true)
-final class DrawAction extends CreateAction with EquatableMixin {
+base class DrawAction extends CreateAction {
 
   const DrawAction({
     super.actionProcess,

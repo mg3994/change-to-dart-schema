@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A food service, like breakfast, lunch, or dinner.
 @Schema(description: r'''A food service, like breakfast, lunch, or dinner.''')
 @JsonSerializable(explicitToJson: true)
-final class FoodService extends Service with EquatableMixin {
+base class FoodService extends Service {
 
   const FoodService({
     super.aggregateRating,

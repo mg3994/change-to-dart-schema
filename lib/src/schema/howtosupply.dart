@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A supply consumed when performing the instructions for how to achieve a result.
 @Schema(description: r'''A supply consumed when performing the instructions for how to achieve a result.''')
 @JsonSerializable(explicitToJson: true)
-final class HowToSupply extends HowToItem with EquatableMixin {
+base class HowToSupply extends HowToItem {
 
   /// The estimated cost of the supply or supplies consumed when performing instructions.
   @Field(name: 'estimatedCost', description: r'''The estimated cost of the supply or supplies consumed when performing instructions.''')

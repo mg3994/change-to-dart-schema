@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A collection of music tracks in playlist form.
 @Schema(description: r'''A collection of music tracks in playlist form.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class MusicPlaylist extends CreativeWork with EquatableMixin {
+base class MusicPlaylist extends CreativeWork {
 
   /// The number of tracks in this album or playlist.
   @Field(name: 'numTracks', description: r'''The number of tracks in this album or playlist.''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A product or service offered by a bank whereby one may deposit, withdraw or transfer money and in some cases be paid interest.
 @Schema(description: r'''A product or service offered by a bank whereby one may deposit, withdraw or transfer money and in some cases be paid interest.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class BankAccount extends FinancialProduct with EquatableMixin {
+base class BankAccount extends FinancialProduct {
 
   /// A minimum amount that has to be paid in every month.
   @Field(name: 'accountMinimumInflow', description: r'''A minimum amount that has to be paid in every month.''')

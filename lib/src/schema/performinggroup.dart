@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A performance group, such as a band, an orchestra, or a circus.
 @Schema(description: r'''A performance group, such as a band, an orchestra, or a circus.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class PerformingGroup extends Organization with EquatableMixin {
+base class PerformingGroup extends Organization {
 
   const PerformingGroup({
     super.acceptedPaymentMethod,

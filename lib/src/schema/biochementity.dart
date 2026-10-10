@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.
 @Schema(description: r'''Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class BioChemEntity extends Thing with EquatableMixin {
+base class BioChemEntity extends Thing {
 
   /// Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
   @Field(name: 'associatedDisease', description: r'''Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An infectious disease is a clinically evident human disease resulting from the presence of pathogenic microbial agents, like pathogenic viruses, pathogenic bacteria, fungi, protozoa, multicellular parasites, and prions. To be considered an infectious disease, such pathogens are known to be able to cause this disease.
 @Schema(description: r'''An infectious disease is a clinically evident human disease resulting from the presence of pathogenic microbial agents, like pathogenic viruses, pathogenic bacteria, fungi, protozoa, multicellular parasites, and prions. To be considered an infectious disease, such pathogens are known to be able to cause this disease.''')
 @JsonSerializable(explicitToJson: true)
-final class InfectiousDisease extends MedicalCondition with EquatableMixin {
+base class InfectiousDisease extends MedicalCondition {
 
   /// The actual infectious agent, such as a specific bacterium.
   @Field(name: 'infectiousAgent', description: r'''The actual infectious agent, such as a specific bacterium.''')

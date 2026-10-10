@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type, e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.
 @Schema(description: r'''A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type, e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class PublicationEvent extends Event with EquatableMixin {
+base class PublicationEvent extends Event {
 
   /// A flag to signal that the item, event, or place is accessible for free.
   @Field(name: 'free', description: r'''A flag to signal that the item, event, or place is accessible for free.''')

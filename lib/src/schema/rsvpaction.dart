@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of notifying an event organizer as to whether you expect to attend the event.
 @Schema(description: r'''The act of notifying an event organizer as to whether you expect to attend the event.''')
 @JsonSerializable(explicitToJson: true)
-final class RsvpAction extends InformAction with EquatableMixin {
+base class RsvpAction extends InformAction {
 
   /// If responding yes, the number of guests who will attend in addition to the invitee.
   @Field(name: 'additionalNumberOfGuests', description: r'''If responding yes, the number of guests who will attend in addition to the invitee.''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A day spa.
 @Schema(description: r'''A day spa.''')
 @JsonSerializable(explicitToJson: true)
-final class DaySpa extends HealthAndBeautyBusiness with EquatableMixin {
+base class DaySpa extends HealthAndBeautyBusiness {
 
   const DaySpa({
     super.branchOf,
@@ -107,38 +107,6 @@ final class DaySpa extends HealthAndBeautyBusiness with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.amenityFeature,
-    super.branchCode,
-    super.containedIn,
-    super.containedInPlace,
-    super.containsPlace,
-    super.geo,
-    super.geoContains,
-    super.geoCoveredBy,
-    super.geoCovers,
-    super.geoCrosses,
-    super.geoDisjoint,
-    super.geoEquals,
-    super.geoIntersects,
-    super.geoOverlaps,
-    super.geoTouches,
-    super.geoWithin,
-    super.hasDriveThroughService,
-    super.hasMap,
-    super.isAccessibleForFree,
-    super.latitude,
-    super.longitude,
-    super.map,
-    super.maps,
-    super.maximumAttendeeCapacity,
-    super.openingHoursSpecification,
-    super.photo,
-    super.photos,
-    super.publicAccess,
-    super.smokingAllowed,
-    super.specialOpeningHoursSpecification,
-    super.tourBookingPage,
   });
 
   @override

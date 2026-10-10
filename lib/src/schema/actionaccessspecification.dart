@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A set of requirements that must be fulfilled in order to perform an Action.
 @Schema(description: r'''A set of requirements that must be fulfilled in order to perform an Action.''')
 @JsonSerializable(explicitToJson: true)
-final class ActionAccessSpecification extends Intangible with EquatableMixin {
+base class ActionAccessSpecification extends Intangible {
 
   /// The end of the availability of the product or service included in the offer.
   @Field(name: 'availabilityEnds', description: r'''The end of the availability of the product or service included in the offer.''')

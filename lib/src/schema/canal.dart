@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A canal, like the Panama Canal.
 @Schema(description: r'''A canal, like the Panama Canal.''')
 @JsonSerializable(explicitToJson: true)
-final class Canal extends BodyOfWater with EquatableMixin {
+base class Canal extends BodyOfWater {
 
   const Canal({
     super.additionalProperty,

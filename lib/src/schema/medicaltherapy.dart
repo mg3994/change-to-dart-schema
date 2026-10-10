@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Any medical intervention designed to prevent, treat, and cure human diseases and medical conditions, including both curative and palliative therapies. Medical therapies are typically processes of care relying upon pharmacotherapy, behavioral therapy, supportive therapy (with fluid or nutrition for example), or detoxification (e.g. hemodialysis) aimed at improving or preventing a health condition.
 @Schema(description: r'''Any medical intervention designed to prevent, treat, and cure human diseases and medical conditions, including both curative and palliative therapies. Medical therapies are typically processes of care relying upon pharmacotherapy, behavioral therapy, supportive therapy (with fluid or nutrition for example), or detoxification (e.g. hemodialysis) aimed at improving or preventing a health condition.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class MedicalTherapy extends TherapeuticProcedure with EquatableMixin {
+base class MedicalTherapy extends TherapeuticProcedure {
 
   /// A contraindication for this therapy.
   @Field(name: 'contraindication', description: r'''A contraindication for this therapy.''')

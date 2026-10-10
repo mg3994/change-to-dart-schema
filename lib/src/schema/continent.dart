@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// One of the continents (for example, Europe or Africa).
 @Schema(description: r'''One of the continents (for example, Europe or Africa).''')
 @JsonSerializable(explicitToJson: true)
-final class Continent extends Landform with EquatableMixin {
+base class Continent extends Landform {
 
   const Continent({
     super.additionalProperty,

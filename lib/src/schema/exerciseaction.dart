@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of participating in exertive activity for the purposes of improving health and fitness.
 @Schema(description: r'''The act of participating in exertive activity for the purposes of improving health and fitness.''')
 @JsonSerializable(explicitToJson: true)
-final class ExerciseAction extends PlayAction with EquatableMixin {
+base class ExerciseAction extends PlayAction {
 
   /// A sub property of location. The course where this action was taken.
   @Field(name: 'course', description: r'''A sub property of location. The course where this action was taken.''')

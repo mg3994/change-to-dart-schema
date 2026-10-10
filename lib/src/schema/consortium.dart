@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A Consortium is a membership [[Organization]] whose members are typically Organizations.
 @Schema(description: r'''A Consortium is a membership [[Organization]] whose members are typically Organizations.''')
 @JsonSerializable(explicitToJson: true)
-final class Consortium extends Organization with EquatableMixin {
+base class Consortium extends Organization {
 
   const Consortium({
     super.acceptedPaymentMethod,

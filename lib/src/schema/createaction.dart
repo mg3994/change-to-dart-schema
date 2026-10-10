@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of deliberately creating/producing/generating/building a result out of the agent.
 @Schema(description: r'''The act of deliberately creating/producing/generating/building a result out of the agent.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class CreateAction extends Action with EquatableMixin {
+base class CreateAction extends Action {
 
   const CreateAction({
     super.actionProcess,

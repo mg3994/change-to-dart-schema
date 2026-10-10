@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An agent approves/certifies/likes/supports/sanctions an object.
 @Schema(description: r'''An agent approves/certifies/likes/supports/sanctions an object.''')
 @JsonSerializable(explicitToJson: true)
-final class EndorseAction extends ReactAction with EquatableMixin {
+base class EndorseAction extends ReactAction {
 
   /// A sub property of participant. The person/organization being supported.
   @Field(name: 'endorsee', description: r'''A sub property of participant. The person/organization being supported.''')

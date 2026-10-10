@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A map.
 @Schema(description: r'''A map.''')
 @JsonSerializable(explicitToJson: true)
-final class Map extends CreativeWork with EquatableMixin {
+base class Map extends CreativeWork {
 
   /// Indicates the kind of Map, from the MapCategoryType Enumeration.
   @Field(name: 'mapType', description: r'''Indicates the kind of Map, from the MapCategoryType Enumeration.''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A [[LibrarySystem]] is a collaborative system amongst several libraries.
 @Schema(description: r'''A [[LibrarySystem]] is a collaborative system amongst several libraries.''')
 @JsonSerializable(explicitToJson: true)
-final class LibrarySystem extends Organization with EquatableMixin {
+base class LibrarySystem extends Organization {
 
   const LibrarySystem({
     super.acceptedPaymentMethod,

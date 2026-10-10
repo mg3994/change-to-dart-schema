@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An alternative, closely-related condition typically considered later in the differential diagnosis process along with the signs that are used to distinguish it.
 @Schema(description: r'''An alternative, closely-related condition typically considered later in the differential diagnosis process along with the signs that are used to distinguish it.''')
 @JsonSerializable(explicitToJson: true)
-final class DDxElement extends MedicalIntangible with EquatableMixin {
+base class DDxElement extends MedicalIntangible {
 
   /// One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
   @Field(name: 'diagnosis', description: r'''One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A ProductReturnPolicy provides information about product return policies associated with an [[Organization]] or [[Product]].
 @Schema(description: r'''A ProductReturnPolicy provides information about product return policies associated with an [[Organization]] or [[Product]].''')
 @JsonSerializable(explicitToJson: true)
-final class ProductReturnPolicy extends Intangible with EquatableMixin {
+base class ProductReturnPolicy extends Intangible {
 
   /// The productReturnDays property indicates the number of days (from purchase) within which relevant product return policy is applicable.
   @Field(name: 'productReturnDays', description: r'''The productReturnDays property indicates the number of days (from purchase) within which relevant product return policy is applicable.''')

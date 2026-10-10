@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An agent quotes/estimates/appraises an object/product/service with a price at a location/store.
 @Schema(description: r'''An agent quotes/estimates/appraises an object/product/service with a price at a location/store.''')
 @JsonSerializable(explicitToJson: true)
-final class QuoteAction extends TradeAction with EquatableMixin {
+base class QuoteAction extends TradeAction {
 
   const QuoteAction({
     super.price,

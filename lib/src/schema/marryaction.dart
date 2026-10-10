@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of marrying a person.
 @Schema(description: r'''The act of marrying a person.''')
 @JsonSerializable(explicitToJson: true)
-final class MarryAction extends InteractAction with EquatableMixin {
+base class MarryAction extends InteractAction {
 
   const MarryAction({
     super.actionProcess,

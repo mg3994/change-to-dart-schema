@@ -12,7 +12,7 @@ import '../../schemaorg.dart';
 /// * [[ReceiveAction]]: Unlike ReceiveAction, TakeAction implies that ownership has been transferred.
 @Schema(description: r'''The act of gaining ownership of an object from an origin. Reciprocal of GiveAction.\n\nRelated actions:\n\n* [[GiveAction]]: The reciprocal of TakeAction.\n* [[ReceiveAction]]: Unlike ReceiveAction, TakeAction implies that ownership has been transferred.''')
 @JsonSerializable(explicitToJson: true)
-final class TakeAction extends TransferAction with EquatableMixin {
+base class TakeAction extends TransferAction {
 
   const TakeAction({
     super.fromLocation,

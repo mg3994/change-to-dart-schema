@@ -11,7 +11,7 @@ import '../../schemaorg.dart';
 	unifying title, for example "The Amazing Spider-Man" or "Groo the
 	Wanderer".''')
 @JsonSerializable(explicitToJson: true)
-final class ComicSeries extends Periodical with EquatableMixin {
+base class ComicSeries extends Periodical {
 
   const ComicSeries({
     super.endDate,

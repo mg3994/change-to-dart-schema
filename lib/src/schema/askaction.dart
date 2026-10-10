@@ -11,7 +11,7 @@ import '../../schemaorg.dart';
 /// * [[ReplyAction]]: Appears generally as a response to AskAction.
 @Schema(description: r'''The act of posing a question / favor to someone.\n\nRelated actions:\n\n* [[ReplyAction]]: Appears generally as a response to AskAction.''')
 @JsonSerializable(explicitToJson: true)
-final class AskAction extends CommunicateAction with EquatableMixin {
+base class AskAction extends CommunicateAction {
 
   /// A sub property of object. A question.
   @Field(name: 'question', description: r'''A sub property of object. A question.''')

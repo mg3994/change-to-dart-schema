@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A state or province of a country.
 @Schema(description: r'''A state or province of a country.''')
 @JsonSerializable(explicitToJson: true)
-final class State extends AdministrativeArea with EquatableMixin {
+base class State extends AdministrativeArea {
 
   const State({
     super.additionalProperty,

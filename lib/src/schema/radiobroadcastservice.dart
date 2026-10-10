@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A delivery service through which radio content is provided via broadcast over the air or online.
 @Schema(description: r'''A delivery service through which radio content is provided via broadcast over the air or online.''')
 @JsonSerializable(explicitToJson: true)
-final class RadioBroadcastService extends BroadcastService with EquatableMixin {
+base class RadioBroadcastService extends BroadcastService {
 
   const RadioBroadcastService({
     super.area,

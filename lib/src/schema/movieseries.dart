@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A series of movies. Included movies can be indicated with the hasPart property.
 @Schema(description: r'''A series of movies. Included movies can be indicated with the hasPart property.''')
 @JsonSerializable(explicitToJson: true)
-final class MovieSeries extends CreativeWorkSeries with EquatableMixin {
+base class MovieSeries extends CreativeWorkSeries {
 
   /// An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
   @Field(name: 'actor', description: r'''An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.''')

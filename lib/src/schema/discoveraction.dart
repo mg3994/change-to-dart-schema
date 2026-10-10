@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of discovering/finding an object.
 @Schema(description: r'''The act of discovering/finding an object.''')
 @JsonSerializable(explicitToJson: true)
-final class DiscoverAction extends FindAction with EquatableMixin {
+base class DiscoverAction extends FindAction {
 
   const DiscoverAction({
     super.actionProcess,

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The most generic kind of creative work, including books, movies, photographs, software programs, etc.
 @Schema(description: r'''The most generic kind of creative work, including books, movies, photographs, software programs, etc.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class CreativeWork extends Thing with EquatableMixin {
+base class CreativeWork extends Thing {
 
   /// The subject matter of an object.
   @Field(name: 'about', description: r'''The subject matter of an object.''')

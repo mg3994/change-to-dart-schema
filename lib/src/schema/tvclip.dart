@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A short TV program or a segment/part of a TV program.
 @Schema(description: r'''A short TV program or a segment/part of a TV program.''')
 @JsonSerializable(explicitToJson: true)
-final class TVClip extends Clip with EquatableMixin {
+base class TVClip extends Clip {
 
   /// The TV series to which this episode or season belongs.
   @Field(name: 'partOfTVSeries', description: r'''The TV series to which this episode or season belongs.''')

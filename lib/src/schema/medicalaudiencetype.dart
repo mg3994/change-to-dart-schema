@@ -1,6 +1,7 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
 
 /// Target audiences types for medical web pages. Enumerated type.
 @Schema(description: r'''Target audiences types for medical web pages. Enumerated type.''')

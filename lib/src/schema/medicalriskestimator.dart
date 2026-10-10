@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Any rule set or interactive tool for estimating the risk of developing a complication or condition.
 @Schema(description: r'''Any rule set or interactive tool for estimating the risk of developing a complication or condition.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class MedicalRiskEstimator extends MedicalEntity with EquatableMixin {
+base class MedicalRiskEstimator extends MedicalEntity {
 
   /// The condition, complication, or symptom whose risk is being estimated.
   @Field(name: 'estimatesRiskOf', description: r'''The condition, complication, or symptom whose risk is being estimated.''')

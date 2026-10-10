@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A chemical substance is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: [ChEBI:59999](https://www.ebi.ac.uk/chebi/searchId.do?chebiId=59999)).
 @Schema(description: r'''A chemical substance is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: [ChEBI:59999](https://www.ebi.ac.uk/chebi/searchId.do?chebiId=59999)).''')
 @JsonSerializable(explicitToJson: true)
-final class ChemicalSubstance extends BioChemEntity with EquatableMixin {
+base class ChemicalSubstance extends BioChemEntity {
 
   /// The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance.
   @Field(name: 'chemicalComposition', description: r'''The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance.''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An answer offered to a question; perhaps correct, perhaps opinionated or wrong.
 @Schema(description: r'''An answer offered to a question; perhaps correct, perhaps opinionated or wrong.''')
 @JsonSerializable(explicitToJson: true)
-final class Answer extends Comment with EquatableMixin {
+base class Answer extends Comment {
 
   /// A step-by-step or full explanation about Answer. Can outline how this Answer was achieved or contain more broad clarification or statement about it.
   @Field(name: 'answerExplanation', description: r'''A step-by-step or full explanation about Answer. Can outline how this Answer was achieved or contain more broad clarification or statement about it. ''')

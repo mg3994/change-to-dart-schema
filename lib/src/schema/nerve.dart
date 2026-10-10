@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A common pathway for the electrochemical nerve impulses that are transmitted along each of the axons.
 @Schema(description: r'''A common pathway for the electrochemical nerve impulses that are transmitted along each of the axons.''')
 @JsonSerializable(explicitToJson: true)
-final class Nerve extends AnatomicalStructure with EquatableMixin {
+base class Nerve extends AnatomicalStructure {
 
   /// The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].
   @Field(name: 'branch', description: r'''The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].''')

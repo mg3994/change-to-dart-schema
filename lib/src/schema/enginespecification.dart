@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Information about the engine of the vehicle. A vehicle can have multiple engines represented by multiple engine specification entities.
 @Schema(description: r'''Information about the engine of the vehicle. A vehicle can have multiple engines represented by multiple engine specification entities.''')
 @JsonSerializable(explicitToJson: true)
-final class EngineSpecification extends StructuredValue with EquatableMixin {
+base class EngineSpecification extends StructuredValue {
 
   /// The volume swept by all of the pistons inside the cylinders of an internal combustion engine in a single movement.
 ///

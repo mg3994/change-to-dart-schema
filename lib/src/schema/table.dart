@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A table on a Web page.
 @Schema(description: r'''A table on a Web page.''')
 @JsonSerializable(explicitToJson: true)
-final class Table extends WebPageElement with EquatableMixin {
+base class Table extends WebPageElement {
 
   const Table({
     super.cssSelector,

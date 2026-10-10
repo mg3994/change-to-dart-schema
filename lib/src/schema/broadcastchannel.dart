@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A unique instance of a BroadcastService on a CableOrSatelliteService lineup.
 @Schema(description: r'''A unique instance of a BroadcastService on a CableOrSatelliteService lineup.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class BroadcastChannel extends Intangible with EquatableMixin {
+base class BroadcastChannel extends Intangible {
 
   /// The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
   @Field(name: 'broadcastChannelId', description: r'''The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.''')

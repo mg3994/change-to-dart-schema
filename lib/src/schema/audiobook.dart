@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An audiobook.
 @Schema(description: r'''An audiobook.''')
 @JsonSerializable(explicitToJson: true)
-final class Audiobook extends AudioObject with EquatableMixin {
+base class Audiobook extends AudioObject {
 
   /// The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
   @Field(name: 'duration', description: r'''The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).''')
@@ -169,12 +169,6 @@ final class Audiobook extends AudioObject with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.abridged,
-    super.bookEdition,
-    super.bookFormat,
-    super.illustrator,
-    super.isbn,
-    super.numberOfPages,
     this.duration,
     this.readBy,
   });

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Data type: URL.
 @Schema(description: r'''Data type: URL.''')
 @JsonSerializable(explicitToJson: true)
-final class URL extends Text with EquatableMixin {
+base class URL extends Text {
 
   const URL({
   });

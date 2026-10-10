@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A series of books. Included books can be indicated with the hasPart property.
 @Schema(description: r'''A series of books. Included books can be indicated with the hasPart property.''')
 @JsonSerializable(explicitToJson: true)
-final class BookSeries extends CreativeWorkSeries with EquatableMixin {
+base class BookSeries extends CreativeWorkSeries {
 
   const BookSeries({
     super.endDate,

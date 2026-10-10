@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A place offering space for "Recreational Vehicles", Caravans, mobile homes and the like.
 @Schema(description: r'''A place offering space for "Recreational Vehicles", Caravans, mobile homes and the like.''')
 @JsonSerializable(explicitToJson: true)
-final class RVPark extends CivicStructure with EquatableMixin {
+base class RVPark extends CivicStructure {
 
   const RVPark({
     super.openingHours,

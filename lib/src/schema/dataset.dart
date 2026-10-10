@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A body of structured information describing some topic(s) of interest.
 @Schema(description: r'''A body of structured information describing some topic(s) of interest.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Dataset extends CreativeWork with EquatableMixin {
+base class Dataset extends CreativeWork {
 
   /// A data catalog which contains this dataset.
   @Field(name: 'catalog', description: r'''A data catalog which contains this dataset.''')

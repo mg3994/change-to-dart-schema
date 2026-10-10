@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of providing goods, services, or money without compensation, often for philanthropic reasons.
 @Schema(description: r'''The act of providing goods, services, or money without compensation, often for philanthropic reasons.''')
 @JsonSerializable(explicitToJson: true)
-final class DonateAction extends TransferAction with EquatableMixin {
+base class DonateAction extends TransferAction {
 
   /// The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.
 ///

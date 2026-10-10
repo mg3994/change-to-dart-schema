@@ -77,7 +77,7 @@ with the [[webFeed]] property. This can be a simple URL, or an inline [[DataFeed
 media type information, e.g. "application/rss+xml" or "application/atom+xml".
 ''')
 @JsonSerializable(explicitToJson: true)
-final class SpecialAnnouncement extends CreativeWork with EquatableMixin {
+base class SpecialAnnouncement extends CreativeWork {
 
   /// Indicates a specific [[CivicStructure]] or [[LocalBusiness]] associated with the SpecialAnnouncement. For example, a specific testing facility or business with special opening hours. For a larger geographic region like a quarantine of an entire region, use [[spatialCoverage]].
   @Field(name: 'announcementLocation', description: r'''Indicates a specific [[CivicStructure]] or [[LocalBusiness]] associated with the SpecialAnnouncement. For example, a specific testing facility or business with special opening hours. For a larger geographic region like a quarantine of an entire region, use [[spatialCoverage]].''')

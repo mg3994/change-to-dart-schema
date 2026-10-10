@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A motorized bicycle is a bicycle with an attached motor used to power the vehicle, or to assist with pedaling.
 @Schema(description: r'''A motorized bicycle is a bicycle with an attached motor used to power the vehicle, or to assist with pedaling.''')
 @JsonSerializable(explicitToJson: true)
-final class MotorizedBicycle extends Vehicle with EquatableMixin {
+base class MotorizedBicycle extends Vehicle {
 
   const MotorizedBicycle({
     super.accelerationTime,

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Any part of the human body, typically a component of an anatomical system. Organs, tissues, and cells are all anatomical structures.
 @Schema(description: r'''Any part of the human body, typically a component of an anatomical system. Organs, tissues, and cells are all anatomical structures.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class AnatomicalStructure extends MedicalEntity with EquatableMixin {
+base class AnatomicalStructure extends MedicalEntity {
 
   /// If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
   @Field(name: 'associatedPathophysiology', description: r'''If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.''')

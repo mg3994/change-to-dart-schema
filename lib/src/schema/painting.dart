@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A painting.
 @Schema(description: r'''A painting.''')
 @JsonSerializable(explicitToJson: true)
-final class Painting extends CreativeWork with EquatableMixin {
+base class Painting extends CreativeWork {
 
   const Painting({
     super.about,

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of responding instinctively and emotionally to an object, expressing a sentiment.
 @Schema(description: r'''The act of responding instinctively and emotionally to an object, expressing a sentiment.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class ReactAction extends AssessAction with EquatableMixin {
+base class ReactAction extends AssessAction {
 
   const ReactAction({
     super.actionProcess,

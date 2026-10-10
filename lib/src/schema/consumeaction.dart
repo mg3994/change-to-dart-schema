@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of ingesting information/resources/food.
 @Schema(description: r'''The act of ingesting information/resources/food.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class ConsumeAction extends Action with EquatableMixin {
+base class ConsumeAction extends Action {
 
   /// A set of requirements that must be fulfilled in order to perform an Action. If more than one value is specified, fulfilling one set of requirements will allow the Action to be performed.
   @Field(name: 'actionAccessibilityRequirement', description: r'''A set of requirements that must be fulfilled in order to perform an Action. If more than one value is specified, fulfilling one set of requirements will allow the Action to be performed.''')

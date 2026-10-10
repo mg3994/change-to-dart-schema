@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of taking money from a buyer in exchange for goods or services rendered. An agent sells an object, product, or service to a buyer for a price. Reciprocal of BuyAction.
 @Schema(description: r'''The act of taking money from a buyer in exchange for goods or services rendered. An agent sells an object, product, or service to a buyer for a price. Reciprocal of BuyAction.''')
 @JsonSerializable(explicitToJson: true)
-final class SellAction extends TradeAction with EquatableMixin {
+base class SellAction extends TradeAction {
 
   /// A sub property of participant. The participant/person/organization that bought the object.
   @Field(name: 'buyer', description: r'''A sub property of participant. The participant/person/organization that bought the object.''')

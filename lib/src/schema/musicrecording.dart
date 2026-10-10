@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A music recording (track), usually a single song.
 @Schema(description: r'''A music recording (track), usually a single song.''')
 @JsonSerializable(explicitToJson: true)
-final class MusicRecording extends CreativeWork with EquatableMixin {
+base class MusicRecording extends CreativeWork {
 
   /// The artist that performed this album or recording.
   @Field(name: 'byArtist', description: r'''The artist that performed this album or recording.''')

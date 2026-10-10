@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An email message.
 @Schema(description: r'''An email message.''')
 @JsonSerializable(explicitToJson: true)
-final class EmailMessage extends Message with EquatableMixin {
+base class EmailMessage extends Message {
 
   const EmailMessage({
     super.bccRecipient,

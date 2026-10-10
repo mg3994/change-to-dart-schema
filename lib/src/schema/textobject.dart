@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A text file. The text can be unformatted or contain markup, html, etc.
 @Schema(description: r'''A text file. The text can be unformatted or contain markup, html, etc.''')
 @JsonSerializable(explicitToJson: true)
-final class TextObject extends MediaObject with EquatableMixin {
+base class TextObject extends MediaObject {
 
   const TextObject({
     super.associatedArticle,

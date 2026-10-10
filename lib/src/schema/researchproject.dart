@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A Research project.
 @Schema(description: r'''A Research project.''')
 @JsonSerializable(explicitToJson: true)
-final class ResearchProject extends Project with EquatableMixin {
+base class ResearchProject extends Project {
 
   const ResearchProject({
     super.acceptedPaymentMethod,

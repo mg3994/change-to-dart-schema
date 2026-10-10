@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A scholarly article in the medical domain.
 @Schema(description: r'''A scholarly article in the medical domain.''')
 @JsonSerializable(explicitToJson: true)
-final class MedicalScholarlyArticle extends ScholarlyArticle with EquatableMixin {
+base class MedicalScholarlyArticle extends ScholarlyArticle {
 
   /// The type of the medical article, taken from the US NLM MeSH publication type catalog. See also [MeSH documentation](http://www.nlm.nih.gov/mesh/pubtypes.html).
   @Field(name: 'publicationType', description: r'''The type of the medical article, taken from the US NLM MeSH publication type catalog. See also [MeSH documentation](http://www.nlm.nih.gov/mesh/pubtypes.html).''')

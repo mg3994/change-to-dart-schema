@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A fast-food restaurant.
 @Schema(description: r'''A fast-food restaurant.''')
 @JsonSerializable(explicitToJson: true)
-final class FastFoodRestaurant extends FoodEstablishment with EquatableMixin {
+base class FastFoodRestaurant extends FoodEstablishment {
 
   const FastFoodRestaurant({
     super.acceptsReservations,
@@ -112,38 +112,6 @@ final class FastFoodRestaurant extends FoodEstablishment with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.amenityFeature,
-    super.branchCode,
-    super.containedIn,
-    super.containedInPlace,
-    super.containsPlace,
-    super.geo,
-    super.geoContains,
-    super.geoCoveredBy,
-    super.geoCovers,
-    super.geoCrosses,
-    super.geoDisjoint,
-    super.geoEquals,
-    super.geoIntersects,
-    super.geoOverlaps,
-    super.geoTouches,
-    super.geoWithin,
-    super.hasDriveThroughService,
-    super.hasMap,
-    super.isAccessibleForFree,
-    super.latitude,
-    super.longitude,
-    super.map,
-    super.maps,
-    super.maximumAttendeeCapacity,
-    super.openingHoursSpecification,
-    super.photo,
-    super.photos,
-    super.publicAccess,
-    super.smokingAllowed,
-    super.specialOpeningHoursSpecification,
-    super.tourBookingPage,
   });
 
   @override

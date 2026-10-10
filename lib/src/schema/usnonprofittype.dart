@@ -1,6 +1,7 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
 
 /// USNonprofitType: Non-profit organization type originating from the United States.
 @Schema(description: r'''USNonprofitType: Non-profit organization type originating from the United States.''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// ShippingConditions represent a set of constraints and information about the conditions of shipping a product. Such conditions may apply to only a subset of the products being shipped, depending on aspects of the product like weight, size, price, destination, and others. All the specified conditions must be met for this ShippingConditions to apply.
 @Schema(description: r'''ShippingConditions represent a set of constraints and information about the conditions of shipping a product. Such conditions may apply to only a subset of the products being shipped, depending on aspects of the product like weight, size, price, destination, and others. All the specified conditions must be met for this ShippingConditions to apply.''')
 @JsonSerializable(explicitToJson: true)
-final class ShippingConditions extends StructuredValue with EquatableMixin {
+base class ShippingConditions extends StructuredValue {
 
   /// The depth of the item.
   @Field(name: 'depth', description: r'''The depth of the item.''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical.
 @Schema(description: r'''Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Substance extends MedicalEntity with EquatableMixin {
+base class Substance extends MedicalEntity {
 
   /// An active ingredient, typically chemical compounds and/or biologic substances.
   @Field(name: 'activeIngredient', description: r'''An active ingredient, typically chemical compounds and/or biologic substances.''')

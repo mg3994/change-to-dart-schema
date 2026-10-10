@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as <code>breadcrumb</code> may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.
 @Schema(description: r'''A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as <code>breadcrumb</code> may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class WebPage extends CreativeWork with EquatableMixin {
+base class WebPage extends CreativeWork {
 
   /// A set of links that can help a user understand and navigate a website hierarchy.
   @Field(name: 'breadcrumb', description: r'''A set of links that can help a user understand and navigate a website hierarchy.''')

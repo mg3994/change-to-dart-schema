@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Entities that have a somewhat fixed, physical extension.
 @Schema(description: r'''Entities that have a somewhat fixed, physical extension.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Place extends Thing with EquatableMixin {
+base class Place extends Thing {
 
   /// A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.
 ///

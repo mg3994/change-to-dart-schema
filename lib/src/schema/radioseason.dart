@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Season dedicated to radio broadcast and associated online delivery.
 @Schema(description: r'''Season dedicated to radio broadcast and associated online delivery.''')
 @JsonSerializable(explicitToJson: true)
-final class RadioSeason extends CreativeWorkSeason with EquatableMixin {
+base class RadioSeason extends CreativeWorkSeason {
 
   const RadioSeason({
     super.actor,

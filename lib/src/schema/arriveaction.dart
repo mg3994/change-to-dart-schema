@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of arriving at a place. An agent arrives at a destination from a fromLocation, optionally with participants.
 @Schema(description: r'''The act of arriving at a place. An agent arrives at a destination from a fromLocation, optionally with participants.''')
 @JsonSerializable(explicitToJson: true)
-final class ArriveAction extends MoveAction with EquatableMixin {
+base class ArriveAction extends MoveAction {
 
   const ArriveAction({
     super.fromLocation,

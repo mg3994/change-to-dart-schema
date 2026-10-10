@@ -29,6 +29,12 @@ class SchemaOrgServer {
       return Response.notFound('Schema file not found.');
     });
 
+    // Ensure build/site exists before serving static files
+    final siteDir = Directory('build/site');
+    if (!await siteDir.exists()) {
+      await siteDir.create(recursive: true);
+    }
+
     // Static site fallback
     final staticHandler = createStaticHandler('build/site', defaultDocument: 'index.html');
 

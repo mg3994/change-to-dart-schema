@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Text representing an XPath (typically but not necessarily version 1.0).
 @Schema(description: r'''Text representing an XPath (typically but not necessarily version 1.0).''')
 @JsonSerializable(explicitToJson: true)
-final class XPathType extends Text with EquatableMixin {
+base class XPathType extends Text {
 
   const XPathType({
   });

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Financial services business.
 @Schema(description: r'''Financial services business.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class FinancialService extends LocalBusiness with EquatableMixin {
+base class FinancialService extends LocalBusiness {
 
   /// Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
   @Field(name: 'feesAndCommissionsSpecification', description: r'''Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.''')
@@ -112,38 +112,6 @@ abstract base class FinancialService extends LocalBusiness with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.amenityFeature,
-    super.branchCode,
-    super.containedIn,
-    super.containedInPlace,
-    super.containsPlace,
-    super.geo,
-    super.geoContains,
-    super.geoCoveredBy,
-    super.geoCovers,
-    super.geoCrosses,
-    super.geoDisjoint,
-    super.geoEquals,
-    super.geoIntersects,
-    super.geoOverlaps,
-    super.geoTouches,
-    super.geoWithin,
-    super.hasDriveThroughService,
-    super.hasMap,
-    super.isAccessibleForFree,
-    super.latitude,
-    super.longitude,
-    super.map,
-    super.maps,
-    super.maximumAttendeeCapacity,
-    super.openingHoursSpecification,
-    super.photo,
-    super.photos,
-    super.publicAccess,
-    super.smokingAllowed,
-    super.specialOpeningHoursSpecification,
-    super.tourBookingPage,
     this.feesAndCommissionsSpecification,
   });
 

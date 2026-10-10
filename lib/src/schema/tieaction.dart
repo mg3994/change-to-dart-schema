@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of reaching a draw in a competitive activity.
 @Schema(description: r'''The act of reaching a draw in a competitive activity.''')
 @JsonSerializable(explicitToJson: true)
-final class TieAction extends AchieveAction with EquatableMixin {
+base class TieAction extends AchieveAction {
 
   const TieAction({
     super.actionProcess,

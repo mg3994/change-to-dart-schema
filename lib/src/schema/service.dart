@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A service provided by an organization, e.g. delivery service, print services, etc.
 @Schema(description: r'''A service provided by an organization, e.g. delivery service, print services, etc.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Service extends Intangible with EquatableMixin {
+base class Service extends Intangible {
 
   /// The overall rating, based on a collection of reviews or ratings, of the item.
   @Field(name: 'aggregateRating', description: r'''The overall rating, based on a collection of reviews or ratings, of the item.''')

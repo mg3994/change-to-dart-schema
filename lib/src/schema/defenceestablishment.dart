@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A defence establishment, such as an army or navy base.
 @Schema(description: r'''A defence establishment, such as an army or navy base.''')
 @JsonSerializable(explicitToJson: true)
-final class DefenceEstablishment extends GovernmentBuilding with EquatableMixin {
+base class DefenceEstablishment extends GovernmentBuilding {
 
   const DefenceEstablishment({
     super.openingHours,

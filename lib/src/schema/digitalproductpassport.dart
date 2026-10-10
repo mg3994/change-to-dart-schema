@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A digital product passport (DPP), a record containing information about a product's lifecycle, sustainability, and compliance.
 @Schema(description: r'''A digital product passport (DPP), a record containing information about a product's lifecycle, sustainability, and compliance.''')
 @JsonSerializable(explicitToJson: true)
-final class DigitalProductPassport extends Certification with EquatableMixin {
+base class DigitalProductPassport extends Certification {
 
   const DigitalProductPassport({
     super.about,

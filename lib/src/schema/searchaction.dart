@@ -11,7 +11,7 @@ import '../../schemaorg.dart';
 /// * [[FindAction]]: SearchAction generally leads to a FindAction, but not necessarily.
 @Schema(description: r'''The act of searching for an object.\n\nRelated actions:\n\n* [[FindAction]]: SearchAction generally leads to a FindAction, but not necessarily.''')
 @JsonSerializable(explicitToJson: true)
-final class SearchAction extends Action with EquatableMixin {
+base class SearchAction extends Action {
 
   /// A sub property of instrument. The query used on this action.
   @Field(name: 'query', description: r'''A sub property of instrument. The query used on this action.''')

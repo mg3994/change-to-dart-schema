@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Event type: Social event.
 @Schema(description: r'''Event type: Social event.''')
 @JsonSerializable(explicitToJson: true)
-final class SocialEvent extends Event with EquatableMixin {
+base class SocialEvent extends Event {
 
   const SocialEvent({
     super.about,

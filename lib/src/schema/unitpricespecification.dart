@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The price asked for a given offer by the respective organization or person.
 @Schema(description: r'''The price asked for a given offer by the respective organization or person.''')
 @JsonSerializable(explicitToJson: true)
-final class UnitPriceSpecification extends PriceSpecification with EquatableMixin {
+base class UnitPriceSpecification extends PriceSpecification {
 
   /// Specifies for how long this price (or price component) will be billed. Can be used, for example, to model the contractual duration of a subscription or payment plan. Type can be either a Duration or a Number (in which case the unit of measurement, for example month, is specified by the unitCode property).
   @Field(name: 'billingDuration', description: r'''Specifies for how long this price (or price component) will be billed. Can be used, for example, to model the contractual duration of a subscription or payment plan. Type can be either a Duration or a Number (in which case the unit of measurement, for example month, is specified by the unitCode property).''')

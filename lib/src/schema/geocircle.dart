@@ -13,7 +13,7 @@ import '../../schemaorg.dart';
           The center of the circle can be indicated via the 'geoMidpoint' property, or more approximately using 'address', 'postalCode'.
        ''')
 @JsonSerializable(explicitToJson: true)
-final class GeoCircle extends GeoShape with EquatableMixin {
+base class GeoCircle extends GeoShape {
 
   /// Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle.
   @Field(name: 'geoMidpoint', description: r'''Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle.''')

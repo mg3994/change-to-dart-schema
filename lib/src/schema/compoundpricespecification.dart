@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A compound price specification is one that bundles multiple prices that all apply in combination for different dimensions of consumption. Use the name property of the attached unit price specification for indicating the dimension of a price component (e.g. "electricity" or "final cleaning").
 @Schema(description: r'''A compound price specification is one that bundles multiple prices that all apply in combination for different dimensions of consumption. Use the name property of the attached unit price specification for indicating the dimension of a price component (e.g. "electricity" or "final cleaning").''')
 @JsonSerializable(explicitToJson: true)
-final class CompoundPriceSpecification extends PriceSpecification with EquatableMixin {
+base class CompoundPriceSpecification extends PriceSpecification {
 
   /// This property links to all [[UnitPriceSpecification]] nodes that apply in parallel for the [[CompoundPriceSpecification]] node.
   @Field(name: 'priceComponent', description: r'''This property links to all [[UnitPriceSpecification]] nodes that apply in parallel for the [[CompoundPriceSpecification]] node.''')

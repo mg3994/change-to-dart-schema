@@ -9,7 +9,7 @@ import '../../schemaorg.dart';
 /// Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]].
 @Schema(description: r'''Describes a reservation for travel, dining or an event. Some reservations require tickets. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]].''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Reservation extends Intangible with EquatableMixin {
+base class Reservation extends Intangible {
 
   /// 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
   @Field(name: 'bookingAgent', description: r''''bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.''')

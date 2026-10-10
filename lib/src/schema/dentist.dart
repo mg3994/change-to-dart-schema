@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A dentist.
 @Schema(description: r'''A dentist.''')
 @JsonSerializable(explicitToJson: true)
-final class Dentist extends LocalBusiness with EquatableMixin {
+base class Dentist extends LocalBusiness {
 
   const Dentist({
     super.branchOf,
@@ -107,41 +107,6 @@ final class Dentist extends LocalBusiness with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.amenityFeature,
-    super.branchCode,
-    super.containedIn,
-    super.containedInPlace,
-    super.containsPlace,
-    super.geo,
-    super.geoContains,
-    super.geoCoveredBy,
-    super.geoCovers,
-    super.geoCrosses,
-    super.geoDisjoint,
-    super.geoEquals,
-    super.geoIntersects,
-    super.geoOverlaps,
-    super.geoTouches,
-    super.geoWithin,
-    super.hasDriveThroughService,
-    super.hasMap,
-    super.isAccessibleForFree,
-    super.latitude,
-    super.longitude,
-    super.map,
-    super.maps,
-    super.maximumAttendeeCapacity,
-    super.openingHoursSpecification,
-    super.photo,
-    super.photos,
-    super.publicAccess,
-    super.smokingAllowed,
-    super.specialOpeningHoursSpecification,
-    super.tourBookingPage,
-    super.healthPlanNetworkId,
-    super.isAcceptingNewPatients,
-    super.medicalSpecialty,
   });
 
   @override

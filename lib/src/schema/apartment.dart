@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An apartment (in American English) or flat (in British English) is a self-contained housing unit (a type of residential real estate) that occupies only part of a building (source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Apartment">http://en.wikipedia.org/wiki/Apartment</a>).
 @Schema(description: r'''An apartment (in American English) or flat (in British English) is a self-contained housing unit (a type of residential real estate) that occupies only part of a building (source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Apartment">http://en.wikipedia.org/wiki/Apartment</a>).''')
 @JsonSerializable(explicitToJson: true)
-final class Apartment extends Accommodation with EquatableMixin {
+base class Apartment extends Accommodation {
 
   /// The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
 /// Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.

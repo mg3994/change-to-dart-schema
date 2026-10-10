@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A set of defined terms, for example a set of categories or a classification scheme, a glossary, dictionary or enumeration. Use the about property to specify what the term set is about.
 @Schema(description: r'''A set of defined terms, for example a set of categories or a classification scheme, a glossary, dictionary or enumeration. Use the about property to specify what the term set is about.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class DefinedTermSet extends CreativeWork with EquatableMixin {
+base class DefinedTermSet extends CreativeWork {
 
   /// The subject matter of an object.
   @Field(name: 'about', description: r'''The subject matter of an object.''')

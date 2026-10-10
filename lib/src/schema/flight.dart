@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An airline flight.
 @Schema(description: r'''An airline flight.''')
 @JsonSerializable(explicitToJson: true)
-final class Flight extends Trip with EquatableMixin {
+base class Flight extends Trip {
 
   /// The kind of aircraft (e.g., "Boeing 747").
   @Field(name: 'aircraft', description: r'''The kind of aircraft (e.g., "Boeing 747").''')

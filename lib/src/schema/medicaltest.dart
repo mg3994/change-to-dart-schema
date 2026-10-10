@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Any medical test, typically performed for diagnostic purposes.
 @Schema(description: r'''Any medical test, typically performed for diagnostic purposes.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class MedicalTest extends MedicalEntity with EquatableMixin {
+base class MedicalTest extends MedicalEntity {
 
   /// Drugs that affect the test's results.
   @Field(name: 'affectedBy', description: r'''Drugs that affect the test's results.''')

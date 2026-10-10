@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the [[offers]] property. Repeated events may be structured as separate Event objects.
 @Schema(description: r'''An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the [[offers]] property. Repeated events may be structured as separate Event objects.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Event extends Thing with EquatableMixin {
+base class Event extends Thing {
 
   /// The subject matter of an object.
   @Field(name: 'about', description: r'''The subject matter of an object.''')

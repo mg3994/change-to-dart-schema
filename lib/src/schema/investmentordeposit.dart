@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A type of financial product that typically requires the client to transfer funds to a financial service in return for potential beneficial financial return.
 @Schema(description: r'''A type of financial product that typically requires the client to transfer funds to a financial service in return for potential beneficial financial return.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class InvestmentOrDeposit extends FinancialProduct with EquatableMixin {
+base class InvestmentOrDeposit extends FinancialProduct {
 
   /// The amount of money.
   @Field(name: 'amount', description: r'''The amount of money.''')

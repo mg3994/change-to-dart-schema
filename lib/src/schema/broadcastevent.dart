@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An over the air or online broadcast event.
 @Schema(description: r'''An over the air or online broadcast event.''')
 @JsonSerializable(explicitToJson: true)
-final class BroadcastEvent extends PublicationEvent with EquatableMixin {
+base class BroadcastEvent extends PublicationEvent {
 
   /// The event being broadcast such as a sporting event or awards ceremony.
   @Field(name: 'broadcastOfEvent', description: r'''The event being broadcast such as a sporting event or awards ceremony.''')

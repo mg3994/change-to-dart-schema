@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of consuming dynamic/moving visual content.
 @Schema(description: r'''The act of consuming dynamic/moving visual content.''')
 @JsonSerializable(explicitToJson: true)
-final class WatchAction extends ConsumeAction with EquatableMixin {
+base class WatchAction extends ConsumeAction {
 
   const WatchAction({
     super.actionAccessibilityRequirement,

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] (see Chapter 5.4 of ISO 8601).
 @Schema(description: r'''A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] (see Chapter 5.4 of ISO 8601).''')
 @JsonSerializable(explicitToJson: true)
-final class DateTime extends Equatable {
+base class DateTime extends Equatable {
 
   const DateTime({
   });

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An electronic file or document.
 @Schema(description: r'''An electronic file or document.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class DigitalDocument extends CreativeWork with EquatableMixin {
+base class DigitalDocument extends CreativeWork {
 
   /// A permission related to the access to this document (e.g. permission to read or write an electronic document). For a public document, specify a grantee with an Audience with audienceType equal to "public".
   @Field(name: 'hasDigitalDocumentPermission', description: r'''A permission related to the access to this document (e.g. permission to read or write an electronic document). For a public document, specify a grantee with an Audience with audienceType equal to "public".''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A DeliveryTimeSettings represents re-usable pieces of shipping information, relating to timing. It is designed for publication on an URL that may be referenced via the [[shippingSettingsLink]] property of an [[OfferShippingDetails]]. Several occurrences can be published, distinguished (and identified/referenced) by their different values for [[transitTimeLabel]].
 @Schema(description: r'''A DeliveryTimeSettings represents re-usable pieces of shipping information, relating to timing. It is designed for publication on an URL that may be referenced via the [[shippingSettingsLink]] property of an [[OfferShippingDetails]]. Several occurrences can be published, distinguished (and identified/referenced) by their different values for [[transitTimeLabel]].''')
 @JsonSerializable(explicitToJson: true)
-final class DeliveryTimeSettings extends StructuredValue with EquatableMixin {
+base class DeliveryTimeSettings extends StructuredValue {
 
   /// The total delay between the receipt of the order and the goods reaching the final customer.
   @Field(name: 'deliveryTime', description: r'''The total delay between the receipt of the order and the goods reaching the final customer.''')

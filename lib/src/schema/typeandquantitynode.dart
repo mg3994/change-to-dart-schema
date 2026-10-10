@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.
 @Schema(description: r'''A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.''')
 @JsonSerializable(explicitToJson: true)
-final class TypeAndQuantityNode extends StructuredValue with EquatableMixin {
+base class TypeAndQuantityNode extends StructuredValue {
 
   /// The quantity of the goods included in the offer.
   @Field(name: 'amountOfThisGood', description: r'''The quantity of the goods included in the offer.''')

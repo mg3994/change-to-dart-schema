@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A structured value representing repayment.
 @Schema(description: r'''A structured value representing repayment.''')
 @JsonSerializable(explicitToJson: true)
-final class RepaymentSpecification extends StructuredValue with EquatableMixin {
+base class RepaymentSpecification extends StructuredValue {
 
   /// a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
   @Field(name: 'downPayment', description: r'''a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.''')

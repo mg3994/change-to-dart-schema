@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A tool used (but not consumed) when performing instructions for how to achieve a result.
 @Schema(description: r'''A tool used (but not consumed) when performing instructions for how to achieve a result.''')
 @JsonSerializable(explicitToJson: true)
-final class HowToTool extends HowToItem with EquatableMixin {
+base class HowToTool extends HowToItem {
 
   const HowToTool({
     super.requiredQuantity,

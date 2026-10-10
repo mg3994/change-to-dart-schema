@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A MemberProgram defines a loyalty (or membership) program that provides its members with certain benefits, for example better pricing, free shipping or returns, or the ability to earn loyalty points. Member programs may have multiple tiers, for example silver and gold members, each with different benefits.
 @Schema(description: r'''A MemberProgram defines a loyalty (or membership) program that provides its members with certain benefits, for example better pricing, free shipping or returns, or the ability to earn loyalty points. Member programs may have multiple tiers, for example silver and gold members, each with different benefits.''')
 @JsonSerializable(explicitToJson: true)
-final class MemberProgram extends Intangible with EquatableMixin {
+base class MemberProgram extends Intangible {
 
   /// The tiers of a member program.
   @Field(name: 'hasTiers', description: r'''The tiers of a member program.''')

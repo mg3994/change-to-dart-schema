@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.
 @Schema(description: r'''A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.''')
 @JsonSerializable(explicitToJson: true)
-final class MusicGroup extends PerformingGroup with EquatableMixin {
+base class MusicGroup extends PerformingGroup {
 
   /// A music album.
   @Field(name: 'album', description: r'''A music album.''')

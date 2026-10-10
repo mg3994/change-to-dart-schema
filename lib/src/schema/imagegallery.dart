@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Web page type: Image gallery page.
 @Schema(description: r'''Web page type: Image gallery page.''')
 @JsonSerializable(explicitToJson: true)
-final class ImageGallery extends MediaGallery with EquatableMixin {
+base class ImageGallery extends MediaGallery {
 
   const ImageGallery({
     super.breadcrumb,

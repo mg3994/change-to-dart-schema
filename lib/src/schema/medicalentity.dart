@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The most generic type of entity related to health and the practice of medicine.
 @Schema(description: r'''The most generic type of entity related to health and the practice of medicine.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class MedicalEntity extends Thing with EquatableMixin {
+base class MedicalEntity extends Thing {
 
   /// A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
   @Field(name: 'code', description: r'''A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.''')

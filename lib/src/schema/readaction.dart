@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of consuming written content.
 @Schema(description: r'''The act of consuming written content.''')
 @JsonSerializable(explicitToJson: true)
-final class ReadAction extends ConsumeAction with EquatableMixin {
+base class ReadAction extends ConsumeAction {
 
   const ReadAction({
     super.actionAccessibilityRequirement,

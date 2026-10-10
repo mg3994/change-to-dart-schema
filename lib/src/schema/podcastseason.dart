@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A single season of a podcast. Many podcasts do not break down into separate seasons. In that case, PodcastSeries should be used.
 @Schema(description: r'''A single season of a podcast. Many podcasts do not break down into separate seasons. In that case, PodcastSeries should be used.''')
 @JsonSerializable(explicitToJson: true)
-final class PodcastSeason extends CreativeWorkSeason with EquatableMixin {
+base class PodcastSeason extends CreativeWorkSeason {
 
   const PodcastSeason({
     super.actor,

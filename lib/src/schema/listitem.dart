@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An list item, e.g. a step in a checklist or how-to description.
 @Schema(description: r'''An list item, e.g. a step in a checklist or how-to description.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class ListItem extends Intangible with EquatableMixin {
+base class ListItem extends Intangible {
 
   /// An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').
   @Field(name: 'item', description: r'''An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').''')

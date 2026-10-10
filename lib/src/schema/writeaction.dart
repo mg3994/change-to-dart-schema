@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of authoring written creative content.
 @Schema(description: r'''The act of authoring written creative content.''')
 @JsonSerializable(explicitToJson: true)
-final class WriteAction extends CreateAction with EquatableMixin {
+base class WriteAction extends CreateAction {
 
   /// The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
   @Field(name: 'inLanguage', description: r'''The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].''')

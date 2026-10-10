@@ -12,7 +12,7 @@ import '../../schemaorg.dart';
 /// * [[SubscribeAction]]: Unlike SubscribeAction, TrackAction refers to  the interest on the location of innanimate objects.
 @Schema(description: r'''An agent tracks an object for updates.\n\nRelated actions:\n\n* [[FollowAction]]: Unlike FollowAction, TrackAction refers to the interest on the location of innanimates objects.\n* [[SubscribeAction]]: Unlike SubscribeAction, TrackAction refers to  the interest on the location of innanimate objects.''')
 @JsonSerializable(explicitToJson: true)
-final class TrackAction extends FindAction with EquatableMixin {
+base class TrackAction extends FindAction {
 
   /// A sub property of instrument. The method of delivery.
   @Field(name: 'deliveryMethod', description: r'''A sub property of instrument. The method of delivery.''')

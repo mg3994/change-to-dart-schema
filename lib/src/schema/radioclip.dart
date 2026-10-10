@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A short radio program or a segment/part of a radio program.
 @Schema(description: r'''A short radio program or a segment/part of a radio program.''')
 @JsonSerializable(explicitToJson: true)
-final class RadioClip extends Clip with EquatableMixin {
+base class RadioClip extends Clip {
 
   const RadioClip({
     super.actor,

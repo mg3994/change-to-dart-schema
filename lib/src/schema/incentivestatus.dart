@@ -1,6 +1,7 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
 
 /// Enumerates a status for an incentive, such as whether it is active.
 @Schema(description: r'''Enumerates a status for an incentive, such as whether it is active.''')

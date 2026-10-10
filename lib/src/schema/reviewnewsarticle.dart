@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A [[NewsArticle]] and [[CriticReview]] providing a professional critic's assessment of a service, product, performance, or artistic or literary work.
 @Schema(description: r'''A [[NewsArticle]] and [[CriticReview]] providing a professional critic's assessment of a service, product, performance, or artistic or literary work.''')
 @JsonSerializable(explicitToJson: true)
-final class ReviewNewsArticle extends CriticReview with EquatableMixin {
+base class ReviewNewsArticle extends CriticReview {
 
   const ReviewNewsArticle({
     super.associatedClaimReview,
@@ -148,18 +148,6 @@ final class ReviewNewsArticle extends CriticReview with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.dateline,
-    super.printColumn,
-    super.printEdition,
-    super.printPage,
-    super.printSection,
-    super.articleBody,
-    super.articleSection,
-    super.backstory,
-    super.pageEnd,
-    super.pageStart,
-    super.pagination,
-    super.speakable,
   });
 
   @override

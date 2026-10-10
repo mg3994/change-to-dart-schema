@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A simple system that adds up the number of risk factors to yield a score that is associated with prognosis, e.g. CHAD score, TIMI risk score.
 @Schema(description: r'''A simple system that adds up the number of risk factors to yield a score that is associated with prognosis, e.g. CHAD score, TIMI risk score.''')
 @JsonSerializable(explicitToJson: true)
-final class MedicalRiskScore extends MedicalRiskEstimator with EquatableMixin {
+base class MedicalRiskScore extends MedicalRiskEstimator {
 
   /// The algorithm or rules to follow to compute the score.
   @Field(name: 'algorithm', description: r'''The algorithm or rules to follow to compute the score.''')

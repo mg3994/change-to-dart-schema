@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A theater or other performing art center.
 @Schema(description: r'''A theater or other performing art center.''')
 @JsonSerializable(explicitToJson: true)
-final class PerformingArtsTheater extends CivicStructure with EquatableMixin {
+base class PerformingArtsTheater extends CivicStructure {
 
   const PerformingArtsTheater({
     super.openingHours,

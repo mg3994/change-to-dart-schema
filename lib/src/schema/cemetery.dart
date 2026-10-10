@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A graveyard.
 @Schema(description: r'''A graveyard.''')
 @JsonSerializable(explicitToJson: true)
-final class Cemetery extends CivicStructure with EquatableMixin {
+base class Cemetery extends CivicStructure {
 
   const Cemetery({
     super.openingHours,

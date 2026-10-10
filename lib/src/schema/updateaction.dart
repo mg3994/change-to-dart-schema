@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of managing by changing/editing the state of the object.
 @Schema(description: r'''The act of managing by changing/editing the state of the object.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class UpdateAction extends Action with EquatableMixin {
+base class UpdateAction extends Action {
 
   /// A sub property of object. The collection target of the action.
   @Field(name: 'collection', description: r'''A sub property of object. The collection target of the action.''')

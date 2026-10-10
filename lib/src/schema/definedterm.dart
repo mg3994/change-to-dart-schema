@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term. Use the about property to specify what the term is about.
 @Schema(description: r'''A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term. Use the about property to specify what the term is about.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class DefinedTerm extends Intangible with EquatableMixin {
+base class DefinedTerm extends Intangible {
 
   /// The subject matter of an object.
   @Field(name: 'about', description: r'''The subject matter of an object.''')

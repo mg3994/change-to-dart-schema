@@ -1,6 +1,7 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
 
 /// The day of the week, e.g. used to specify to which day the opening hours of an OpeningHoursSpecification refer.
 ///

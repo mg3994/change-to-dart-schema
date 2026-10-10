@@ -13,7 +13,7 @@ import '../../schemaorg.dart';
   background on the underlying concepts.
   ''')
 @JsonSerializable(explicitToJson: true)
-final class OfferForLease extends Offer with EquatableMixin {
+base class OfferForLease extends Offer {
 
   const OfferForLease({
     super.acceptedPaymentMethod,

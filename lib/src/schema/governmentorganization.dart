@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A governmental organization or agency.
 @Schema(description: r'''A governmental organization or agency.''')
 @JsonSerializable(explicitToJson: true)
-final class GovernmentOrganization extends Organization with EquatableMixin {
+base class GovernmentOrganization extends Organization {
 
   const GovernmentOrganization({
     super.acceptedPaymentMethod,

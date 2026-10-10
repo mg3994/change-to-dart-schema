@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A specific strength in which a medical drug is available in a specific country.
 @Schema(description: r'''A specific strength in which a medical drug is available in a specific country.''')
 @JsonSerializable(explicitToJson: true)
-final class DrugStrength extends MedicalIntangible with EquatableMixin {
+base class DrugStrength extends MedicalIntangible {
 
   /// An active ingredient, typically chemical compounds and/or biologic substances.
   @Field(name: 'activeIngredient', description: r'''An active ingredient, typically chemical compounds and/or biologic substances.''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A statistical distribution of values.
 @Schema(description: r'''A statistical distribution of values.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class QuantitativeValueDistribution extends StructuredValue with EquatableMixin {
+base class QuantitativeValueDistribution extends StructuredValue {
 
   /// The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
   @Field(name: 'duration', description: r'''The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).''')

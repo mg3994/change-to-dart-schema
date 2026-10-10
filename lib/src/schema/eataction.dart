@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of swallowing solid objects.
 @Schema(description: r'''The act of swallowing solid objects.''')
 @JsonSerializable(explicitToJson: true)
-final class EatAction extends ConsumeAction with EquatableMixin {
+base class EatAction extends ConsumeAction {
 
   const EatAction({
     super.actionAccessibilityRequirement,

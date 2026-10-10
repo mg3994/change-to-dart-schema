@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A [[FAQPage]] is a [[WebPage]] presenting one or more "[Frequently asked questions](https://en.wikipedia.org/wiki/FAQ)" (see also [[QAPage]]).
 @Schema(description: r'''A [[FAQPage]] is a [[WebPage]] presenting one or more "[Frequently asked questions](https://en.wikipedia.org/wiki/FAQ)" (see also [[QAPage]]).''')
 @JsonSerializable(explicitToJson: true)
-final class FAQPage extends WebPage with EquatableMixin {
+base class FAQPage extends WebPage {
 
   const FAQPage({
     super.breadcrumb,

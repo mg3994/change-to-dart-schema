@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A Property value specification.
 @Schema(description: r'''A Property value specification.''')
 @JsonSerializable(explicitToJson: true)
-final class PropertyValueSpecification extends Intangible with EquatableMixin {
+base class PropertyValueSpecification extends Intangible {
 
   /// The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
   @Field(name: 'defaultValue', description: r'''The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.''')

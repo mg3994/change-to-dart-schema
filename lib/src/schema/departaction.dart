@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of  departing from a place. An agent departs from a fromLocation for a destination, optionally with participants.
 @Schema(description: r'''The act of  departing from a place. An agent departs from a fromLocation for a destination, optionally with participants.''')
 @JsonSerializable(explicitToJson: true)
-final class DepartAction extends MoveAction with EquatableMixin {
+base class DepartAction extends MoveAction {
 
   const DepartAction({
     super.fromLocation,

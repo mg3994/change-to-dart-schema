@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A collection or bound volume of maps, charts, plates or tables, physical or in media form illustrating any subject.
 @Schema(description: r'''A collection or bound volume of maps, charts, plates or tables, physical or in media form illustrating any subject.''')
 @JsonSerializable(explicitToJson: true)
-final class Atlas extends CreativeWork with EquatableMixin {
+base class Atlas extends CreativeWork {
 
   const Atlas({
     super.about,

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of giving money voluntarily to a beneficiary in recognition of services rendered.
 @Schema(description: r'''The act of giving money voluntarily to a beneficiary in recognition of services rendered.''')
 @JsonSerializable(explicitToJson: true)
-final class TipAction extends TradeAction with EquatableMixin {
+base class TipAction extends TradeAction {
 
   /// A sub property of participant. The participant who is at the receiving end of the action.
   @Field(name: 'recipient', description: r'''A sub property of participant. The participant who is at the receiving end of the action.''')

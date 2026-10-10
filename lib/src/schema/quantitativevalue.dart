@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A point value or interval for product characteristics and other purposes.
 @Schema(description: r''' A point value or interval for product characteristics and other purposes.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class QuantitativeValue extends StructuredValue with EquatableMixin {
+base class QuantitativeValue extends StructuredValue {
 
   /// A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.
 ///

@@ -11,7 +11,7 @@ import '../../schemaorg.dart';
       This includes identifying the day(s) of the week or month when the recurring event will take place, in addition to its start and end time. Schedules may also
       have start and end dates to indicate when they are active, e.g. to define a limited calendar of events.''')
 @JsonSerializable(explicitToJson: true)
-final class Schedule extends Intangible with EquatableMixin {
+base class Schedule extends Intangible {
 
   /// Defines the day(s) of the week on which a recurring [[Event]] takes place. May be specified using either [[DayOfWeek]], or alternatively [[Text]] conforming to iCal's syntax for byDay recurrence rules.
   @Field(name: 'byDay', description: r'''Defines the day(s) of the week on which a recurring [[Event]] takes place. May be specified using either [[DayOfWeek]], or alternatively [[Text]] conforming to iCal's syntax for byDay recurrence rules.''')

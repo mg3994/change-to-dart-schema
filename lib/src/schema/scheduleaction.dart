@@ -11,7 +11,7 @@ import '../../schemaorg.dart';
 /// * [[ReserveAction]]: Unlike ReserveAction, ScheduleAction allocates future actions (e.g. an event, a task, etc) towards a time slot / spatial allocation.
 @Schema(description: r'''Scheduling future actions, events, or tasks.\n\nRelated actions:\n\n* [[ReserveAction]]: Unlike ReserveAction, ScheduleAction allocates future actions (e.g. an event, a task, etc) towards a time slot / spatial allocation.''')
 @JsonSerializable(explicitToJson: true)
-final class ScheduleAction extends PlanAction with EquatableMixin {
+base class ScheduleAction extends PlanAction {
 
   const ScheduleAction({
     super.scheduledTime,

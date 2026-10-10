@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A unique instance of a television BroadcastService on a CableOrSatelliteService lineup.
 @Schema(description: r'''A unique instance of a television BroadcastService on a CableOrSatelliteService lineup.''')
 @JsonSerializable(explicitToJson: true)
-final class TelevisionChannel extends BroadcastChannel with EquatableMixin {
+base class TelevisionChannel extends BroadcastChannel {
 
   const TelevisionChannel({
     super.broadcastChannelId,

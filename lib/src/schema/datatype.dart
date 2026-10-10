@@ -1,6 +1,7 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
 
 /// The basic data types such as Integers, Strings, etc.
 @Schema(description: r'''The basic data types such as Integers, Strings, etc.''')

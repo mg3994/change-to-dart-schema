@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A fact-checking review of claims made (or reported) in some creative work (referenced via itemReviewed).
 @Schema(description: r'''A fact-checking review of claims made (or reported) in some creative work (referenced via itemReviewed).''')
 @JsonSerializable(explicitToJson: true)
-final class ClaimReview extends Review with EquatableMixin {
+base class ClaimReview extends Review {
 
   /// A short summary of the specific claims reviewed in a ClaimReview.
   @Field(name: 'claimReviewed', description: r'''A short summary of the specific claims reviewed in a ClaimReview.''')

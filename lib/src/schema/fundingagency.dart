@@ -17,7 +17,7 @@ import '../../schemaorg.dart';
 Examples of funding agencies include ERC, REA, NIH, Bill and Melinda Gates Foundation, ...
     ''')
 @JsonSerializable(explicitToJson: true)
-final class FundingAgency extends Project with EquatableMixin {
+base class FundingAgency extends Project {
 
   const FundingAgency({
     super.acceptedPaymentMethod,

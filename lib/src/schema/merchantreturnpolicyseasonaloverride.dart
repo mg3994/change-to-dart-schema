@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A seasonal override of a return policy, for example used for holidays.
 @Schema(description: r'''A seasonal override of a return policy, for example used for holidays.''')
 @JsonSerializable(explicitToJson: true)
-final class MerchantReturnPolicySeasonalOverride extends Intangible with EquatableMixin {
+base class MerchantReturnPolicySeasonalOverride extends Intangible {
 
   /// The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
   @Field(name: 'endDate', description: r'''The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A collection of music tracks.
 @Schema(description: r'''A collection of music tracks.''')
 @JsonSerializable(explicitToJson: true)
-final class MusicAlbum extends MusicPlaylist with EquatableMixin {
+base class MusicAlbum extends MusicPlaylist {
 
   /// Classification of the album by its type of content: soundtrack, live album, studio album, etc.
   @Field(name: 'albumProductionType', description: r'''Classification of the album by its type of content: soundtrack, live album, studio album, etc.''')

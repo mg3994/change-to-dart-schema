@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A Catholic church.
 @Schema(description: r'''A Catholic church.''')
 @JsonSerializable(explicitToJson: true)
-final class CatholicChurch extends Church with EquatableMixin {
+base class CatholicChurch extends Church {
 
   const CatholicChurch({
     super.openingHours,

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of organizing tasks/objects/events by associating resources to it.
 @Schema(description: r'''The act of organizing tasks/objects/events by associating resources to it.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class AllocateAction extends OrganizeAction with EquatableMixin {
+base class AllocateAction extends OrganizeAction {
 
   const AllocateAction({
     super.actionProcess,

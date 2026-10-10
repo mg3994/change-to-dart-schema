@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An EducationalAudience.
 @Schema(description: r'''An EducationalAudience.''')
 @JsonSerializable(explicitToJson: true)
-final class EducationalAudience extends Audience with EquatableMixin {
+base class EducationalAudience extends Audience {
 
   /// An educationalRole of an EducationalAudience.
   @Field(name: 'educationalRole', description: r'''An educationalRole of an EducationalAudience.''')

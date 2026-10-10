@@ -9,7 +9,7 @@ import '../../schemaorg.dart';
 /// Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
 @Schema(description: r'''A reservation for lodging at a hotel, motel, inn, etc.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.''')
 @JsonSerializable(explicitToJson: true)
-final class LodgingReservation extends Reservation with EquatableMixin {
+base class LodgingReservation extends Reservation {
 
   /// The earliest someone may check into a lodging establishment.
   @Field(name: 'checkinTime', description: r'''The earliest someone may check into a lodging establishment.''')

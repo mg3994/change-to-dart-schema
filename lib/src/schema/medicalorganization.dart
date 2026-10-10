@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A medical organization (physical or not), such as hospital, institution or clinic.
 @Schema(description: r'''A medical organization (physical or not), such as hospital, institution or clinic.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class MedicalOrganization extends Organization with EquatableMixin {
+base class MedicalOrganization extends Organization {
 
   /// Name or unique ID of network. (Networks are often reused across different insurance plans.)
   @Field(name: 'healthPlanNetworkId', description: r'''Name or unique ID of network. (Networks are often reused across different insurance plans.)''')

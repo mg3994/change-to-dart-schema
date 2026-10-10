@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of being defeated in a competitive activity.
 @Schema(description: r'''The act of being defeated in a competitive activity.''')
 @JsonSerializable(explicitToJson: true)
-final class LoseAction extends AchieveAction with EquatableMixin {
+base class LoseAction extends AchieveAction {
 
   /// A sub property of participant. The winner of the action.
   @Field(name: 'winner', description: r'''A sub property of participant. The winner of the action.''')

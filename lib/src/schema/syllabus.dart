@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A syllabus that describes the material covered in a course, often with several such sections per [[Course]] so that a distinct [[timeRequired]] can be provided for that section of the [[Course]].
 @Schema(description: r'''A syllabus that describes the material covered in a course, often with several such sections per [[Course]] so that a distinct [[timeRequired]] can be provided for that section of the [[Course]].''')
 @JsonSerializable(explicitToJson: true)
-final class Syllabus extends LearningResource with EquatableMixin {
+base class Syllabus extends LearningResource {
 
   const Syllabus({
     super.assesses,

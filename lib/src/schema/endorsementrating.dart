@@ -19,7 +19,7 @@ An [[EndorsementRating]] may be part of a numeric scale or organized system, but
 endorsement rating is particularly useful in the absence of numeric scales as it helps consumers understand that the rating is broadly positive.
 ''')
 @JsonSerializable(explicitToJson: true)
-final class EndorsementRating extends Rating with EquatableMixin {
+base class EndorsementRating extends Rating {
 
   const EndorsementRating({
     super.author,

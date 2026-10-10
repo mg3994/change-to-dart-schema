@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A listing that describes a job opening in a certain organization.
 @Schema(description: r'''A listing that describes a job opening in a certain organization.''')
 @JsonSerializable(explicitToJson: true)
-final class JobPosting extends Intangible with EquatableMixin {
+base class JobPosting extends Intangible {
 
   /// The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
   @Field(name: 'applicantLocationRequirements', description: r'''The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.''')

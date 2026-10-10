@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A group of multiple reservations with common values for all sub-reservations.
 @Schema(description: r'''A group of multiple reservations with common values for all sub-reservations.''')
 @JsonSerializable(explicitToJson: true)
-final class ReservationPackage extends Reservation with EquatableMixin {
+base class ReservationPackage extends Reservation {
 
   /// The individual reservations included in the package. Typically a repeated property.
   @Field(name: 'subReservation', description: r'''The individual reservations included in the package. Typically a repeated property.''')

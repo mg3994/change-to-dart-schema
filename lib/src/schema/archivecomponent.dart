@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An intangible type to be applied to any archive content, carrying with it a set of properties required to describe archival items and collections.
 @Schema(description: r'''An intangible type to be applied to any archive content, carrying with it a set of properties required to describe archival items and collections.''')
 @JsonSerializable(explicitToJson: true)
-final class ArchiveComponent extends CreativeWork with EquatableMixin {
+base class ArchiveComponent extends CreativeWork {
 
   /// [[ArchiveOrganization]] that holds, keeps or maintains the [[ArchiveComponent]].
   @Field(name: 'holdingArchive', description: r'''[[ArchiveOrganization]] that holds, keeps or maintains the [[ArchiveComponent]].''')

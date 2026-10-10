@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A quotation. Often but not necessarily from some written work, attributable to a real world author and - if associated with a fictional character - to any fictional Person. Use [[isBasedOn]] to link to source/origin. The [[recordedIn]] property can be used to reference a Quotation from an [[Event]].
 @Schema(description: r'''A quotation. Often but not necessarily from some written work, attributable to a real world author and - if associated with a fictional character - to any fictional Person. Use [[isBasedOn]] to link to source/origin. The [[recordedIn]] property can be used to reference a Quotation from an [[Event]].''')
 @JsonSerializable(explicitToJson: true)
-final class Quotation extends CreativeWork with EquatableMixin {
+base class Quotation extends CreativeWork {
 
   /// The (e.g. fictional) character, Person or Organization to whom the quotation is attributed within the containing CreativeWork.
   @Field(name: 'spokenByCharacter', description: r'''The (e.g. fictional) character, Person or Organization to whom the quotation is attributed within the containing CreativeWork.''')

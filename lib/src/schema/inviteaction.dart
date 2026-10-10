@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of asking someone to attend an event. Reciprocal of RsvpAction.
 @Schema(description: r'''The act of asking someone to attend an event. Reciprocal of RsvpAction.''')
 @JsonSerializable(explicitToJson: true)
-final class InviteAction extends CommunicateAction with EquatableMixin {
+base class InviteAction extends CommunicateAction {
 
   /// Upcoming or past event associated with this place, organization, or action.
   @Field(name: 'event', description: r'''Upcoming or past event associated with this place, organization, or action.''')

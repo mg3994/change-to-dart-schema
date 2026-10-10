@@ -11,7 +11,7 @@ import '../../schemaorg.dart';
 /// * [[TransferAction]]: Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object.
 @Schema(description: r'''The act of an agent relocating to a place.\n\nRelated actions:\n\n* [[TransferAction]]: Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class MoveAction extends Action with EquatableMixin {
+base class MoveAction extends Action {
 
   /// A sub property of location. The original location of the object or the agent before the action.
   @Field(name: 'fromLocation', description: r'''A sub property of location. The original location of the object or the agent before the action.''')

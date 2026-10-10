@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The delivery of a parcel either via the postal service or a commercial service.
 @Schema(description: r'''The delivery of a parcel either via the postal service or a commercial service.''')
 @JsonSerializable(explicitToJson: true)
-final class ParcelDelivery extends Intangible with EquatableMixin {
+base class ParcelDelivery extends Intangible {
 
   /// 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
   @Field(name: 'carrier', description: r''''carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.''')

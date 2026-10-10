@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Web page type: Search results page.
 @Schema(description: r'''Web page type: Search results page.''')
 @JsonSerializable(explicitToJson: true)
-final class SearchResultsPage extends WebPage with EquatableMixin {
+base class SearchResultsPage extends WebPage {
 
   const SearchResultsPage({
     super.breadcrumb,

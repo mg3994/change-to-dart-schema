@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.
 @Schema(description: r'''Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.''')
 @JsonSerializable(explicitToJson: true)
-final class Code extends CreativeWork with EquatableMixin {
+base class Code extends CreativeWork {
 
   const Code({
     super.about,

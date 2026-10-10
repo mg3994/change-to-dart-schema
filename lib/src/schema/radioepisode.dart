@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A radio episode which can be part of a series or season.
 @Schema(description: r'''A radio episode which can be part of a series or season.''')
 @JsonSerializable(explicitToJson: true)
-final class RadioEpisode extends Episode with EquatableMixin {
+base class RadioEpisode extends Episode {
 
   const RadioEpisode({
     super.actor,

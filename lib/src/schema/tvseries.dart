@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// CreativeWorkSeries dedicated to TV broadcast and associated online delivery.
 @Schema(description: r'''CreativeWorkSeries dedicated to TV broadcast and associated online delivery.''')
 @JsonSerializable(explicitToJson: true)
-final class TVSeries extends CreativeWork with EquatableMixin {
+base class TVSeries extends CreativeWork {
 
   /// An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
   @Field(name: 'actor', description: r'''An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.''')
@@ -236,9 +236,6 @@ Since schema.org types like [[Movie]], [[TVEpisode]], [[TVSeason]], and [[TVSeri
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.endDate,
-    super.issn,
-    super.startDate,
     this.actor,
     this.actors,
     this.containsSeason,

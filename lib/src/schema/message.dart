@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A single message from a sender to one or more organizations or people.
 @Schema(description: r'''A single message from a sender to one or more organizations or people.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Message extends CreativeWork with EquatableMixin {
+base class Message extends CreativeWork {
 
   /// A sub property of recipient. The recipient blind copied on a message.
   @Field(name: 'bccRecipient', description: r'''A sub property of recipient. The recipient blind copied on a message.''')

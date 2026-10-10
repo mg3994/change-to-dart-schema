@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An historical landmark or building.
 @Schema(description: r'''An historical landmark or building.''')
 @JsonSerializable(explicitToJson: true)
-final class LandmarksOrHistoricalBuildings extends Place with EquatableMixin {
+base class LandmarksOrHistoricalBuildings extends Place {
 
   const LandmarksOrHistoricalBuildings({
     super.additionalProperty,

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A lake (for example, Lake Pontrachain).
 @Schema(description: r'''A lake (for example, Lake Pontrachain).''')
 @JsonSerializable(explicitToJson: true)
-final class LakeBodyOfWater extends BodyOfWater with EquatableMixin {
+base class LakeBodyOfWater extends BodyOfWater {
 
   const LakeBodyOfWater({
     super.additionalProperty,

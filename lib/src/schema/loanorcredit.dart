@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A financial product for the loaning of an amount of money, or line of credit, under agreed terms and charges.
 @Schema(description: r'''A financial product for the loaning of an amount of money, or line of credit, under agreed terms and charges.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class LoanOrCredit extends FinancialProduct with EquatableMixin {
+base class LoanOrCredit extends FinancialProduct {
 
   /// The amount of money.
   @Field(name: 'amount', description: r'''The amount of money.''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A posting to a discussion forum.
 @Schema(description: r'''A posting to a discussion forum.''')
 @JsonSerializable(explicitToJson: true)
-final class DiscussionForumPosting extends SocialMediaPosting with EquatableMixin {
+base class DiscussionForumPosting extends SocialMediaPosting {
 
   const DiscussionForumPosting({
     super.sharedContent,

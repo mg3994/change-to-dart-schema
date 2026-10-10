@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A collection of datasets.
 @Schema(description: r'''A collection of datasets.''')
 @JsonSerializable(explicitToJson: true)
-final class DataCatalog extends CreativeWork with EquatableMixin {
+base class DataCatalog extends CreativeWork {
 
   /// A dataset contained in this catalog.
   @Field(name: 'dataset', description: r'''A dataset contained in this catalog.''')

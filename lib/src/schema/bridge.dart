@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A bridge.
 @Schema(description: r'''A bridge.''')
 @JsonSerializable(explicitToJson: true)
-final class Bridge extends CivicStructure with EquatableMixin {
+base class Bridge extends CivicStructure {
 
   const Bridge({
     super.openingHours,

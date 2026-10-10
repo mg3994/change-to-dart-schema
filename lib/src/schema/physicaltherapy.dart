@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A process of progressive physical care and rehabilitation aimed at improving a health condition.
 @Schema(description: r'''A process of progressive physical care and rehabilitation aimed at improving a health condition.''')
 @JsonSerializable(explicitToJson: true)
-final class PhysicalTherapy extends MedicalTherapy with EquatableMixin {
+base class PhysicalTherapy extends MedicalTherapy {
 
   const PhysicalTherapy({
     super.contraindication,

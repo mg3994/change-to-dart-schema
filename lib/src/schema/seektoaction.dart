@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// This is the [[Action]] of navigating to a specific [[startOffset]] timestamp within a [[VideoObject]], typically represented with a URL template structure.
 @Schema(description: r'''This is the [[Action]] of navigating to a specific [[startOffset]] timestamp within a [[VideoObject]], typically represented with a URL template structure.''')
 @JsonSerializable(explicitToJson: true)
-final class SeekToAction extends Action with EquatableMixin {
+base class SeekToAction extends Action {
 
   /// The start time of the clip expressed as the number of seconds from the beginning of the work.
   @Field(name: 'startOffset', description: r'''The start time of the clip expressed as the number of seconds from the beginning of the work.''')

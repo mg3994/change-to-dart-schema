@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Data type: Floating number.
 @Schema(description: r'''Data type: Floating number.''')
 @JsonSerializable(explicitToJson: true)
-final class Float extends Number with EquatableMixin {
+base class Float extends Number {
 
   const Float({
   });

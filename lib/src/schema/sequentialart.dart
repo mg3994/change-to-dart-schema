@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An art forms that use images deployed in a specific order for the purpose of graphic storytelling (i.e., narration of graphic stories) or conveying information. Examples of SequentialArt are Franco-Belgian Bande Dessinée, Comics in the USA and 漫画 (Manga) in Japan.
 @Schema(description: r'''An art forms that use images deployed in a specific order for the purpose of graphic storytelling (i.e., narration of graphic stories) or conveying information. Examples of SequentialArt are Franco-Belgian Bande Dessinée, Comics in the USA and 漫画 (Manga) in Japan.''')
 @JsonSerializable(explicitToJson: true)
-final class SequentialArt extends Book with EquatableMixin {
+base class SequentialArt extends Book {
 
   const SequentialArt({
     super.abridged,
@@ -145,20 +145,6 @@ final class SequentialArt extends Book with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.artEdition,
-    super.artMedium,
-    super.artform,
-    super.artist,
-    super.artworkSurface,
-    super.colorist,
-    super.depth,
-    super.height,
-    super.inker,
-    super.letterer,
-    super.penciler,
-    super.surface,
-    super.weight,
-    super.width,
   });
 
   @override

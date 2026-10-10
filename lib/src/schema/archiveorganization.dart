@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An organization with archival holdings. An organization which keeps and preserves archival material and typically makes it accessible to the public.
 @Schema(description: r'''An organization with archival holdings. An organization which keeps and preserves archival material and typically makes it accessible to the public.''')
 @JsonSerializable(explicitToJson: true)
-final class ArchiveOrganization extends LocalBusiness with EquatableMixin {
+base class ArchiveOrganization extends LocalBusiness {
 
   /// Collection, [fonds](https://en.wikipedia.org/wiki/Fonds), or item held, kept or maintained by an [[ArchiveOrganization]].
   @Field(name: 'archiveHeld', description: r'''Collection, [fonds](https://en.wikipedia.org/wiki/Fonds), or item held, kept or maintained by an [[ArchiveOrganization]].''')
@@ -112,38 +112,6 @@ final class ArchiveOrganization extends LocalBusiness with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.amenityFeature,
-    super.branchCode,
-    super.containedIn,
-    super.containedInPlace,
-    super.containsPlace,
-    super.geo,
-    super.geoContains,
-    super.geoCoveredBy,
-    super.geoCovers,
-    super.geoCrosses,
-    super.geoDisjoint,
-    super.geoEquals,
-    super.geoIntersects,
-    super.geoOverlaps,
-    super.geoTouches,
-    super.geoWithin,
-    super.hasDriveThroughService,
-    super.hasMap,
-    super.isAccessibleForFree,
-    super.latitude,
-    super.longitude,
-    super.map,
-    super.maps,
-    super.maximumAttendeeCapacity,
-    super.openingHoursSpecification,
-    super.photo,
-    super.photos,
-    super.publicAccess,
-    super.smokingAllowed,
-    super.specialOpeningHoursSpecification,
-    super.tourBookingPage,
     this.archiveHeld,
   });
 

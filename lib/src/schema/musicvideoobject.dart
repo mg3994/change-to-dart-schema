@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A music video file.
 @Schema(description: r'''A music video file.''')
 @JsonSerializable(explicitToJson: true)
-final class MusicVideoObject extends MediaObject with EquatableMixin {
+base class MusicVideoObject extends MediaObject {
 
   const MusicVideoObject({
     super.associatedArticle,

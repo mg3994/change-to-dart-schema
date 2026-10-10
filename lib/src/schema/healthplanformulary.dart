@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// For a given health insurance plan, the specification for costs and coverage of prescription drugs.
 @Schema(description: r'''For a given health insurance plan, the specification for costs and coverage of prescription drugs.''')
 @JsonSerializable(explicitToJson: true)
-final class HealthPlanFormulary extends Intangible with EquatableMixin {
+base class HealthPlanFormulary extends Intangible {
 
   /// The costs to the patient for services under this network or formulary.
   @Field(name: 'healthPlanCostSharing', description: r'''The costs to the patient for services under this network or formulary.''')

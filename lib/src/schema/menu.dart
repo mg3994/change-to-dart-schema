@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A structured representation of food or drink items available from a FoodEstablishment.
 @Schema(description: r'''A structured representation of food or drink items available from a FoodEstablishment.''')
 @JsonSerializable(explicitToJson: true)
-final class Menu extends CreativeWork with EquatableMixin {
+base class Menu extends CreativeWork {
 
   /// A food or drink item contained in a menu or menu section.
   @Field(name: 'hasMenuItem', description: r'''A food or drink item contained in a menu or menu section.''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A SpeakableSpecification indicates (typically via [[xpath]] or [[cssSelector]]) sections of a document that are highlighted as particularly [[speakable]]. Instances of this type are expected to be used primarily as values of the [[speakable]] property.
 @Schema(description: r'''A SpeakableSpecification indicates (typically via [[xpath]] or [[cssSelector]]) sections of a document that are highlighted as particularly [[speakable]]. Instances of this type are expected to be used primarily as values of the [[speakable]] property.''')
 @JsonSerializable(explicitToJson: true)
-final class SpeakableSpecification extends Intangible with EquatableMixin {
+base class SpeakableSpecification extends Intangible {
 
   /// A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
   @Field(name: 'cssSelector', description: r'''A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".''')

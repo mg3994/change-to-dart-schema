@@ -17,7 +17,7 @@ Observations can also encode a subset of simple RDF-like statements (its observa
 In the context of a quantitative knowledge graph, typical properties could include [[measuredProperty]], [[observationAbout]], [[observationDate]], [[value]], [[unitCode]], [[unitText]], [[measurementMethod]].
     ''')
 @JsonSerializable(explicitToJson: true)
-final class Observation extends Intangible with EquatableMixin {
+base class Observation extends Intangible {
 
   /// A [[marginOfError]] for an [[Observation]].
   @Field(name: 'marginOfError', description: r'''A [[marginOfError]] for an [[Observation]].''')
@@ -95,13 +95,6 @@ If there are several [[variableMeasured]] properties recorded for some given dat
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.maxValue,
-    super.minValue,
-    super.unitCode,
-    super.unitText,
-    super.value,
-    super.valueReference,
     this.marginOfError,
     this.measuredProperty,
     this.measurementDenominator,

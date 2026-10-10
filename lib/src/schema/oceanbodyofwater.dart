@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An ocean (for example, the Pacific).
 @Schema(description: r'''An ocean (for example, the Pacific).''')
 @JsonSerializable(explicitToJson: true)
-final class OceanBodyOfWater extends BodyOfWater with EquatableMixin {
+base class OceanBodyOfWater extends BodyOfWater {
 
   const OceanBodyOfWater({
     super.additionalProperty,

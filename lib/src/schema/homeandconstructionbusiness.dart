@@ -11,7 +11,7 @@ import '../../schemaorg.dart';
 /// As a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]](s).
 @Schema(description: r'''A construction business.\n\nA HomeAndConstructionBusiness is a [[LocalBusiness]] that provides services around homes and buildings.\n\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\(s).''')
 @JsonSerializable(explicitToJson: true)
-abstract base class HomeAndConstructionBusiness extends LocalBusiness with EquatableMixin {
+base class HomeAndConstructionBusiness extends LocalBusiness {
 
   const HomeAndConstructionBusiness({
     super.branchOf,
@@ -111,38 +111,6 @@ abstract base class HomeAndConstructionBusiness extends LocalBusiness with Equat
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.amenityFeature,
-    super.branchCode,
-    super.containedIn,
-    super.containedInPlace,
-    super.containsPlace,
-    super.geo,
-    super.geoContains,
-    super.geoCoveredBy,
-    super.geoCovers,
-    super.geoCrosses,
-    super.geoDisjoint,
-    super.geoEquals,
-    super.geoIntersects,
-    super.geoOverlaps,
-    super.geoTouches,
-    super.geoWithin,
-    super.hasDriveThroughService,
-    super.hasMap,
-    super.isAccessibleForFree,
-    super.latitude,
-    super.longitude,
-    super.map,
-    super.maps,
-    super.maximumAttendeeCapacity,
-    super.openingHoursSpecification,
-    super.photo,
-    super.photos,
-    super.publicAccess,
-    super.smokingAllowed,
-    super.specialOpeningHoursSpecification,
-    super.tourBookingPage,
   });
 
   @override

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An [[EmployerReview]] is a review of an [[Organization]] regarding its role as an employer, written by a current or former employee of that organization.
 @Schema(description: r'''An [[EmployerReview]] is a review of an [[Organization]] regarding its role as an employer, written by a current or former employee of that organization.''')
 @JsonSerializable(explicitToJson: true)
-final class EmployerReview extends Review with EquatableMixin {
+base class EmployerReview extends Review {
 
   const EmployerReview({
     super.associatedClaimReview,

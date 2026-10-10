@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of producing a balanced opinion about the object for an audience. An agent reviews an object with participants resulting in a review.
 @Schema(description: r'''The act of producing a balanced opinion about the object for an audience. An agent reviews an object with participants resulting in a review.''')
 @JsonSerializable(explicitToJson: true)
-final class ReviewAction extends AssessAction with EquatableMixin {
+base class ReviewAction extends AssessAction {
 
   /// A sub property of result. The review that resulted in the performing of the action.
   @Field(name: 'resultReview', description: r'''A sub property of result. The review that resulted in the performing of the action.''')

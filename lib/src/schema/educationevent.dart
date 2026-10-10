@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Event type: Education event.
 @Schema(description: r'''Event type: Education event.''')
 @JsonSerializable(explicitToJson: true)
-final class EducationEvent extends Event with EquatableMixin {
+base class EducationEvent extends Event {
 
   /// The item being described is intended to assess the competency or learning outcome defined by the referenced term.
   @Field(name: 'assesses', description: r'''The item being described is intended to assess the competency or learning outcome defined by the referenced term.''')

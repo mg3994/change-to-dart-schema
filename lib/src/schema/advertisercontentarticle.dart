@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An [[Article]] that an external entity has paid to place or to produce to its specifications. Includes [advertorials](https://en.wikipedia.org/wiki/Advertorial), sponsored content, native advertising and other paid content.
 @Schema(description: r'''An [[Article]] that an external entity has paid to place or to produce to its specifications. Includes [advertorials](https://en.wikipedia.org/wiki/Advertorial), sponsored content, native advertising and other paid content.''')
 @JsonSerializable(explicitToJson: true)
-final class AdvertiserContentArticle extends Article with EquatableMixin {
+base class AdvertiserContentArticle extends Article {
 
   const AdvertiserContentArticle({
     super.articleBody,

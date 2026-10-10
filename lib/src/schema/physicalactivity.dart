@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Any bodily activity that enhances or maintains physical fitness and overall health and wellness. Includes activity that is part of daily living and routine, structured exercise, and exercise prescribed as part of a medical treatment or recovery plan.
 @Schema(description: r'''Any bodily activity that enhances or maintains physical fitness and overall health and wellness. Includes activity that is part of daily living and routine, structured exercise, and exercise prescribed as part of a medical treatment or recovery plan.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class PhysicalActivity extends LifestyleModification with EquatableMixin {
+base class PhysicalActivity extends LifestyleModification {
 
   /// The anatomy of the underlying organ system or structures associated with this entity.
   @Field(name: 'associatedAnatomy', description: r'''The anatomy of the underlying organ system or structures associated with this entity.''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A sea (for example, the Caspian sea).
 @Schema(description: r'''A sea (for example, the Caspian sea).''')
 @JsonSerializable(explicitToJson: true)
-final class SeaBodyOfWater extends BodyOfWater with EquatableMixin {
+base class SeaBodyOfWater extends BodyOfWater {
 
   const SeaBodyOfWater({
     super.additionalProperty,

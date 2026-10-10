@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// One of the sections into which a book is divided. A chapter usually has a section number or a name.
 @Schema(description: r'''One of the sections into which a book is divided. A chapter usually has a section number or a name.''')
 @JsonSerializable(explicitToJson: true)
-final class Chapter extends CreativeWork with EquatableMixin {
+base class Chapter extends CreativeWork {
 
   /// The page on which the work ends; for example "138" or "xvi".
   @Field(name: 'pageEnd', description: r'''The page on which the work ends; for example "138" or "xvi".''')

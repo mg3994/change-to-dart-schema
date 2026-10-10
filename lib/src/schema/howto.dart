@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Instructions that explain how to achieve a result by performing a sequence of steps.
 @Schema(description: r'''Instructions that explain how to achieve a result by performing a sequence of steps.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class HowTo extends CreativeWork with EquatableMixin {
+base class HowTo extends CreativeWork {
 
   /// The estimated cost of the supply or supplies consumed when performing instructions.
   @Field(name: 'estimatedCost', description: r'''The estimated cost of the supply or supplies consumed when performing instructions.''')

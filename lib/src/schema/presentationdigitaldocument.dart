@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A file containing slides or used for a presentation.
 @Schema(description: r'''A file containing slides or used for a presentation.''')
 @JsonSerializable(explicitToJson: true)
-final class PresentationDigitalDocument extends DigitalDocument with EquatableMixin {
+base class PresentationDigitalDocument extends DigitalDocument {
 
   const PresentationDigitalDocument({
     super.hasDigitalDocumentPermission,

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A direction indicating a single action to do in the instructions for how to achieve a result.
 @Schema(description: r'''A direction indicating a single action to do in the instructions for how to achieve a result.''')
 @JsonSerializable(explicitToJson: true)
-final class HowToDirection extends CreativeWork with EquatableMixin {
+base class HowToDirection extends CreativeWork {
 
   /// A media object representing the circumstances after performing this direction.
   @Field(name: 'afterMedia', description: r'''A media object representing the circumstances after performing this direction.''')
@@ -179,9 +179,6 @@ final class HowToDirection extends CreativeWork with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.item,
-    super.nextItem,
-    super.previousItem,
     this.afterMedia,
     this.beforeMedia,
     this.duringMedia,

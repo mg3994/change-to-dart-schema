@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.
 @Schema(description: r'''A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Vehicle extends Product with EquatableMixin {
+base class Vehicle extends Product {
 
   /// The time needed to accelerate the vehicle from a given start velocity to a given target velocity.
 ///

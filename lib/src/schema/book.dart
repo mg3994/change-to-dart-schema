@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A book.
 @Schema(description: r'''A book.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Book extends CreativeWork with EquatableMixin {
+base class Book extends CreativeWork {
 
   /// Indicates whether the book is an abridged edition.
   @Field(name: 'abridged', description: r'''Indicates whether the book is an abridged edition.''')

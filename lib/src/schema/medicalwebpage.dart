@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A web page that provides medical information.
 @Schema(description: r'''A web page that provides medical information.''')
 @JsonSerializable(explicitToJson: true)
-final class MedicalWebPage extends WebPage with EquatableMixin {
+base class MedicalWebPage extends WebPage {
 
   /// An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.
   @Field(name: 'aspect', description: r'''An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.''')

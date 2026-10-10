@@ -9,7 +9,7 @@ import '../../schemaorg.dart';
 @Schema(description: r'''An individual medical practitioner. For their official address use [[address]], for affiliations to hospitals use [[hospitalAffiliation]].
 The [[practicesAt]] property can be used to indicate [[MedicalOrganization]] hospitals, clinics, pharmacies etc. where this physician practices.''')
 @JsonSerializable(explicitToJson: true)
-final class IndividualPhysician extends Physician with EquatableMixin {
+base class IndividualPhysician extends Physician {
 
   /// A [[MedicalOrganization]] where the [[IndividualPhysician]] practices.
   @Field(name: 'practicesAt', description: r'''A [[MedicalOrganization]] where the [[IndividualPhysician]] practices.''')
@@ -119,40 +119,6 @@ final class IndividualPhysician extends Physician with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.amenityFeature,
-    super.branchCode,
-    super.containedIn,
-    super.containedInPlace,
-    super.containsPlace,
-    super.geo,
-    super.geoContains,
-    super.geoCoveredBy,
-    super.geoCovers,
-    super.geoCrosses,
-    super.geoDisjoint,
-    super.geoEquals,
-    super.geoIntersects,
-    super.geoOverlaps,
-    super.geoTouches,
-    super.geoWithin,
-    super.hasDriveThroughService,
-    super.hasMap,
-    super.isAccessibleForFree,
-    super.latitude,
-    super.longitude,
-    super.map,
-    super.maps,
-    super.maximumAttendeeCapacity,
-    super.openingHoursSpecification,
-    super.photo,
-    super.photos,
-    super.publicAccess,
-    super.smokingAllowed,
-    super.specialOpeningHoursSpecification,
-    super.tourBookingPage,
-    super.healthPlanNetworkId,
-    super.isAcceptingNewPatients,
     this.practicesAt,
   });
 

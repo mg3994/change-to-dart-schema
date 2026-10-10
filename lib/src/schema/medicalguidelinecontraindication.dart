@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A guideline contraindication that designates a process as harmful and where quality of the data supporting the contraindication is sound.
 @Schema(description: r'''A guideline contraindication that designates a process as harmful and where quality of the data supporting the contraindication is sound.''')
 @JsonSerializable(explicitToJson: true)
-final class MedicalGuidelineContraindication extends MedicalGuideline with EquatableMixin {
+base class MedicalGuidelineContraindication extends MedicalGuideline {
 
   const MedicalGuidelineContraindication({
     super.evidenceLevel,

@@ -19,7 +19,7 @@ In British English a campsite, or campground, is an area, usually divided into a
 See also the dedicated [document on the use of schema.org for marking up hotels and other forms of accommodations](/docs/hotels.html).
 ''')
 @JsonSerializable(explicitToJson: true)
-final class CampingPitch extends Accommodation with EquatableMixin {
+base class CampingPitch extends Accommodation {
 
   const CampingPitch({
     super.accommodationCategory,

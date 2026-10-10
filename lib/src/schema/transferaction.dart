@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another.
 @Schema(description: r'''The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class TransferAction extends Action with EquatableMixin {
+base class TransferAction extends Action {
 
   /// A sub property of location. The original location of the object or the agent before the action.
   @Field(name: 'fromLocation', description: r'''A sub property of location. The original location of the object or the agent before the action.''')

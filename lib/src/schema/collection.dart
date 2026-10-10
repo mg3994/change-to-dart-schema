@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A collection of items, e.g. creative works or products.
 @Schema(description: r'''A collection of items, e.g. creative works or products.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Collection extends CreativeWork with EquatableMixin {
+base class Collection extends CreativeWork {
 
   /// The number of items in the [[Collection]].
   @Field(name: 'collectionSize', description: r'''The number of items in the [[Collection]].''')

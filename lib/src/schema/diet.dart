@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A strategy of regulating the intake of food to achieve or maintain a specific health-related goal.
 @Schema(description: r'''A strategy of regulating the intake of food to achieve or maintain a specific health-related goal.''')
 @JsonSerializable(explicitToJson: true)
-final class Diet extends CreativeWork with EquatableMixin {
+base class Diet extends CreativeWork {
 
   /// Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.
   @Field(name: 'dietFeatures', description: r'''Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.''')
@@ -164,13 +164,6 @@ final class Diet extends CreativeWork with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.code,
-    super.guideline,
-    super.legalStatus,
-    super.medicineSystem,
-    super.recognizingAuthority,
-    super.relevantSpecialty,
-    super.study,
     this.dietFeatures,
     this.endorsers,
     this.expertConsiderations,

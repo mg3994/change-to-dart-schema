@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A locksmith.
 @Schema(description: r'''A locksmith.''')
 @JsonSerializable(explicitToJson: true)
-final class Locksmith extends HomeAndConstructionBusiness with EquatableMixin {
+base class Locksmith extends HomeAndConstructionBusiness {
 
   const Locksmith({
     super.branchOf,
@@ -107,38 +107,6 @@ final class Locksmith extends HomeAndConstructionBusiness with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.amenityFeature,
-    super.branchCode,
-    super.containedIn,
-    super.containedInPlace,
-    super.containsPlace,
-    super.geo,
-    super.geoContains,
-    super.geoCoveredBy,
-    super.geoCovers,
-    super.geoCrosses,
-    super.geoDisjoint,
-    super.geoEquals,
-    super.geoIntersects,
-    super.geoOverlaps,
-    super.geoTouches,
-    super.geoWithin,
-    super.hasDriveThroughService,
-    super.hasMap,
-    super.isAccessibleForFree,
-    super.latitude,
-    super.longitude,
-    super.map,
-    super.maps,
-    super.maximumAttendeeCapacity,
-    super.openingHoursSpecification,
-    super.photo,
-    super.photos,
-    super.publicAccess,
-    super.smokingAllowed,
-    super.specialOpeningHoursSpecification,
-    super.tourBookingPage,
   });
 
   @override

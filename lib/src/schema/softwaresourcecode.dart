@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.
 @Schema(description: r'''Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.''')
 @JsonSerializable(explicitToJson: true)
-final class SoftwareSourceCode extends CreativeWork with EquatableMixin {
+base class SoftwareSourceCode extends CreativeWork {
 
   /// Link to the repository where the un-compiled, human readable code and related code is located (SVN, GitHub, CodePlex).
   @Field(name: 'codeRepository', description: r'''Link to the repository where the un-compiled, human readable code and related code is located (SVN, GitHub, CodePlex).''')

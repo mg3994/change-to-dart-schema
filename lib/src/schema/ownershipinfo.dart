@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A structured value providing information about when a certain organization or person owned a certain product.
 @Schema(description: r'''A structured value providing information about when a certain organization or person owned a certain product.''')
 @JsonSerializable(explicitToJson: true)
-final class OwnershipInfo extends StructuredValue with EquatableMixin {
+base class OwnershipInfo extends StructuredValue {
 
   /// The organization or person from which the product was acquired.
   @Field(name: 'acquiredFrom', description: r'''The organization or person from which the product was acquired.''')

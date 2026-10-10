@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A work of art that is primarily visual in character.
 @Schema(description: r'''A work of art that is primarily visual in character.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class VisualArtwork extends CreativeWork with EquatableMixin {
+base class VisualArtwork extends CreativeWork {
 
   /// The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
   @Field(name: 'artEdition', description: r'''The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").''')

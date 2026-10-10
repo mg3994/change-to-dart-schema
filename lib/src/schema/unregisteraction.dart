@@ -12,7 +12,7 @@ import '../../schemaorg.dart';
 /// * [[LeaveAction]]: Unlike LeaveAction, UnRegisterAction implies that you are unregistering from a service you were previously registered, rather than leaving a team/group of people.
 @Schema(description: r'''The act of un-registering from a service.\n\nRelated actions:\n\n* [[RegisterAction]]: antonym of UnRegisterAction.\n* [[LeaveAction]]: Unlike LeaveAction, UnRegisterAction implies that you are unregistering from a service you were previously registered, rather than leaving a team/group of people.''')
 @JsonSerializable(explicitToJson: true)
-final class UnRegisterAction extends InteractAction with EquatableMixin {
+base class UnRegisterAction extends InteractAction {
 
   const UnRegisterAction({
     super.actionProcess,

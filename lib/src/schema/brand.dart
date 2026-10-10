@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A brand is a name used by an organization or business person for labeling a product, product group, or similar.
 @Schema(description: r'''A brand is a name used by an organization or business person for labeling a product, product group, or similar.''')
 @JsonSerializable(explicitToJson: true)
-final class Brand extends Intangible with EquatableMixin {
+base class Brand extends Intangible {
 
   /// The overall rating, based on a collection of reviews or ratings, of the item.
   @Field(name: 'aggregateRating', description: r'''The overall rating, based on a collection of reviews or ratings, of the item.''')

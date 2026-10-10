@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Short story or tale. A brief work of literature, usually written in narrative prose.
 @Schema(description: r'''Short story or tale. A brief work of literature, usually written in narrative prose.''')
 @JsonSerializable(explicitToJson: true)
-final class ShortStory extends CreativeWork with EquatableMixin {
+base class ShortStory extends CreativeWork {
 
   const ShortStory({
     super.about,

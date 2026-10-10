@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The artwork on the outer surface of a CreativeWork.
 @Schema(description: r'''The artwork on the outer surface of a CreativeWork.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class CoverArt extends VisualArtwork with EquatableMixin {
+base class CoverArt extends VisualArtwork {
 
   const CoverArt({
     super.artEdition,

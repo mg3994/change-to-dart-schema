@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A photograph.
 @Schema(description: r'''A photograph.''')
 @JsonSerializable(explicitToJson: true)
-final class Photograph extends CreativeWork with EquatableMixin {
+base class Photograph extends CreativeWork {
 
   const Photograph({
     super.about,

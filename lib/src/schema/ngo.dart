@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Organization: Non-governmental Organization.
 @Schema(description: r'''Organization: Non-governmental Organization.''')
 @JsonSerializable(explicitToJson: true)
-final class NGO extends Organization with EquatableMixin {
+base class NGO extends Organization {
 
   const NGO({
     super.acceptedPaymentMethod,

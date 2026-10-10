@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc.
 @Schema(description: r'''A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc.''')
 @JsonSerializable(explicitToJson: true)
-final class PerformanceRole extends Role with EquatableMixin {
+base class PerformanceRole extends Role {
 
   /// The name of a character played in some acting or performing role, i.e. in a PerformanceRole.
   @Field(name: 'characterName', description: r'''The name of a character played in some acting or performing role, i.e. in a PerformanceRole.''')

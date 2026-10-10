@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of expressing a preference from a fixed/finite/structured set of choices/options.
 @Schema(description: r'''The act of expressing a preference from a fixed/finite/structured set of choices/options.''')
 @JsonSerializable(explicitToJson: true)
-final class VoteAction extends ChooseAction with EquatableMixin {
+base class VoteAction extends ChooseAction {
 
   /// A sub property of object. The candidate subject of this action.
   @Field(name: 'candidate', description: r'''A sub property of object. The candidate subject of this action.''')

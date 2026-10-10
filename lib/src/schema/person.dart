@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A person (alive, dead, undead, or fictional).
 @Schema(description: r'''A person (alive, dead, undead, or fictional).''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Person extends Thing with EquatableMixin {
+base class Person extends Thing {
 
   /// An additional name for a Person, can be used for a middle name.
   @Field(name: 'additionalName', description: r'''An additional name for a Person, can be used for a middle name.''')

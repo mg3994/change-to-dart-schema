@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A sports location, such as a playing field.
 @Schema(description: r'''A sports location, such as a playing field.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class SportsActivityLocation extends LocalBusiness with EquatableMixin {
+base class SportsActivityLocation extends LocalBusiness {
 
   const SportsActivityLocation({
     super.branchOf,
@@ -107,38 +107,6 @@ abstract base class SportsActivityLocation extends LocalBusiness with EquatableM
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.amenityFeature,
-    super.branchCode,
-    super.containedIn,
-    super.containedInPlace,
-    super.containsPlace,
-    super.geo,
-    super.geoContains,
-    super.geoCoveredBy,
-    super.geoCovers,
-    super.geoCrosses,
-    super.geoDisjoint,
-    super.geoEquals,
-    super.geoIntersects,
-    super.geoOverlaps,
-    super.geoTouches,
-    super.geoWithin,
-    super.hasDriveThroughService,
-    super.hasMap,
-    super.isAccessibleForFree,
-    super.latitude,
-    super.longitude,
-    super.map,
-    super.maps,
-    super.maximumAttendeeCapacity,
-    super.openingHoursSpecification,
-    super.photo,
-    super.photos,
-    super.publicAccess,
-    super.smokingAllowed,
-    super.specialOpeningHoursSpecification,
-    super.tourBookingPage,
   });
 
   @override

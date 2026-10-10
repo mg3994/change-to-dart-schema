@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Web page type: About page.
 @Schema(description: r'''Web page type: About page.''')
 @JsonSerializable(explicitToJson: true)
-final class AboutPage extends WebPage with EquatableMixin {
+base class AboutPage extends WebPage {
 
   const AboutPage({
     super.breadcrumb,

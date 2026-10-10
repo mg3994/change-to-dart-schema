@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The footer section of the page.
 @Schema(description: r'''The footer section of the page.''')
 @JsonSerializable(explicitToJson: true)
-final class WPFooter extends WebPageElement with EquatableMixin {
+base class WPFooter extends WebPageElement {
 
   const WPFooter({
     super.cssSelector,

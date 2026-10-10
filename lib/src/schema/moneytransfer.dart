@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of transferring money from one place to another place. This may occur electronically or physically.
 @Schema(description: r'''The act of transferring money from one place to another place. This may occur electronically or physically.''')
 @JsonSerializable(explicitToJson: true)
-final class MoneyTransfer extends TransferAction with EquatableMixin {
+base class MoneyTransfer extends TransferAction {
 
   /// The amount of money.
   @Field(name: 'amount', description: r'''The amount of money.''')

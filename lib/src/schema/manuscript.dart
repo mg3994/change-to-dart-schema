@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A book, document, or piece of music written by hand rather than typed or printed.
 @Schema(description: r'''A book, document, or piece of music written by hand rather than typed or printed.''')
 @JsonSerializable(explicitToJson: true)
-final class Manuscript extends CreativeWork with EquatableMixin {
+base class Manuscript extends CreativeWork {
 
   const Manuscript({
     super.about,

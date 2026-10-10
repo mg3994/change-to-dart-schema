@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of forming one's opinion, reaction or sentiment.
 @Schema(description: r'''The act of forming one's opinion, reaction or sentiment.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class AssessAction extends Action with EquatableMixin {
+base class AssessAction extends Action {
 
   const AssessAction({
     super.actionProcess,

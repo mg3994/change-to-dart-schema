@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A type of blood vessel that specifically carries blood to the heart.
 @Schema(description: r'''A type of blood vessel that specifically carries blood to the heart.''')
 @JsonSerializable(explicitToJson: true)
-final class Vein extends Vessel with EquatableMixin {
+base class Vein extends Vessel {
 
   /// The vasculature that the vein drains into.
   @Field(name: 'drainsTo', description: r'''The vasculature that the vein drains into.''')

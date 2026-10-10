@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of swallowing liquids.
 @Schema(description: r'''The act of swallowing liquids.''')
 @JsonSerializable(explicitToJson: true)
-final class DrinkAction extends ConsumeAction with EquatableMixin {
+base class DrinkAction extends ConsumeAction {
 
   const DrinkAction({
     super.actionAccessibilityRequirement,

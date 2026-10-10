@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The place where a person lives.
 @Schema(description: r'''The place where a person lives.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Residence extends Place with EquatableMixin {
+base class Residence extends Place {
 
   /// A floorplan of some [[Accommodation]].
   @Field(name: 'accommodationFloorPlan', description: r'''A floorplan of some [[Accommodation]].''')

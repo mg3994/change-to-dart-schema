@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of adding at a specific location in an ordered collection.
 @Schema(description: r'''The act of adding at a specific location in an ordered collection.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class InsertAction extends AddAction with EquatableMixin {
+base class InsertAction extends AddAction {
 
   /// A sub property of location. The final location of the object or the agent after the action.
   @Field(name: 'toLocation', description: r'''A sub property of location. The final location of the object or the agent after the action.''')

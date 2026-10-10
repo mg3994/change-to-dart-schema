@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A rating is an evaluation on a numeric scale, such as 1 to 5 stars.
 @Schema(description: r'''A rating is an evaluation on a numeric scale, such as 1 to 5 stars.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Rating extends Intangible with EquatableMixin {
+base class Rating extends Intangible {
 
   /// The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
   @Field(name: 'author', description: r'''The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.''')

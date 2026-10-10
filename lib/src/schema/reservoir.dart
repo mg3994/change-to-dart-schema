@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A reservoir of water, typically an artificially created lake, like the Lake Kariba reservoir.
 @Schema(description: r'''A reservoir of water, typically an artificially created lake, like the Lake Kariba reservoir.''')
 @JsonSerializable(explicitToJson: true)
-final class Reservoir extends BodyOfWater with EquatableMixin {
+base class Reservoir extends BodyOfWater {
 
   const Reservoir({
     super.additionalProperty,

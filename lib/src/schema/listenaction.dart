@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of consuming audio content.
 @Schema(description: r'''The act of consuming audio content.''')
 @JsonSerializable(explicitToJson: true)
-final class ListenAction extends ConsumeAction with EquatableMixin {
+base class ListenAction extends ConsumeAction {
 
   const ListenAction({
     super.actionAccessibilityRequirement,

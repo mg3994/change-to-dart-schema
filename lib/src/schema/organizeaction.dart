@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of manipulating/administering/supervising/controlling one or more objects.
 @Schema(description: r'''The act of manipulating/administering/supervising/controlling one or more objects.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class OrganizeAction extends Action with EquatableMixin {
+base class OrganizeAction extends Action {
 
   const OrganizeAction({
     super.actionProcess,

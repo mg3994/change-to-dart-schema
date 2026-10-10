@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An entry point, within some Web-based protocol.
 @Schema(description: r'''An entry point, within some Web-based protocol.''')
 @JsonSerializable(explicitToJson: true)
-final class EntryPoint extends Intangible with EquatableMixin {
+base class EntryPoint extends Intangible {
 
   /// An application that can complete the request.
   @Field(name: 'actionApplication', description: r'''An application that can complete the request.''')

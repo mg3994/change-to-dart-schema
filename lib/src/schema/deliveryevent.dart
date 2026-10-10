@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An event involving the delivery of an item.
 @Schema(description: r'''An event involving the delivery of an item.''')
 @JsonSerializable(explicitToJson: true)
-final class DeliveryEvent extends Event with EquatableMixin {
+base class DeliveryEvent extends Event {
 
   /// Password, PIN, or access code needed for delivery (e.g. from a locker).
   @Field(name: 'accessCode', description: r'''Password, PIN, or access code needed for delivery (e.g. from a locker).''')

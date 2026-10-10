@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Data type: PronounceableText.
 @Schema(description: r'''Data type: PronounceableText.''')
 @JsonSerializable(explicitToJson: true)
-final class PronounceableText extends Text with EquatableMixin {
+base class PronounceableText extends Text {
 
   /// The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
   @Field(name: 'inLanguage', description: r'''The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].''')

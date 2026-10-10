@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// [[Guide]] is a page or article that recommends specific products or services, or aspects of a thing for a user to consider. A [[Guide]] may represent a Buying Guide and detail aspects of products or services for a user to consider. A [[Guide]] may represent a Product Guide and recommend specific products or services. A [[Guide]] may represent a Ranked List and recommend specific products or services with ranking.
 @Schema(description: r'''[[Guide]] is a page or article that recommends specific products or services, or aspects of a thing for a user to consider. A [[Guide]] may represent a Buying Guide and detail aspects of products or services for a user to consider. A [[Guide]] may represent a Product Guide and recommend specific products or services. A [[Guide]] may represent a Ranked List and recommend specific products or services with ranking.''')
 @JsonSerializable(explicitToJson: true)
-final class Guide extends CreativeWork with EquatableMixin {
+base class Guide extends CreativeWork {
 
   /// A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
   @Field(name: 'category', description: r'''A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.''')

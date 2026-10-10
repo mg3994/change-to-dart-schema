@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An agent controls a device or application.
 @Schema(description: r'''An agent controls a device or application.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class ControlAction extends Action with EquatableMixin {
+base class ControlAction extends Action {
 
   const ControlAction({
     super.actionProcess,

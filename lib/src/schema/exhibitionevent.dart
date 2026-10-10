@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Event type: Exhibition event, e.g. at a museum, library, archive, tradeshow, ...
 @Schema(description: r'''Event type: Exhibition event, e.g. at a museum, library, archive, tradeshow, ...''')
 @JsonSerializable(explicitToJson: true)
-final class ExhibitionEvent extends Event with EquatableMixin {
+base class ExhibitionEvent extends Event {
 
   const ExhibitionEvent({
     super.about,

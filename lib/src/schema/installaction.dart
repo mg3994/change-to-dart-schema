@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of installing an application.
 @Schema(description: r'''The act of installing an application.''')
 @JsonSerializable(explicitToJson: true)
-final class InstallAction extends ConsumeAction with EquatableMixin {
+base class InstallAction extends ConsumeAction {
 
   const InstallAction({
     super.actionAccessibilityRequirement,

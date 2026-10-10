@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A sidebar section of the page.
 @Schema(description: r'''A sidebar section of the page.''')
 @JsonSerializable(explicitToJson: true)
-final class WPSideBar extends WebPageElement with EquatableMixin {
+base class WPSideBar extends WebPageElement {
 
   const WPSideBar({
     super.cssSelector,

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The costs of settling the payment using a particular payment method.
 @Schema(description: r'''The costs of settling the payment using a particular payment method.''')
 @JsonSerializable(explicitToJson: true)
-final class PaymentChargeSpecification extends PriceSpecification with EquatableMixin {
+base class PaymentChargeSpecification extends PriceSpecification {
 
   /// The delivery method(s) to which the delivery charge or payment charge specification applies.
   @Field(name: 'appliesToDeliveryMethod', description: r'''The delivery method(s) to which the delivery charge or payment charge specification applies.''')

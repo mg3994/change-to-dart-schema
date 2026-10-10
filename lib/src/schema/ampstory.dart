@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A creative work with a visual storytelling format intended to be viewed online, particularly on mobile devices.
 @Schema(description: r'''A creative work with a visual storytelling format intended to be viewed online, particularly on mobile devices.''')
 @JsonSerializable(explicitToJson: true)
-final class AmpStory extends CreativeWork with EquatableMixin {
+base class AmpStory extends CreativeWork {
 
   const AmpStory({
     super.about,
@@ -139,24 +139,6 @@ final class AmpStory extends CreativeWork with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.associatedArticle,
-    super.bitrate,
-    super.contentSize,
-    super.contentUrl,
-    super.duration,
-    super.embedUrl,
-    super.encodesCreativeWork,
-    super.endTime,
-    super.height,
-    super.ineligibleRegion,
-    super.playerType,
-    super.productionCompany,
-    super.regionsAllowed,
-    super.requiresSubscription,
-    super.sha256,
-    super.startTime,
-    super.uploadDate,
-    super.width,
   });
 
   @override

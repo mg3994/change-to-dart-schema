@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A video file.
 @Schema(description: r'''A video file.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class VideoObject extends MediaObject with EquatableMixin {
+base class VideoObject extends MediaObject {
 
   /// An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
   @Field(name: 'actor', description: r'''An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.''')

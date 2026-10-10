@@ -9,7 +9,7 @@ import '../../schemaorg.dart';
 /// Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
 @Schema(description: r'''A reservation for bus travel. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].''')
 @JsonSerializable(explicitToJson: true)
-final class BusReservation extends Reservation with EquatableMixin {
+base class BusReservation extends Reservation {
 
   const BusReservation({
     super.bookingAgent,

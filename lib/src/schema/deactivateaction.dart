@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of stopping or deactivating a device or application (e.g. stopping a timer or turning off a flashlight).
 @Schema(description: r'''The act of stopping or deactivating a device or application (e.g. stopping a timer or turning off a flashlight).''')
 @JsonSerializable(explicitToJson: true)
-final class DeactivateAction extends ControlAction with EquatableMixin {
+base class DeactivateAction extends ControlAction {
 
   const DeactivateAction({
     super.actionProcess,

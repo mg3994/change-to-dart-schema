@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An indication for preventing an underlying condition, symptom, etc.
 @Schema(description: r'''An indication for preventing an underlying condition, symptom, etc.''')
 @JsonSerializable(explicitToJson: true)
-final class PreventionIndication extends MedicalIndication with EquatableMixin {
+base class PreventionIndication extends MedicalIndication {
 
   const PreventionIndication({
     super.code,

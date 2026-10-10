@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A [blog](https://en.wikipedia.org/wiki/Blog), sometimes known as a "weblog". Note that the individual posts ([[BlogPosting]]s) in a [[Blog]] are often colloquially referred to by the same term.
 @Schema(description: r'''A [blog](https://en.wikipedia.org/wiki/Blog), sometimes known as a "weblog". Note that the individual posts ([[BlogPosting]]s) in a [[Blog]] are often colloquially referred to by the same term.''')
 @JsonSerializable(explicitToJson: true)
-final class Blog extends CreativeWork with EquatableMixin {
+base class Blog extends CreativeWork {
 
   /// A posting that is part of this blog.
   @Field(name: 'blogPost', description: r'''A posting that is part of this blog.''')

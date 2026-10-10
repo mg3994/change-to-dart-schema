@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Residence type: Apartment complex.
 @Schema(description: r'''Residence type: Apartment complex.''')
 @JsonSerializable(explicitToJson: true)
-final class ApartmentComplex extends Residence with EquatableMixin {
+base class ApartmentComplex extends Residence {
 
   /// Indicates the total (available plus unavailable) number of accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAvailableAccommodationUnits]].
   @Field(name: 'numberOfAccommodationUnits', description: r'''Indicates the total (available plus unavailable) number of accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAvailableAccommodationUnits]].''')

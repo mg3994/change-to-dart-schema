@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A contact point&#x2014;for example, a Customer Complaints department.
 @Schema(description: r'''A contact point&#x2014;for example, a Customer Complaints department.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class ContactPoint extends StructuredValue with EquatableMixin {
+base class ContactPoint extends StructuredValue {
 
   /// The geographic area where a service or offered item is provided.
   @Field(name: 'areaServed', description: r'''The geographic area where a service or offered item is provided.''')

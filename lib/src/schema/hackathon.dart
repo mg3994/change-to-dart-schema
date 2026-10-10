@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A [hackathon](https://en.wikipedia.org/wiki/Hackathon) event.
 @Schema(description: r'''A [hackathon](https://en.wikipedia.org/wiki/Hackathon) event.''')
 @JsonSerializable(explicitToJson: true)
-final class Hackathon extends Event with EquatableMixin {
+base class Hackathon extends Event {
 
   const Hackathon({
     super.about,

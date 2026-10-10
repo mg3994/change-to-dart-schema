@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An order item is a line of an order. It includes the quantity and shipping details of a bought offer.
 @Schema(description: r'''An order item is a line of an order. It includes the quantity and shipping details of a bought offer.''')
 @JsonSerializable(explicitToJson: true)
-final class OrderItem extends StructuredValue with EquatableMixin {
+base class OrderItem extends StructuredValue {
 
   /// The delivery of the parcel related to this order or order item.
   @Field(name: 'orderDelivery', description: r'''The delivery of the parcel related to this order or order item.''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A medical test performed on a sample of a patient's blood.
 @Schema(description: r'''A medical test performed on a sample of a patient's blood.''')
 @JsonSerializable(explicitToJson: true)
-final class BloodTest extends MedicalTest with EquatableMixin {
+base class BloodTest extends MedicalTest {
 
   const BloodTest({
     super.affectedBy,

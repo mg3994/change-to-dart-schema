@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A body of water, such as a sea, ocean, or lake.
 @Schema(description: r'''A body of water, such as a sea, ocean, or lake.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class BodyOfWater extends Landform with EquatableMixin {
+base class BodyOfWater extends Landform {
 
   const BodyOfWater({
     super.additionalProperty,

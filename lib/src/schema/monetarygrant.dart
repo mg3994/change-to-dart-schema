@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A monetary grant.
 @Schema(description: r'''A monetary grant.''')
 @JsonSerializable(explicitToJson: true)
-final class MonetaryGrant extends Grant with EquatableMixin {
+base class MonetaryGrant extends Grant {
 
   /// The amount of money.
   @Field(name: 'amount', description: r'''The amount of money.''')

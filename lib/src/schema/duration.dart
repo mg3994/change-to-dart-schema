@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Quantity: Duration (use [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601)).
 @Schema(description: r'''Quantity: Duration (use [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601)).''')
 @JsonSerializable(explicitToJson: true)
-final class Duration extends Quantity with EquatableMixin {
+base class Duration extends Quantity {
 
   const Duration({
   });

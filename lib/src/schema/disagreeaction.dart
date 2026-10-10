@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of expressing a difference of opinion with the object. An agent disagrees to/about an object (a proposition, topic or theme) with participants.
 @Schema(description: r'''The act of expressing a difference of opinion with the object. An agent disagrees to/about an object (a proposition, topic or theme) with participants.''')
 @JsonSerializable(explicitToJson: true)
-final class DisagreeAction extends ReactAction with EquatableMixin {
+base class DisagreeAction extends ReactAction {
 
   const DisagreeAction({
     super.actionProcess,

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The artwork on the cover of a comic.
 @Schema(description: r'''The artwork on the cover of a comic.''')
 @JsonSerializable(explicitToJson: true)
-final class ComicCoverArt extends ComicStory with EquatableMixin {
+base class ComicCoverArt extends ComicStory {
 
   const ComicCoverArt({
     super.artist,
@@ -144,15 +144,6 @@ final class ComicCoverArt extends ComicStory with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.artEdition,
-    super.artMedium,
-    super.artform,
-    super.artworkSurface,
-    super.depth,
-    super.height,
-    super.surface,
-    super.weight,
-    super.width,
   });
 
   @override

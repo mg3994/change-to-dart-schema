@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc.
 @Schema(description: r'''Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class MedicalCondition extends MedicalEntity with EquatableMixin {
+base class MedicalCondition extends MedicalEntity {
 
   /// The anatomy of the underlying organ system or structures associated with this entity.
   @Field(name: 'associatedAnatomy', description: r'''The anatomy of the underlying organ system or structures associated with this entity.''')

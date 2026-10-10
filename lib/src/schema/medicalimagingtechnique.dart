@@ -1,6 +1,7 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
 
 /// Any medical imaging modality typically used for diagnostic purposes. Enumerated type.
 @Schema(description: r'''Any medical imaging modality typically used for diagnostic purposes. Enumerated type.''')

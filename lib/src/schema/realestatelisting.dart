@@ -11,7 +11,7 @@ import '../../schemaorg.dart';
   The [[RealEstateListing]] type itself represents the overall listing, as manifested in some [[WebPage]].
   ''')
 @JsonSerializable(explicitToJson: true)
-final class RealEstateListing extends WebPage with EquatableMixin {
+base class RealEstateListing extends WebPage {
 
   /// Publication date of an online listing.
   @Field(name: 'datePosted', description: r'''Publication date of an online listing.''')

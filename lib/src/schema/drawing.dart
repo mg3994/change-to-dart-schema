@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A picture or diagram made with a pencil, pen, or crayon rather than paint.
 @Schema(description: r'''A picture or diagram made with a pencil, pen, or crayon rather than paint.''')
 @JsonSerializable(explicitToJson: true)
-final class Drawing extends CreativeWork with EquatableMixin {
+base class Drawing extends CreativeWork {
 
   const Drawing({
     super.about,

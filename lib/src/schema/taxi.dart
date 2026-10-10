@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A taxi.
 @Schema(description: r'''A taxi.''')
 @JsonSerializable(explicitToJson: true)
-final class Taxi extends Service with EquatableMixin {
+base class Taxi extends Service {
 
   const Taxi({
     super.aggregateRating,

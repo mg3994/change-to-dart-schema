@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A movie.
 @Schema(description: r'''A movie.''')
 @JsonSerializable(explicitToJson: true)
-final class Movie extends CreativeWork with EquatableMixin {
+base class Movie extends CreativeWork {
 
   /// An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
   @Field(name: 'actor', description: r'''An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.''')

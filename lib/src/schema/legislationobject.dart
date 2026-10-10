@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A specific object or file containing a Legislation. Note that the same Legislation can be published in multiple files. For example, a digitally signed PDF, a plain PDF and an HTML version.
 @Schema(description: r'''A specific object or file containing a Legislation. Note that the same Legislation can be published in multiple files. For example, a digitally signed PDF, a plain PDF and an HTML version.''')
 @JsonSerializable(explicitToJson: true)
-final class LegislationObject extends Legislation with EquatableMixin {
+base class LegislationObject extends Legislation {
 
   /// The legal value of this legislation file. The same legislation can be written in multiple files with different legal values. Typically a digitally signed PDF have a "stronger" legal value than the HTML file of the same act.
   @Field(name: 'legislationLegalValue', description: r'''The legal value of this legislation file. The same legislation can be written in multiple files with different legal values. Typically a digitally signed PDF have a "stronger" legal value than the HTML file of the same act.''')
@@ -164,24 +164,6 @@ final class LegislationObject extends Legislation with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.associatedArticle,
-    super.bitrate,
-    super.contentSize,
-    super.contentUrl,
-    super.duration,
-    super.embedUrl,
-    super.encodesCreativeWork,
-    super.endTime,
-    super.height,
-    super.ineligibleRegion,
-    super.playerType,
-    super.productionCompany,
-    super.regionsAllowed,
-    super.requiresSubscription,
-    super.sha256,
-    super.startTime,
-    super.uploadDate,
-    super.width,
     this.legislationLegalValue,
   });
 

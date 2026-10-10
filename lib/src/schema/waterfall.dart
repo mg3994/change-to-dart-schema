@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A waterfall, like Niagara.
 @Schema(description: r'''A waterfall, like Niagara.''')
 @JsonSerializable(explicitToJson: true)
-final class Waterfall extends BodyOfWater with EquatableMixin {
+base class Waterfall extends BodyOfWater {
 
   const Waterfall({
     super.additionalProperty,

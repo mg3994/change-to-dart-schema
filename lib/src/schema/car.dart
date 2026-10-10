@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A car is a wheeled, self-powered motor vehicle used for transportation.
 @Schema(description: r'''A car is a wheeled, self-powered motor vehicle used for transportation.''')
 @JsonSerializable(explicitToJson: true)
-final class Car extends Vehicle with EquatableMixin {
+base class Car extends Vehicle {
 
   /// The ACRISS Car Classification Code is a code used by many car rental companies, for classifying vehicles. ACRISS stands for Association of Car Rental Industry Systems and Standards.
   @Field(name: 'acrissCode', description: r'''The ACRISS Car Classification Code is a code used by many car rental companies, for classifying vehicles. ACRISS stands for Association of Car Rental Industry Systems and Standards.''')

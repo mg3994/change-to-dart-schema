@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of consuming static visual content.
 @Schema(description: r'''The act of consuming static visual content.''')
 @JsonSerializable(explicitToJson: true)
-final class ViewAction extends ConsumeAction with EquatableMixin {
+base class ViewAction extends ConsumeAction {
 
   const ViewAction({
     super.actionAccessibilityRequirement,

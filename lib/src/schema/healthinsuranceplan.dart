@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A US-style health insurance plan, including PPOs, EPOs, and HMOs.
 @Schema(description: r'''A US-style health insurance plan, including PPOs, EPOs, and HMOs.''')
 @JsonSerializable(explicitToJson: true)
-final class HealthInsurancePlan extends Intangible with EquatableMixin {
+base class HealthInsurancePlan extends Intangible {
 
   /// The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
   @Field(name: 'benefitsSummaryUrl', description: r'''The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.''')

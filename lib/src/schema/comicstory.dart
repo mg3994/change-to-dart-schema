@@ -11,7 +11,7 @@ import '../../schemaorg.dart';
 	unit of a comic, including the interior stories, covers, and backmatter. Most
 	comics have at least two stories: a cover (ComicCoverArt) and an interior story.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class ComicStory extends CreativeWork with EquatableMixin {
+base class ComicStory extends CreativeWork {
 
   /// The primary artist for a work
 /// in a medium other than pencils or digital line art--for example, if the

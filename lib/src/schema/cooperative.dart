@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An organization that is a joint project of multiple organizations or persons.
 @Schema(description: r'''An organization that is a joint project of multiple organizations or persons.''')
 @JsonSerializable(explicitToJson: true)
-final class Cooperative extends Organization with EquatableMixin {
+base class Cooperative extends Organization {
 
   const Cooperative({
     super.acceptedPaymentMethod,

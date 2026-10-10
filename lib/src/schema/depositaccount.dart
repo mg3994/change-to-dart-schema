@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A type of Bank Account with a main purpose of depositing funds to gain interest or other benefits.
 @Schema(description: r'''A type of Bank Account with a main purpose of depositing funds to gain interest or other benefits.''')
 @JsonSerializable(explicitToJson: true)
-final class DepositAccount extends BankAccount with EquatableMixin {
+base class DepositAccount extends BankAccount {
 
   const DepositAccount({
     super.accountMinimumInflow,
@@ -54,7 +54,6 @@ final class DepositAccount extends BankAccount with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.amount,
   });
 
   @override

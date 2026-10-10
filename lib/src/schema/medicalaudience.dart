@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Target audiences for medical web pages.
 @Schema(description: r'''Target audiences for medical web pages.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class MedicalAudience extends Audience with EquatableMixin {
+base class MedicalAudience extends Audience {
 
   const MedicalAudience({
     super.audienceType,
@@ -25,15 +25,6 @@ abstract base class MedicalAudience extends Audience with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.healthCondition,
-    super.requiredGender,
-    super.requiredMaxAge,
-    super.requiredMinAge,
-    super.suggestedAge,
-    super.suggestedGender,
-    super.suggestedMaxAge,
-    super.suggestedMeasurement,
-    super.suggestedMinAge,
   });
 
   @override

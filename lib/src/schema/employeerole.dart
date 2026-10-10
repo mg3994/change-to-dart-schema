@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A subclass of OrganizationRole used to describe employee relationships.
 @Schema(description: r'''A subclass of OrganizationRole used to describe employee relationships.''')
 @JsonSerializable(explicitToJson: true)
-final class EmployeeRole extends OrganizationRole with EquatableMixin {
+base class EmployeeRole extends OrganizationRole {
 
   /// The base salary of the job or of an employee in an EmployeeRole.
   @Field(name: 'baseSalary', description: r'''The base salary of the job or of an employee in an EmployeeRole.''')

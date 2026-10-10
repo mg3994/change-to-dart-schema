@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A river (for example, the broad majestic Shannon).
 @Schema(description: r'''A river (for example, the broad majestic Shannon).''')
 @JsonSerializable(explicitToJson: true)
-final class RiverBodyOfWater extends BodyOfWater with EquatableMixin {
+base class RiverBodyOfWater extends BodyOfWater {
 
   const RiverBodyOfWater({
     super.additionalProperty,

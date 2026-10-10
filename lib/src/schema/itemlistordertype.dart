@@ -1,6 +1,7 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
 
 /// Enumerated for values for itemListOrder for indicating how an ordered ItemList is organized.
 @Schema(description: r'''Enumerated for values for itemListOrder for indicating how an ordered ItemList is organized.''')

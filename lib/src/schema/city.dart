@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A city or town.
 @Schema(description: r'''A city or town.''')
 @JsonSerializable(explicitToJson: true)
-final class City extends AdministrativeArea with EquatableMixin {
+base class City extends AdministrativeArea {
 
   const City({
     super.additionalProperty,

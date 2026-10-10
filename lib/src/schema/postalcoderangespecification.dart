@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Indicates a range of postal codes, usually defined as the set of valid codes between [[postalCodeBegin]] and [[postalCodeEnd]], inclusively.
 @Schema(description: r'''Indicates a range of postal codes, usually defined as the set of valid codes between [[postalCodeBegin]] and [[postalCodeEnd]], inclusively.''')
 @JsonSerializable(explicitToJson: true)
-final class PostalCodeRangeSpecification extends StructuredValue with EquatableMixin {
+base class PostalCodeRangeSpecification extends StructuredValue {
 
   /// First postal code in a range (included).
   @Field(name: 'postalCodeBegin', description: r'''First postal code in a range (included).''')

@@ -11,7 +11,7 @@ import '../../schemaorg.dart';
 /// * [[AcceptAction]]: The antonym of RejectAction.
 @Schema(description: r'''The act of rejecting to/adopting an object.\n\nRelated actions:\n\n* [[AcceptAction]]: The antonym of RejectAction.''')
 @JsonSerializable(explicitToJson: true)
-final class RejectAction extends AllocateAction with EquatableMixin {
+base class RejectAction extends AllocateAction {
 
   const RejectAction({
     super.actionProcess,

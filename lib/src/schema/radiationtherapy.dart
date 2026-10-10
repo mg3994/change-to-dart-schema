@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A process of care using radiation aimed at improving a health condition.
 @Schema(description: r'''A process of care using radiation aimed at improving a health condition.''')
 @JsonSerializable(explicitToJson: true)
-final class RadiationTherapy extends MedicalTherapy with EquatableMixin {
+base class RadiationTherapy extends MedicalTherapy {
 
   const RadiationTherapy({
     super.contraindication,

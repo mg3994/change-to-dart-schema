@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A treatment of people with physical, emotional, or social problems, using purposeful activity to help them overcome or learn to deal with their problems.
 @Schema(description: r'''A treatment of people with physical, emotional, or social problems, using purposeful activity to help them overcome or learn to deal with their problems.''')
 @JsonSerializable(explicitToJson: true)
-final class OccupationalTherapy extends MedicalTherapy with EquatableMixin {
+base class OccupationalTherapy extends MedicalTherapy {
 
   const OccupationalTherapy({
     super.contraindication,

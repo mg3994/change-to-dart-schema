@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An advertising section of the page.
 @Schema(description: r'''An advertising section of the page.''')
 @JsonSerializable(explicitToJson: true)
-final class WPAdBlock extends WebPageElement with EquatableMixin {
+base class WPAdBlock extends WebPageElement {
 
   const WPAdBlock({
     super.cssSelector,

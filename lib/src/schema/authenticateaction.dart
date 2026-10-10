@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The action of authenticating into a device or application.
 @Schema(description: r'''The action of authenticating into a device or application.''')
 @JsonSerializable(explicitToJson: true)
-final class AuthenticateAction extends ControlAction with EquatableMixin {
+base class AuthenticateAction extends ControlAction {
 
   const AuthenticateAction({
     super.actionProcess,

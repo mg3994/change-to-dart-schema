@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A food-related business.
 @Schema(description: r'''A food-related business.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class FoodEstablishment extends LocalBusiness with EquatableMixin {
+base class FoodEstablishment extends LocalBusiness {
 
   /// Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
   @Field(name: 'acceptsReservations', description: r'''Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.''')
@@ -132,38 +132,6 @@ abstract base class FoodEstablishment extends LocalBusiness with EquatableMixin 
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.amenityFeature,
-    super.branchCode,
-    super.containedIn,
-    super.containedInPlace,
-    super.containsPlace,
-    super.geo,
-    super.geoContains,
-    super.geoCoveredBy,
-    super.geoCovers,
-    super.geoCrosses,
-    super.geoDisjoint,
-    super.geoEquals,
-    super.geoIntersects,
-    super.geoOverlaps,
-    super.geoTouches,
-    super.geoWithin,
-    super.hasDriveThroughService,
-    super.hasMap,
-    super.isAccessibleForFree,
-    super.latitude,
-    super.longitude,
-    super.map,
-    super.maps,
-    super.maximumAttendeeCapacity,
-    super.openingHoursSpecification,
-    super.photo,
-    super.photos,
-    super.publicAccess,
-    super.smokingAllowed,
-    super.specialOpeningHoursSpecification,
-    super.tourBookingPage,
     this.acceptsReservations,
     this.hasMenu,
     this.menu,

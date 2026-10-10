@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A medical procedure intended primarily for diagnostic, as opposed to therapeutic, purposes.
 @Schema(description: r'''A medical procedure intended primarily for diagnostic, as opposed to therapeutic, purposes.''')
 @JsonSerializable(explicitToJson: true)
-final class DiagnosticProcedure extends MedicalProcedure with EquatableMixin {
+base class DiagnosticProcedure extends MedicalProcedure {
 
   const DiagnosticProcedure({
     super.bodyLocation,

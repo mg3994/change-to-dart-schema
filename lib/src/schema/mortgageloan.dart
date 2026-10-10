@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A loan in which property or real estate is used as collateral. (A loan securitized against some real estate.)
 @Schema(description: r'''A loan in which property or real estate is used as collateral. (A loan securitized against some real estate.)''')
 @JsonSerializable(explicitToJson: true)
-final class MortgageLoan extends LoanOrCredit with EquatableMixin {
+base class MortgageLoan extends LoanOrCredit {
 
   /// Whether borrower is a resident of the jurisdiction where the property is located.
   @Field(name: 'domiciledMortgage', description: r'''Whether borrower is a resident of the jurisdiction where the property is located.''')

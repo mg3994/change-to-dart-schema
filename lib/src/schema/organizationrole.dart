@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A subclass of Role used to describe roles within organizations.
 @Schema(description: r'''A subclass of Role used to describe roles within organizations.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class OrganizationRole extends Role with EquatableMixin {
+base class OrganizationRole extends Role {
 
   /// A number associated with a role in an organization, for example, the number on an athlete's jersey.
   @Field(name: 'numberedPosition', description: r'''A number associated with a role in an organization, for example, the number on an athlete's jersey.''')

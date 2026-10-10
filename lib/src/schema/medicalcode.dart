@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A code for a medical entity.
 @Schema(description: r'''A code for a medical entity.''')
 @JsonSerializable(explicitToJson: true)
-final class MedicalCode extends CategoryCode with EquatableMixin {
+base class MedicalCode extends CategoryCode {
 
   /// A short textual code that uniquely identifies the value.
   @Field(name: 'codeValue', description: r'''A short textual code that uniquely identifies the value.''')
@@ -37,14 +37,6 @@ final class MedicalCode extends CategoryCode with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.code,
-    super.funding,
-    super.guideline,
-    super.legalStatus,
-    super.medicineSystem,
-    super.recognizingAuthority,
-    super.relevantSpecialty,
-    super.study,
     this.codeValue,
     this.codingSystem,
   });

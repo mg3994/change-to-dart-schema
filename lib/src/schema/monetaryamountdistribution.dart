@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A statistical distribution of monetary amounts.
 @Schema(description: r'''A statistical distribution of monetary amounts.''')
 @JsonSerializable(explicitToJson: true)
-final class MonetaryAmountDistribution extends QuantitativeValueDistribution with EquatableMixin {
+base class MonetaryAmountDistribution extends QuantitativeValueDistribution {
 
   /// The currency in which the monetary amount is expressed.
 ///

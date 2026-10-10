@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of participating in performance arts.
 @Schema(description: r'''The act of participating in performance arts.''')
 @JsonSerializable(explicitToJson: true)
-final class PerformAction extends PlayAction with EquatableMixin {
+base class PerformAction extends PlayAction {
 
   /// A sub property of location. The entertainment business where the action occurred.
   @Field(name: 'entertainmentBusiness', description: r'''A sub property of location. The entertainment business where the action occurred.''')

@@ -1,5 +1,6 @@
 // Generated file. Exporting all Schema.org definitions.
 
+export 'src/json_ld.dart';
 export 'src/schema/Num3dmodel.dart';
 export 'src/schema/aboutpage.dart';
 export 'src/schema/acceptaction.dart';

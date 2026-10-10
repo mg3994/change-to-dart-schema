@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A utility class that serves as the umbrella for a number of 'intangible' things in the medical space.
 @Schema(description: r'''A utility class that serves as the umbrella for a number of 'intangible' things in the medical space.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class MedicalIntangible extends MedicalEntity with EquatableMixin {
+base class MedicalIntangible extends MedicalEntity {
 
   const MedicalIntangible({
     super.code,

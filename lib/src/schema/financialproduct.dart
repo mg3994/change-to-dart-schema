@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.
 @Schema(description: r'''A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class FinancialProduct extends Service with EquatableMixin {
+base class FinancialProduct extends Service {
 
   /// The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
   @Field(name: 'annualPercentageRate', description: r'''The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.''')

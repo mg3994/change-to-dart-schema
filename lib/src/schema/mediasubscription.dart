@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A subscription which allows a user to access media including audio, video, books, etc.
 @Schema(description: r'''A subscription which allows a user to access media including audio, video, books, etc.''')
 @JsonSerializable(explicitToJson: true)
-final class MediaSubscription extends Intangible with EquatableMixin {
+base class MediaSubscription extends Intangible {
 
   /// The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable/satellite provider to authenticate your subscription before playing media.
   @Field(name: 'authenticator', description: r'''The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable/satellite provider to authenticate your subscription before playing media.''')

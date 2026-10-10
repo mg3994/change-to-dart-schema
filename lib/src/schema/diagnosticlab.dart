@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A medical laboratory that offers on-site or off-site diagnostic services.
 @Schema(description: r'''A medical laboratory that offers on-site or off-site diagnostic services.''')
 @JsonSerializable(explicitToJson: true)
-final class DiagnosticLab extends MedicalOrganization with EquatableMixin {
+base class DiagnosticLab extends MedicalOrganization {
 
   /// A diagnostic test or procedure offered by this lab.
   @Field(name: 'availableTest', description: r'''A diagnostic test or procedure offered by this lab.''')

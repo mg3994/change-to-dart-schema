@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An agent orders an object/product/service to be delivered/sent.
 @Schema(description: r'''An agent orders an object/product/service to be delivered/sent.''')
 @JsonSerializable(explicitToJson: true)
-final class OrderAction extends TradeAction with EquatableMixin {
+base class OrderAction extends TradeAction {
 
   /// A sub property of instrument. The method of delivery.
   @Field(name: 'deliveryMethod', description: r'''A sub property of instrument. The method of delivery.''')

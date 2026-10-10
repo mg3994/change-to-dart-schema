@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An Insurance agency.
 @Schema(description: r'''An Insurance agency.''')
 @JsonSerializable(explicitToJson: true)
-final class InsuranceAgency extends FinancialService with EquatableMixin {
+base class InsuranceAgency extends FinancialService {
 
   const InsuranceAgency({
     super.feesAndCommissionsSpecification,
@@ -108,38 +108,6 @@ final class InsuranceAgency extends FinancialService with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.amenityFeature,
-    super.branchCode,
-    super.containedIn,
-    super.containedInPlace,
-    super.containsPlace,
-    super.geo,
-    super.geoContains,
-    super.geoCoveredBy,
-    super.geoCovers,
-    super.geoCrosses,
-    super.geoDisjoint,
-    super.geoEquals,
-    super.geoIntersects,
-    super.geoOverlaps,
-    super.geoTouches,
-    super.geoWithin,
-    super.hasDriveThroughService,
-    super.hasMap,
-    super.isAccessibleForFree,
-    super.latitude,
-    super.longitude,
-    super.map,
-    super.maps,
-    super.maximumAttendeeCapacity,
-    super.openingHoursSpecification,
-    super.photo,
-    super.photos,
-    super.publicAccess,
-    super.smokingAllowed,
-    super.specialOpeningHoursSpecification,
-    super.tourBookingPage,
   });
 
   @override

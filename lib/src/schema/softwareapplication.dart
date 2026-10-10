@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A software application.
 @Schema(description: r'''A software application.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class SoftwareApplication extends CreativeWork with EquatableMixin {
+base class SoftwareApplication extends CreativeWork {
 
   /// Type of software application, e.g. 'Game, Multimedia'.
   @Field(name: 'applicationCategory', description: r'''Type of software application, e.g. 'Game, Multimedia'.''')

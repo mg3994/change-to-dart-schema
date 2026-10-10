@@ -13,7 +13,7 @@ import '../../schemaorg.dart';
 See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
 ''')
 @JsonSerializable(explicitToJson: true)
-final class MeetingRoom extends Room with EquatableMixin {
+base class MeetingRoom extends Room {
 
   const MeetingRoom({
     super.accommodationCategory,

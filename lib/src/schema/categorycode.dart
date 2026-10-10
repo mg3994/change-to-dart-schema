@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A Category Code.
 @Schema(description: r'''A Category Code.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class CategoryCode extends DefinedTerm with EquatableMixin {
+base class CategoryCode extends DefinedTerm {
 
   /// A short textual code that uniquely identifies the value.
   @Field(name: 'codeValue', description: r'''A short textual code that uniquely identifies the value.''')

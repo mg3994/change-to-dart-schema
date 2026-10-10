@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A step in the instructions for how to achieve a result. It is an ordered list with HowToDirection and/or HowToTip items.
 @Schema(description: r'''A step in the instructions for how to achieve a result. It is an ordered list with HowToDirection and/or HowToTip items.''')
 @JsonSerializable(explicitToJson: true)
-final class HowToStep extends CreativeWork with EquatableMixin {
+base class HowToStep extends CreativeWork {
 
   const HowToStep({
     super.about,
@@ -139,13 +139,6 @@ final class HowToStep extends CreativeWork with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.aggregateElement,
-    super.itemListElement,
-    super.itemListOrder,
-    super.numberOfItems,
-    super.item,
-    super.nextItem,
-    super.previousItem,
   });
 
   @override

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A sub-grouping of food or drink items in a menu. E.g. courses (such as 'Dinner', 'Breakfast', etc.), specific type of dishes (such as 'Meat', 'Vegan', 'Drinks', etc.), or some other classification made by the menu provider.
 @Schema(description: r'''A sub-grouping of food or drink items in a menu. E.g. courses (such as 'Dinner', 'Breakfast', etc.), specific type of dishes (such as 'Meat', 'Vegan', 'Drinks', etc.), or some other classification made by the menu provider.''')
 @JsonSerializable(explicitToJson: true)
-final class MenuSection extends CreativeWork with EquatableMixin {
+base class MenuSection extends CreativeWork {
 
   /// A food or drink item contained in a menu or menu section.
   @Field(name: 'hasMenuItem', description: r'''A food or drink item contained in a menu or menu section.''')

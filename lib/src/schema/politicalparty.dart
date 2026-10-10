@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Organization: Political Party.
 @Schema(description: r'''Organization: Political Party.''')
 @JsonSerializable(explicitToJson: true)
-final class PoliticalParty extends Organization with EquatableMixin {
+base class PoliticalParty extends Organization {
 
   const PoliticalParty({
     super.acceptedPaymentMethod,

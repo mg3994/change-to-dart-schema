@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A Research Organization (e.g. scientific institute, research company).
 @Schema(description: r'''A Research Organization (e.g. scientific institute, research company).''')
 @JsonSerializable(explicitToJson: true)
-final class ResearchOrganization extends Organization with EquatableMixin {
+base class ResearchOrganization extends Organization {
 
   const ResearchOrganization({
     super.acceptedPaymentMethod,

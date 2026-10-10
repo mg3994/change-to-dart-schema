@@ -52,7 +52,7 @@ class SchemaOrgGraph {
     return [];
   }
 
-  List<String> getAllParentClassIds(String classId) {
+  List<String> getPrimaryParentChain(String classId) {
     final parents = <String>[];
     final visited = <String>{};
 
@@ -61,11 +61,10 @@ class SchemaOrgGraph {
       final item = itemsById[current];
       if (item == null) return;
       final directParents = _extractList(item['rdfs:subClassOf']);
-      for (var p in directParents) {
-        if (p.startsWith('schema:')) {
-          parents.add(p);
-          recurse(p);
-        }
+      final primary = directParents.firstWhere((p) => p.startsWith('schema:'), orElse: () => '');
+      if (primary.isNotEmpty) {
+        parents.add(primary);
+        recurse(primary);
       }
     }
 
@@ -205,6 +204,7 @@ void main(List<String> args) async {
     buffer.writeln("// Generated file. Do not edit directly.");
     buffer.writeln("import 'package:schemantic/schemantic.dart';");
     buffer.writeln("import 'package:json_annotation/json_annotation.dart';");
+    buffer.writeln("import '../../schemaorg.dart';");
     buffer.writeln();
     if (doc.isNotEmpty) buffer.writeln(doc);
     buffer.writeln("@Schema(description: r'''$commentText''')");
@@ -254,8 +254,6 @@ void main(List<String> args) async {
       primaryParentName = '';
     }
 
-    final hasSubclasses = (graph.subclassesByParent[classId] ?? []).isNotEmpty;
-
     // Direct properties
     final props = graph.propertiesByDomain[classId] ?? [];
 
@@ -276,12 +274,12 @@ void main(List<String> args) async {
       fieldNames.add(propName);
     }
 
-    // Collect inherited properties from all ancestor classes that are NOT re-declared on this class
-    final parentClassIds = graph.getAllParentClassIds(classId);
+    // Collect inherited properties ONLY from the primary parent's inheritance chain
+    final primaryChainParentIds = primaryParentId.isNotEmpty ? graph.getPrimaryParentChain(classId) : <String>[];
     final inheritedPropNames = <String>{};
     final parentParams = <String>[];
 
-    for (var parentId in parentClassIds) {
+    for (var parentId in primaryChainParentIds) {
       final parentProps = graph.propertiesByDomain[parentId] ?? [];
       for (var p in parentProps) {
         final pId = p['@id'] as String;
@@ -305,14 +303,11 @@ void main(List<String> args) async {
     buffer.writeln("@Schema(description: r'''$commentText''')");
     buffer.writeln("@JsonSerializable(explicitToJson: true)");
 
-    var classModifier = 'final class';
-    if (hasSubclasses) {
-      classModifier = 'abstract base class';
-    }
+    var classModifier = 'base class';
 
     var inheritanceClause = '';
     if (primaryParentName.isNotEmpty && primaryParentName != className) {
-      inheritanceClause = ' extends $primaryParentName with EquatableMixin';
+      inheritanceClause = ' extends $primaryParentName';
     } else {
       inheritanceClause = ' extends Equatable';
     }
@@ -372,6 +367,7 @@ void main(List<String> args) async {
   final exportBuffer = StringBuffer();
   exportBuffer.writeln("// Generated file. Exporting all Schema.org definitions.");
   exportBuffer.writeln();
+  exportBuffer.writeln("export 'src/json_ld.dart';");
 
   final allFiles = outputDir.listSync().whereType<File>().map((f) => f.path.split('/').last).toList()..sort();
   for (var f in allFiles) {

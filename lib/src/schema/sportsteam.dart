@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Organization: Sports team.
 @Schema(description: r'''Organization: Sports team.''')
 @JsonSerializable(explicitToJson: true)
-final class SportsTeam extends SportsOrganization with EquatableMixin {
+base class SportsTeam extends SportsOrganization {
 
   /// A person that acts as performing member of a sports team; a player as opposed to a coach.
   @Field(name: 'athlete', description: r'''A person that acts as performing member of a sports team; a player as opposed to a coach.''')

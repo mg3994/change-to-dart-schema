@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A set of Category Code values.
 @Schema(description: r'''A set of Category Code values.''')
 @JsonSerializable(explicitToJson: true)
-final class CategoryCodeSet extends DefinedTermSet with EquatableMixin {
+base class CategoryCodeSet extends DefinedTermSet {
 
   /// A Category code contained in this code set.
   @Field(name: 'hasCategoryCode', description: r'''A Category code contained in this code set.''')

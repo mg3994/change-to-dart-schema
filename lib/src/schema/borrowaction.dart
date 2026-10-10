@@ -11,7 +11,7 @@ import '../../schemaorg.dart';
 /// * [[LendAction]]: Reciprocal of BorrowAction.
 @Schema(description: r'''The act of obtaining an object under an agreement to return it at a later date. Reciprocal of LendAction.\n\nRelated actions:\n\n* [[LendAction]]: Reciprocal of BorrowAction.''')
 @JsonSerializable(explicitToJson: true)
-final class BorrowAction extends TransferAction with EquatableMixin {
+base class BorrowAction extends TransferAction {
 
   /// A sub property of participant. The person that lends the object being borrowed.
   @Field(name: 'lender', description: r'''A sub property of participant. The person that lends the object being borrowed.''')

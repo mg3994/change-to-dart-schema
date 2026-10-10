@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A payment method using a credit, debit, store or other card to associate the payment with an account.
 @Schema(description: r'''A payment method using a credit, debit, store or other card to associate the payment with an account.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class PaymentCard extends FinancialProduct with EquatableMixin {
+base class PaymentCard extends FinancialProduct {
 
   /// A cardholder benefit that pays the cardholder a small percentage of their net expenditures.
   @Field(name: 'cashBack', description: r'''A cardholder benefit that pays the cardholder a small percentage of their net expenditures.''')
@@ -71,7 +71,6 @@ abstract base class PaymentCard extends FinancialProduct with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.paymentMethodType,
     this.cashBack,
     this.contactlessPayment,
     this.floorLimit,

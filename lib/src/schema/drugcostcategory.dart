@@ -1,6 +1,7 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
 
 /// Enumerated categories of medical drug costs.
 @Schema(description: r'''Enumerated categories of medical drug costs.''')

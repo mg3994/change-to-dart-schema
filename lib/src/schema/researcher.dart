@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Researchers.
 @Schema(description: r'''Researchers.''')
 @JsonSerializable(explicitToJson: true)
-final class Researcher extends Audience with EquatableMixin {
+base class Researcher extends Audience {
 
   const Researcher({
     super.audienceType,

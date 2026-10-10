@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Web page type: Checkout page.
 @Schema(description: r'''Web page type: Checkout page.''')
 @JsonSerializable(explicitToJson: true)
-final class CheckoutPage extends WebPage with EquatableMixin {
+base class CheckoutPage extends WebPage {
 
   const CheckoutPage({
     super.breadcrumb,

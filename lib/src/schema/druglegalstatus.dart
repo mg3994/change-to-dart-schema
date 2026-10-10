@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The legal availability status of a medical drug.
 @Schema(description: r'''The legal availability status of a medical drug.''')
 @JsonSerializable(explicitToJson: true)
-final class DrugLegalStatus extends MedicalIntangible with EquatableMixin {
+base class DrugLegalStatus extends MedicalIntangible {
 
   /// The location in which the status applies.
   @Field(name: 'applicableLocation', description: r'''The location in which the status applies.''')

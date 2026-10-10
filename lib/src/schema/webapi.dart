@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An application programming interface accessible over Web/Internet technologies.
 @Schema(description: r'''An application programming interface accessible over Web/Internet technologies.''')
 @JsonSerializable(explicitToJson: true)
-final class WebAPI extends Service with EquatableMixin {
+base class WebAPI extends Service {
 
   /// Further documentation describing the Web API in more detail.
   @Field(name: 'documentation', description: r'''Further documentation describing the Web API in more detail.''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A trip or journey. An itinerary of visits to one or more places.
 @Schema(description: r'''A trip or journey. An itinerary of visits to one or more places.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Trip extends Intangible with EquatableMixin {
+base class Trip extends Intangible {
 
   /// The expected arrival time.
   @Field(name: 'arrivalTime', description: r'''The expected arrival time.''')

@@ -9,7 +9,7 @@ import '../../schemaorg.dart';
 /// Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
 @Schema(description: r'''A reservation for a rental car.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.''')
 @JsonSerializable(explicitToJson: true)
-final class RentalCarReservation extends Reservation with EquatableMixin {
+base class RentalCarReservation extends Reservation {
 
   /// Where a rental car can be dropped off.
   @Field(name: 'dropoffLocation', description: r'''Where a rental car can be dropped off.''')

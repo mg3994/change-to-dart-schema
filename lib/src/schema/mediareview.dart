@@ -13,7 +13,7 @@ import '../../schemaorg.dart';
     a work in progress. While the [[MediaManipulationRatingEnumeration]] list reflects significant community review amongst fact-checkers and others working
     to combat misinformation, the specific structures for representing media objects, their versions and publication context, are still evolving. Similarly, best practices for the relationship between [[MediaReview]] and [[ClaimReview]] markup have not yet been finalized.''')
 @JsonSerializable(explicitToJson: true)
-final class MediaReview extends Review with EquatableMixin {
+base class MediaReview extends Review {
 
   /// Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared).
   @Field(name: 'mediaAuthenticityCategory', description: r'''Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared).''')

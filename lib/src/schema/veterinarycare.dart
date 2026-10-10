@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A vet's office.
 @Schema(description: r'''A vet's office.''')
 @JsonSerializable(explicitToJson: true)
-final class VeterinaryCare extends MedicalOrganization with EquatableMixin {
+base class VeterinaryCare extends MedicalOrganization {
 
   const VeterinaryCare({
     super.healthPlanNetworkId,

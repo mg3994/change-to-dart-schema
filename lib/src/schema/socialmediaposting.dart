@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A post to a social media platform, including blog posts, tweets, Facebook posts, etc.
 @Schema(description: r'''A post to a social media platform, including blog posts, tweets, Facebook posts, etc.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class SocialMediaPosting extends Article with EquatableMixin {
+base class SocialMediaPosting extends Article {
 
   /// A CreativeWork such as an image, video, or audio clip shared as part of this posting.
   @Field(name: 'sharedContent', description: r'''A CreativeWork such as an image, video, or audio clip shared as part of this posting.''')

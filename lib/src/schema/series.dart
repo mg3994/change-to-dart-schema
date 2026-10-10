@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A Series in schema.org is a group of related items, typically but not necessarily of the same kind. See also [[CreativeWorkSeries]], [[EventSeries]].
 @Schema(description: r'''A Series in schema.org is a group of related items, typically but not necessarily of the same kind. See also [[CreativeWorkSeries]], [[EventSeries]].''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Series extends Intangible with EquatableMixin {
+base class Series extends Intangible {
 
   const Series({
     super.additionalType,

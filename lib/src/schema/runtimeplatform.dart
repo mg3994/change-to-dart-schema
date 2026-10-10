@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Specialized software environment that provides the essential infrastructure, libraries, and services required to execute a program.
 @Schema(description: r'''Specialized software environment that provides the essential infrastructure, libraries, and services required to execute a program.''')
 @JsonSerializable(explicitToJson: true)
-final class RuntimePlatform extends SoftwareApplication with EquatableMixin {
+base class RuntimePlatform extends SoftwareApplication {
 
   const RuntimePlatform({
     super.applicationCategory,

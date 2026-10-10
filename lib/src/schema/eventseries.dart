@@ -33,7 +33,7 @@ may seem more Event-like when the period of time is compact and when aspects suc
 it may also sometimes prove useful to describe a longer-term series as an Event.
    ''')
 @JsonSerializable(explicitToJson: true)
-final class EventSeries extends Event with EquatableMixin {
+base class EventSeries extends Event {
 
   const EventSeries({
     super.about,

@@ -9,7 +9,7 @@ import '../../schemaorg.dart';
 /// See also [blog post](https://blog.schema.org/2014/09/02/schema-org-support-for-bibliographic-relationships-and-periodicals/).
 @Schema(description: r'''An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.\n\nSee also [blog post](https://blog.schema.org/2014/09/02/schema-org-support-for-bibliographic-relationships-and-periodicals/).''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Article extends CreativeWork with EquatableMixin {
+base class Article extends CreativeWork {
 
   /// The actual body of the article.
   @Field(name: 'articleBody', description: r'''The actual body of the article.''')

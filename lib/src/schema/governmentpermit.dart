@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A permit issued by a government agency.
 @Schema(description: r'''A permit issued by a government agency.''')
 @JsonSerializable(explicitToJson: true)
-final class GovernmentPermit extends Permit with EquatableMixin {
+base class GovernmentPermit extends Permit {
 
   const GovernmentPermit({
     super.issuedBy,

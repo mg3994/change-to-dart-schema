@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A page devoted to a single item, such as a particular product or hotel.
 @Schema(description: r'''A page devoted to a single item, such as a particular product or hotel.''')
 @JsonSerializable(explicitToJson: true)
-final class ItemPage extends WebPage with EquatableMixin {
+base class ItemPage extends WebPage {
 
   const ItemPage({
     super.breadcrumb,

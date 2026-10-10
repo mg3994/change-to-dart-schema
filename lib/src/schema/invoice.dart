@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A statement of the money due for goods or services; a bill.
 @Schema(description: r'''A statement of the money due for goods or services; a bill.''')
 @JsonSerializable(explicitToJson: true)
-final class Invoice extends Intangible with EquatableMixin {
+base class Invoice extends Intangible {
 
   /// The identifier for the account the payment will be applied to.
   @Field(name: 'accountId', description: r'''The identifier for the account the payment will be applied to.''')

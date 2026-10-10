@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A service which provides access to media programming like TV or radio. Access may be via cable or satellite.
 @Schema(description: r'''A service which provides access to media programming like TV or radio. Access may be via cable or satellite.''')
 @JsonSerializable(explicitToJson: true)
-final class CableOrSatelliteService extends Service with EquatableMixin {
+base class CableOrSatelliteService extends Service {
 
   const CableOrSatelliteService({
     super.aggregateRating,

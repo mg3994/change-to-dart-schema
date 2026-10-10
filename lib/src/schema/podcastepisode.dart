@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A single episode of a podcast series.
 @Schema(description: r'''A single episode of a podcast series.''')
 @JsonSerializable(explicitToJson: true)
-final class PodcastEpisode extends Episode with EquatableMixin {
+base class PodcastEpisode extends Episode {
 
   const PodcastEpisode({
     super.actor,

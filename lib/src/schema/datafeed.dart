@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A single feed providing structured information about one or more entities or topics.
 @Schema(description: r'''A single feed providing structured information about one or more entities or topics.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class DataFeed extends Dataset with EquatableMixin {
+base class DataFeed extends Dataset {
 
   /// An item within a data feed. Data feeds may have many elements.
   @Field(name: 'dataFeedElement', description: r'''An item within a data feed. Data feeds may have many elements.''')

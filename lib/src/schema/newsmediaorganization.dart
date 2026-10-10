@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A News/Media organization such as a newspaper or TV station.
 @Schema(description: r'''A News/Media organization such as a newspaper or TV station.''')
 @JsonSerializable(explicitToJson: true)
-final class NewsMediaOrganization extends Organization with EquatableMixin {
+base class NewsMediaOrganization extends Organization {
 
   /// For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
   @Field(name: 'actionableFeedbackPolicy', description: r'''For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.''')

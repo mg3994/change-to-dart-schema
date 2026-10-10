@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Aquarium.
 @Schema(description: r'''Aquarium.''')
 @JsonSerializable(explicitToJson: true)
-final class Aquarium extends CivicStructure with EquatableMixin {
+base class Aquarium extends CivicStructure {
 
   const Aquarium({
     super.openingHours,

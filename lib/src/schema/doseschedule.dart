@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A specific dosing schedule for a drug or supplement.
 @Schema(description: r'''A specific dosing schedule for a drug or supplement.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class DoseSchedule extends MedicalIntangible with EquatableMixin {
+base class DoseSchedule extends MedicalIntangible {
 
   /// The unit of the dose, e.g. 'mg'.
   @Field(name: 'doseUnit', description: r'''The unit of the dose, e.g. 'mg'.''')

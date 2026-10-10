@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The average rating based on multiple ratings or reviews.
 @Schema(description: r'''The average rating based on multiple ratings or reviews.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class AggregateRating extends Rating with EquatableMixin {
+base class AggregateRating extends Rating {
 
   /// The item that is being reviewed/rated.
   @Field(name: 'itemReviewed', description: r'''The item that is being reviewed/rated.''')

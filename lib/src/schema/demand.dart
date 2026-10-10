@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A demand entity represents the public, not necessarily binding, not necessarily exclusive, announcement by an organization or person to seek a certain type of goods or services. For describing demand using this type, the very same properties used for Offer apply.
 @Schema(description: r'''A demand entity represents the public, not necessarily binding, not necessarily exclusive, announcement by an organization or person to seek a certain type of goods or services. For describing demand using this type, the very same properties used for Offer apply.''')
 @JsonSerializable(explicitToJson: true)
-final class Demand extends Intangible with EquatableMixin {
+base class Demand extends Intangible {
 
   /// The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
   @Field(name: 'acceptedPaymentMethod', description: r'''The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.''')

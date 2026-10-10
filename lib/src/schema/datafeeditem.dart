@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A single item within a larger data feed.
 @Schema(description: r'''A single item within a larger data feed.''')
 @JsonSerializable(explicitToJson: true)
-final class DataFeedItem extends Intangible with EquatableMixin {
+base class DataFeedItem extends Intangible {
 
   /// The date on which the CreativeWork was created or the item was added to a DataFeed.
   @Field(name: 'dateCreated', description: r'''The date on which the CreativeWork was created or the item was added to a DataFeed.''')

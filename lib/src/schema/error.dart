@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Representation of an Error.
 @Schema(description: r'''Representation of an Error.''')
 @JsonSerializable(explicitToJson: true)
-final class Error extends InstantaneousEvent with EquatableMixin {
+base class Error extends InstantaneousEvent {
 
   /// Application or platform dependant error code.
   @Field(name: 'errorCode', description: r'''Application or platform dependant error code.''')

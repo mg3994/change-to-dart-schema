@@ -11,7 +11,7 @@ import '../../schemaorg.dart';
 The properties [[numConstraints]] and [[constraintProperty]] are used to specify which of the populations properties are used to specify the population. Note that the sense of "population" used here is the general sense of a statistical
 population, and does not imply that the population consists of people. For example, a [[populationType]] of [[Event]] or [[NewsArticle]] could be used. See also [[Observation]], where a [[populationType]] such as [[Person]] or [[Event]] can be indicated directly. In most cases it may be better to use [[StatisticalVariable]] instead of [[StatisticalPopulation]].''')
 @JsonSerializable(explicitToJson: true)
-final class StatisticalPopulation extends Intangible with EquatableMixin {
+base class StatisticalPopulation extends Intangible {
 
   /// Indicates the populationType common to all members of a [[StatisticalPopulation]] or all cases within the scope of a [[StatisticalVariable]].
   @Field(name: 'populationType', description: r'''Indicates the populationType common to all members of a [[StatisticalPopulation]] or all cases within the scope of a [[StatisticalVariable]].''')

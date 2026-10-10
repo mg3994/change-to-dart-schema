@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// ShippingService represents the criteria used to determine if and how an offer could be shipped to a customer.
 @Schema(description: r'''ShippingService represents the criteria used to determine if and how an offer could be shipped to a customer.''')
 @JsonSerializable(explicitToJson: true)
-final class ShippingService extends StructuredValue with EquatableMixin {
+base class ShippingService extends StructuredValue {
 
   /// Type of fulfillment applicable to the [[ShippingService]].
   @Field(name: 'fulfillmentType', description: r'''Type of fulfillment applicable to the [[ShippingService]].''')

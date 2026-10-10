@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A Search and Rescue organization of some kind.
 @Schema(description: r'''A Search and Rescue organization of some kind.''')
 @JsonSerializable(explicitToJson: true)
-final class SearchRescueOrganization extends Organization with EquatableMixin {
+base class SearchRescueOrganization extends Organization {
 
   const SearchRescueOrganization({
     super.acceptedPaymentMethod,

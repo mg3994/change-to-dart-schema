@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Any collection of tests commonly ordered together.
 @Schema(description: r'''Any collection of tests commonly ordered together.''')
 @JsonSerializable(explicitToJson: true)
-final class MedicalTestPanel extends MedicalTest with EquatableMixin {
+base class MedicalTestPanel extends MedicalTest {
 
   /// A component test of the panel.
   @Field(name: 'subTest', description: r'''A component test of the panel.''')

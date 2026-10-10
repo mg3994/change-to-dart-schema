@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Used to describe a ticket to an event, a flight, a bus ride, etc.
 @Schema(description: r'''Used to describe a ticket to an event, a flight, a bus ride, etc.''')
 @JsonSerializable(explicitToJson: true)
-final class Ticket extends Intangible with EquatableMixin {
+base class Ticket extends Intangible {
 
   /// The date the ticket was issued.
   @Field(name: 'dateIssued', description: r'''The date the ticket was issued.''')

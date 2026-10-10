@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An agent pays a price to a participant.
 @Schema(description: r'''An agent pays a price to a participant.''')
 @JsonSerializable(explicitToJson: true)
-final class PayAction extends TradeAction with EquatableMixin {
+base class PayAction extends TradeAction {
 
   /// A sub property of participant. The participant who is at the receiving end of the action.
   @Field(name: 'recipient', description: r'''A sub property of participant. The participant who is at the receiving end of the action.''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A play is a form of literature, usually consisting of dialogue between characters, intended for theatrical performance rather than just reading. Note: A performance of a Play would be a [[TheaterEvent]] or [[BroadcastEvent]] - the *Play* being the [[workPerformed]].
 @Schema(description: r'''A play is a form of literature, usually consisting of dialogue between characters, intended for theatrical performance rather than just reading. Note: A performance of a Play would be a [[TheaterEvent]] or [[BroadcastEvent]] - the *Play* being the [[workPerformed]].''')
 @JsonSerializable(explicitToJson: true)
-final class Play extends CreativeWork with EquatableMixin {
+base class Play extends CreativeWork {
 
   const Play({
     super.about,

@@ -19,7 +19,7 @@ Grants support  activities directed towards some agreed collective goals, often 
 The amount of a [[Grant]] is represented using [[amount]] as a [[MonetaryAmount]].
     ''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Grant extends Intangible with EquatableMixin {
+base class Grant extends Intangible {
 
   /// Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]].
   @Field(name: 'fundedItem', description: r'''Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]].''')

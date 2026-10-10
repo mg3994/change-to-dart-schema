@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A placeholder for multiple similar products of the same kind.
 @Schema(description: r'''A placeholder for multiple similar products of the same kind.''')
 @JsonSerializable(explicitToJson: true)
-final class SomeProducts extends Product with EquatableMixin {
+base class SomeProducts extends Product {
 
   /// The current approximate inventory level for the item or items.
   @Field(name: 'inventoryLevel', description: r'''The current approximate inventory level for the item or items.''')

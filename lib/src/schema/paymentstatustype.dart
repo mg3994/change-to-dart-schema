@@ -1,6 +1,7 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
 
 /// A specific payment status. For example, PaymentDue, PaymentComplete, etc.
 @Schema(description: r'''A specific payment status. For example, PaymentDue, PaymentComplete, etc.''')

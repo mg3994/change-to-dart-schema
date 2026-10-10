@@ -9,7 +9,7 @@ import '../../schemaorg.dart';
 /// Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
 @Schema(description: r'''A reservation for a taxi.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].''')
 @JsonSerializable(explicitToJson: true)
-final class TaxiReservation extends Reservation with EquatableMixin {
+base class TaxiReservation extends Reservation {
 
   /// Number of people the reservation should accommodate.
   @Field(name: 'partySize', description: r'''Number of people the reservation should accommodate.''')

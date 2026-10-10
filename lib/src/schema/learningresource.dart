@@ -15,7 +15,7 @@ import '../../schemaorg.dart';
 
 [[EducationEvent]] serves a similar purpose for event-like things (e.g. a [[Trip]]). A [[LearningResource]] may be created as a result of an [[EducationEvent]], for example by recording one.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class LearningResource extends CreativeWork with EquatableMixin {
+base class LearningResource extends CreativeWork {
 
   /// The item being described is intended to assess the competency or learning outcome defined by the referenced term.
   @Field(name: 'assesses', description: r'''The item being described is intended to assess the competency or learning outcome defined by the referenced term.''')

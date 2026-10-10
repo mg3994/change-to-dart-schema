@@ -12,7 +12,7 @@ import '../../schemaorg.dart';
 /// * [[SendAction]]: Unlike SendAction, GiveAction implies that ownership is being transferred (e.g. I may send my laptop to you, but that doesn't mean I'm giving it to you).
 @Schema(description: r'''The act of transferring ownership of an object to a destination. Reciprocal of TakeAction.\n\nRelated actions:\n\n* [[TakeAction]]: Reciprocal of GiveAction.\n* [[SendAction]]: Unlike SendAction, GiveAction implies that ownership is being transferred (e.g. I may send my laptop to you, but that doesn't mean I'm giving it to you).''')
 @JsonSerializable(explicitToJson: true)
-final class GiveAction extends TransferAction with EquatableMixin {
+base class GiveAction extends TransferAction {
 
   /// A sub property of participant. The participant who is at the receiving end of the action.
   @Field(name: 'recipient', description: r'''A sub property of participant. The participant who is at the receiving end of the action.''')

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A guideline recommendation that is regarded as efficacious and where quality of the data supporting the recommendation is sound.
 @Schema(description: r'''A guideline recommendation that is regarded as efficacious and where quality of the data supporting the recommendation is sound.''')
 @JsonSerializable(explicitToJson: true)
-final class MedicalGuidelineRecommendation extends MedicalGuideline with EquatableMixin {
+base class MedicalGuidelineRecommendation extends MedicalGuideline {
 
   /// Strength of the guideline's recommendation (e.g. 'class I').
   @Field(name: 'recommendationStrength', description: r'''Strength of the guideline's recommendation (e.g. 'class I').''')

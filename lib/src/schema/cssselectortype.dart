@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Text representing a CSS selector.
 @Schema(description: r'''Text representing a CSS selector.''')
 @JsonSerializable(explicitToJson: true)
-final class CssSelectorType extends Text with EquatableMixin {
+base class CssSelectorType extends Text {
 
   const CssSelectorType({
   });

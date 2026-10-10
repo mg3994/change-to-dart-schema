@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// All or part of a [[Dataset]] in downloadable form.
 @Schema(description: r'''All or part of a [[Dataset]] in downloadable form. ''')
 @JsonSerializable(explicitToJson: true)
-final class DataDownload extends MediaObject with EquatableMixin {
+base class DataDownload extends MediaObject {
 
   /// A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
   @Field(name: 'measurementMethod', description: r'''A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].''')

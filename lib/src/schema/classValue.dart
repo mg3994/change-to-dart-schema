@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A class, also often called a 'Type'; equivalent to rdfs:Class.
 @Schema(description: r'''A class, also often called a 'Type'; equivalent to rdfs:Class.''')
 @JsonSerializable(explicitToJson: true)
-final class Class extends Intangible with EquatableMixin {
+base class Class extends Intangible {
 
   /// Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
   @Field(name: 'supersededBy', description: r'''Relates a term (i.e. a property, class or enumeration) to one that supersedes it.''')

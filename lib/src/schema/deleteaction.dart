@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of editing a recipient by removing one of its objects.
 @Schema(description: r'''The act of editing a recipient by removing one of its objects.''')
 @JsonSerializable(explicitToJson: true)
-final class DeleteAction extends UpdateAction with EquatableMixin {
+base class DeleteAction extends UpdateAction {
 
   const DeleteAction({
     super.collection,

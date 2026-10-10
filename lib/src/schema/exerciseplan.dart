@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Fitness-related activity designed for a specific health-related purpose, including defined exercise routines as well as activity prescribed by a clinician.
 @Schema(description: r'''Fitness-related activity designed for a specific health-related purpose, including defined exercise routines as well as activity prescribed by a clinician.''')
 @JsonSerializable(explicitToJson: true)
-final class ExercisePlan extends CreativeWork with EquatableMixin {
+base class ExercisePlan extends CreativeWork {
 
   /// Length of time to engage in the activity.
   @Field(name: 'activityDuration', description: r'''Length of time to engage in the activity.''')
@@ -179,17 +179,6 @@ final class ExercisePlan extends CreativeWork with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.associatedAnatomy,
-    super.category,
-    super.epidemiology,
-    super.pathophysiology,
-    super.code,
-    super.guideline,
-    super.legalStatus,
-    super.medicineSystem,
-    super.recognizingAuthority,
-    super.relevantSpecialty,
-    super.study,
     this.activityDuration,
     this.activityFrequency,
     this.additionalVariable,

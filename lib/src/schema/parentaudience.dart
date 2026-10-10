@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A set of characteristics describing parents, who can be interested in viewing some content.
 @Schema(description: r'''A set of characteristics describing parents, who can be interested in viewing some content.''')
 @JsonSerializable(explicitToJson: true)
-final class ParentAudience extends PeopleAudience with EquatableMixin {
+base class ParentAudience extends PeopleAudience {
 
   /// Maximal age of the child.
   @Field(name: 'childMaxAge', description: r'''Maximal age of the child.''')

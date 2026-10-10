@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Server that provides game interaction in a multiplayer game.
 @Schema(description: r'''Server that provides game interaction in a multiplayer game.''')
 @JsonSerializable(explicitToJson: true)
-final class GameServer extends Intangible with EquatableMixin {
+base class GameServer extends Intangible {
 
   /// Video game which is played on this server.
   @Field(name: 'game', description: r'''Video game which is played on this server.''')

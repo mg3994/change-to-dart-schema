@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of capturing still images of objects using a camera.
 @Schema(description: r'''The act of capturing still images of objects using a camera.''')
 @JsonSerializable(explicitToJson: true)
-final class PhotographAction extends CreateAction with EquatableMixin {
+base class PhotographAction extends CreateAction {
 
   const PhotographAction({
     super.actionProcess,

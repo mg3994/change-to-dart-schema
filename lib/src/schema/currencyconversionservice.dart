@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A service to convert funds from one currency to another currency.
 @Schema(description: r'''A service to convert funds from one currency to another currency.''')
 @JsonSerializable(explicitToJson: true)
-final class CurrencyConversionService extends FinancialProduct with EquatableMixin {
+base class CurrencyConversionService extends FinancialProduct {
 
   const CurrencyConversionService({
     super.annualPercentageRate,

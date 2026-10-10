@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Event type: Sports event.
 @Schema(description: r'''Event type: Sports event.''')
 @JsonSerializable(explicitToJson: true)
-final class SportsEvent extends Event with EquatableMixin {
+base class SportsEvent extends Event {
 
   /// The away team in a sports event.
   @Field(name: 'awayTeam', description: r'''The away team in a sports event.''')

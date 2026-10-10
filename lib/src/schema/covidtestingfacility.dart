@@ -15,7 +15,7 @@ import '../../schemaorg.dart';
       about that place, e.g. contact info, address, opening hours. Note that in an emergency, such information may not always be reliable.
       ''')
 @JsonSerializable(explicitToJson: true)
-final class CovidTestingFacility extends MedicalClinic with EquatableMixin {
+base class CovidTestingFacility extends MedicalClinic {
 
   const CovidTestingFacility({
     super.availableService,
@@ -117,40 +117,6 @@ final class CovidTestingFacility extends MedicalClinic with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.amenityFeature,
-    super.branchCode,
-    super.containedIn,
-    super.containedInPlace,
-    super.containsPlace,
-    super.geo,
-    super.geoContains,
-    super.geoCoveredBy,
-    super.geoCovers,
-    super.geoCrosses,
-    super.geoDisjoint,
-    super.geoEquals,
-    super.geoIntersects,
-    super.geoOverlaps,
-    super.geoTouches,
-    super.geoWithin,
-    super.hasDriveThroughService,
-    super.hasMap,
-    super.isAccessibleForFree,
-    super.latitude,
-    super.longitude,
-    super.map,
-    super.maps,
-    super.maximumAttendeeCapacity,
-    super.openingHoursSpecification,
-    super.photo,
-    super.photos,
-    super.publicAccess,
-    super.smokingAllowed,
-    super.specialOpeningHoursSpecification,
-    super.tourBookingPage,
-    super.healthPlanNetworkId,
-    super.isAcceptingNewPatients,
   });
 
   @override

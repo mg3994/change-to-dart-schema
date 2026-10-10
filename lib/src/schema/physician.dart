@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An individual physician or a physician's office considered as a [[MedicalOrganization]].
 @Schema(description: r'''An individual physician or a physician's office considered as a [[MedicalOrganization]].''')
 @JsonSerializable(explicitToJson: true)
-abstract base class Physician extends MedicalBusiness with EquatableMixin {
+base class Physician extends MedicalBusiness {
 
   /// A medical service available from this provider.
   @Field(name: 'availableService', description: r'''A medical service available from this provider.''')
@@ -137,40 +137,6 @@ Note: for historical reasons, any textual label and formal code provided as a li
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.amenityFeature,
-    super.branchCode,
-    super.containedIn,
-    super.containedInPlace,
-    super.containsPlace,
-    super.geo,
-    super.geoContains,
-    super.geoCoveredBy,
-    super.geoCovers,
-    super.geoCrosses,
-    super.geoDisjoint,
-    super.geoEquals,
-    super.geoIntersects,
-    super.geoOverlaps,
-    super.geoTouches,
-    super.geoWithin,
-    super.hasDriveThroughService,
-    super.hasMap,
-    super.isAccessibleForFree,
-    super.latitude,
-    super.longitude,
-    super.map,
-    super.maps,
-    super.maximumAttendeeCapacity,
-    super.openingHoursSpecification,
-    super.photo,
-    super.photos,
-    super.publicAccess,
-    super.smokingAllowed,
-    super.specialOpeningHoursSpecification,
-    super.tourBookingPage,
-    super.healthPlanNetworkId,
-    super.isAcceptingNewPatients,
     this.availableService,
     this.hospitalAffiliation,
     this.medicalSpecialty,

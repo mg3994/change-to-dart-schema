@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A food or drink item listed in a menu or menu section.
 @Schema(description: r'''A food or drink item listed in a menu or menu section.''')
 @JsonSerializable(explicitToJson: true)
-final class MenuItem extends Intangible with EquatableMixin {
+base class MenuItem extends Intangible {
 
   /// Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
   @Field(name: 'menuAddOn', description: r'''Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.''')

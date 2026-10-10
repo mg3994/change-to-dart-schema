@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A legislative building&#x2014;for example, the state capitol.
 @Schema(description: r'''A legislative building&#x2014;for example, the state capitol.''')
 @JsonSerializable(explicitToJson: true)
-final class LegislativeBuilding extends GovernmentBuilding with EquatableMixin {
+base class LegislativeBuilding extends GovernmentBuilding {
 
   const LegislativeBuilding({
     super.openingHours,

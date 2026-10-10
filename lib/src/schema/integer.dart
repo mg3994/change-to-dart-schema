@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Data type: Integer.
 @Schema(description: r'''Data type: Integer.''')
 @JsonSerializable(explicitToJson: true)
-final class Integer extends Number with EquatableMixin {
+base class Integer extends Number {
 
   const Integer({
   });

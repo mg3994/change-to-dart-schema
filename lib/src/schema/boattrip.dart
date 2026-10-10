@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A trip on a commercial ferry line.
 @Schema(description: r'''A trip on a commercial ferry line.''')
 @JsonSerializable(explicitToJson: true)
-final class BoatTrip extends Trip with EquatableMixin {
+base class BoatTrip extends Trip {
 
   /// The terminal or port from which the boat arrives.
   @Field(name: 'arrivalBoatTerminal', description: r'''The terminal or port from which the boat arrives.''')

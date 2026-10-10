@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A medical procedure intended primarily for palliative purposes, aimed at relieving the symptoms of an underlying health condition.
 @Schema(description: r'''A medical procedure intended primarily for palliative purposes, aimed at relieving the symptoms of an underlying health condition.''')
 @JsonSerializable(explicitToJson: true)
-final class PalliativeProcedure extends MedicalProcedure with EquatableMixin {
+base class PalliativeProcedure extends MedicalProcedure {
 
   const PalliativeProcedure({
     super.bodyLocation,
@@ -37,12 +37,6 @@ final class PalliativeProcedure extends MedicalProcedure with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.contraindication,
-    super.duplicateTherapy,
-    super.seriousAdverseOutcome,
-    super.adverseOutcome,
-    super.doseSchedule,
-    super.drug,
   });
 
   @override

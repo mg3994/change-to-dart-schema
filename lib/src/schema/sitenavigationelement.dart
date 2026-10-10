@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A navigation element of the page.
 @Schema(description: r'''A navigation element of the page.''')
 @JsonSerializable(explicitToJson: true)
-final class SiteNavigationElement extends WebPageElement with EquatableMixin {
+base class SiteNavigationElement extends WebPageElement {
 
   const SiteNavigationElement({
     super.cssSelector,

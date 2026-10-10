@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A stage of a medical condition, such as 'Stage IIIa'.
 @Schema(description: r'''A stage of a medical condition, such as 'Stage IIIa'.''')
 @JsonSerializable(explicitToJson: true)
-final class MedicalConditionStage extends MedicalIntangible with EquatableMixin {
+base class MedicalConditionStage extends MedicalIntangible {
 
   /// The stage represented as a number, e.g. 3.
   @Field(name: 'stageAsNumber', description: r'''The stage represented as a number, e.g. 3.''')

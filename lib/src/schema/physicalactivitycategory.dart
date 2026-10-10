@@ -1,6 +1,7 @@
 // Generated file. Do not edit directly.
 import 'package:schemantic/schemantic.dart';
 import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
 
 /// Categories of physical activity, organized by physiologic classification.
 @Schema(description: r'''Categories of physical activity, organized by physiologic classification.''')

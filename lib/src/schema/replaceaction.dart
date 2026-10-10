@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of editing a recipient by replacing an old object with a new object.
 @Schema(description: r'''The act of editing a recipient by replacing an old object with a new object.''')
 @JsonSerializable(explicitToJson: true)
-final class ReplaceAction extends UpdateAction with EquatableMixin {
+base class ReplaceAction extends UpdateAction {
 
   /// A sub property of object. The object that is being replaced.
   @Field(name: 'replacee', description: r'''A sub property of object. The object that is being replaced.''')

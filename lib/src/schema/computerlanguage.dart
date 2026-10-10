@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// This type covers computer programming languages such as Scheme and Lisp, as well as other language-like computer representations. Natural languages are best represented with the [[Language]] type.
 @Schema(description: r'''This type covers computer programming languages such as Scheme and Lisp, as well as other language-like computer representations. Natural languages are best represented with the [[Language]] type.''')
 @JsonSerializable(explicitToJson: true)
-final class ComputerLanguage extends Intangible with EquatableMixin {
+base class ComputerLanguage extends Intangible {
 
   const ComputerLanguage({
     super.additionalType,

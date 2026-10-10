@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A parking lot or other parking facility.
 @Schema(description: r'''A parking lot or other parking facility.''')
 @JsonSerializable(explicitToJson: true)
-final class ParkingFacility extends CivicStructure with EquatableMixin {
+base class ParkingFacility extends CivicStructure {
 
   const ParkingFacility({
     super.openingHours,

@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The act of producing/preparing food.
 @Schema(description: r'''The act of producing/preparing food.''')
 @JsonSerializable(explicitToJson: true)
-final class CookAction extends CreateAction with EquatableMixin {
+base class CookAction extends CreateAction {
 
   /// A sub property of location. The specific food establishment where the action occurred.
   @Field(name: 'foodEstablishment', description: r'''A sub property of location. The specific food establishment where the action occurred.''')

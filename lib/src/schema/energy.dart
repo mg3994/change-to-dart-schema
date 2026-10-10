@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Properties that take Energy as values are of the form '&lt;Number&gt; &lt;Energy unit of measure&gt;'.
 @Schema(description: r'''Properties that take Energy as values are of the form '&lt;Number&gt; &lt;Energy unit of measure&gt;'.''')
 @JsonSerializable(explicitToJson: true)
-final class Energy extends Quantity with EquatableMixin {
+base class Energy extends Quantity {
 
   const Energy({
   });

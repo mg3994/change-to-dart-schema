@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A service provided by a government organization, e.g. food stamps, veterans benefits, etc.
 @Schema(description: r'''A service provided by a government organization, e.g. food stamps, veterans benefits, etc.''')
 @JsonSerializable(explicitToJson: true)
-final class GovernmentService extends Service with EquatableMixin {
+base class GovernmentService extends Service {
 
   /// Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
   @Field(name: 'jurisdiction', description: r'''Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.''')

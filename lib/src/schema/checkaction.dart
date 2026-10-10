@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An agent inspects, determines, investigates, inquires, or examines an object's accuracy, quality, condition, or state.
 @Schema(description: r'''An agent inspects, determines, investigates, inquires, or examines an object's accuracy, quality, condition, or state.''')
 @JsonSerializable(explicitToJson: true)
-final class CheckAction extends FindAction with EquatableMixin {
+base class CheckAction extends FindAction {
 
   const CheckAction({
     super.actionProcess,

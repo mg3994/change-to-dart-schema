@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A store that sells materials useful or necessary for various hobbies.
 @Schema(description: r'''A store that sells materials useful or necessary for various hobbies.''')
 @JsonSerializable(explicitToJson: true)
-final class HobbyShop extends Store with EquatableMixin {
+base class HobbyShop extends Store {
 
   const HobbyShop({
     super.branchOf,
@@ -107,38 +107,6 @@ final class HobbyShop extends Store with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.amenityFeature,
-    super.branchCode,
-    super.containedIn,
-    super.containedInPlace,
-    super.containsPlace,
-    super.geo,
-    super.geoContains,
-    super.geoCoveredBy,
-    super.geoCovers,
-    super.geoCrosses,
-    super.geoDisjoint,
-    super.geoEquals,
-    super.geoIntersects,
-    super.geoOverlaps,
-    super.geoTouches,
-    super.geoWithin,
-    super.hasDriveThroughService,
-    super.hasMap,
-    super.isAccessibleForFree,
-    super.latitude,
-    super.longitude,
-    super.map,
-    super.maps,
-    super.maximumAttendeeCapacity,
-    super.openingHoursSpecification,
-    super.photo,
-    super.photos,
-    super.publicAccess,
-    super.smokingAllowed,
-    super.specialOpeningHoursSpecification,
-    super.tourBookingPage,
   });
 
   @override

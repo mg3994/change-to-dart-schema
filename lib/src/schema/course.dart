@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A description of an educational course which may be offered as distinct instances which take place at different times or take place at different locations, or be offered through different media or modes of study. An educational course is a sequence of one or more educational events and/or creative works which aims to build knowledge, competence or ability of learners.
 @Schema(description: r'''A description of an educational course which may be offered as distinct instances which take place at different times or take place at different locations, or be offered through different media or modes of study. An educational course is a sequence of one or more educational events and/or creative works which aims to build knowledge, competence or ability of learners.''')
 @JsonSerializable(explicitToJson: true)
-final class Course extends CreativeWork with EquatableMixin {
+base class Course extends CreativeWork {
 
   /// A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
   @Field(name: 'availableLanguage', description: r'''A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].''')
@@ -189,7 +189,6 @@ final class Course extends CreativeWork with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.competencyRequired,
     this.availableLanguage,
     this.courseCode,
     this.coursePrerequisites,

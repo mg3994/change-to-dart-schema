@@ -13,7 +13,7 @@ import '../../schemaorg.dart';
       definitions used as the source here.
       ''')
 @JsonSerializable(explicitToJson: true)
-final class CDCPMDRecord extends StructuredValue with EquatableMixin {
+base class CDCPMDRecord extends StructuredValue {
 
   /// collectiondate - Date for which patient counts are reported.
   @Field(name: 'cvdCollectionDate', description: r'''collectiondate - Date for which patient counts are reported.''')

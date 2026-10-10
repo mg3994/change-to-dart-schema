@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The geographic coordinates of a place or event.
 @Schema(description: r'''The geographic coordinates of a place or event.''')
 @JsonSerializable(explicitToJson: true)
-final class GeoCoordinates extends StructuredValue with EquatableMixin {
+base class GeoCoordinates extends StructuredValue {
 
   /// Physical address of the item.
   @Field(name: 'address', description: r'''Physical address of the item.''')

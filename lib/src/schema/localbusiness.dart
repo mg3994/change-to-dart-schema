@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.
 @Schema(description: r'''A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class LocalBusiness extends Organization with EquatableMixin {
+base class LocalBusiness extends Organization {
 
   /// The larger organization that this local business is a branch of, if any. Not to be confused with (anatomical) [[branch]].
   @Field(name: 'branchOf', description: r'''The larger organization that this local business is a branch of, if any. Not to be confused with (anatomical) [[branch]].''')
@@ -140,38 +140,6 @@ abstract base class LocalBusiness extends Organization with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.additionalProperty,
-    super.amenityFeature,
-    super.branchCode,
-    super.containedIn,
-    super.containedInPlace,
-    super.containsPlace,
-    super.geo,
-    super.geoContains,
-    super.geoCoveredBy,
-    super.geoCovers,
-    super.geoCrosses,
-    super.geoDisjoint,
-    super.geoEquals,
-    super.geoIntersects,
-    super.geoOverlaps,
-    super.geoTouches,
-    super.geoWithin,
-    super.hasDriveThroughService,
-    super.hasMap,
-    super.isAccessibleForFree,
-    super.latitude,
-    super.longitude,
-    super.map,
-    super.maps,
-    super.maximumAttendeeCapacity,
-    super.openingHoursSpecification,
-    super.photo,
-    super.photos,
-    super.publicAccess,
-    super.smokingAllowed,
-    super.specialOpeningHoursSpecification,
-    super.tourBookingPage,
     this.branchOf,
     this.currenciesAccepted,
     this.floorLevel,

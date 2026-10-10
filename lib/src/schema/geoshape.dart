@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// The geographic shape of a place. A GeoShape can be described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.
 @Schema(description: r'''The geographic shape of a place. A GeoShape can be described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.''')
 @JsonSerializable(explicitToJson: true)
-abstract base class GeoShape extends StructuredValue with EquatableMixin {
+base class GeoShape extends StructuredValue {
 
   /// Physical address of the item.
   @Field(name: 'address', description: r'''Physical address of the item.''')

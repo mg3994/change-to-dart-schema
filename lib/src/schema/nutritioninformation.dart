@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// Nutritional information about the recipe.
 @Schema(description: r'''Nutritional information about the recipe.''')
 @JsonSerializable(explicitToJson: true)
-final class NutritionInformation extends StructuredValue with EquatableMixin {
+base class NutritionInformation extends StructuredValue {
 
   /// The number of calories.
   @Field(name: 'calories', description: r'''The number of calories.''')

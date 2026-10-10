@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A Service to transfer funds from a person or organization to a beneficiary person or organization.
 @Schema(description: r'''A Service to transfer funds from a person or organization to a beneficiary person or organization.''')
 @JsonSerializable(explicitToJson: true)
-final class PaymentService extends FinancialProduct with EquatableMixin {
+base class PaymentService extends FinancialProduct {
 
   const PaymentService({
     super.annualPercentageRate,
@@ -51,7 +51,6 @@ final class PaymentService extends FinancialProduct with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.paymentMethodType,
   });
 
   @override

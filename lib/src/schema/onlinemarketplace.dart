@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An eCommerce marketplace.
 @Schema(description: r'''An eCommerce marketplace.''')
 @JsonSerializable(explicitToJson: true)
-final class OnlineMarketplace extends OnlineStore with EquatableMixin {
+base class OnlineMarketplace extends OnlineStore {
 
   /// An eCommerce store part of an online marketplace.
   @Field(name: 'hasStore', description: r'''An eCommerce store part of an online marketplace.''')

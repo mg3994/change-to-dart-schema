@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A zoo.
 @Schema(description: r'''A zoo.''')
 @JsonSerializable(explicitToJson: true)
-final class Zoo extends CivicStructure with EquatableMixin {
+base class Zoo extends CivicStructure {
 
   const Zoo({
     super.openingHours,

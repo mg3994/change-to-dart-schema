@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A video game is an electronic game that involves human interaction with a user interface to generate visual feedback on a video device.
 @Schema(description: r'''A video game is an electronic game that involves human interaction with a user interface to generate visual feedback on a video device.''')
 @JsonSerializable(explicitToJson: true)
-final class VideoGame extends Game with EquatableMixin {
+base class VideoGame extends Game {
 
   /// An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
   @Field(name: 'actor', description: r'''An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.''')
@@ -204,31 +204,6 @@ final class VideoGame extends Game with EquatableMixin {
     super.sameAs,
     super.subjectOf,
     super.url,
-    super.applicationCategory,
-    super.applicationSubCategory,
-    super.applicationSuite,
-    super.availableOnDevice,
-    super.countriesNotSupported,
-    super.countriesSupported,
-    super.device,
-    super.downloadUrl,
-    super.featureList,
-    super.fileSize,
-    super.installUrl,
-    super.memoryRequirements,
-    super.operatingSystem,
-    super.permissions,
-    super.processorRequirements,
-    super.releaseNotes,
-    super.requirements,
-    super.runtimePlatform,
-    super.screenshot,
-    super.softwareAddOn,
-    super.softwareHelp,
-    super.softwareRequirements,
-    super.softwareVersion,
-    super.storageRequirements,
-    super.supportingData,
     this.actor,
     this.actors,
     this.cheatCode,

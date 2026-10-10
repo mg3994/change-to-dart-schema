@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A file containing a note, primarily for the author.
 @Schema(description: r'''A file containing a note, primarily for the author.''')
 @JsonSerializable(explicitToJson: true)
-final class NoteDigitalDocument extends DigitalDocument with EquatableMixin {
+base class NoteDigitalDocument extends DigitalDocument {
 
   const NoteDigitalDocument({
     super.hasDigitalDocumentPermission,

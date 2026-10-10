@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A US-style health insurance plan network.
 @Schema(description: r'''A US-style health insurance plan network.''')
 @JsonSerializable(explicitToJson: true)
-final class HealthPlanNetwork extends Intangible with EquatableMixin {
+base class HealthPlanNetwork extends Intangible {
 
   /// The costs to the patient for services under this network or formulary.
   @Field(name: 'healthPlanCostSharing', description: r'''The costs to the patient for services under this network or formulary.''')

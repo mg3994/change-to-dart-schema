@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// An agent orders a (not yet released) object/product/service to be delivered/sent.
 @Schema(description: r'''An agent orders a (not yet released) object/product/service to be delivered/sent.''')
 @JsonSerializable(explicitToJson: true)
-final class PreOrderAction extends TradeAction with EquatableMixin {
+base class PreOrderAction extends TradeAction {
 
   const PreOrderAction({
     super.price,

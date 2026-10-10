@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A [[comment]] that corrects [[CreativeWork]].
 @Schema(description: r'''A [[comment]] that corrects [[CreativeWork]].''')
 @JsonSerializable(explicitToJson: true)
-final class CorrectionComment extends Comment with EquatableMixin {
+base class CorrectionComment extends Comment {
 
   const CorrectionComment({
     super.downvoteCount,

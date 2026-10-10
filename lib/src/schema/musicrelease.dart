@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A MusicRelease is a specific release of a music album.
 @Schema(description: r'''A MusicRelease is a specific release of a music album.''')
 @JsonSerializable(explicitToJson: true)
-final class MusicRelease extends MusicPlaylist with EquatableMixin {
+base class MusicRelease extends MusicPlaylist {
 
   /// The catalog number for the release.
   @Field(name: 'catalogNumber', description: r'''The catalog number for the release.''')

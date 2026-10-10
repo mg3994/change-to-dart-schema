@@ -7,7 +7,7 @@ import '../../schemaorg.dart';
 /// A medical procedure involving an incision with instruments; performed for diagnose, or therapeutic purposes.
 @Schema(description: r'''A medical procedure involving an incision with instruments; performed for diagnose, or therapeutic purposes.''')
 @JsonSerializable(explicitToJson: true)
-final class SurgicalProcedure extends MedicalProcedure with EquatableMixin {
+base class SurgicalProcedure extends MedicalProcedure {
 
   const SurgicalProcedure({
     super.bodyLocation,
