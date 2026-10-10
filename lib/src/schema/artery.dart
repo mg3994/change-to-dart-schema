@@ -1,0 +1,33 @@
+// Generated file. Do not edit directly.
+import 'package:equatable/equatable.dart';
+import 'package:schemantic/schemantic.dart';
+import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
+
+/// A type of blood vessel that specifically carries blood away from the heart.
+@Schema(description: r'''A type of blood vessel that specifically carries blood away from the heart.''')
+@JsonSerializable(explicitToJson: true)
+final class Artery extends Vessel with EquatableMixin {
+
+  /// The branches that comprise the arterial structure.
+  @Field(name: 'arterialBranch', description: r'''The branches that comprise the arterial structure.''')
+  @JsonKey(name: 'arterialBranch')
+  final AnatomicalStructure? arterialBranch;
+
+  /// The area to which the artery supplies blood.
+  @Field(name: 'supplyTo', description: r'''The area to which the artery supplies blood.''')
+  @JsonKey(name: 'supplyTo')
+  final AnatomicalStructure? supplyTo;
+
+  const Artery({
+    this.arterialBranch,
+    this.supplyTo,
+  });
+
+  @override
+  List<Object?> get props => [
+    ...super.props,
+    arterialBranch,
+    supplyTo,
+  ];
+}

@@ -1,0 +1,26 @@
+// Generated file. Do not edit directly.
+import 'package:equatable/equatable.dart';
+import 'package:schemantic/schemantic.dart';
+import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
+
+/// Lists or enumerations—for example, a list of cuisines or music genres, etc.
+@Schema(description: r'''Lists or enumerations—for example, a list of cuisines or music genres, etc.''')
+@JsonSerializable(explicitToJson: true)
+abstract base class Enumeration extends Intangible with EquatableMixin {
+
+  /// Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
+  @Field(name: 'supersededBy', description: r'''Relates a term (i.e. a property, class or enumeration) to one that supersedes it.''')
+  @JsonKey(name: 'supersededBy')
+  final Object? supersededBy;
+
+  const Enumeration({
+    this.supersededBy,
+  });
+
+  @override
+  List<Object?> get props => [
+    ...super.props,
+    supersededBy,
+  ];
+}

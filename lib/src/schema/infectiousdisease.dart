@@ -1,0 +1,40 @@
+// Generated file. Do not edit directly.
+import 'package:equatable/equatable.dart';
+import 'package:schemantic/schemantic.dart';
+import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
+
+/// An infectious disease is a clinically evident human disease resulting from the presence of pathogenic microbial agents, like pathogenic viruses, pathogenic bacteria, fungi, protozoa, multicellular parasites, and prions. To be considered an infectious disease, such pathogens are known to be able to cause this disease.
+@Schema(description: r'''An infectious disease is a clinically evident human disease resulting from the presence of pathogenic microbial agents, like pathogenic viruses, pathogenic bacteria, fungi, protozoa, multicellular parasites, and prions. To be considered an infectious disease, such pathogens are known to be able to cause this disease.''')
+@JsonSerializable(explicitToJson: true)
+final class InfectiousDisease extends MedicalCondition with EquatableMixin {
+
+  /// The actual infectious agent, such as a specific bacterium.
+  @Field(name: 'infectiousAgent', description: r'''The actual infectious agent, such as a specific bacterium.''')
+  @JsonKey(name: 'infectiousAgent')
+  final String? infectiousAgent;
+
+  /// The class of infectious agent (bacteria, prion, etc.) that causes the disease.
+  @Field(name: 'infectiousAgentClass', description: r'''The class of infectious agent (bacteria, prion, etc.) that causes the disease.''')
+  @JsonKey(name: 'infectiousAgentClass')
+  final InfectiousAgentClass? infectiousAgentClass;
+
+  /// How the disease spreads, either as a route or vector, for example 'direct contact', 'Aedes aegypti', etc.
+  @Field(name: 'transmissionMethod', description: r'''How the disease spreads, either as a route or vector, for example 'direct contact', 'Aedes aegypti', etc.''')
+  @JsonKey(name: 'transmissionMethod')
+  final String? transmissionMethod;
+
+  const InfectiousDisease({
+    this.infectiousAgent,
+    this.infectiousAgentClass,
+    this.transmissionMethod,
+  });
+
+  @override
+  List<Object?> get props => [
+    ...super.props,
+    infectiousAgent,
+    infectiousAgentClass,
+    transmissionMethod,
+  ];
+}

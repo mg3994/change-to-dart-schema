@@ -1,0 +1,40 @@
+// Generated file. Do not edit directly.
+import 'package:equatable/equatable.dart';
+import 'package:schemantic/schemantic.dart';
+import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
+
+/// A product or service offered by a bank whereby one may deposit, withdraw or transfer money and in some cases be paid interest.
+@Schema(description: r'''A product or service offered by a bank whereby one may deposit, withdraw or transfer money and in some cases be paid interest.''')
+@JsonSerializable(explicitToJson: true)
+abstract base class BankAccount extends FinancialProduct with EquatableMixin {
+
+  /// A minimum amount that has to be paid in every month.
+  @Field(name: 'accountMinimumInflow', description: r'''A minimum amount that has to be paid in every month.''')
+  @JsonKey(name: 'accountMinimumInflow')
+  final MonetaryAmount? accountMinimumInflow;
+
+  /// An overdraft is an extension of credit from a lending institution when an account reaches zero. An overdraft allows the individual to continue withdrawing money even if the account has no funds in it. Basically the bank allows people to borrow a set amount of money.
+  @Field(name: 'accountOverdraftLimit', description: r'''An overdraft is an extension of credit from a lending institution when an account reaches zero. An overdraft allows the individual to continue withdrawing money even if the account has no funds in it. Basically the bank allows people to borrow a set amount of money.''')
+  @JsonKey(name: 'accountOverdraftLimit')
+  final MonetaryAmount? accountOverdraftLimit;
+
+  /// The type of a bank account.
+  @Field(name: 'bankAccountType', description: r'''The type of a bank account.''')
+  @JsonKey(name: 'bankAccountType')
+  final Object? bankAccountType;
+
+  const BankAccount({
+    this.accountMinimumInflow,
+    this.accountOverdraftLimit,
+    this.bankAccountType,
+  });
+
+  @override
+  List<Object?> get props => [
+    ...super.props,
+    accountMinimumInflow,
+    accountOverdraftLimit,
+    bankAccountType,
+  ];
+}

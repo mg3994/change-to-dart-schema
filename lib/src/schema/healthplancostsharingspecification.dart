@@ -1,0 +1,54 @@
+// Generated file. Do not edit directly.
+import 'package:equatable/equatable.dart';
+import 'package:schemantic/schemantic.dart';
+import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
+
+/// A description of costs to the patient under a given network or formulary.
+@Schema(description: r'''A description of costs to the patient under a given network or formulary.''')
+@JsonSerializable(explicitToJson: true)
+final class HealthPlanCostSharingSpecification extends Intangible with EquatableMixin {
+
+  /// Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
+  @Field(name: 'healthPlanCoinsuranceOption', description: r'''Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?''')
+  @JsonKey(name: 'healthPlanCoinsuranceOption')
+  final String? healthPlanCoinsuranceOption;
+
+  /// The rate of coinsurance expressed as a number between 0.0 and 1.0.
+  @Field(name: 'healthPlanCoinsuranceRate', description: r'''The rate of coinsurance expressed as a number between 0.0 and 1.0.''')
+  @JsonKey(name: 'healthPlanCoinsuranceRate')
+  final num? healthPlanCoinsuranceRate;
+
+  /// The copay amount.
+  @Field(name: 'healthPlanCopay', description: r'''The copay amount.''')
+  @JsonKey(name: 'healthPlanCopay')
+  final PriceSpecification? healthPlanCopay;
+
+  /// Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
+  @Field(name: 'healthPlanCopayOption', description: r'''Whether the copay is before or after deductible, etc. TODO: Is this a closed set?''')
+  @JsonKey(name: 'healthPlanCopayOption')
+  final String? healthPlanCopayOption;
+
+  /// The category or type of pharmacy associated with this cost sharing.
+  @Field(name: 'healthPlanPharmacyCategory', description: r'''The category or type of pharmacy associated with this cost sharing.''')
+  @JsonKey(name: 'healthPlanPharmacyCategory')
+  final String? healthPlanPharmacyCategory;
+
+  const HealthPlanCostSharingSpecification({
+    this.healthPlanCoinsuranceOption,
+    this.healthPlanCoinsuranceRate,
+    this.healthPlanCopay,
+    this.healthPlanCopayOption,
+    this.healthPlanPharmacyCategory,
+  });
+
+  @override
+  List<Object?> get props => [
+    ...super.props,
+    healthPlanCoinsuranceOption,
+    healthPlanCoinsuranceRate,
+    healthPlanCopay,
+    healthPlanCopayOption,
+    healthPlanPharmacyCategory,
+  ];
+}

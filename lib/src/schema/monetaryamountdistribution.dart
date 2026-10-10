@@ -1,0 +1,28 @@
+// Generated file. Do not edit directly.
+import 'package:equatable/equatable.dart';
+import 'package:schemantic/schemantic.dart';
+import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
+
+/// A statistical distribution of monetary amounts.
+@Schema(description: r'''A statistical distribution of monetary amounts.''')
+@JsonSerializable(explicitToJson: true)
+final class MonetaryAmountDistribution extends QuantitativeValueDistribution with EquatableMixin {
+
+  /// The currency in which the monetary amount is expressed.
+///
+/// Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+  @Field(name: 'currency', description: r'''The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".''')
+  @JsonKey(name: 'currency')
+  final String? currency;
+
+  const MonetaryAmountDistribution({
+    this.currency,
+  });
+
+  @override
+  List<Object?> get props => [
+    ...super.props,
+    currency,
+  ];
+}

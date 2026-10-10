@@ -1,0 +1,47 @@
+// Generated file. Do not edit directly.
+import 'package:equatable/equatable.dart';
+import 'package:schemantic/schemantic.dart';
+import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
+
+/// A payment method using a credit, debit, store or other card to associate the payment with an account.
+@Schema(description: r'''A payment method using a credit, debit, store or other card to associate the payment with an account.''')
+@JsonSerializable(explicitToJson: true)
+abstract base class PaymentCard extends FinancialProduct with EquatableMixin {
+
+  /// A cardholder benefit that pays the cardholder a small percentage of their net expenditures.
+  @Field(name: 'cashBack', description: r'''A cardholder benefit that pays the cardholder a small percentage of their net expenditures.''')
+  @JsonKey(name: 'cashBack')
+  final Object? cashBack;
+
+  /// A secure method for consumers to purchase products or services via debit, credit or smartcards by using RFID or NFC technology.
+  @Field(name: 'contactlessPayment', description: r'''A secure method for consumers to purchase products or services via debit, credit or smartcards by using RFID or NFC technology.''')
+  @JsonKey(name: 'contactlessPayment')
+  final bool? contactlessPayment;
+
+  /// A floor limit is the amount of money above which credit card transactions must be authorized.
+  @Field(name: 'floorLimit', description: r'''A floor limit is the amount of money above which credit card transactions must be authorized.''')
+  @JsonKey(name: 'floorLimit')
+  final MonetaryAmount? floorLimit;
+
+  /// The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month.
+  @Field(name: 'monthlyMinimumRepaymentAmount', description: r'''The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month.''')
+  @JsonKey(name: 'monthlyMinimumRepaymentAmount')
+  final Object? monthlyMinimumRepaymentAmount;
+
+  const PaymentCard({
+    this.cashBack,
+    this.contactlessPayment,
+    this.floorLimit,
+    this.monthlyMinimumRepaymentAmount,
+  });
+
+  @override
+  List<Object?> get props => [
+    ...super.props,
+    cashBack,
+    contactlessPayment,
+    floorLimit,
+    monthlyMinimumRepaymentAmount,
+  ];
+}

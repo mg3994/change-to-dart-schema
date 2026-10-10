@@ -1,0 +1,19 @@
+// Generated file. Do not edit directly.
+import 'package:equatable/equatable.dart';
+import 'package:schemantic/schemantic.dart';
+import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
+
+/// A Series in schema.org is a group of related items, typically but not necessarily of the same kind. See also [[CreativeWorkSeries]], [[EventSeries]].
+@Schema(description: r'''A Series in schema.org is a group of related items, typically but not necessarily of the same kind. See also [[CreativeWorkSeries]], [[EventSeries]].''')
+@JsonSerializable(explicitToJson: true)
+abstract base class Series extends Intangible with EquatableMixin {
+
+  const Series({
+  });
+
+  @override
+  List<Object?> get props => [
+    ...super.props,
+  ];
+}

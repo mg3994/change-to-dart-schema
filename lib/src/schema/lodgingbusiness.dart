@@ -1,0 +1,77 @@
+// Generated file. Do not edit directly.
+import 'package:equatable/equatable.dart';
+import 'package:schemantic/schemantic.dart';
+import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
+
+/// A lodging business, such as a motel, hotel, or inn.
+@Schema(description: r'''A lodging business, such as a motel, hotel, or inn.''')
+@JsonSerializable(explicitToJson: true)
+abstract base class LodgingBusiness extends LocalBusiness with EquatableMixin {
+
+  /// An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+  @Field(name: 'amenityFeature', description: r'''An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.''')
+  @JsonKey(name: 'amenityFeature')
+  final LocationFeatureSpecification? amenityFeature;
+
+  /// An intended audience, i.e. a group for whom something was created.
+  @Field(name: 'audience', description: r'''An intended audience, i.e. a group for whom something was created.''')
+  @JsonKey(name: 'audience')
+  final Audience? audience;
+
+  /// A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+  @Field(name: 'availableLanguage', description: r'''A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].''')
+  @JsonKey(name: 'availableLanguage')
+  final Object? availableLanguage;
+
+  /// The earliest someone may check into a lodging establishment.
+  @Field(name: 'checkinTime', description: r'''The earliest someone may check into a lodging establishment.''')
+  @JsonKey(name: 'checkinTime')
+  final Object? checkinTime;
+
+  /// The latest someone may check out of a lodging establishment.
+  @Field(name: 'checkoutTime', description: r'''The latest someone may check out of a lodging establishment.''')
+  @JsonKey(name: 'checkoutTime')
+  final Object? checkoutTime;
+
+  /// The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+/// Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+  @Field(name: 'numberOfRooms', description: r'''The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.''')
+  @JsonKey(name: 'numberOfRooms')
+  final Object? numberOfRooms;
+
+  /// Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+  @Field(name: 'petsAllowed', description: r'''Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.''')
+  @JsonKey(name: 'petsAllowed')
+  final Object? petsAllowed;
+
+  /// An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
+  @Field(name: 'starRating', description: r'''An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).''')
+  @JsonKey(name: 'starRating')
+  final Rating? starRating;
+
+  const LodgingBusiness({
+    this.amenityFeature,
+    this.audience,
+    this.availableLanguage,
+    this.checkinTime,
+    this.checkoutTime,
+    this.numberOfRooms,
+    this.petsAllowed,
+    this.starRating,
+  });
+
+  @override
+  List<Object?> get props => [
+    ...super.props,
+    amenityFeature,
+    audience,
+    availableLanguage,
+    checkinTime,
+    checkoutTime,
+    numberOfRooms,
+    petsAllowed,
+    starRating,
+  ];
+}

@@ -1,0 +1,47 @@
+// Generated file. Do not edit directly.
+import 'package:equatable/equatable.dart';
+import 'package:schemantic/schemantic.dart';
+import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
+
+/// An over the air or online broadcast event.
+@Schema(description: r'''An over the air or online broadcast event.''')
+@JsonSerializable(explicitToJson: true)
+final class BroadcastEvent extends PublicationEvent with EquatableMixin {
+
+  /// The event being broadcast such as a sporting event or awards ceremony.
+  @Field(name: 'broadcastOfEvent', description: r'''The event being broadcast such as a sporting event or awards ceremony.''')
+  @JsonKey(name: 'broadcastOfEvent')
+  final Event? broadcastOfEvent;
+
+  /// True if the broadcast is of a live event.
+  @Field(name: 'isLiveBroadcast', description: r'''True if the broadcast is of a live event.''')
+  @JsonKey(name: 'isLiveBroadcast')
+  final bool? isLiveBroadcast;
+
+  /// Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+  @Field(name: 'subtitleLanguage', description: r'''Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).''')
+  @JsonKey(name: 'subtitleLanguage')
+  final Object? subtitleLanguage;
+
+  /// The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
+  @Field(name: 'videoFormat', description: r'''The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).''')
+  @JsonKey(name: 'videoFormat')
+  final String? videoFormat;
+
+  const BroadcastEvent({
+    this.broadcastOfEvent,
+    this.isLiveBroadcast,
+    this.subtitleLanguage,
+    this.videoFormat,
+  });
+
+  @override
+  List<Object?> get props => [
+    ...super.props,
+    broadcastOfEvent,
+    isLiveBroadcast,
+    subtitleLanguage,
+    videoFormat,
+  ];
+}

@@ -1,0 +1,33 @@
+// Generated file. Do not edit directly.
+import 'package:equatable/equatable.dart';
+import 'package:schemantic/schemantic.dart';
+import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
+
+/// The act of authoring written creative content.
+@Schema(description: r'''The act of authoring written creative content.''')
+@JsonSerializable(explicitToJson: true)
+final class WriteAction extends CreateAction with EquatableMixin {
+
+  /// The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+  @Field(name: 'inLanguage', description: r'''The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].''')
+  @JsonKey(name: 'inLanguage')
+  final Object? inLanguage;
+
+  /// A sub property of instrument. The language used on this action.
+  @Field(name: 'language', description: r'''A sub property of instrument. The language used on this action.''')
+  @JsonKey(name: 'language')
+  final Language? language;
+
+  const WriteAction({
+    this.inLanguage,
+    this.language,
+  });
+
+  @override
+  List<Object?> get props => [
+    ...super.props,
+    inLanguage,
+    language,
+  ];
+}

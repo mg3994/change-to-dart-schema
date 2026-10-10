@@ -1,0 +1,33 @@
+// Generated file. Do not edit directly.
+import 'package:equatable/equatable.dart';
+import 'package:schemantic/schemantic.dart';
+import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
+
+/// A Role that represents a Web link, e.g. as expressed via the 'url' property. Its linkRelationship property can indicate URL-based and plain textual link types, e.g. those in IANA link registry or others such as 'amphtml'. This structure provides a placeholder where details from HTML's link element can be represented outside of HTML, e.g. in JSON-LD feeds.
+@Schema(description: r'''A Role that represents a Web link, e.g. as expressed via the 'url' property. Its linkRelationship property can indicate URL-based and plain textual link types, e.g. those in IANA link registry or others such as 'amphtml'. This structure provides a placeholder where details from HTML's link element can be represented outside of HTML, e.g. in JSON-LD feeds.''')
+@JsonSerializable(explicitToJson: true)
+final class LinkRole extends Role with EquatableMixin {
+
+  /// The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+  @Field(name: 'inLanguage', description: r'''The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].''')
+  @JsonKey(name: 'inLanguage')
+  final Object? inLanguage;
+
+  /// Indicates the relationship type of a Web link.
+  @Field(name: 'linkRelationship', description: r'''Indicates the relationship type of a Web link. ''')
+  @JsonKey(name: 'linkRelationship')
+  final String? linkRelationship;
+
+  const LinkRole({
+    this.inLanguage,
+    this.linkRelationship,
+  });
+
+  @override
+  List<Object?> get props => [
+    ...super.props,
+    inLanguage,
+    linkRelationship,
+  ];
+}

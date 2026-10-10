@@ -1,0 +1,46 @@
+// Generated file. Do not edit directly.
+import 'package:equatable/equatable.dart';
+import 'package:schemantic/schemantic.dart';
+import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
+
+/// A reservation to dine at a food-related business.
+///
+/// Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
+@Schema(description: r'''A reservation to dine at a food-related business.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.''')
+@JsonSerializable(explicitToJson: true)
+final class FoodEstablishmentReservation extends Reservation with EquatableMixin {
+
+  /// The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.
+///
+/// Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+  @Field(name: 'endTime', description: r'''The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.''')
+  @JsonKey(name: 'endTime')
+  final Object? endTime;
+
+  /// Number of people the reservation should accommodate.
+  @Field(name: 'partySize', description: r'''Number of people the reservation should accommodate.''')
+  @JsonKey(name: 'partySize')
+  final Object? partySize;
+
+  /// The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.
+///
+/// Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+  @Field(name: 'startTime', description: r'''The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.''')
+  @JsonKey(name: 'startTime')
+  final Object? startTime;
+
+  const FoodEstablishmentReservation({
+    this.endTime,
+    this.partySize,
+    this.startTime,
+  });
+
+  @override
+  List<Object?> get props => [
+    ...super.props,
+    endTime,
+    partySize,
+    startTime,
+  ];
+}

@@ -1,0 +1,26 @@
+// Generated file. Do not edit directly.
+import 'package:equatable/equatable.dart';
+import 'package:schemantic/schemantic.dart';
+import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
+
+/// The legal availability status of a medical drug.
+@Schema(description: r'''The legal availability status of a medical drug.''')
+@JsonSerializable(explicitToJson: true)
+final class DrugLegalStatus extends MedicalIntangible with EquatableMixin {
+
+  /// The location in which the status applies.
+  @Field(name: 'applicableLocation', description: r'''The location in which the status applies.''')
+  @JsonKey(name: 'applicableLocation')
+  final AdministrativeArea? applicableLocation;
+
+  const DrugLegalStatus({
+    this.applicableLocation,
+  });
+
+  @override
+  List<Object?> get props => [
+    ...super.props,
+    applicableLocation,
+  ];
+}

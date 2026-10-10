@@ -1,0 +1,113 @@
+// Generated file. Do not edit directly.
+import 'package:equatable/equatable.dart';
+import 'package:schemantic/schemantic.dart';
+import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
+
+/// ShippingConditions represent a set of constraints and information about the conditions of shipping a product. Such conditions may apply to only a subset of the products being shipped, depending on aspects of the product like weight, size, price, destination, and others. All the specified conditions must be met for this ShippingConditions to apply.
+@Schema(description: r'''ShippingConditions represent a set of constraints and information about the conditions of shipping a product. Such conditions may apply to only a subset of the products being shipped, depending on aspects of the product like weight, size, price, destination, and others. All the specified conditions must be met for this ShippingConditions to apply.''')
+@JsonSerializable(explicitToJson: true)
+final class ShippingConditions extends StructuredValue with EquatableMixin {
+
+  /// The depth of the item.
+  @Field(name: 'depth', description: r'''The depth of the item.''')
+  @JsonKey(name: 'depth')
+  final Object? depth;
+
+  /// Indicates when shipping to a particular [[shippingDestination]] is not available.
+  @Field(name: 'doesNotShip', description: r'''Indicates when shipping to a particular [[shippingDestination]] is not available.''')
+  @JsonKey(name: 'doesNotShip')
+  final bool? doesNotShip;
+
+  /// The height of the item.
+  @Field(name: 'height', description: r'''The height of the item.''')
+  @JsonKey(name: 'height')
+  final Object? height;
+
+  /// Limits the number of items being shipped for which these conditions apply.
+  @Field(name: 'numItems', description: r'''Limits the number of items being shipped for which these conditions apply.''')
+  @JsonKey(name: 'numItems')
+  final QuantitativeValue? numItems;
+
+  /// Minimum and maximum order value for which these shipping conditions are valid.
+  @Field(name: 'orderValue', description: r'''Minimum and maximum order value for which these shipping conditions are valid.''')
+  @JsonKey(name: 'orderValue')
+  final MonetaryAmount? orderValue;
+
+  /// Limited period during which these shipping conditions apply.
+  @Field(name: 'seasonalOverride', description: r'''Limited period during which these shipping conditions apply.''')
+  @JsonKey(name: 'seasonalOverride')
+  final OpeningHoursSpecification? seasonalOverride;
+
+  /// indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.
+  @Field(name: 'shippingDestination', description: r'''indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.''')
+  @JsonKey(name: 'shippingDestination')
+  final DefinedRegion? shippingDestination;
+
+  /// Indicates the origin of a shipment, i.e. where it should be coming from.
+  @Field(name: 'shippingOrigin', description: r'''Indicates the origin of a shipment, i.e. where it should be coming from.''')
+  @JsonKey(name: 'shippingOrigin')
+  final DefinedRegion? shippingOrigin;
+
+  /// The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
+  @Field(name: 'shippingRate', description: r'''The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.''')
+  @JsonKey(name: 'shippingRate')
+  final Object? shippingRate;
+
+  /// The typical delay the order has been sent for delivery and the goods reach the final customer.
+///
+/// In the context of [[ShippingDeliveryTime]], use the [[QuantitativeValue]]. Typical properties: minValue, maxValue, unitCode (d for DAY).
+///
+/// In the context of [[ShippingConditions]], use the [[ServicePeriod]]. It has a duration (as a [[QuantitativeValue]]) and also business days and a cut-off time.
+///
+  @Field(name: 'transitTime', description: r'''The typical delay the order has been sent for delivery and the goods reach the final customer.
+
+  In the context of [[ShippingDeliveryTime]], use the [[QuantitativeValue]]. Typical properties: minValue, maxValue, unitCode (d for DAY).
+
+  In the context of [[ShippingConditions]], use the [[ServicePeriod]]. It has a duration (as a [[QuantitativeValue]]) and also business days and a cut-off time.
+''')
+  @JsonKey(name: 'transitTime')
+  final Object? transitTime;
+
+  /// The weight of the product or person.
+  @Field(name: 'weight', description: r'''The weight of the product or person.''')
+  @JsonKey(name: 'weight')
+  final Object? weight;
+
+  /// The width of the item.
+  @Field(name: 'width', description: r'''The width of the item.''')
+  @JsonKey(name: 'width')
+  final Object? width;
+
+  const ShippingConditions({
+    this.depth,
+    this.doesNotShip,
+    this.height,
+    this.numItems,
+    this.orderValue,
+    this.seasonalOverride,
+    this.shippingDestination,
+    this.shippingOrigin,
+    this.shippingRate,
+    this.transitTime,
+    this.weight,
+    this.width,
+  });
+
+  @override
+  List<Object?> get props => [
+    ...super.props,
+    depth,
+    doesNotShip,
+    height,
+    numItems,
+    orderValue,
+    seasonalOverride,
+    shippingDestination,
+    shippingOrigin,
+    shippingRate,
+    transitTime,
+    weight,
+    width,
+  ];
+}

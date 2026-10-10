@@ -1,0 +1,96 @@
+// Generated file. Do not edit directly.
+import 'package:equatable/equatable.dart';
+import 'package:schemantic/schemantic.dart';
+import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
+
+/// A News/Media organization such as a newspaper or TV station.
+@Schema(description: r'''A News/Media organization such as a newspaper or TV station.''')
+@JsonSerializable(explicitToJson: true)
+final class NewsMediaOrganization extends Organization with EquatableMixin {
+
+  /// For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
+  @Field(name: 'actionableFeedbackPolicy', description: r'''For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.''')
+  @JsonKey(name: 'actionableFeedbackPolicy')
+  final Object? actionableFeedbackPolicy;
+
+  /// For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
+  @Field(name: 'correctionsPolicy', description: r'''For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.''')
+  @JsonKey(name: 'correctionsPolicy')
+  final Object? correctionsPolicy;
+
+  /// Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+  @Field(name: 'diversityPolicy', description: r'''Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.''')
+  @JsonKey(name: 'diversityPolicy')
+  final Object? diversityPolicy;
+
+  /// For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
+  @Field(name: 'diversityStaffingReport', description: r'''For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.''')
+  @JsonKey(name: 'diversityStaffingReport')
+  final Object? diversityStaffingReport;
+
+  /// Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
+  @Field(name: 'ethicsPolicy', description: r'''Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.''')
+  @JsonKey(name: 'ethicsPolicy')
+  final Object? ethicsPolicy;
+
+  /// For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
+  @Field(name: 'masthead', description: r'''For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.''')
+  @JsonKey(name: 'masthead')
+  final Object? masthead;
+
+  /// For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
+  @Field(name: 'missionCoveragePrioritiesPolicy', description: r'''For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.''')
+  @JsonKey(name: 'missionCoveragePrioritiesPolicy')
+  final Object? missionCoveragePrioritiesPolicy;
+
+  /// For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement explaining when authors of articles are not named in bylines.
+  @Field(name: 'noBylinesPolicy', description: r'''For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement explaining when authors of articles are not named in bylines.''')
+  @JsonKey(name: 'noBylinesPolicy')
+  final Object? noBylinesPolicy;
+
+  /// For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+  @Field(name: 'ownershipFundingInfo', description: r'''For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.''')
+  @JsonKey(name: 'ownershipFundingInfo')
+  final Object? ownershipFundingInfo;
+
+  /// For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
+  @Field(name: 'unnamedSourcesPolicy', description: r'''For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.''')
+  @JsonKey(name: 'unnamedSourcesPolicy')
+  final Object? unnamedSourcesPolicy;
+
+  /// Disclosure about verification and fact-checking processes for a [[NewsMediaOrganization]] or other fact-checking [[Organization]].
+  @Field(name: 'verificationFactCheckingPolicy', description: r'''Disclosure about verification and fact-checking processes for a [[NewsMediaOrganization]] or other fact-checking [[Organization]].''')
+  @JsonKey(name: 'verificationFactCheckingPolicy')
+  final Object? verificationFactCheckingPolicy;
+
+  const NewsMediaOrganization({
+    this.actionableFeedbackPolicy,
+    this.correctionsPolicy,
+    this.diversityPolicy,
+    this.diversityStaffingReport,
+    this.ethicsPolicy,
+    this.masthead,
+    this.missionCoveragePrioritiesPolicy,
+    this.noBylinesPolicy,
+    this.ownershipFundingInfo,
+    this.unnamedSourcesPolicy,
+    this.verificationFactCheckingPolicy,
+  });
+
+  @override
+  List<Object?> get props => [
+    ...super.props,
+    actionableFeedbackPolicy,
+    correctionsPolicy,
+    diversityPolicy,
+    diversityStaffingReport,
+    ethicsPolicy,
+    masthead,
+    missionCoveragePrioritiesPolicy,
+    noBylinesPolicy,
+    ownershipFundingInfo,
+    unnamedSourcesPolicy,
+    verificationFactCheckingPolicy,
+  ];
+}

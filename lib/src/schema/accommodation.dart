@@ -1,0 +1,156 @@
+// Generated file. Do not edit directly.
+import 'package:equatable/equatable.dart';
+import 'package:schemantic/schemantic.dart';
+import 'package:json_annotation/json_annotation.dart';
+import '../../schemaorg.dart';
+
+/// An accommodation is a place that can accommodate human beings, e.g. a hotel room, a camping pitch, or a meeting room. Many accommodations are for overnight stays, but this is not a mandatory requirement.
+/// For more specific types of accommodations not defined in schema.org, one can use [[additionalType]] with external vocabularies.
+/// <br /><br />
+/// See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
+///
+@Schema(description: r'''An accommodation is a place that can accommodate human beings, e.g. a hotel room, a camping pitch, or a meeting room. Many accommodations are for overnight stays, but this is not a mandatory requirement.
+For more specific types of accommodations not defined in schema.org, one can use [[additionalType]] with external vocabularies.
+<br /><br />
+See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
+''')
+@JsonSerializable(explicitToJson: true)
+abstract base class Accommodation extends Place with EquatableMixin {
+
+  /// Category of an [[Accommodation]], following real estate conventions, e.g. RESO (see [PropertySubType](https://ddwiki.reso.org/display/DDW17/PropertySubType+Field), and [PropertyType](https://ddwiki.reso.org/display/DDW17/PropertyType+Field) fields  for suggested values).
+  @Field(name: 'accommodationCategory', description: r'''Category of an [[Accommodation]], following real estate conventions, e.g. RESO (see [PropertySubType](https://ddwiki.reso.org/display/DDW17/PropertySubType+Field), and [PropertyType](https://ddwiki.reso.org/display/DDW17/PropertyType+Field) fields  for suggested values).''')
+  @JsonKey(name: 'accommodationCategory')
+  final String? accommodationCategory;
+
+  /// A floorplan of some [[Accommodation]].
+  @Field(name: 'accommodationFloorPlan', description: r'''A floorplan of some [[Accommodation]].''')
+  @JsonKey(name: 'accommodationFloorPlan')
+  final FloorPlan? accommodationFloorPlan;
+
+  /// An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+  @Field(name: 'amenityFeature', description: r'''An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.''')
+  @JsonKey(name: 'amenityFeature')
+  final LocationFeatureSpecification? amenityFeature;
+
+  /// The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
+/// If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
+  @Field(name: 'bed', description: r'''The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
+      If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.''')
+  @JsonKey(name: 'bed')
+  final Object? bed;
+
+  /// The floor level for an [[Accommodation]] in a multi-storey building. Since counting
+/// systems [vary internationally](https://en.wikipedia.org/wiki/Storey#Consecutive_number_floor_designations), the local system should be used where possible.
+  @Field(name: 'floorLevel', description: r'''The floor level for an [[Accommodation]] in a multi-storey building. Since counting
+  systems [vary internationally](https://en.wikipedia.org/wiki/Storey#Consecutive_number_floor_designations), the local system should be used where possible.''')
+  @JsonKey(name: 'floorLevel')
+  final String? floorLevel;
+
+  /// The size of the accommodation, e.g. in square meter or squarefoot.
+/// Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard.
+  @Field(name: 'floorSize', description: r'''The size of the accommodation, e.g. in square meter or squarefoot.
+Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard.''')
+  @JsonKey(name: 'floorSize')
+  final QuantitativeValue? floorSize;
+
+  /// Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
+  @Field(name: 'leaseLength', description: r'''Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.''')
+  @JsonKey(name: 'leaseLength')
+  final Object? leaseLength;
+
+  /// The total integer number of bathrooms in some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
+  @Field(name: 'numberOfBathroomsTotal', description: r'''The total integer number of bathrooms in some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].''')
+  @JsonKey(name: 'numberOfBathroomsTotal')
+  final int? numberOfBathroomsTotal;
+
+  /// The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
+  @Field(name: 'numberOfBedrooms', description: r'''The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].''')
+  @JsonKey(name: 'numberOfBedrooms')
+  final Object? numberOfBedrooms;
+
+  /// Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
+  @Field(name: 'numberOfFullBathrooms', description: r'''Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).''')
+  @JsonKey(name: 'numberOfFullBathrooms')
+  final num? numberOfFullBathrooms;
+
+  /// Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field).
+  @Field(name: 'numberOfPartialBathrooms', description: r'''Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). ''')
+  @JsonKey(name: 'numberOfPartialBathrooms')
+  final num? numberOfPartialBathrooms;
+
+  /// The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+/// Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+  @Field(name: 'numberOfRooms', description: r'''The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.''')
+  @JsonKey(name: 'numberOfRooms')
+  final Object? numberOfRooms;
+
+  /// The allowed total occupancy for the accommodation in persons (including infants etc). For individual accommodations, this is not necessarily the legal maximum but defines the permitted usage as per the contractual agreement (e.g. a double room used by a single person).
+/// Typical unit code(s): C62 for person.
+  @Field(name: 'occupancy', description: r'''The allowed total occupancy for the accommodation in persons (including infants etc). For individual accommodations, this is not necessarily the legal maximum but defines the permitted usage as per the contractual agreement (e.g. a double room used by a single person).
+Typical unit code(s): C62 for person.''')
+  @JsonKey(name: 'occupancy')
+  final QuantitativeValue? occupancy;
+
+  /// Indications regarding the permitted usage of the accommodation.
+  @Field(name: 'permittedUsage', description: r'''Indications regarding the permitted usage of the accommodation.''')
+  @JsonKey(name: 'permittedUsage')
+  final String? permittedUsage;
+
+  /// Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+  @Field(name: 'petsAllowed', description: r'''Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.''')
+  @JsonKey(name: 'petsAllowed')
+  final Object? petsAllowed;
+
+  /// A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
+  @Field(name: 'tourBookingPage', description: r'''A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.''')
+  @JsonKey(name: 'tourBookingPage')
+  final String? tourBookingPage;
+
+  /// The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field).
+  @Field(name: 'yearBuilt', description: r'''The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field). ''')
+  @JsonKey(name: 'yearBuilt')
+  final num? yearBuilt;
+
+  const Accommodation({
+    this.accommodationCategory,
+    this.accommodationFloorPlan,
+    this.amenityFeature,
+    this.bed,
+    this.floorLevel,
+    this.floorSize,
+    this.leaseLength,
+    this.numberOfBathroomsTotal,
+    this.numberOfBedrooms,
+    this.numberOfFullBathrooms,
+    this.numberOfPartialBathrooms,
+    this.numberOfRooms,
+    this.occupancy,
+    this.permittedUsage,
+    this.petsAllowed,
+    this.tourBookingPage,
+    this.yearBuilt,
+  });
+
+  @override
+  List<Object?> get props => [
+    ...super.props,
+    accommodationCategory,
+    accommodationFloorPlan,
+    amenityFeature,
+    bed,
+    floorLevel,
+    floorSize,
+    leaseLength,
+    numberOfBathroomsTotal,
+    numberOfBedrooms,
+    numberOfFullBathrooms,
+    numberOfPartialBathrooms,
+    numberOfRooms,
+    occupancy,
+    permittedUsage,
+    petsAllowed,
+    tourBookingPage,
+    yearBuilt,
+  ];
+}
